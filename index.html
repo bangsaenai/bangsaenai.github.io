@@ -139,6 +139,65 @@
         </div>
     </section>
 
+    <section class="py-20 bg-slate-900 border-y border-slate-800 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div class="absolute right-0 top-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl mix-blend-screen"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            
+            <div class="md:w-1/2 space-y-6">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-mono">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
+                    PEER-REVIEWED ARCHITECTURE
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">
+                    Don't trust the code.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                        Trust the Math.
+                    </span>
+                </h2>
+                
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Our flight controller isn't just PID loops. It's built on the 
+                    <strong class="text-gray-200">Koopman-Kalman Safeguard</strong> framework, 
+                    transforming chaotic nonlinear dynamics into a solvable linear system ($Ax=b$).
+                </p>
+
+                <a href="[ใส่ลิงก์ Authorea ของท่านตรงนี้]" target="_blank" 
+                   class="inline-flex items-center px-6 py-3 border border-gray-600 rounded-lg text-white hover:bg-white hover:text-black transition-all duration-300 group">
+                    <span>Read the Scientific Paper</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="md:w-1/2 w-full">
+                <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-800/50 p-6 backdrop-blur-sm group hover:border-blue-500/50 transition-colors">
+                    <div class="space-y-4 opacity-70 group-hover:opacity-100 transition-opacity">
+                        <div class="h-4 w-3/4 bg-slate-600 rounded"></div>
+                        <div class="h-8 w-full bg-slate-500 rounded"></div>
+                        <div class="space-y-2 pt-4">
+                            <div class="h-2 w-full bg-slate-700 rounded"></div>
+                            <div class="h-2 w-full bg-slate-700 rounded"></div>
+                            <div class="h-2 w-5/6 bg-slate-700 rounded"></div>
+                        </div>
+                        <div class="py-4 flex justify-center">
+                            <code class="font-mono text-emerald-400 text-sm">
+                                z(k+1) = K * z(k) + B * u(k)
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
     <section id="shop" class="py-24 px-4 relative">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 max-w-2xl mx-auto">
