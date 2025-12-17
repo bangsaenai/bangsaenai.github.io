@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangsaen AI - Flight Control Blueprints</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+
+    </head>
+<body class="bg-slate-900 text-white antialiased">
+
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-slate-400 hover:text-white transition">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Lab
+            </a>
+            <span class="font-bold text-white tracking-tight">Bangsaen<span class="text-blue-500">AI</span></span>
+        </div>
+    </nav>
+
+    <header class="text-center py-16 px-4 bg-[url('https://source.unsplash.com/1600x900/?blueprint,grid')] bg-cover bg-center bg-blend-multiply bg-slate-900/90">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <div class="inline-block px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-semibold">
+                Flight Control Systems
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                Stop Guessing. <br>
+                Start <span class="text-blue-500">Calculating</span>.
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+                The Open Source code gets you in the air. <br>
+                <strong>The Blueprints</strong> give you the precision to master the wind.
+            </p>
+        </div>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            
+            <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-blue-500 transition-all shadow-xl relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-blue-600 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                    POPULAR
+                </div>
+                
+                <div class="text-blue-400 mb-4"><i class="fas fa-file-pdf fa-3x"></i></div>
+                <h3 class="text-2xl font-bold mb-2">The Flight Blueprint</h3>
+                <p class="text-slate-400 mb-6 text-sm h-16">
+                    Skip the trial and error. Get the complete parameter configurations, wiring diagrams, and tuning guide used in our demo videos.
+                </p>
+                <div class="text-3xl font-bold mb-6">$19 <span class="text-sm text-slate-500 font-normal">/ one-time</span></div>
+                
+                <ul class="space-y-3 mb-8 text-sm text-slate-300">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Complete Wiring Diagram (PDF)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Pre-tuned Koopman Parameters</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Setup Video Tutorial</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Lifetime Updates</li>
+                </ul>
+
+                <a href="https://gumroad.com/" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-bold transition transform group-hover:scale-105">
+                    Get the Blueprints
+                </a>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-red-500 transition-all shadow-xl relative group">
+                <div class="text-red-400 mb-4"><i class="fab fa-patreon fa-3x"></i></div>
+                <h3 class="text-2xl font-bold mb-2">The Inner Circle</h3>
+                <p class="text-slate-400 mb-6 text-sm h-16">
+                    Join the research team. Get direct access to ask questions, request features, and see behind-the-scenes experiments.
+                </p>
+                <div class="text-3xl font-bold mb-6">$5 <span class="text-sm text-slate-500 font-normal">/ month</span></div>
+                
+                <ul class="space-y-3 mb-8 text-sm text-slate-300">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Priority Support</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Early Access to New Code</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Voting Rights on Next Project</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Supporter Badge on GitHub</li>
+                </ul>
+
+                <a href="https://www.patreon.com/" target="_blank" class="block w-full bg-slate-700 hover:bg-red-600 text-white text-center py-3 rounded-lg font-bold transition transform group-hover:scale-105">
+                    Become a Supporter
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 pb-20 text-center">
+        <h2 class="text-2xl font-bold mb-8">Why pay when the code is Open Source?</h2>
+        <div class="space-y-6 text-slate-400 text-left">
+            <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                <h4 class="text-white font-bold mb-2">The Code is Free (GPL v3.0)</h4>
+                <p>We believe in Open Source. You can download the raw Python code from our GitHub right now for $0. That will never change.</p>
+            </div>
+            <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                <h4 class="text-white font-bold mb-2">You are paying for Time & Certainty</h4>
+                <p>The Blueprints are for engineers who value their time. We've spent 100+ hours tuning the physics parameters so you don't have to crash 10 planes to find the sweet spot.</p>
+            </div>
+        </div>
+        
+        <div class="mt-12">
+            <a href="https://github.com/bangsaenai" class="text-slate-500 hover:text-white underline text-sm">
+                I'll do it the hard way (Go to GitHub)
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>
