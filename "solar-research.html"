@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Inertia Grid Security - Bangsaen AI Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+    </style>
+
+    </head>
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-4">
+        <div class="max-w-3xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-blue-400 hover:text-white transition">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Lab
+            </a>
+            <span class="font-bold text-white tracking-tight">Bangsaen<span class="text-green-500">AI</span></span>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="text-green-400 font-bold tracking-wider text-xs uppercase">Research Case Study</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white">
+                Defending the Grid in <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">Zero Inertia</span>
+            </h1>
+            <p class="text-lg text-slate-400">
+                Why traditional relays fail, and how Physics Manifold can distinguish a cyber-attack from a cloud shadow in 0.01s.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 10 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-3xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-32 bg-slate-800/50 rounded flex items-center justify-center mb-12 border border-slate-700 border-dashed text-slate-600">
+            [AdSense In-Article Ad Here]
+        </div>
+
+        <div class="prose text-lg space-y-8 text-slate-300">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">T</span>he world is transitioning to renewable energy. But as we replace heavy spinning generators with solar inverters, we lose something critical: <strong>Inertia</strong>.
+            </p>
+            <p>
+                Without inertia, the grid becomes fragile. A passing cloud can cause voltage fluctuations that look exactly like a cyber-attack. This is the <strong>"Zero-Inertia Dilemma"</strong>.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">The Problem: Scenario A (Nature)</h2>
+            <p>
+                When a cloud passes over a solar farm, irradiance drops. The MPPT (Maximum Power Point Tracking) controller frantically adjusts voltage to squeeze out power. To a dumb relay, this looks like a voltage dip fault.
+            </p>
+            <p>
+                <strong>The Result?</strong> False Alarms. The relay trips, cutting off power when it's needed most.
+            </p>
+
+            <div class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                 <div class="aspect-w-16 aspect-h-9 bg-slate-800 flex items-center justify-center h-64 text-slate-500">
+                    <i class="fab fa-youtube fa-3x"></i>
+                    <span class="ml-2">Video: Scenario A Simulation</span>
+                </div>
+            </div>
+
+            <div class="w-full h-60 bg-slate-800/50 rounded flex items-center justify-center my-12 border border-slate-700 border-dashed text-slate-600">
+                [AdSense In-Article Ad Here]
+            </div>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">The Solution: Physics Manifold</h2>
+            <p>
+                Instead of using Deep Learning black boxes, we use the <strong>Koopman Operator</strong> to map the non-linear dynamics of the solar array into a linear space.
+            </p>
+            <blockquote class="border-l-4 border-green-500 pl-4 italic text-slate-400 my-6">
+                "We don't teach the AI what a cloud looks like. We teach it the Laws of Physics."
+            </blockquote>
+            <p>
+                This allows our KKS algorithm to see that the voltage drop from a cloud follows a specific "trajectory" on the physics manifold. It's valid behavior. System status: <span class="text-green-400 font-mono">GREEN</span>.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">Scenario B: The Cyber Attack</h2>
+            <p>
+                Now, imagine a hacker injects false data to fool the inverter. To a standard relay, the voltage levels might look the same as the cloud scenario.
+            </p>
+            <p>
+                But on our Physics Manifold? <strong>It's impossible.</strong> The trajectory violates the laws of circuit theory.
+            </p>
+            <p>
+                Our system detects this anomaly in <strong>less than 0.01 seconds</strong>. System status: <span class="text-red-500 font-mono font-bold">RED (ATTACK DETECTED)</span>.
+            </p>
+
+             <div class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                <div class="aspect-w-16 aspect-h-9 bg-slate-800 flex items-center justify-center h-64 text-slate-500">
+                   <i class="fab fa-youtube fa-3x"></i>
+                   <span class="ml-2">Video: Scenario B Simulation</span>
+               </div>
+           </div>
+
+        </div>
+
+        <div class="w-full h-32 bg-slate-800/50 rounded flex items-center justify-center mt-12 border border-slate-700 border-dashed text-slate-600">
+            [AdSense In-Article Ad Here]
+        </div>
+
+    </article>
+
+    <footer class="bg-slate-950 py-12 text-center border-t border-slate-900 mt-12">
+        <h3 class="text-white font-bold text-xl mb-4">Ready to secure your Grid?</h3>
+        <p class="text-slate-500 mb-8 max-w-md mx-auto">
+            Contact Bangsaen AI for licensing and consulting on Physics-Informed Security.
+        </p>
+        <a href="mailto:contact@bangsaenai.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition">
+            Contact Us
+        </a>
+    </footer>
+
+</body>
+</html>
