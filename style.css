@@ -11,57 +11,59 @@ body {
     color: #ffffff;
 }
 
-/* --- ส่วนที่ 2: Navbar (แถบเมนู) --- */
+/* --- CSS สำหรับ Navbar (เมนูบาร์) --- */
 .navbar {
     width: 100%;
-    background-color: rgba(11, 14, 20, 0.9); /* สีดำโปร่งแสง */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
+    background-color: rgba(11, 14, 20, 0.95); /* สีพื้นหลังดำโปร่งแสง */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* เส้นขอบบางๆ */
+    position: sticky; /* ให้เมนูติดอยู่ด้านบนตลอดเวลาเลื่อนจอ */
     top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    z-index: 1000; /* ให้อยู่ชั้นบนสุด */
+    backdrop-filter: blur(10px); /* เอฟเฟกต์เบลอพื้นหลังกระจก */
 }
 
 .nav-container {
-    max-width: 1200px; /* จำกัดความกว้างไม่ให้เมนูฉีกออกข้างเกินไป */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 1.2rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between; /* ดันโลโก้ไปซ้าย เมนูไปขวา */
     align-items: center;
 }
 
-/* ดีไซน์โลโก้ */
+/* โลโก้ */
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
 }
 
 .nav-logo .highlight {
-    background: linear-gradient(to right, #60a5fa, #a78bfa); /* สี Gradient เดิมของคุณ */
+    background: linear-gradient(to right, #60a5fa, #a78bfa); /* สีฟ้า-ม่วง ตามธีมเว็บคุณ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ดีไซน์ลิงก์เมนู */
+/* ลิงก์เมนู */
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 30px; /* ระยะห่างระหว่างปุ่ม */
 }
 
 .nav-link {
-    color: #9ca3af;
+    color: #9ca3af; /* สีเทาอ่อน */
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
 }
 
 .nav-link:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+    color: #ffffff; /* ชี้แล้วเปลี่ยนเป็นสีขาว */
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.6); /* เรืองแสงสีฟ้า */
 }
 
 /* --- ส่วนเสริม: รองรับ Mobile (ถ้าหน้าจอมือถือให้ซ่อนเมนูบางส่วนได้ในอนาคต) --- */
