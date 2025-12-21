@@ -1,0 +1,56 @@
+/* สไตล์สำหรับ Navbar */
+.navbar {
+    width: 100%;
+    background-color: rgba(11, 14, 20, 0.9); /* สีดำโปร่งแสงนิดๆ */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* เส้นขอบบางๆ ด้านล่าง */
+    position: sticky; /* ให้เมนูติดอยู่ข้างบนเวลาเลื่อนจอ (ถ้าชอบ) */
+    top: 0;
+    z-index: 1000; /* ให้อยู่เหนือทุกอย่าง */
+    backdrop-filter: blur(10px); /* เอฟเฟกต์เบลอพื้นหลังกระจก (Glassmorphism) */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto; /* จัดกึ่งกลางจอ */
+    padding: 1.2rem 2rem; /* ระยะห่าง บน-ล่าง ซ้าย-ขวา */
+    display: flex; /* จัดเรียงแนวนอน */
+    justify-content: space-between; /* ดันโลโก้ไปซ้าย เมนูไปขวา */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+
+/* ดีไซน์โลโก้ */
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-logo .highlight {
+    color: #3b82f6; /* สีฟ้าเอกลักษณ์ของเว็บคุณ */
+    /* หรือใช้สีเขียวไล่เฉดแบบเดิมก็ได้ */
+    background: linear-gradient(to right, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ดีไซน์ลิงก์เมนู */
+.nav-menu {
+    display: flex;
+    gap: 30px; /* ระยะห่างระหว่างแต่ละเมนู */
+}
+
+.nav-link {
+    color: #9ca3af; /* สีเทาอ่อน (ดูแพงกว่าสีขาวล้วน) */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease; /* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
+}
+
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ (Hover) */
+.nav-link:hover {
+    color: #ffffff; /* เปลี่ยนเป็นสีขาว */
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.5); /* เรืองแสงสีฟ้า */
+}
