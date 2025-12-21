@@ -1,21 +1,34 @@
-/* สไตล์สำหรับ Navbar */
+/* --- ส่วนที่ 1: ตั้งค่า Font และพื้นฐาน (ใช้ร่วมกันทุกหน้า) --- */
+
+/* ดึง Font 'Inter' จาก Google Fonts มาใช้ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif; /* บังคับใช้ Font Inter กับทั้งหน้า */
+    margin: 0;
+    padding: 0;
+    background-color: #0b0e14; /* สีพื้นหลังดำด้าน (Theme เดียวกับ Tailwind เดิมของคุณ) */
+    color: #ffffff;
+}
+
+/* --- ส่วนที่ 2: Navbar (แถบเมนู) --- */
 .navbar {
     width: 100%;
-    background-color: rgba(11, 14, 20, 0.9); /* สีดำโปร่งแสงนิดๆ */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* เส้นขอบบางๆ ด้านล่าง */
-    position: sticky; /* ให้เมนูติดอยู่ข้างบนเวลาเลื่อนจอ (ถ้าชอบ) */
+    background-color: rgba(11, 14, 20, 0.9); /* สีดำโปร่งแสง */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
     top: 0;
-    z-index: 1000; /* ให้อยู่เหนือทุกอย่าง */
-    backdrop-filter: blur(10px); /* เอฟเฟกต์เบลอพื้นหลังกระจก (Glassmorphism) */
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto; /* จัดกึ่งกลางจอ */
-    padding: 1.2rem 2rem; /* ระยะห่าง บน-ล่าง ซ้าย-ขวา */
-    display: flex; /* จัดเรียงแนวนอน */
+    max-width: 1200px; /* จำกัดความกว้างไม่ให้เมนูฉีกออกข้างเกินไป */
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
     justify-content: space-between; /* ดันโลโก้ไปซ้าย เมนูไปขวา */
-    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    align-items: center;
 }
 
 /* ดีไซน์โลโก้ */
@@ -24,13 +37,10 @@
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
-    letter-spacing: -0.5px;
 }
 
 .nav-logo .highlight {
-    color: #3b82f6; /* สีฟ้าเอกลักษณ์ของเว็บคุณ */
-    /* หรือใช้สีเขียวไล่เฉดแบบเดิมก็ได้ */
-    background: linear-gradient(to right, #3b82f6, #06b6d4);
+    background: linear-gradient(to right, #60a5fa, #a78bfa); /* สี Gradient เดิมของคุณ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -38,19 +48,25 @@
 /* ดีไซน์ลิงก์เมนู */
 .nav-menu {
     display: flex;
-    gap: 30px; /* ระยะห่างระหว่างแต่ละเมนู */
+    gap: 30px;
 }
 
 .nav-link {
-    color: #9ca3af; /* สีเทาอ่อน (ดูแพงกว่าสีขาวล้วน) */
+    color: #9ca3af;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.3s ease; /* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
+    transition: all 0.3s ease;
 }
 
-/* เอฟเฟกต์ตอนเอาเมาส์ชี้ (Hover) */
 .nav-link:hover {
-    color: #ffffff; /* เปลี่ยนเป็นสีขาว */
-    text-shadow: 0 0 8px rgba(59, 130, 246, 0.5); /* เรืองแสงสีฟ้า */
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+/* --- ส่วนเสริม: รองรับ Mobile (ถ้าหน้าจอมือถือให้ซ่อนเมนูบางส่วนได้ในอนาคต) --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* ซ่อนเมนูก่อนในมือถือ (เดี๋ยวค่อยทำปุ่มกดทีหลัง) */
+    }
 }
