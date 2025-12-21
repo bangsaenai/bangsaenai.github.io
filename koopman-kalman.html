@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Koopman-Kalman Safeguard - BangsaenAI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Bangsaen<span class="highlight">AI</span></a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="blog.html" class="nav-link" style="color:white;">Research Blog</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-socials space-x-4">
+                <a href="https://github.com/bangsaenai" class="text-slate-400 hover:text-white" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://www.youtube.com/@bangsaenai" class="text-slate-400 hover:text-red-500" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-24 pb-12 px-6 text-center bg-[#0b0e14]">
+        <span class="inline-block py-1 px-3 rounded-full bg-purple-900/30 text-purple-400 text-sm font-semibold mb-4 border border-purple-800">
+            Mathematics Ep.2
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            The Koopman-Kalman Safeguard:<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                Taming Chaos with Linear Algebra
+            </span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8">
+            How we dismantled the "Linear Illusion" to achieve provably safe control in chaotic regimes.
+        </p>
+    </header>
+
+    <article class="max-w-3xl mx-auto px-6 pb-20 text-gray-300 leading-relaxed text-lg">
+        
+        <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-l-4 border-red-500 pl-4">1. The Linear Illusion</h2>
+        <p class="mb-6">
+            In Ep.1, we praised the elegance of $Ax=b$. But there is a trap. 
+            For decades, control engineering has relied on the assumption that if we zoom in close enough, every curve looks like a straight line. 
+            This is <strong>Local Linearization</strong> (Jacobian)[cite: 17].
+        </p>
+        <p class="mb-6">
+            It works for stable cruising. But in the chaotic regimes of the 21st century—like a Wing-in-Ground craft stalling or a power grid bifurcating—this assumption shatters[cite: 18].
+            The local linear model is "blind" to the global topology. It predicts safety ($J \approx 0$) while the physics screams danger. 
+            We call this the <strong>"Linear Illusion"</strong>[cite: 7, 84].
+        </p>
+
+        <h2 class="text-2xl font-bold text-white mt-12 mb-4 border-l-4 border-purple-500 pl-4">2. Lifting Chaos to Order</h2>
+        <p class="mb-6">
+            To solve this, we don't abandon linear algebra. We change the coordinate system.
+            Inspired by <strong>Bernard Koopman (1931)</strong>, we postulate that nonlinear dynamics in state space are actually <em>linear</em> dynamics in an infinite-dimensional space of observables[cite: 23].
+        </p>
+        
+        <div class="bg-[#1f2937] p-6 rounded-lg text-center mb-8 border border-gray-700">
+            <p class="text-2xl font-serif italic text-white mb-2">$$z_{k+1} = K z_k + B u_k$$</p>
+            <p class="text-sm text-gray-500">The Koopman Operator Equation [cite: 131]</p>
+        </div>
+
+        <p class="mb-6">
+            By "lifting" our state $x$ into a higher-dimensional vector $z = \Psi(x)$, we can capture the full nonlinear landscape (multiple basins of attraction) within a linear matrix $K$[cite: 129, 133].
+        </p>
+
+        <h2 class="text-2xl font-bold text-white mt-12 mb-4 border-l-4 border-blue-500 pl-4">3. The Koopman-Kalman Safeguard (KKS)</h2>
+        <p class="mb-6">
+            Here is our breakthrough. By fusing Koopman's global geometry with the <strong>Kalman Filter's</strong> optimal estimation, we create the <strong>Koopman-Kalman Safeguard (KKS)</strong>[cite: 9, 25].
+        </p>
+        <ul class="list-disc ml-6 mb-8 space-y-2 text-gray-400">
+            <li>We reconstruct a <strong>"Virtual Impulse Response"</strong> from the identified Koopman model[cite: 46].</li>
+            <li>This allows us to use the efficient $Ax=b$ solver to predict bifurcations that are invisible to standard Jacobians[cite: 47].</li>
+            <li><strong>The Result:</strong> We solve the "Learner's Dilemma." We can mathematically prove a controller is unsafe <em>before</em> it crashes the drone[cite: 48].</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 p-8 rounded-xl mt-12 text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">Read the Full Paper</h3>
+            <p class="text-gray-300 mb-6">
+                "The Koopman-Kalman Safeguard: A Unified Framework for Provably Safe Control in Chaotic Regimes"
+            </p>
+            <a href="https://www.authorea.com/users/your-profile/articles/your-paper-id" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                <i class="fas fa-external-link-alt mr-2"></i> Read on Authorea
+            </a>
+            <p class="text-xs text-gray-500 mt-4">
+                Full mathematical proofs and experimental data included[cite: 218].
+            </p>
+        </div>
+
+    </article>
+
+    <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
+        <p>&copy; 2025 BangsaenAI Research Lab.</p>
+    </footer>
+ <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+    </body>
+</html>
