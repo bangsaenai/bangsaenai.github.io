@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Math Behind Chaos Control - BangsaenAI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Bangsaen<span class="highlight">AI</span></a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="blog.html" class="nav-link" style="color:white;">Research Blog</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-socials space-x-4">
+                <a href="https://github.com/bangsaenai" class="text-slate-400 hover:text-white" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://www.youtube.com/@bangsaenai" class="text-slate-400 hover:text-red-500" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-24 pb-12 px-6 text-center bg-[#0b0e14]">
+        <span class="inline-block py-1 px-3 rounded-full bg-blue-900/30 text-blue-400 text-sm font-semibold mb-4 border border-blue-800">
+            Mathematics Ep.1
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Column Space & Left Null Space:<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                The Heart of Control
+            </span>
+        </h1>
+        <div class="flex justify-center items-center text-gray-400 text-sm space-x-6">
+            <span><i class="far fa-user mr-2"></i>Dr. Tanet</span>
+            <span><i class="far fa-clock mr-2"></i>8 min read</span>
+            <span><i class="far fa-calendar mr-2"></i>Dec 21, 2025</span>
+        </div>
+    </header>
+
+    <article class="max-w-3xl mx-auto px-6 pb-20 text-gray-300 leading-relaxed text-lg">
+        
+        <p class="mb-8">
+            Before we talk about AI or Koopman Operators, we must return to the most fundamental equation in engineering:
+        </p>
+
+        <div class="bg-[#1f2937] p-6 rounded-lg text-center mb-10 border border-gray-700 shadow-lg">
+            <p class="text-3xl font-serif italic text-white">$$Ax = b$$</p>
+        </div>
+
+        <p class="mb-8">
+            In high school, we are taught to find $x$. But in Control Engineering, we care more about $A$ (the system) and $b$ (the state). 
+            Specifically, we need to know: <strong>Does a solution even exist?</strong> And if the sensor readings don't make sense, <strong>is it a fault or just noise?</strong>
+        </p>
+
+        <h2 class="text-2xl font-bold text-white mt-12 mb-4 border-l-4 border-blue-500 pl-4">1. The Column Space: The Realm of Possibility</h2>
+        <p class="mb-6">
+            The <strong>Column Space</strong> of matrix $A$, denoted as $C(A)$, represents everywhere your system <em>can</em> physically go. 
+            If your target state $b$ lives inside $C(A)$, then the system is controllable. We can solve for $x$.
+        </p>
+        <p class="mb-6">
+            Think of a <strong>Swarm Drone</strong> formation. The physics of the propellers limits where the drone can move. 
+            No matter how hard you spin the motors, you cannot instantaneously teleport. 
+            The Column Space defines the "Valid Physics Zone".
+        </p>
+
+        <h2 class="text-2xl font-bold text-white mt-12 mb-4 border-l-4 border-purple-500 pl-4">2. The Left Null Space: The Fault Detector</h2>
+        <p class="mb-6">
+            Here is where it gets interesting. The <strong>Left Null Space</strong>, $N(A^T)$, is orthogonal (perpendicular) to the Column Space.
+        </p>
+        <div class="bg-gray-800/50 p-4 rounded border-l-4 border-red-500 mb-6 italic text-gray-400">
+            "If the Column Space is the sound of the orchestra, the Left Null Space is the silence. If you hear noise in the silence, something is wrong."
+        </div>
+        <p class="mb-6">
+            This is the mathematical foundation of <strong>Fault Detection</strong>.
+            We use this to check sensors on a <strong>Bus Bar</strong> in a power grid.
+        </p>
+        <ul class="list-disc ml-6 mb-8 space-y-2 text-gray-400">
+            <li><strong>The GPS Analogy:</strong> A GPS tells you where you are ($x$). But how do you know the GPS isn't lying?</li>
+            <li><strong>The Math Check:</strong> We project the sensor data onto the Left Null Space. Theoretically, the result should be zero ($0$).</li>
+            <li><strong>The Result:</strong> If the result is <em>not</em> zero, it means the vector $b$ has "leaked" out of the Column Space. This is a mathematical proof that a sensor has failed or an error has occurred.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-white mt-12 mb-4 border-l-4 border-green-500 pl-4">3. Why Ax=b is Not Enough</h2>
+        <p class="mb-6">
+            For decades, this logic worked perfectly for traditional power plants with <strong>Large Inertia</strong> (huge spinning generators). 
+            The system moved slowly enough that $Ax=b$ was a stable, reliable snapshot.
+        </p>
+        <p class="mb-8">
+            But today, we face <strong>Zero Inertia</strong> grids (Solar & Wind). 
+            Inverters react in microseconds. The system dynamics change faster than we can solve the equation.
+            $A$ is no longer constant. It breathes. It morphs.
+        </p>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mt-10">
+            <h3 class="text-xl font-bold text-blue-400 mb-2">Coming Next: Ep.2</h3>
+            <p class="text-gray-300">
+                When inertia hits zero, simple Linear Algebra fails. 
+                We need a new kind of math that can handle "bending" spaces. 
+                This is why we turn to <strong>Differential Geometry</strong> and <strong>Physics Manifolds</strong>.
+            </p>
+            <a href="#" class="inline-block mt-4 text-white font-semibold border-b border-blue-400 hover:text-blue-400 transition">Subscribe for updates &rarr;</a>
+        </div>
+
+    </article>
+
+    <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
+        <div class="footer-links mb-6">
+            <a href="index.html" class="text-gray-400 hover:text-white mx-3 no-underline">Home</a>
+            <a href="blog.html" class="text-gray-400 hover:text-white mx-3 no-underline">Research Blog</a>
+            <a href="about.html" class="text-gray-400 hover:text-white mx-3 no-underline">About Us</a>
+            <a href="contact.html" class="text-gray-400 hover:text-white mx-3 no-underline">Contact</a>
+        </div>
+        <p>&copy; 2025 BangsaenAI Research Lab.</p>
+    </footer>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+  
+    </body>
+</html>
