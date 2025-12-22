@@ -36,6 +36,11 @@
     </header>
 
     <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 20px;">
+
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" onkeyup="searchBlog()" placeholder="Search research topics, keywords, or math concepts...">
+        </div>
         
         <div class="filter-menu">
             <button class="filter-btn active" onclick="filterSelection('all')">All Research</button>
