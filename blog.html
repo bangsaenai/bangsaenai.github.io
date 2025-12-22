@@ -225,6 +225,36 @@
         event.currentTarget.classList.add("active");
     }
 
+       function searchBlog() {
+    // 1. ดึงค่าที่คนพิมพ์มา และแปลงเป็นตัวเล็กทั้งหมด (Case Insensitive)
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('blog-card');
+    
+    // *ลูกเล่นเสริม: ถ้าเริ่มพิมพ์ ให้รีเซ็ตปุ่ม Filter กลับไปที่ "All" อัตโนมัติ
+    // เพื่อให้ค้นหาเจอทุกหมวดหมู่ (ถ้าไม่ชอบ ลบบรรทัดนี้ได้ครับ)
+    if(input.length > 0) {
+        let allBtn = document.querySelector('.filter-btn[onclick="filterSelection(\'all\')"]');
+        if(allBtn) allBtn.click(); 
+    }
+
+    // 2. วนลูปเช็คการ์ดทีละใบ
+    for (let i = 0; i < cards.length; i++) { 
+        let title = cards[i].getElementsByTagName("h3")[0];
+        let desc = cards[i].getElementsByTagName("p")[0];
+        
+        // ดึงข้อความออกมา
+        let titleText = title.textContent || title.innerText;
+        let descText = desc.textContent || desc.innerText;
+
+        // 3. ถ้าข้อความใน Title หรือ Description ตรงกับคำค้นหา -> โชว์
+        if (titleText.toLowerCase().indexOf(input) > -1 || descText.toLowerCase().indexOf(input) > -1) {
+            cards[i].style.display = "flex";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+} 
+
     // เรียกทำงานครั้งแรกให้โชว์ทั้งหมด
     window.onload = function() {
         filterSelection('all');
