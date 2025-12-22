@@ -200,68 +200,80 @@
     </script>
 
     <script>
+    // 1. ฟังก์ชันกรองหมวดหมู่ (Filter)
     function filterSelection(category) {
         var cards = document.getElementsByClassName("blog-card");
         var buttons = document.getElementsByClassName("filter-btn");
 
-        // 1. Loop เพื่อจัดการการแสดงผล Card
+        // Loop จัดการแสดงผล Card
         for (var i = 0; i < cards.length; i++) {
             var cardCategory = cards[i].getAttribute("data-category");
             if (category == 'all' || category == cardCategory) {
-                cards[i].style.display = "flex"; // แสดงผล
-                // Trigger Animation
+                cards[i].style.display = "flex"; 
+                // Animation
                 cards[i].classList.remove("show");
                 void cards[i].offsetWidth; 
                 cards[i].classList.add("show");
             } else {
-                cards[i].style.display = "none"; // ซ่อน
+                cards[i].style.display = "none"; 
             }
         }
 
-        // 2. Loop เพื่อจัดการสีปุ่ม (Active State)
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].classList.remove("active");
+        // Loop จัดการสีปุ่ม (Active State)
+        // ** แก้ไข: เพิ่มการเช็คว่ามี event จริงหรือไม่ เพื่อกัน Error ตอนโหลดหน้าเว็บ **
+        if (typeof event !== 'undefined' && event.type === 'click') {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            event.currentTarget.classList.add("active");
         }
-        event.currentTarget.classList.add("active");
     }
 
-       function searchBlog() {
-    // 1. ดึงค่าที่คนพิมพ์มา และแปลงเป็นตัวเล็กทั้งหมด (Case Insensitive)
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let cards = document.getElementsByClassName('blog-card');
-    
-    // *ลูกเล่นเสริม: ถ้าเริ่มพิมพ์ ให้รีเซ็ตปุ่ม Filter กลับไปที่ "All" อัตโนมัติ
-    // เพื่อให้ค้นหาเจอทุกหมวดหมู่ (ถ้าไม่ชอบ ลบบรรทัดนี้ได้ครับ)
-    if(input.length > 0) {
-        let allBtn = document.querySelector('.filter-btn[onclick="filterSelection(\'all\')"]');
-        if(allBtn) allBtn.click(); 
-    }
-
-    // 2. วนลูปเช็คการ์ดทีละใบ
-    for (let i = 0; i < cards.length; i++) { 
-        let title = cards[i].getElementsByTagName("h3")[0];
-        let desc = cards[i].getElementsByTagName("p")[0];
+    // 2. ฟังก์ชันค้นหา (Search)
+    function searchBlog() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('blog-card');
         
-        // ดึงข้อความออกมา
-        let titleText = title.textContent || title.innerText;
-        let descText = desc.textContent || desc.innerText;
+        // ถ้าเริ่มพิมพ์ ให้รีเซ็ตปุ่ม Filter เป็น All อัตโนมัติ
+        if(input.length > 0) {
+            let allBtn = document.querySelector('.filter-btn'); 
+            // ไม่ต้อง click() เพื่อเลี่ยง loop, แค่ให้มั่นใจว่าหาเจอทุกอัน
+            // หรือถ้าอยากให้ปุ่ม All active ด้วย:
+             if(allBtn && !allBtn.classList.contains('active')) {
+                 // รีเซ็ตปุ่ม Active ให้ไปอยู่ที่ All
+                 let buttons = document.getElementsByClassName("filter-btn");
+                 for (let btn of buttons) btn.classList.remove("active");
+                 allBtn.classList.add("active");
+             }
+        }
 
-        
-        // เพิ่มบรรทัดนี้ใน Loop
-let keywords = cards[i].getAttribute("data-keywords") || ""; 
+        for (let i = 0; i < cards.length; i++) { 
+            let title = cards[i].getElementsByTagName("h3")[0];
+            let desc = cards[i].getElementsByTagName("p")[0];
+            
+            let titleText = title.textContent || title.innerText;
+            let descText = desc.textContent || desc.innerText;
+            let keywords = cards[i].getAttribute("data-keywords") || ""; 
 
-// แก้เงื่อนไข if เป็น:
-if (titleText.toLowerCase().indexOf(input) > -1 || 
-    descText.toLowerCase().indexOf(input) > -1 ||
-    keywords.toLowerCase().indexOf(input) > -1 ) { // เช็ค keywords ด้วย
-    cards[i].style.display = "flex";
-}
-    }
-} 
+            // ** แก้ไข: เพิ่มเงื่อนไข else เพื่อซ่อนการ์ดที่ไม่ตรงกับคำค้นหา **
+            if (titleText.toLowerCase().indexOf(input) > -1 || 
+                descText.toLowerCase().indexOf(input) > -1 ||
+                keywords.toLowerCase().indexOf(input) > -1 ) { 
+                cards[i].style.display = "flex";
+            } else {
+                cards[i].style.display = "none"; // ต้องมีบรรทัดนี้ ไม่งั้นมันจะไม่หายไปครับ!
+            }
+        }
+    } 
 
-    // เรียกทำงานครั้งแรกให้โชว์ทั้งหมด
+    // 3. เรียกทำงานครั้งแรกให้โชว์ทั้งหมด (ไม่ต้องส่ง event)
     window.onload = function() {
-        filterSelection('all');
+        // เรียกฟังก์ชันแบบ manual โดยไม่ผ่าน onclick เพื่อไม่ให้ error
+        var cards = document.getElementsByClassName("blog-card");
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].style.display = "flex";
+            cards[i].classList.add("show");
+        }
     };
     </script>
 </body>
