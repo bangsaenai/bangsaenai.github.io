@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    </head>
+</head>
 <body style="background-color: #0b0e14; color: white; font-family: sans-serif;">
-<nav class="navbar">
+
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Bangsaen<span class="highlight">AI</span></a>
             <div class="nav-menu">
@@ -28,93 +29,89 @@
             </div>
         </div>
     </nav>
+
     <header style="text-align: center; padding: 50px 20px;">
         <h1 style="font-size: 2.5rem; color: #fff;">Engineering <span style="color: #4ade80;">Insights</span></h1>
         <p style="color: #9ca3af;">Deep dive into Control Theory, AI, and Renewable Energy.</p>
     </header>
 
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 20px;">
         
-        <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="filter-menu">
+            <button class="filter-btn active" onclick="filterSelection('all')">All Research</button>
+            <button class="filter-btn" onclick="filterSelection('grid')">Energy Grid</button>
+            <button class="filter-btn" onclick="filterSelection('flight')">Flight Control</button>
+            <button class="filter-btn" onclick="filterSelection('math')">Mathematics</button>
+        </div>
+
+        <div class="blog-container">
             
-            <div class="card" style="background: #1f2937; border-radius: 10px; padding: 20px; border: 1px solid #374151;">
-                <span style="background: #065f46; color: #34d399; padding: 5px 10px; font-size: 0.8rem; border-radius: 5px;">Energy Grid</span>
-                <h3 style="margin-top: 15px;">Defending the Grid in Zero Inertia</h3>
-                <p style="color: #d1d5db; font-size: 0.9rem;">How Physics Manifold distinguishes cyber-attacks from cloud shadows.</p>
-                <a href="solar-research.html" style="color: #3b82f6; text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">Read Analysis &rarr;</a>
+            <div class="blog-card" data-category="grid">
+                <span class="badge badge-grid">Energy Grid</span>
+                <h3>Defending the Grid in Zero Inertia</h3>
+                <p>How Physics Manifold distinguishes cyber-attacks from cloud shadows.</p>
+                <a href="solar-research.html" class="read-link">Read Analysis &rarr;</a>
             </div>
 
-            <div class="card" style="background: #1f2937; border-radius: 10px; padding: 20px; border: 1px solid #374151;">
-                <span style="background: #1e40af; color: #60a5fa; padding: 5px 10px; font-size: 0.8rem; border-radius: 5px;">Flight Control</span>
-                <h3 style="margin-top: 15px;">Koopman Operator Theory Explained</h3>
-                <p style="color: #d1d5db; font-size: 0.9rem;">Why linearizing non-linear dynamics is the future of drone stability.</p>
-                <a href="koopman-kalman.html" style="color: #3b82f6; text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">Read Analysis &rarr;</a>
+            <div class="blog-card" data-category="flight">
+                <span class="badge badge-flight">Flight Control</span>
+                <h3>Koopman Operator Theory Explained</h3>
+                <p>Why linearizing non-linear dynamics is the future of drone stability.</p>
+                <a href="koopman-kalman.html" class="read-link">Read Analysis &rarr;</a>
             </div>
 
-            <div class="card" style="background: #1f2937; border-radius: 10px; padding: 20px; border: 1px solid #374151;">
-                <span style="background: #4b5563; color: #d1d5db; padding: 5px 10px; font-size: 0.8rem; border-radius: 5px;">Mathematics</span>
-                <h3 style="margin-top: 15px;">The Math Behind Chaos Control</h3>
-                <p style="color: #d1d5db; font-size: 0.9rem;">Understanding the differential equations that power our autopilot.</p>
-                <a href="math-chaos-control.html" style="color: #3b82f6; text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">Read Analysis &rarr;</a>
-            </div>
-            
+            <div class="blog-card" data-category="math">
+                <span class="badge badge-math">Mathematics</span>
+                <h3>The Math Behind Chaos Control</h3>
+                <p>Understanding the differential equations that power our autopilot.</p>
+                <a href="math-chaos-control.html" class="read-link">Read Analysis &rarr;</a>
             </div>
 
- <div class="blog-container">
+            <div class="blog-card" data-category="grid">
+                <span class="badge badge-grid">Energy Grid</span>
+                <h3>Stabilizing Microgrids via Inverter Control</h3>
+                <p>Exploring the role of Virtual Synchronous Machines (VSM) in replacing rotating mass inertia.</p>
+                <a href="#" class="read-link">Read Analysis &rarr;</a>
+            </div>
 
-    <div class="blog-card">
-        <span class="badge badge-grid">Energy Grid</span>
-        <h3>Stabilizing Microgrids via Inverter Control</h3>
-        <p>Exploring the role of Virtual Synchronous Machines (VSM) in replacing rotating mass inertia.</p>
-        <a href="#" class="read-link">Read Analysis &rarr;</a>
-    </div>
+            <div class="blog-card" data-category="flight">
+                <span class="badge badge-flight">Flight Control</span>
+                <h3>Post-Stall Maneuvers with AI</h3>
+                <p>Using Deep Reinforcement Learning to recover fixed-wing drones from catastrophic spins.</p>
+                <a href="#" class="read-link">Read Analysis &rarr;</a>
+            </div>
 
-    <div class="blog-card">
-        <span class="badge badge-flight">Flight Control</span>
-        <h3>Post-Stall Maneuvers with AI</h3>
-        <p>Using Deep Reinforcement Learning to recover fixed-wing drones from catastrophic spins.</p>
-        <a href="#" class="read-link">Read Analysis &rarr;</a>
-    </div>
+            <div class="blog-card" data-category="math">
+                <span class="badge badge-math">Mathematics</span>
+                <h3>The Geometry of Koopman Operators</h3>
+                <p>Visualizing the infinite-dimensional lift of nonlinear systems into linear manifolds.</p>
+                <a href="#" class="read-link">Read Analysis &rarr;</a>
+            </div>
 
-    <div class="blog-card">
-        <span class="badge badge-math">Mathematics</span>
-        <h3>The Geometry of Koopman Operators</h3>
-        <p>Visualizing the infinite-dimensional lift of nonlinear systems into linear manifolds.</p>
-        <a href="#" class="read-link">Read Analysis &rarr;</a>
-    </div>
+            <div class="blog-card" data-category="grid">
+                <span class="badge badge-grid">Energy Grid</span>
+                <h3>Grid Resilience in Extreme Weather</h3>
+                <p>Adapting control algorithms to handle rapid fluctuations from storm-induced PV drops.</p>
+                <a href="#" class="read-link">Read Analysis &rarr;</a>
+            </div>
 
-    </div> 
+            <div class="blog-card" data-category="flight">
+                <span class="badge badge-flight">Flight Control</span>
+                <h3>Autonomous Landing on Moving Platforms</h3>
+                <p>Implementing Model Predictive Control (MPC) for high-precision drone recovery.</p>
+                <a href="#" class="read-link">Read Analysis &rarr;</a>
+            </div>
 
-   <div class="blog-container">
+            <div class="blog-card" data-category="math">
+                <span class="badge badge-math">Mathematics</span>
+                <h3>Lyapunov Stability in Neural Networks</h3>
+                <p>Proving stability guarantees for AI-driven control systems mathematically.</p>
+                <a href="#" class="read-link">Read Analysis &rarr;</a>
+            </div>
 
-    <div class="blog-card">
-        <span class="badge badge-grid">Energy Grid</span>
-        <h3>Stabilizing Microgrids via Inverter Control</h3>
-        <p>Exploring the role of Virtual Synchronous Machines (VSM) in replacing rotating mass inertia.</p>
-        <a href="#" class="read-link">Read Analysis &rarr;</a>
-    </div>
+        </div> </div>
 
-    <div class="blog-card">
-        <span class="badge badge-flight">Flight Control</span>
-        <h3>Post-Stall Maneuvers with AI</h3>
-        <p>Using Deep Reinforcement Learning to recover fixed-wing drones from catastrophic spins.</p>
-        <a href="#" class="read-link">Read Analysis &rarr;</a>
-    </div>
-
-    <div class="blog-card">
-        <span class="badge badge-math">Mathematics</span>
-        <h3>The Geometry of Koopman Operators</h3>
-        <p>Visualizing the infinite-dimensional lift of nonlinear systems into linear manifolds.</p>
-        <a href="#" class="read-link">Read Analysis &rarr;</a>
-    </div>
-
-    </div>
-
-
-        
-    </div>
-
-       <footer class="border-t border-slate-800 py-12 bg-slate-950">
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
             <p class="text-slate-500 mb-8">
@@ -125,13 +122,44 @@
                 <a href="privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
                 <a href="terms.html" class="hover:text-white mx-2">Terms of Service</a>
                 <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
-    
             </div>
         </div>
     </footer>
     
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
-    </body>
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+    <script>
+    function filterSelection(category) {
+        var cards = document.getElementsByClassName("blog-card");
+        var buttons = document.getElementsByClassName("filter-btn");
+
+        // 1. Loop เพื่อจัดการการแสดงผล Card
+        for (var i = 0; i < cards.length; i++) {
+            var cardCategory = cards[i].getAttribute("data-category");
+            if (category == 'all' || category == cardCategory) {
+                cards[i].style.display = "flex"; // แสดงผล
+                // Trigger Animation
+                cards[i].classList.remove("show");
+                void cards[i].offsetWidth; 
+                cards[i].classList.add("show");
+            } else {
+                cards[i].style.display = "none"; // ซ่อน
+            }
+        }
+
+        // 2. Loop เพื่อจัดการสีปุ่ม (Active State)
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("active");
+        }
+        event.currentTarget.classList.add("active");
+    }
+
+    // เรียกทำงานครั้งแรกให้โชว์ทั้งหมด
+    window.onload = function() {
+        filterSelection('all');
+    };
+    </script>
+</body>
 </html>
