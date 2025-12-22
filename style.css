@@ -137,6 +137,54 @@ body {
 .read-link:hover {
     text-decoration: underline;
 }
+
+/* จัดปุ่มให้อยู่ตรงกลาง และมีช่องไฟสวยงาม */
+.filter-menu {
+    text-align: center;
+    margin: 40px 0 30px 0;
+}
+
+/* ดีไซน์ปุ่ม Filter */
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #2a3b55;
+    color: #94a3b8;
+    padding: 10px 24px;
+    margin: 0 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif; /* หรือฟอนต์หลักของเว็บท่าน */
+}
+
+/* เมื่อเอาเมาส์ชี้ */
+.filter-btn:hover {
+    background-color: #1e293b;
+    color: #fff;
+    border-color: #4a90e2;
+}
+
+/* สถานะ Active (ปุ่มที่ถูกเลือกอยู่) */
+.filter-btn.active {
+    background-color: #3b82f6; /* สีฟ้าเด่น */
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); /* เรืองแสง */
+}
+
+/* Animation ตอน Card โผล่ขึ้นมา */
+.blog-card.show {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* --- ส่วนเสริม: รองรับ Mobile (ถ้าหน้าจอมือถือให้ซ่อนเมนูบางส่วนได้ในอนาคต) --- */
 @media (max-width: 768px) {
     .nav-menu {
