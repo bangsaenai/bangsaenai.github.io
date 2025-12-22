@@ -159,30 +159,53 @@ body {
     font-family: 'Inter', sans-serif; /* หรือฟอนต์หลักของเว็บท่าน */
 }
 
-/* เมื่อเอาเมาส์ชี้ */
+/* 1. จัดกล่องเมนูให้อยู่ตรงกลาง และมีระยะห่างสวยงาม */
+.filter-menu {
+    display: flex;             /* ใช้ Flexbox เพื่อจัดเรียงแนวนอน */
+    justify-content: center;   /* สั่งให้ก้อนทั้งหมดอยู่ "ตรงกลาง" */
+    flex-wrap: wrap;           /* ถ้าจอเล็ก ให้ปุ่มไหลลงมาบรรทัดล่างได้ ไม่ตกขอบ */
+    gap: 15px;                 /* ช่องไฟระหว่างปุ่ม 15px */
+    margin: 40px auto 50px auto; /* เว้นระยะบน 40px, ล่าง 50px */
+    max-width: 800px;          /* ไม่ให้แถวยาวเกินไปจนดูรก */
+}
+
+/* 2. ดีไซน์ตัวปุ่ม (ตอนปกติ) */
+.filter-btn {
+    background-color: rgba(30, 41, 59, 0.5); /* สีพื้นหลังเข้มโปร่งแสงนิดๆ */
+    border: 1px solid #334155; /* ขอบสีเทาหม่น */
+    color: #cbd5e1;            /* ตัวหนังสือสีเทาเงิน อ่านง่าย */
+    padding: 12px 28px;        /* ความอ้วนของปุ่ม (บนล่าง 12, ซ้ายขวา 28) */
+    font-size: 1rem;
+    border-radius: 50px;       /* ทำขอบมนเป็นทรงแคปซูล (Pill Shape) */
+    cursor: pointer;
+    transition: all 0.3s ease; /* ใส่ Animation ให้ลื่นๆ เวลาชี้ */
+    font-family: inherit;      /* ให้ใช้ฟอนต์เดียวกับเว็บ */
+    font-weight: 500;
+}
+
+/* 3. ดีไซน์ปุ่ม (ตอนเอาเมาส์ชี้ - Hover) */
 .filter-btn:hover {
-    background-color: #1e293b;
-    color: #fff;
-    border-color: #4a90e2;
+    background-color: #334155; /* พื้นหลังสว่างขึ้น */
+    color: #ffffff;            /* ตัวหนังสือขาวจั๊วะ */
+    transform: translateY(-2px); /* ลอยขึ้นนิดนึงให้ดูมีมิติ */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* เงาใต้ปุ่ม */
 }
 
-/* สถานะ Active (ปุ่มที่ถูกเลือกอยู่) */
+/* 4. ดีไซน์ปุ่ม (ตอนถูกกดเลือก - Active) */
 .filter-btn.active {
-    background-color: #3b82f6; /* สีฟ้าเด่น */
-    color: white;
-    border-color: #3b82f6;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); /* เรืองแสง */
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* ไล่สีฟ้าสวยๆ */
+    border-color: transparent; /* ซ่อนเส้นขอบ */
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* เรืองแสงสีฟ้า (Neon Glow) */
+    font-weight: 600;
 }
 
-/* Animation ตอน Card โผล่ขึ้นมา */
-.blog-card.show {
-    animation: fadeIn 0.5s ease forwards;
+/* เพิ่มเติม: ปรับ Animation ตอนกรองให้เนียนขึ้น */
+.blog-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* ขยับนุ่มนวล */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
 
 
 /* --- ส่วนเสริม: รองรับ Mobile (ถ้าหน้าจอมือถือให้ซ่อนเมนูบางส่วนได้ในอนาคต) --- */
