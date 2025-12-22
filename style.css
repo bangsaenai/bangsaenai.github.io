@@ -66,6 +66,77 @@ body {
     text-shadow: 0 0 10px rgba(96, 165, 250, 0.6); /* เรืองแสงสีฟ้า */
 }
 
+/* Container หลักสำหรับจัดเรียง Card */
+.blog-container {
+    display: grid;
+    /* แบ่งเป็น 3 คอลัมน์เท่าๆ กัน (Responsive: ถ้าจอเล็กจะยุบเหลือ 1) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; /* ช่องว่างระหว่างกล่อง */
+    padding: 2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ดีไซน์ของ Card แต่ละใบ */
+.blog-card {
+    background-color: #111625; /* สีพื้นหลังเข้มตามธีม */
+    border: 1px solid #2a3b55; /* เส้นขอบสีน้ำเงินหม่น */
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Effect ตอนเอาเมาส์ชี้ */
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: #4a90e2; /* ขอบเรืองแสงสีฟ้า */
+}
+
+/* Badge ป้ายกำกับหมวดหมู่ */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+/* สีเฉพาะของแต่ละหมวดหมู่ */
+.badge-grid { background-color: #1b3a2b; color: #4ade80; } /* เขียว */
+.badge-flight { background-color: #1e3a8a; color: #60a5fa; } /* ฟ้า */
+.badge-math { background-color: #374151; color: #9ca3af; } /* เทา */
+
+/* Typography */
+.blog-card h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.blog-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.read-link:hover {
+    text-decoration: underline;
+}
 /* --- ส่วนเสริม: รองรับ Mobile (ถ้าหน้าจอมือถือให้ซ่อนเมนูบางส่วนได้ในอนาคต) --- */
 @media (max-width: 768px) {
     .nav-menu {
