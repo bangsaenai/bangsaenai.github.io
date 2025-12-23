@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRID-00001: Microgrid - Bangsaen AI</title>
+    <title>GRID-00001: The PID Paradox in Net-Zero - Bangsaen AI</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7340358979396049" crossorigin="anonymous"></script>
 
     <style>
@@ -32,18 +32,18 @@
         <div class="max-w-3xl mx-auto space-y-4">
             <span class="text-green-400 font-bold tracking-wider text-xs uppercase">Energy Grid Research</span>
             <h1 class="text-3xl md:text-5xl font-extrabold text-white">
-                Topic Headline <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">Highlight Keyword</span>
+                The Zero-Inertia Paradox: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">Why PID Fails at Net Zero</span>
             </h1>
             <p class="text-lg text-slate-400">
-                Short description of the research problem and the solution proposed in this article.
+                Tesla gave us the battery. But when we push for 100% renewables, the standard controls start to fall apart.
             </p>
             <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
                 <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
                 <span>•</span>
-                <span><i class="far fa-clock mr-1"></i> 5 min read</span>
+                <span><i class="far fa-clock mr-1"></i> 6 min read</span>
                 <span>•</span>
-                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: Grid-0000X</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: Grid-00001</span>
             </div>
         </div>
     </header>
@@ -62,18 +62,24 @@
 
         <div class="prose text-lg space-y-8 text-slate-300">
             <p>
-                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">I</span>ntroduction text goes here. Explain the context of the problem.
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">W</span>e have to give credit where it's due. Tesla's Powerwalls and Megapacks have revolutionized energy storage. They solved the <em>"Storage Problem"</em>.
+            </p>
+            <p>
+                But we are engineers. We are greedy. We don't just want a backup battery; we want <strong>Net Zero</strong>. We want to cut the spinning diesel generator cord entirely. And that is where the nightmare begins.
             </p>
 
-            <h2 class="text-2xl font-bold text-white mt-12 mb-4">1. Problem Formulation</h2>
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">1. The "Zero Inertia" Cliff</h2>
             <p>
-                Details about the problem. You can insert mathematical context here.
+                In a traditional grid, heavy turbines provide "Inertia" — a physical shock absorber that resists change. When you turn on a heavy load, the turbine slows down <em>gradually</em>.
+            </p>
+            <p>
+                But in a 100% renewable microgrid (Net Zero), we replace turbines with <strong>Inverters</strong>. Inverters have <strong>Zero Inertia</strong>. They are massless. When a cloud passes or a load spikes, the voltage doesn't "sag" gracefully... it <strong>crashes</strong> instantly.
             </p>
 
             <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0b0e14]">
-                <img src="images/placeholder.png" alt="Graph Description" class="w-full h-auto opacity-50"> 
+                <img src="../images/grid/00001/pid-failure.png" alt="PID Oscillation Graph" class="w-full h-auto opacity-70"> 
                 <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
-                    <i class="fas fa-chart-area mr-2"></i> Fig 1. Description of the graph.
+                    <i class="fas fa-chart-line mr-2"></i> Fig 1. Standard PID controller oscillating uncontrollably under Zero Inertia conditions.
                 </figcaption>
             </figure>
 
@@ -87,89 +93,19 @@
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
-            <h2 class="text-2xl font-bold text-white mt-12 mb-4">2. The Solution</h2>
-            <p>Explain the solution or the algorithm used.</p>
-            
-            <blockquote class="border-l-4 border-green-500 pl-4 italic text-slate-400 my-6">
-                "Key insight or quote from the research goes here."
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">2. Why PID is Not Enough</h2>
+            <p>
+                We tried tuning the standard Proportional-Integral-Derivative (PID) controllers. We increased the gains. We decreased them. It didn't matter.
+            </p>
+            <blockquote class="border-l-4 border-red-500 pl-4 italic text-slate-400 my-6">
+                "A PID controller waits for an error to exist before it reacts. In a Zero Inertia system, by the time the error is detected, the system has already collapsed."
             </blockquote>
+            <p>
+                The PID control loop is simply <strong>too slow</strong> for the speed of light physics happening in silicon inverters. We need something that doesn't just react... we need something that <em>simulates</em> the physics we lost.
+            </p>
 
-        </div>
-
-        <div class="my-12 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-green-500/30 text-center">
-            <i class="fas fa-file-pdf text-green-400 text-4xl mb-4"></i>
-            <h3 class="text-white text-2xl font-bold mb-2">Get the Full Source Code</h3>
-            <p class="text-slate-400 mb-6">Download the simulation files and dataset.</p>
-            <div class="p-4 border border-dashed border-slate-600 rounded text-slate-500 text-sm">
-                [ Paste ConvertKit/Form Code Here ]
-            </div>
-        </div>
-
-        <div class="w-full h-32 bg-slate-800/50 rounded flex items-center justify-center mt-12 border border-slate-700 border-dashed text-slate-600">
-            <ins class="adsbygoogle"
-                 style="display:block; text-align:center;"
-                 data-ad-layout="in-article"
-                 data-ad-format="fluid"
-                 data-ad-client="ca-pub-7340358979396049"
-                 data-ad-slot="6773001255"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
         <hr class="border-slate-800 my-12">
 
-    <div class="related-research-section">
-        <h3 class="text-2xl font-bold text-white mb-6">
-            <i class="fas fa-project-diagram text-green-500 mr-2"></i> 
-            Explore Related Dimensions
-        </h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <a href="../grid/grid00002-vsm-control.html" class="block group">
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-green-500 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-green-600 text-xs font-bold px-2 py-1 text-white rounded-bl">NEXT PART</div>
-                    <h4 class="text-xl font-bold text-slate-200 group-hover:text-green-400 mb-2">
-                        Implementing Virtual Synchronous Machines
-                    </h4>
-                    <p class="text-slate-400 text-sm">
-                        Moving from theory to code. How to simulate inertia in Python.
-                    </p>
-                    <span class="text-green-500 text-sm mt-4 inline-block group-hover:underline">Continue Reading &rarr;</span>
-                </div>
-            </a>
-
-            <a href="../math/math00001-chaos-theory.html" class="block group">
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500 transition-all duration-300">
-                    <span class="text-purple-400 text-xs font-bold uppercase tracking-wider mb-2 block">Mathematical Proof</span>
-                    <h4 class="text-xl font-bold text-slate-200 group-hover:text-purple-400 mb-2">
-                        The Math Behind Stability
-                    </h4>
-                    <p class="text-slate-400 text-sm">
-                        Deep dive into the differential equations used in this grid model.
-                    </p>
-                    <span class="text-purple-500 text-sm mt-4 inline-block group-hover:underline">See the Proof &rarr;</span>
-                </div>
-            </a>
-
-        </div>
-    </div>
-    
-
-    </article>
-
-    <footer class="border-t border-slate-800 py-12 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
-            <p class="text-slate-500 mb-8">Bangsaen AI Research Laboratory &copy; 2025</p>
-            <div class="text-slate-600 text-sm">
-                <a href="index.html" class="hover:text-white mx-2">Home</a>
-                <a href="blog.html" class="hover:text-white mx-2">Research</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
-</body>
-</html>
+        <div class="related-research-section">
