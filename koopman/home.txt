@@ -1,0 +1,23 @@
+bangsaenai.github.io/ (Root Folder - บ้านใหญ่)
+│
+├── index.html          (หน้าแรก)
+├── blog.html           (หน้ารวมบทความ)
+├── style.css           (เสื้อผ้า - ใช้ร่วมกันหมด)
+├── script.js           (สมอง - ใช้ร่วมกันหมด)
+│
+├── images/             (ห้องเก็บของ - รูปภาพ)
+│   ├── grid/           (รูปของหมวด Grid)
+│   ├── flight/         (รูปของหมวด Flight)
+│   └── math/           (รูปของหมวด Math)
+│
+├── grid/               (โซนบ้าน Grid)
+│   ├── grid00001.html  (บทความที่ 1) -> ลิงก์กลับบ้านใช้ ../blog.html
+│   └── grid00002.html
+│
+├── flight/             (โซนบ้าน Flight)
+│   ├── flight00001.html
+│   └── ...
+│
+└── math/               (โซนบ้าน Math)
+    ├── math00001.html
+    └── ...
