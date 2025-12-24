@@ -146,12 +146,14 @@
                 But in a 100% renewable microgrid (Net Zero), we replace turbines with <strong>Inverters</strong>. Inverters have <strong>Zero Inertia</strong>. They are massless. When a cloud passes or a load spikes, the voltage doesn't "sag" gracefully... it <strong>crashes</strong> instantly.
             </p>
 
-            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0b0e14]">
-                <img src="../images/grid/00001/pid-failure.png" alt="PID Oscillation Graph" class="w-full h-auto opacity-70"> 
-                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
-                    <i class="fas fa-chart-line mr-2"></i> Fig 1. Standard PID controller oscillating uncontrollably under Zero Inertia conditions.
-                </figcaption>
-            </figure>
+            <figure class="my-8">
+    <img src="https://bangsaenai.github.io/images/grid/grid-00001/inverter_using_PID.png" 
+         alt="PID Oscillation Graph" 
+         class="w-full rounded-lg shadow-lg border border-gray-800">
+    <figcaption class="text-center text-gray-500 text-sm mt-3 italic">
+        Fig 1. The 'Yellow Block of Death' — This isn't a glitch. It's your inverter switching between +350V and -350V thousands of times per second. In the real world, this graph smells like burning capacitors.
+    </figcaption>
+</figure>
 
             <div class="w-full h-60 bg-slate-800/50 rounded flex items-center justify-center my-12 border border-slate-700 border-dashed text-slate-600">
                 <ins class="adsbygoogle"
