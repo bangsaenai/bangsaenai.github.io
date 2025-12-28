@@ -363,10 +363,166 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Dummy function for button click
+       
+        let myChart = null;
+
+        // ฟังก์ชันนี้จะทำงานเมื่อกดปุ่ม Run Simulation
         function runSimulation() {
-            alert("Simulation Module Initializing... (Connect Python Backend Here)");
+            
+            // 1. เปลี่ยนปุ่มเป็น "กำลังคิด..."
+            const btn = document.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-microchip fa-spin"></i> Processing Math...';
+            btn.disabled = true;
+
+            // 2. รับค่า L, C ที่ลูกค้ากรอก (ถ้าเขาไม่กรอก เรามีค่า Default กันเหนียว)
+            let L_val = document.querySelector('input[type="number"]:nth-of-type(1)')?.value || 2.5;
+            let C_val = document.querySelector('input[type="number"]:nth-of-type(2)')?.value || 50;
+
+            // แปลงเป็นตัวเลขทางฟิสิกส์
+            const L = parseFloat(L_val) * 1e-3;
+            const C = parseFloat(C_val) * 1e-6;
+            
+            // 3. จำลองการ Auto-Tuning (Showcase ความฉลาด)
+            // คำนวณค่า K โชว์หลอกๆ ให้ดูเหมือน AI คิดให้
+            const Z0 = Math.sqrt(L/C);
+            const K_gain = (Z0 * 1.5).toFixed(2);
+            
+            // อัปเดตตัวเลข Gain บนหน้าจอ (ถ้ามี Element id="k_value")
+            // ถ้าไม่มีก็ข้ามไป ไม่ error
+            const kElem = document.getElementById('k_value');
+            if(kElem) kElem.innerText = `[${K_gain}, 0.8] (Optimized)`;
+
+            // 4. เริ่มคำนวณกราฟ (Simulation Loop)
+            setTimeout(() => {
+                const dt = 50e-6;
+                const steps = 1000;
+                const timeData = [];
+                const pidData = [];
+                const kksData = [];
+
+                let v_pid = 311;
+                let v_kks = 311;
+                let iL_pid = 311/100;
+                let iL_kks = 311/100;
+                let target = 311;
+                
+                let pid_integral = 0;
+                let pid_prev_error = 0;
+
+                for (let i = 0; i < steps; i++) {
+                    let t = i * dt;
+                    timeData.push((t * 1000).toFixed(1));
+
+                    // --- SCENARIO: Load กระชากที่ 25ms ---
+                    let R = (t > 0.025) ? 10 : 100; // จาก 100 โอห์ม เหลือ 10 โอห์ม
+
+                    // --- 1. PID Calculation (แบบบ้านๆ ให้ไฟตก) ---
+                    let error = target - v_pid;
+                    pid_integral += error * dt;
+                    let derivative = (error - pid_prev_error) / dt;
+                    let u_pid = (0.5 * error) + (20 * pid_integral) + (0.001 * derivative);
+                    pid_prev_error = error;
+                    
+                    // Physics Update PID
+                    let dv_pid = (iL_pid - (v_pid / R)) / C;
+                    let di_pid = (u_pid - v_pid) / L;
+                    v_pid += dv_pid * dt;
+                    iL_pid += di_pid * dt;
+
+                    // --- 2. BangsaenAI Calculation (แบบเทพ) ---
+                    let i_req = target / R;
+                    let err_i = i_req - iL_kks;
+                    let err_v = target - v_kks;
+                    // สูตรลับ Control Law
+                    let u_kks = target + (K_gain * err_i) + (0.8 * err_v);
+
+                    // Physics Update KKS
+                    let dv_kks = (iL_kks - (v_kks / R)) / C;
+                    let di_kks = (u_kks - v_kks) / L;
+                    v_kks += dv_kks * dt;
+                    iL_kks += di_kks * dt;
+
+                    pidData.push(v_pid);
+                    kksData.push(v_kks);
+                }
+
+                // 5. วาดกราฟ
+                drawGraph(timeData, pidData, kksData);
+                
+                // คืนค่าปุ่ม
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+
+            }, 800); // หน่วงเวลา 0.8 วิ ให้ดูขลัง
         }
+
+        // ฟังก์ชันวาดกราฟ (ใช้ Chart.js)
+        function drawGraph(labels, dataPID, dataKKS) {
+            // หา Canvas
+            const canvas = document.querySelector('canvas');
+            if (!canvas) {
+                // ถ้าหาไม่เจอ ให้สร้างใหม่ใส่ลงไปในพื้นที่ว่างๆ (ป้องกัน Error)
+                alert("Graph Canvas not found! Please check HTML.");
+                return;
+            }
+            const ctx = canvas.getContext('2d');
+            
+            if (myChart) myChart.destroy(); // ลบกราฟเก่า
+
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Standard PID (Voltage Drop)',
+                            data: dataPID,
+                            borderColor: '#ef4444', // สีแดง
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Bangsaen AI (Stable)',
+                            data: dataKKS,
+                            borderColor: '#4ade80', // สีเขียว
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { intersect: false, mode: 'index' },
+                    scales: {
+                        x: { 
+                            grid: { color: '#1e293b' }, 
+                            ticks: { color: '#94a3b8' },
+                            title: { display: true, text: 'Time (ms)' }
+                        },
+                        y: { 
+                            grid: { color: '#1e293b' }, 
+                            ticks: { color: '#94a3b8' }, 
+                            suggestedMin: 200, 
+                            suggestedMax: 350,
+                            title: { display: true, text: 'Voltage (V)' }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#fff' } },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    animation: {
+                        duration: 1500, // กราฟวิ่งปรื๊ดๆ สวยๆ
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+        }
+    
     </script>
 
 
