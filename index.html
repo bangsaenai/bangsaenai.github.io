@@ -248,12 +248,14 @@
             <div class="mt-16 text-center border-t border-slate-800 pt-10">
                 <h3 class="text-2xl font-bold text-white mb-6">Satisfied with the simulation?</h3>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="px-8 py-3 rounded-lg border border-green-500 text-green-400 font-semibold hover:bg-green-500/10 transition-colors">
+                    <a href="mailto:drtanet@bangsaenai.com?subject=Request%20API%20Key%20(Research%20Beta)" 
+                       class="px-8 py-3 rounded-lg border border-green-500 text-green-400 font-semibold hover:bg-green-500/10 transition-colors flex items-center justify-center">
                         <i class="fas fa-key mr-2"></i> Get API Key (Free)
-                    </button>
-                    <button class="px-8 py-3 rounded-lg bg-slate-100 text-slate-900 font-bold hover:bg-white transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    </a>
+                    <a href="mailto:drtanet@bangsaenai.com?subject=Enterprise%20License%20Inquiry" 
+                       class="px-8 py-3 rounded-lg bg-slate-100 text-slate-900 font-bold hover:bg-white transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center">
                         Contact for Enterprise License
-                    </button>
+                    </a>
                 </div>
                 
                 <div class="max-w-3xl mx-auto mt-12 p-4 rounded-lg bg-slate-900/50 border border-slate-700/50 text-center">
@@ -269,7 +271,7 @@
                         </span>
                     </p>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
@@ -303,8 +305,7 @@
             btn.innerHTML = '<i class="fas fa-microchip fa-spin"></i> Processing Math...';
             btn.disabled = true;
 
-            // 2. Hide Placeholder (Fix Ghost Text)
-            // สั่งให้ตัวหนังสือจางหายไปจริงๆ
+            // 2. Hide Placeholder
             const placeholder = document.getElementById('graph-placeholder');
             if(placeholder) {
                 placeholder.style.opacity = '0'; 
@@ -347,7 +348,6 @@
                     let derivative = (error - pid_prev_error) / dt;
                     let u_pid = (0.5 * error) + (20 * pid_integral) + (0.001 * derivative);
                     pid_prev_error = error;
-                    // Dynamics
                     let dv_pid = (iL_pid - (v_pid / R)) / C;
                     let di_pid = (u_pid - v_pid) / L;
                     v_pid += dv_pid * dt;
@@ -358,7 +358,6 @@
                     let err_i = i_req - iL_kks;
                     let err_v = target - v_kks;
                     let u_kks = target + (K_gain * err_i) + (0.8 * err_v);
-                    // Dynamics
                     let dv_kks = (iL_kks - (v_kks / R)) / C;
                     let di_kks = (u_kks - v_kks) / L;
                     v_kks += dv_kks * dt;
@@ -411,7 +410,7 @@
                         y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, suggestedMin: 200, suggestedMax: 350, title: { display: true, text: 'Voltage (V)' } }
                     },
                     plugins: { 
-                        legend: { display: false }, // ซ่อน Legend ที่ซ้ำซ้อน
+                        legend: { display: false }, 
                         tooltip: { 
                             mode: 'index', 
                             intersect: false,
