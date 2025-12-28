@@ -45,6 +45,13 @@
                 linear-gradient(to right, rgba(30, 41, 59, 0.5) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(30, 41, 59, 0.5) 1px, transparent 1px);
         }
+        /* Animation สำหรับข้อความแจ้งเตือนความปลอดภัย */
+        .security-blink {
+            animation: blinker 2s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 
@@ -225,7 +232,7 @@
                              <canvas id="stabilityChart"></canvas>
                         </div>
                         
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600 z-0 pointer-events-none">
+                        <div id="graph-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-slate-600 z-0 pointer-events-none transition-opacity duration-500">
                             <i class="fas fa-chart-line text-6xl mb-4 opacity-20"></i>
                             <p class="font-mono text-sm uppercase tracking-widest opacity-50">Waiting for input...</p>
                         </div>
@@ -248,7 +255,21 @@
                         Contact for Enterprise License
                     </button>
                 </div>
-            </div>
+                
+                <div class="max-w-3xl mx-auto mt-12 p-4 rounded-lg bg-slate-900/50 border border-slate-700/50 text-center">
+                    <p class="text-xs text-slate-500 font-mono mb-2">
+                        <i class="fas fa-shield-alt text-green-500 mr-2 security-blink"></i> ARCHITECTURE SECURITY NOTICE
+                    </p>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        This browser-based simulation utilizes a linearized approximation model for low-latency demonstration purposes. 
+                        The production-grade <strong class="text-white">Infinite-Dimensional Lifted Space Koopman Operator</strong> 
+                        runs exclusively on our secure backend kernel to protect Intellectual Property.
+                        <span class="block mt-2 text-xs text-slate-600 italic">
+                            (Source code inspection will not reveal the proprietary control matrix.)
+                        </span>
+                    </p>
+                </div>
+                </div>
         </div>
     </section>
 
@@ -282,19 +303,26 @@
             btn.innerHTML = '<i class="fas fa-microchip fa-spin"></i> Processing Math...';
             btn.disabled = true;
 
-            // 2. Get Input
+            // 2. Hide Placeholder (Fix Ghost Text)
+            // สั่งให้ตัวหนังสือจางหายไปจริงๆ
+            const placeholder = document.getElementById('graph-placeholder');
+            if(placeholder) {
+                placeholder.style.opacity = '0'; 
+            }
+
+            // 3. Get Input
             let L_val = document.querySelector('input[type="number"]:nth-of-type(1)')?.value || 2.5;
             let C_val = document.querySelector('input[type="number"]:nth-of-type(2)')?.value || 50;
             const L = parseFloat(L_val) * 1e-3;
             const C = parseFloat(C_val) * 1e-6;
             
-            // 3. Fake Auto-Tuning
+            // 4. Fake Auto-Tuning
             const Z0 = Math.sqrt(L/C);
             const K_gain = (Z0 * 1.5).toFixed(2);
             const kElem = document.getElementById('k_value');
             if(kElem) kElem.innerText = `[${K_gain}, 0.8] (Optimized)`;
 
-            // 4. Calculate
+            // 5. Calculate
             setTimeout(() => {
                 const dt = 50e-6;
                 const steps = 1000;
@@ -347,7 +375,6 @@
         }
 
         function drawGraph(labels, dataPID, dataKKS) {
-            // Fix: Target the specific ID
             const ctx = document.getElementById('stabilityChart').getContext('2d');
             
             if (myChart) myChart.destroy();
@@ -358,7 +385,7 @@
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Standard PID (Voltage Drop)',
+                            label: 'Standard PID',
                             data: dataPID,
                             borderColor: '#ef4444',
                             borderWidth: 2,
@@ -366,7 +393,7 @@
                             tension: 0.4
                         },
                         {
-                            label: 'Bangsaen AI (Stable)',
+                            label: 'Bangsaen AI',
                             data: dataKKS,
                             borderColor: '#4ade80',
                             borderWidth: 3,
@@ -383,7 +410,18 @@
                         x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, title: { display: true, text: 'Time (ms)' } },
                         y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, suggestedMin: 200, suggestedMax: 350, title: { display: true, text: 'Voltage (V)' } }
                     },
-                    plugins: { legend: { labels: { color: '#fff' } } },
+                    plugins: { 
+                        legend: { display: false }, // ซ่อน Legend ที่ซ้ำซ้อน
+                        tooltip: { 
+                            mode: 'index', 
+                            intersect: false,
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#334155',
+                            borderWidth: 1
+                        } 
+                    },
                     animation: { duration: 1500, easing: 'easeOutQuart' }
                 }
             });
