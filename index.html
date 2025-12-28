@@ -174,29 +174,63 @@
         </div>
     </section>
 
-    <section id="simulation-playground" style="padding: 50px 0;">
-    <div class="container">
-        <h2 style="text-align: center;">Test Our Algorithm</h2>
-        <p style="text-align: center;">Input your hardware parameters and see KKS stability in action.</p>
-        
-        <div class="row">
-            <div class="col-input">
-                <label>Inductance (L): <input type="number" value="2.5"> mH</label>
-                <label>Capacitance (C): <input type="number" value="50"> uF</label>
-                <button class="btn-primary" onclick="runSimulation()">Run Simulation</button>
-            </div>
-            
-            <div class="col-graph">
-                <canvas id="stabilityGraph"></canvas> 
-            </div>
+    <section class="sim-section" id="playground">
+  <div class="sim-container">
+    
+    <div class="sim-header">
+      <h2>Interactive Playground</h2>
+      <p>Prove the math yourself. Input your hardware parameters.</p>
+    </div>
+
+    <div class="dashboard-grid">
+      
+      <div class="control-panel">
+        <div class="input-group">
+          <label>INDUCTANCE (L)</label>
+          <div class="input-wrapper">
+            <input type="number" value="2.5" step="0.1">
+            <span class="input-unit">mH</span>
+          </div>
         </div>
 
-        <div style="text-align: center; margin-top: 30px;">
-            <h3>Ready to deploy on hardware?</h3>
-            <button class="btn-outline">Get API Key</button>
-            <button class="btn-solid">Contact for License</button>
+        <div class="input-group">
+          <label>CAPACITANCE (C)</label>
+          <div class="input-wrapper">
+            <input type="number" value="50" step="10">
+            <span class="input-unit">uF</span>
+          </div>
         </div>
+
+        <div class="input-group">
+          <label>LOAD RESISTANCE (R)</label>
+          <div class="input-wrapper">
+            <input type="number" value="10" step="1">
+            <span class="input-unit">Ω</span>
+          </div>
+        </div>
+
+        <button class="btn-simulate" onclick="runSimulation()">
+          ▶ Run Simulation
+        </button>
+      </div>
+
+      <div class="graph-panel">
+        <div class="graph-grid-bg">
+          <span class="graph-placeholder-text">Waiting for Input...</span>
+        </div>
+      </div>
+    
     </div>
+
+    <div class="cta-section">
+      <h3>Ready to deploy on real hardware?</h3>
+      <div class="cta-buttons">
+        <button class="btn-api">Get API Key</button>
+        <button class="btn-license">Contact for License</button>
+      </div>
+    </div>
+
+  </div>
 </section>
 
     
