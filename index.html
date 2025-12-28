@@ -253,21 +253,36 @@
     <div id="modal-enterprise" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
         <div class="modal-content bg-[#0b0e14] border border-blue-500/30 rounded-2xl max-w-lg w-full p-8 shadow-[0_0_50px_rgba(59,130,246,0.15)] relative">
             <button onclick="closeModal('modal-enterprise')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+            
             <div class="text-center mb-6">
-                <div class="w-16 h-16 bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500"><i class="fas fa-building text-2xl text-blue-400"></i></div>
+                <div class="w-16 h-16 bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500">
+                    <i class="fas fa-building text-2xl text-blue-400"></i>
+                </div>
                 <h3 class="text-2xl font-bold text-white mb-2">Enterprise Deployment</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Direct integration of <strong>Bangsaen KKS</strong> into industrial inverters. Includes source code and 24/7 SLA support.</p>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Direct integration of <strong>Bangsaen KKS</strong> into industrial inverters. 
+                    <span class="text-blue-300 block mt-2">
+                        Due to high demand and IP security protocols, all initial technical vetting is conducted via <strong>Encrypted Email Channel</strong> only.
+                    </span>
+                </p>
             </div>
+
             <ul class="space-y-3 mb-8">
-                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Full "Lifted Space" Source Code</li>
-                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Zero-Inertia Controller Hardware</li>
-                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Direct Line to Lead Engineers</li>
+                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Full "Lifted Space" Source Code Access</li>
+                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Zero-Inertia Controller Hardware Specs</li>
+                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-file-signature text-blue-500 mr-3"></i> NDA & Licensing Review</li>
             </ul>
-            <a href="mailto:drtanet@bangsaenai.com?subject=Enterprise%20License%20Inquiry&body=Company:%0AContact%20Person:%0ARequirement:" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg text-center transition-all shadow-lg shadow-blue-900/20">Contact CEO (Direct Line)</a>
-            <p class="text-center text-xs text-slate-600 mt-4">Priority response within 12 hours.</p>
+
+            <a href="mailto:drtanet@bangsaenai.com?subject=Enterprise%20Technical%20Review&body=Company:%0AContact%20Person:%0ATechnical%20Requirements:%0A(Please%20attach%20single-line%20diagram%20if%20available)" 
+               class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg text-center transition-all shadow-lg shadow-blue-900/20">
+                Submit Technical Requirements (Email)
+            </a>
+            
+            <p class="text-center text-xs text-slate-600 mt-4">
+                <i class="fas fa-lock mr-1"></i> No video calls scheduled prior to NDA signing.
+            </p>
         </div>
     </div>
-
     <script>
         // Modal Logic
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
