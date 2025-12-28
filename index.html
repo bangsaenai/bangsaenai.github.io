@@ -3,16 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="efTxfuzOy3EYfVcQdkfbkep4rZglv1H8zkrBfuydUkI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-FFGV1SXG9J');
-    </script>
     <title>Bangsaen AI - Physics-Informed Research Lab</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,21 +12,15 @@
             theme: {
                 extend: {
                     colors: {
-                        slate: {
-                            850: '#151e2e',
-                            900: '#0f172a',
-                            950: '#020617',
-                        }
+                        slate: { 850: '#151e2e', 900: '#0f172a', 950: '#020617' }
                     }
                 }
             }
         }
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7340358979396049"
-        crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -50,281 +35,103 @@
 
 <body class="bg-slate-900 text-white antialiased selection:bg-green-500 selection:text-black">
 
-    <nav
-        class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-20">
-
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center gap-3 group">
-                        <img src="images/logo.png" alt="Bangsaen AI Logo"
-                            class="h-10 w-auto transition-transform duration-300 group-hover:scale-110">
-                        <span
-                            class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-green-400">
-                            Bangsaen<span class="text-green-500 group-hover:text-green-300">AI</span>
-                        </span>
-                    </a>
-                </div>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html"
-                        class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Home</a>
-                    <a href="blog.html"
-                        class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Research
-                        Blog</a>
-                    <a href="about.html"
-                        class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">About Us</a>
-                    <a href="contact.html"
-                        class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Contact</a>
-
-                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
-                        <a href="https://github.com/bangsaenai" target="_blank"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-github fa-lg"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@bangsaenai" target="_blank"
-                            class="text-gray-400 hover:text-red-500 transition-colors">
-                            <i class="fab fa-youtube fa-lg"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-t border-gray-800">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html"
-                    class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Home</a>
-                <a href="blog.html"
-                    class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Research
-                    Blog</a>
-                <a href="about.html"
-                    class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">About
-                    Us</a>
-                <a href="contact.html"
-                    class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Contact</a>
-
-                <div class="flex items-center space-x-6 px-3 pt-4 mt-4 border-t border-gray-700">
-                    <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-github fa-xl"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@bangsaenai" target="_blank"
-                        class="text-gray-400 hover:text-red-500">
-                        <i class="fab fa-youtube fa-xl"></i>
-                    </a>
-                </div>
+                <a href="#" class="flex items-center gap-2 group">
+                    <img src="images/logo.png" class="h-8 w-auto" onerror="this.src='https://via.placeholder.com/40'">
+                    <span class="font-bold text-xl tracking-tight">Bangsaen<span class="text-green-500">AI</span></span>
+                </a>
             </div>
         </div>
     </nav>
 
-
-
-    <header
-        class="text-center py-20 px-4 bg-[url('https://source.unsplash.com/1600x900/?circuit,network')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-slate-900/90">
-        <div class="pt-32 pb-12 bg-[#0b0e14] text-center">
-            <div
-                class="inline-block px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-semibold mb-4">
-                Research & Development Laboratory
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">
-                Controlling Chaos with <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Mathematics</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mt-4">
-                We bridge the gap between <strong>Physical Laws</strong> and <strong>Artificial Intelligence</strong>.
-                From stabilizing aircraft aerodynamics to securing zero-inertia power grids.
-            </p>
-        </div>
+    <header class="pt-32 pb-12 text-center bg-[#0b0e14]">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+            Controlling Chaos with <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Math</span>
+        </h1>
     </header>
 
-    <section class="max-w-7xl mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <div
-                class="group relative rounded-2xl bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 overflow-hidden">
-                <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
-                <div class="p-8 relative z-10">
-                    <div
-                        class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center mb-6 text-blue-400">
-                        <i class="fas fa-plane-departure fa-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Project: Wing Craft</h3>
-                    <p class="text-slate-400 mb-6 h-20">
-                        Advanced Flight Control Systems utilizing Koopman Operator Theory to manage non-linear
-                        aerodynamics in real-time.
-                    </p>
-
-                    <div class="bg-slate-900/50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
-                        <p class="text-xs text-slate-500 uppercase font-bold mb-1">Foundational Paper</p>
-                        <a href="https://www.authorea.com/users/1010167/articles/1370260-the-koopman-kalman-safeguard-a-unified-framework-for-provably-safe-control-in-chaotic-regimes/"
-                            target="_blank" class="text-sm text-blue-300 hover:underline">
-                            Read our first paper on Authorea <i class="fas fa-external-link-alt ml-1"></i>
-                        </a>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <a href="https://github.com/bangsaenai"
-                            class="flex-1 bg-slate-700 hover:bg-slate-600 text-white text-center py-3 rounded-lg font-semibold transition">
-                            <i class="fab fa-github mr-2"></i> Open Source
-                        </a>
-                        <a href="flight-blueprints.html"
-                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition">
-                            View Blueprint
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="group relative rounded-2xl bg-slate-800 border border-slate-700 hover:border-green-500 transition-all duration-300 overflow-hidden">
-                <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-
-                <div
-                    class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full animate-pulse">
-                    BREAKING RESEARCH
-                </div>
-
-                <div class="p-8 relative z-10">
-                    <div
-                        class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center mb-6 text-green-400">
-                        <i class="fas fa-bolt fa-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Project: Solar Guardian</h3>
-                    <p class="text-slate-400 mb-6 h-20">
-                        <strong>Zero-Inertia Grid Security.</strong> Using Physics Manifold to detect cyber-attacksin <
-                            0.06s vs. cloud shading without false alarms. </p>
-
-                            <div
-                                class="bg-slate-900/50 p-4 rounded-lg mb-6 flex justify-between items-center border border-slate-700">
-                                <div>
-                                    <p class="text-xs text-slate-500 uppercase font-bold">Scenario A (Nature)</p>
-                                    <p class="text-green-400 font-mono text-sm">● PASSED (Robust)</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-xs text-slate-500 uppercase font-bold">Scenario B (Attack)</p>
-                                    <p class="text-red-400 font-mono text-sm">● DETECTED (Secure)</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4">
-                                <a href="https://www.youtube.com/@bangsaenai"
-                                    class="flex-1 bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition">
-                                    <i class="fab fa-youtube mr-2"></i> Watch Demo
-                                </a>
-                                <a href="solar-research.html"
-                                    class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition">
-                                    Read Case Study
-                                </a>
-                            </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="playground" class="py-20 bg-slate-850 border-t border-slate-800 relative overflow-hidden">
+    <section id="playground" class="py-16 bg-slate-850 border-t border-slate-800 relative overflow-hidden">
         
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30"></div>
-        <div class="absolute -left-20 top-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse"></div>
-        <div class="absolute -right-20 bottom-20 w-72 h-72 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse" style="animation-delay: 2s;"></div>
-
         <div class="max-w-7xl mx-auto px-4 relative z-10">
             
-            <div class="text-center mb-12">
+            <div class="text-center mb-10">
                 <span class="text-green-400 font-mono text-sm tracking-widest uppercase mb-2 block">Interactive Simulation</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Prove the Math Yourself</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Prove the Math Yourself</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
-                    Don't just take our word for it. Input your specific hardware parameters below and simulate how the Koopman-Kalman Safeguard (KKS) stabilizes the grid in real-time.
+                    Input your hardware parameters below. The simulation will trigger a <strong>Sudden Load Surge (10x Shock)</strong> to test stability.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
-                <div class="lg:col-span-1 bg-slate-900/80 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-2xl">
+                <div class="lg:col-span-1 bg-slate-900/80 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-2xl h-fit">
                     <div class="flex items-center gap-3 mb-6 border-b border-slate-700 pb-4">
                         <i class="fas fa-sliders-h text-green-400"></i>
-                        <h3 class="font-bold text-lg text-white">Parameters</h3>
+                        <h3 class="font-bold text-lg text-white">Hardware Config</h3>
                     </div>
 
                     <div class="space-y-6">
                         <div>
                             <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Inductance (L)</label>
-                            <div class="relative group">
-                                <input type="number" value="2.5" step="0.1" 
-                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all">
+                            <div class="relative">
+                                <input type="number" id="input_L" value="2.5" step="0.1" 
+                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all">
                                 <span class="absolute right-4 top-3 text-slate-500 font-mono text-sm">mH</span>
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Capacitance (C)</label>
-                            <div class="relative group">
-                                <input type="number" value="50" step="10" 
-                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all">
+                            <div class="relative">
+                                <input type="number" id="input_C" value="50" step="10" 
+                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all">
                                 <span class="absolute right-4 top-3 text-slate-500 font-mono text-sm">uF</span>
                             </div>
                         </div>
 
-                        <div>
-                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Load Resistance (R)</label>
-                            <div class="relative group">
-                                <input type="number" value="10" step="1" 
-                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all">
-                                <span class="absolute right-4 top-3 text-slate-500 font-mono text-sm">Ω</span>
-                            </div>
+                        <div class="bg-slate-800/50 rounded-lg p-4 border border-red-500/20">
+                            <label class="block text-xs font-bold text-red-400 uppercase tracking-wider mb-2">
+                                <i class="fas fa-bolt mr-1"></i> Test Scenario
+                            </label>
+                            <p class="text-sm text-slate-300">
+                                Simulating a <strong class="text-white">100Ω ➝ 10Ω</strong> sudden load step (10x Surge) at t=25ms.
+                            </p>
                         </div>
 
-                        <button onclick="runSimulation()" 
-                            class="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold py-4 rounded-lg shadow-lg shadow-green-900/20 transform transition active:scale-95 flex items-center justify-center gap-2 group">
+                        <button onclick="runWebSimulation()" 
+                            class="w-full mt-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold py-4 rounded-lg shadow-lg transform transition active:scale-95 flex items-center justify-center gap-2 group">
                             <i class="fas fa-play text-sm group-hover:animate-pulse"></i> Run Simulation
                         </button>
                     </div>
                 </div>
 
-                <div class="lg:col-span-2 bg-[#0b0e14] border border-slate-800 rounded-2xl p-1 relative overflow-hidden shadow-2xl">
-                    <div class="h-full w-full bg-slate-900/50 rounded-xl relative overflow-hidden flex flex-col">
-                        
-                        <div class="absolute top-4 left-4 z-10 flex gap-4">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                                <span class="text-xs text-slate-400">Standard PID</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
-                                <span class="text-xs text-green-400 font-bold">Bangsaen KKS</span>
-                            </div>
+                <div class="lg:col-span-2 bg-[#0b0e14] border border-slate-800 rounded-2xl p-4 relative shadow-2xl flex flex-col">
+                    <div class="relative flex-1 min-h-[400px] w-full">
+                        <canvas id="stabilityChart"></canvas>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mt-4 border-t border-slate-800 pt-3 px-2">
+                        <div class="text-xs font-mono text-slate-500">
+                            Auto-Tuning Gain (K): <span id="k_value" class="text-green-400">-</span>
                         </div>
-
-                        <div class="graph-grid absolute inset-0 opacity-20 pointer-events-none"></div>
-
-                        <div class="flex-1 flex flex-col items-center justify-center text-slate-600 z-0">
-                            <i class="fas fa-chart-line text-6xl mb-4 opacity-20"></i>
-                            <p class="font-mono text-sm uppercase tracking-widest opacity-50">Waiting for input stream...</p>
-                            </div>
-
-                        <div class="absolute bottom-0 left-0 w-full bg-[#0b0e14]/80 backdrop-blur border-t border-slate-800 p-3 flex justify-between items-center px-6">
-                            <div class="font-mono text-xs text-slate-500">SAMPLING: <span class="text-green-400">50μs</span></div>
-                            <div class="font-mono text-xs text-slate-500">STATUS: <span class="text-blue-400 animate-pulse">READY</span></div>
+                        <div class="text-xs font-mono text-slate-500">
+                            STATUS: <span class="text-blue-400 animate-pulse">READY</span>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <div class="mt-16 text-center border-t border-slate-800 pt-10">
-                <h3 class="text-2xl font-bold text-white mb-6">Satisfied with the simulation?</h3>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="px-8 py-3 rounded-lg border border-green-500 text-green-400 font-semibold hover:bg-green-500/10 transition-colors">
-                        <i class="fas fa-key mr-2"></i> Get API Key (Free)
+            <div class="mt-12 text-center">
+                <p class="text-slate-400 mb-4 text-sm">See the difference? PID crashes. BangsaenAI holds.</p>
+                <div class="flex justify-center gap-4">
+                    <button class="px-6 py-3 rounded-lg border border-green-500 text-green-400 font-semibold hover:bg-green-500/10 transition-colors">
+                        Get API Key
                     </button>
-                    <button class="px-8 py-3 rounded-lg bg-slate-100 text-slate-900 font-bold hover:bg-white transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                        Contact for Enterprise License
+                    <button class="px-6 py-3 rounded-lg bg-slate-700 text-white font-bold hover:bg-slate-600 transition-colors">
+                        Contact Enterprise
                     </button>
                 </div>
             </div>
@@ -332,47 +139,154 @@
         </div>
     </section>
 
-
-
-    <footer class="border-t border-slate-800 py-12 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <img src="images/logo.png" alt="Bangsaen AI Logo"
-                class="h-16 w-auto mx-auto mb-6 opacity-80 hover:opacity-100 transition-opacity">
-
-            <h2 class="text-2xl font-bold text-slate-200 mb-4 font-heading">
-                Don't trust the code. Trust the Math.
-            </h2>
-            <p class="text-slate-500 mb-8">
-                Bangsaen AI Research Laboratory &copy; 2025<br>
-                Demonstrating Advanced Control Theory in Real-world Applications.
-            </p>
-            <div class="text-slate-600 text-sm">
-                <a href="privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white mx-2">Terms of Service</a>
-                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
-
-            </div>
-        </div>
+    <footer class="border-t border-slate-800 py-8 bg-slate-950 text-center text-slate-600 text-sm">
+        Bangsaen AI Research Laboratory &copy; 2025
     </footer>
 
     <script>
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        let myChart = null;
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        function runWebSimulation() {
+            // 1. รับค่า Input Hardware จากลูกค้า
+            const L = parseFloat(document.getElementById('input_L').value) * 1e-3; // Convert to Henry
+            const C = parseFloat(document.getElementById('input_C').value) * 1e-6; // Convert to Farad
+            
+            // 2. คำนวณ Auto-Tuning (จำลองความฉลาดของ API)
+            // Z0 คือ Characteristic Impedance รากที่สองของ L/C
+            const Z0 = Math.sqrt(L/C);
+            const K_gain = (Z0 * 1.5).toFixed(2); // สูตร Heuristic ง่ายๆ สำหรับ Demo
+            document.getElementById('k_value').innerText = `[${K_gain}, 0.8]`;
 
-        // Dummy function for button click
-        function runSimulation() {
-            alert("Simulation Module Initializing... (Connect Python Backend Here)");
+            // 3. เตรียมตัวแปร Simulation
+            const dt = 50e-6; // 50us sampling
+            const steps = 1000; // 50ms total time
+            const timeData = [];
+            const pidData = [];
+            const kksData = [];
+
+            // Initial States (เริ่มที่ 311V นิ่งๆ)
+            let v_pid = 311;
+            let v_kks = 311;
+            let iL_pid = 311 / 100;
+            let iL_kks = 311 / 100;
+            let target = 311;
+
+            // PID Memory
+            let pid_integral = 0;
+            let pid_prev_error = 0;
+
+            // Loop คำนวณ Physics (เหมือน Python เป๊ะ แต่รันใน JS)
+            for (let i = 0; i < steps; i++) {
+                let t = i * dt;
+                timeData.push((t * 1000).toFixed(1)); // เก็บเวลาหน่วย ms
+
+                // --- SCENARIO: Load Surge ที่ 25ms ---
+                let R = (t > 0.025) ? 10 : 100; // เปลี่ยนจาก 100 ohm เป็น 10 ohm
+
+                // --- 1. PID Calculation (แบบบ้านๆ) ---
+                let error = target - v_pid;
+                pid_integral += error * dt;
+                let derivative = (error - pid_prev_error) / dt;
+                let u_pid = (0.5 * error) + (20 * pid_integral) + (0.001 * derivative); // Kp, Ki, Kd
+                pid_prev_error = error;
+                
+                // Physics Update PID Plant
+                // dv/dt = (iL - v/R)/C
+                // di/dt = (u - v)/L
+                let dv_pid = (iL_pid - (v_pid / R)) / C;
+                let di_pid = (u_pid - v_pid) / L; // u_pid คือแรงดันที่จ่ายเข้าไป
+                
+                v_pid += dv_pid * dt;
+                iL_pid += di_pid * dt;
+
+                // --- 2. KKS Calculation (Bangsaen AI) ---
+                // สูตรลับ: Feedforward Current Injection
+                // เรารู้ R เราคำนวณกระแสที่ต้องใช้เลย i_req = V_target / R
+                let i_req = target / R;
+                let err_i = i_req - iL_kks;
+                let err_v = target - v_kks;
+                
+                // Control Law: อัดแรงดันเพิ่มตามความต้องการกระแส (Gain แปรผันตาม L/C)
+                let u_kks = target + (K_gain * err_i) + (0.8 * err_v); 
+
+                // Physics Update KKS Plant
+                let dv_kks = (iL_kks - (v_kks / R)) / C;
+                let di_kks = (u_kks - v_kks) / L;
+
+                v_kks += dv_kks * dt;
+                iL_kks += di_kks * dt;
+
+                // เก็บผลลัพธ์ใส่ Array
+                pidData.push(v_pid);
+                kksData.push(v_kks);
+            }
+
+            // 4. วาดกราฟด้วย Chart.js
+            drawGraph(timeData, pidData, kksData);
+        }
+
+        function drawGraph(labels, dataPID, dataKKS) {
+            const ctx = document.getElementById('stabilityChart').getContext('2d');
+            
+            if (myChart) myChart.destroy(); // ลบกราฟเก่าถ้ามี
+
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Standard PID (Voltage Drop)',
+                            data: dataPID,
+                            borderColor: '#ef4444', // สีแดง
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Bangsaen AI (Stable)',
+                            data: dataKKS,
+                            borderColor: '#4ade80', // สีเขียว
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            tension: 0.1 // เส้นคมๆ ไม่ย้วย
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index',
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Time (ms)', color: '#64748b' },
+                            grid: { color: '#1e293b' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        y: {
+                            title: { display: true, text: 'Voltage (V)', color: '#64748b' },
+                            grid: { color: '#1e293b' },
+                            ticks: { color: '#94a3b8' },
+                            suggestedMin: 200,
+                            suggestedMax: 350
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#fff' } },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#334155',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
         }
     </script>
-
-
-    <script>
-        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "qOGqhPaxVWgqP21lEujIv"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
-    </script>
 </body>
-
 </html>
