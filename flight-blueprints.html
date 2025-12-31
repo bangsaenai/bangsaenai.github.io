@@ -1,144 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-FFGV1SXG9J');
-</script>
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
     <title>Bangsaen AI - Flight Control Blueprints</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
     </style>
 
     </head>
-<body class="bg-slate-900 text-white antialiased">
+<body class="bg-slate-950 text-slate-200 antialiased">
 
-    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-4">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-slate-400 hover:text-white transition">
-                <i class="fas fa-arrow-left mr-2"></i> Back to Lab
+    <nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center text-slate-400 hover:text-white transition group">
+                <i class="fas fa-arrow-left mr-3 group-hover:-translate-x-1 transition-transform"></i> 
+                <span class="font-medium">Back to Lab</span>
             </a>
-            <span class="font-bold text-white tracking-tight">Bangsaen<span class="text-blue-500">AI</span></span>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-microchip text-cyan-500"></i>
+                <span class="font-extrabold text-xl tracking-tight text-white">Bangsaen<span class="text-cyan-500">AI</span></span>
+            </div>
         </div>
     </nav>
 
-    <header class="text-center py-16 px-4 bg-[url('https://source.unsplash.com/1600x900/?blueprint,grid')] bg-cover bg-center bg-blend-multiply bg-slate-900/90">
-        <div class="max-w-3xl mx-auto space-y-6">
-            <div class="inline-block px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-semibold">
-                Flight Control Systems
+    <header class="relative text-center py-24 px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://source.unsplash.com/1600x900/?circuit,blueprint,technology" alt="Blueprint Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950 bg-grid-pattern"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto space-y-8">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-300 text-sm font-semibold backdrop-blur-sm">
+                <i class="fas fa-fighter-jet mr-2"></i> Flight Control Systems
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-white">
                 Stop Guessing. <br>
-                Start <span class="text-blue-500">Calculating</span>.
+                Start <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Calculating</span>.
             </h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
                 The Open Source code gets you in the air. <br>
-                <strong>The Blueprints</strong> give you the precision to master the wind.
+                <strong class="text-slate-200">The Blueprints</strong> give you the precision to master the wind.
             </p>
         </div>
     </header>
 
-    <section class="max-w-5xl mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <section class="max-w-6xl mx-auto px-4 py-20 relative z-10 -mt-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             
-            <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-blue-500 transition-all shadow-xl relative overflow-hidden group">
-                <div class="absolute top-0 right-0 bg-blue-600 text-xs font-bold px-3 py-1 rounded-bl-lg">
+            <div class="bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-2xl shadow-sm">
                     POPULAR
                 </div>
                 
-                <div class="text-blue-400 mb-4"><i class="fas fa-file-pdf fa-3x"></i></div>
-                <h3 class="text-2xl font-bold mb-2">The Flight Blueprint</h3>
-                <p class="text-slate-400 mb-6 text-sm h-16">
+                <div class="text-cyan-400 mb-6 p-4 bg-cyan-950/30 rounded-2xl inline-block">
+                    <i class="fas fa-file-shield fa-3x"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-3 text-white">The Flight Blueprint</h3>
+                <p class="text-slate-400 mb-8 text-base leading-relaxed">
                     Skip the trial and error. Get the complete parameter configurations, wiring diagrams, and tuning guide used in our demo videos.
                 </p>
-                <div class="text-3xl font-bold mb-6">$19 <span class="text-sm text-slate-500 font-normal">/ one-time</span></div>
+                <div class="flex items-baseline mb-8">
+                    <span class="text-5xl font-extrabold text-white">$19</span>
+                    <span class="ml-2 text-lg text-slate-500 font-medium">/ one-time</span>
+                </div>
                 
-                <ul class="space-y-3 mb-8 text-sm text-slate-300">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Complete Wiring Diagram (PDF)</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Pre-tuned Koopman Parameters</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Setup Video Tutorial</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Lifetime Updates</li>
+                <ul class="space-y-4 mb-10 text-slate-300">
+                    <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-3 text-lg"></i> Complete Wiring Diagram (PDF)</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-3 text-lg"></i> Pre-tuned Koopman Parameters</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-3 text-lg"></i> Setup Video Tutorial</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-3 text-lg"></i> Lifetime Updates</li>
                 </ul>
 
-                
-                <div class="bg-slate-900/80 p-6 rounded-lg border border-blue-500/50 mt-4">
-    <p class="text-white font-bold mb-2 text-sm">🚧 Coming Soon</p>
-    <p class="text-slate-400 text-xs mb-4">
-        Join the waitlist to get <span class="text-green-400">20% OFF</span> on launch day.
-    </p>
-    
-    <div class="p-2 border border-dashed border-slate-600 rounded text-slate-500 text-xs">
-        [ Paste Waitlist Form Code Here ]
-    </div>
-</div>
+                <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/80 relative overflow-hidden group/box hover:border-cyan-500/30 transition">
+                    <div class="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover/box:opacity-100 transition-opacity"></div>
+                    <div class="flex items-center mb-3">
+                        <span class="flex h-3 w-3 relative mr-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                        </span>
+                        <p class="text-white font-bold text-sm uppercase tracking-wider">Coming Soon</p>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Join the waitlist to get an exclusive <span class="text-cyan-400 font-bold">20% OFF</span> on launch day.
+                    </p>
+                    
+                    <div class="flex items-center justify-between p-3 bg-slate-900 rounded-xl border border-slate-700/50 text-slate-500 text-sm">
+                        <span class="italic"><i class="far fa-envelope mr-2"></i> Enter email address...</span>
+                        <button class="bg-slate-800 text-slate-400 px-4 py-1.5 rounded-lg text-xs font-semibold cursor-not-allowed" disabled>Notify Me</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-red-500 transition-all shadow-xl relative group">
-                <div class="text-red-400 mb-4"><i class="fab fa-patreon fa-3x"></i></div>
-                <h3 class="text-2xl font-bold mb-2">The Inner Circle</h3>
-                <p class="text-slate-400 mb-6 text-sm h-16">
-                    Join the research team. Get direct access to ask questions, request features, and see behind-the-scenes experiments.
+            <div class="bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 shadow-xl hover:shadow-amber-500/10 relative group lg:mt-8">
+                <div class="text-amber-400 mb-6 p-4 bg-amber-950/30 rounded-2xl inline-block">
+                    <i class="fab fa-patreon fa-3x"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-3 text-white">The Inner Circle</h3>
+                <p class="text-slate-400 mb-8 text-base leading-relaxed">
+                    Join the elite research team. Get direct access to ask questions, request features, and see behind-the-scenes experiments.
                 </p>
-                <div class="text-3xl font-bold mb-6">$5 <span class="text-sm text-slate-500 font-normal">/ month</span></div>
+                <div class="flex items-baseline mb-8">
+                    <span class="text-5xl font-extrabold text-white">$5</span>
+                    <span class="ml-2 text-lg text-slate-500 font-medium">/ month</span>
+                </div>
                 
-                <ul class="space-y-3 mb-8 text-sm text-slate-300">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Priority Support</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Early Access to New Code</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Voting Rights on Next Project</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Supporter Badge on GitHub</li>
+                <ul class="space-y-4 mb-10 text-slate-300">
+                    <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-3 text-lg"></i> Priority Support</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-3 text-lg"></i> Early Access to New Code</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-3 text-lg"></i> Voting Rights on Next Project</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-amber-500 mr-3 text-lg"></i> Supporter Badge on GitHub</li>
                 </ul>
 
-                <a href="https://www.patreon.com/14088624/join" target="_blank" class="block w-full bg-slate-700 hover:bg-red-600 text-white text-center py-3 rounded-lg font-bold transition transform group-hover:scale-105">
-                    Become a Supporter
+                <a href="https://www.patreon.com/14088624/join" target="_blank" class="block w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-center py-4 rounded-xl font-bold text-lg transition transform hover:-translate-y-1 shadow-lg shadow-amber-900/20">
+                    Join the Elite Team
                 </a>
             </div>
 
         </div>
     </section>
 
-    <section class="max-w-3xl mx-auto px-6 pb-20 text-center">
-        <h2 class="text-2xl font-bold mb-8">Why pay when the code is Open Source?</h2>
-        <div class="space-y-6 text-slate-400 text-left">
-            <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                <h4 class="text-white font-bold mb-2">The Code is Free (GPL v3.0)</h4>
-                <p>We believe in Open Source. You can download the raw Python code from our GitHub right now for $0. That will never change.</p>
+    <section class="max-w-5xl mx-auto px-6 pb-24 pt-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-white">Why pay when the code is <span class="text-cyan-500">Open Source</span>?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            <div class="bg-slate-900/60 backdrop-blur p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition group">
+                <div class="mb-4 text-cyan-500 group-hover:scale-110 transition-transform origin-left">
+                    <i class="fas fa-unlock-alt fa-2x"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3 text-white">The Code is Free (GPL v3.0)</h4>
+                <p class="text-slate-400 leading-relaxed">We believe in Open Source. You can download the raw Python code from our GitHub right now for $0. That will never change.</p>
             </div>
-            <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                <h4 class="text-white font-bold mb-2">You are paying for Time & Certainty</h4>
-                <p>The Blueprints are for engineers who value their time. We've spent 100+ hours tuning the physics parameters so you don't have to crash 10 planes to find the sweet spot.</p>
+            <div class="bg-slate-900/60 backdrop-blur p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition group">
+                <div class="mb-4 text-amber-500 group-hover:scale-110 transition-transform origin-left">
+                    <i class="fas fa-hourglass-half fa-2x"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3 text-white">You are paying for Time & Certainty</h4>
+                <p class="text-slate-400 leading-relaxed">The Blueprints are for engineers who value their time. We've spent 100+ hours tuning the physics parameters so you don't have to crash 10 planes to find the sweet spot.</p>
             </div>
         </div>
         
-        <div class="mt-12">
-            <a href="https://github.com/bangsaenai" class="text-slate-500 hover:text-white underline text-sm">
+        <div class="mt-16">
+            <a href="https://github.com/bangsaenai" class="inline-flex items-center text-slate-500 hover:text-cyan-400 transition border-b border-slate-800 hover:border-cyan-400 pb-1 font-medium">
+                <i class="fab fa-github mr-2"></i>
                 I'll do it the hard way (Go to GitHub)
             </a>
         </div>
     </section>
 
-    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+    <footer class="border-t border-slate-900 py-16 bg-slate-950 bg-grid-pattern">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
-            <p class="text-slate-500 mb-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 mb-6">
+                Don't trust the code. <span class="text-cyan-500">Trust the Math.</span>
+            </h2>
+            <p class="text-slate-500 mb-10 max-w-md mx-auto">
                 Bangsaen AI Research Laboratory &copy; 2025<br>
                 Demonstrating Advanced Control Theory in Real-world Applications.
             </p>
-            <div class="text-slate-600 text-sm">
-                <a href="privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white mx-2">Terms of Service</a>
-                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
-    
+            <div class="flex justify-center space-x-6 text-slate-600 font-medium text-sm">
+                <a href="privacy-policy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-cyan-400 transition"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </footer>
@@ -147,3 +184,4 @@
 </script>
 </body>
 </html>
+
