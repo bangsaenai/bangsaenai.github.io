@@ -23,6 +23,9 @@
                 extend: {
                     colors: {
                         slate: { 850: '#151e2e', 900: '#0f172a', 950: '#020617' }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -49,6 +52,12 @@
         .modal-content { transition: transform 0.3s ease-out; }
         .modal.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         .modal.hidden .modal-content { transform: scale(0.95); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
 
@@ -66,7 +75,7 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="index.html" class="text-white text-sm font-medium border-b-2 border-green-500">Home</a>
                     <a href="blog.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Research Blog</a>
                     <a href="about.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">About Us</a>
                     <a href="contact.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Contact</a>
@@ -82,7 +91,7 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-t border-gray-800">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-white bg-gray-800">Home</a>
                 <a href="blog.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Research Blog</a>
                 <a href="about.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About Us</a>
                 <a href="contact.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
@@ -90,65 +99,139 @@
         </div>
     </nav>
 
-    <header class="text-center py-20 px-4 bg-[url('https://source.unsplash.com/1600x900/?circuit,network')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-slate-900/90">
-        <div class="pt-32 pb-12 bg-[#0b0e14] text-center">
-            <div class="inline-block px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-semibold mb-4">Research & Development Laboratory</div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">
-                Controlling Chaos with <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Mathematics</span>
+    <header class="text-center py-20 px-4 bg-[url('https://source.unsplash.com/1600x900/?circuit,network')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-slate-900/95">
+        <div class="pt-32 pb-12">
+            <div class="inline-block px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-semibold mb-4 animate-fade-in-up">Research & Development Laboratory</div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Controlling Chaos with <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-emerald-400">Mathematics</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mt-4">
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
                 We bridge the gap between <strong>Physical Laws</strong> and <strong>Artificial Intelligence</strong>.
-                From stabilizing aircraft aerodynamics to securing zero-inertia power grids.
+                Advanced control architectures for the next generation of Energy and Motion.
             </p>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="group relative rounded-2xl bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all duration-300 overflow-hidden">
-                <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
-                <div class="p-8 relative z-10">
-                    <div class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center mb-6 text-blue-400">
-                        <i class="fas fa-plane-departure fa-xl"></i>
+    <section class="max-w-7xl mx-auto px-4 py-16 space-y-24">
+
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-green-500 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
+            <div class="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl">LIVE SIMULATION AVAILABLE</div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-green-400 border border-slate-600">
+                            <i class="fas fa-bolt fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Solar Guardian</h2>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Project: Wing Craft</h3>
-                    <p class="text-slate-400 mb-6 h-20">Advanced Flight Control Systems utilizing Koopman Operator Theory to manage non-linear aerodynamics in real-time.</p>
-                    <div class="bg-slate-900/50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
-                        <p class="text-xs text-slate-500 uppercase font-bold mb-1">Foundational Paper</p>
-                        <a href="https://www.authorea.com/users/1010167/articles/1370260-the-koopman-kalman-safeguard-a-unified-framework-for-provably-safe-control-in-chaotic-regimes/" target="_blank" class="text-sm text-blue-300 hover:underline">Read our first paper on Authorea <i class="fas fa-external-link-alt ml-1"></i></a>
+                    <h3 class="text-xl text-green-400 font-mono mb-4">Zero-Inertia Grid Security</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Using Physics Manifolds to detect cyber-attacks in < 0.06s vs. cloud shading without false alarms. 
+                        Our Koopman-Kalman Safeguard (KKS) provides mathematical robustness to the grid edge.
+                    </p>
+                    
+                    <div class="bg-slate-900/80 p-4 rounded-lg mb-8 border border-slate-700 flex justify-between items-center max-w-md">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Scenario A (Nature)</p>
+                            <p class="text-green-400 font-mono text-sm">● PASSED (Robust)</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Scenario B (Attack)</p>
+                            <p class="text-red-400 font-mono text-sm">● DETECTED (Secure)</p>
+                        </div>
                     </div>
+
                     <div class="flex gap-4">
-                        <a href="https://github.com/bangsaenai" class="flex-1 bg-slate-700 hover:bg-slate-600 text-white text-center py-3 rounded-lg font-semibold transition"><i class="fab fa-github mr-2"></i> Open Source</a>
-                        <a href="flight-blueprints.html" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition">View Blueprint</a>
+                        <button onclick="document.getElementById('playground').scrollIntoView({behavior: 'smooth'})" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-green-900/20">
+                            <i class="fas fa-play mr-2"></i> Try Simulation
+                        </button>
+                        <a href="solar-research.html" class="border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:border-white hover:text-white transition-all">
+                            Read Case Study
+                        </a>
                     </div>
                 </div>
+                <div class="order-1 lg:order-2 relative h-full min-h-[300px] bg-slate-900 rounded-xl border border-slate-700 flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://source.unsplash.com/800x600/?solar,energy')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"></div>
+                    <i class="fas fa-solar-panel text-6xl text-green-500/50 z-10"></i>
+                </div>
             </div>
+        </div>
 
-            <div class="group relative rounded-2xl bg-slate-800 border border-slate-700 hover:border-green-500 transition-all duration-300 overflow-hidden">
-                <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full animate-pulse">BREAKING RESEARCH</div>
-                <div class="p-8 relative z-10">
-                    <div class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center mb-6 text-green-400"><i class="fas fa-bolt fa-xl"></i></div>
-                    <h3 class="text-2xl font-bold mb-2">Project: Solar Guardian</h3>
-                    <p class="text-slate-400 mb-6 h-20"><strong>Zero-Inertia Grid Security.</strong> Using Physics Manifold to detect cyber-attacks in < 0.06s vs. cloud shading without false alarms.</p>
-                    <div class="bg-slate-900/50 p-4 rounded-lg mb-6 flex justify-between items-center border border-slate-700">
-                        <div><p class="text-xs text-slate-500 uppercase font-bold">Scenario A (Nature)</p><p class="text-green-400 font-mono text-sm">● PASSED (Robust)</p></div>
-                        <div class="text-right"><p class="text-xs text-slate-500 uppercase font-bold">Scenario B (Attack)</p><p class="text-red-400 font-mono text-sm">● DETECTED (Secure)</p></div>
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-yellow-500 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors"></div>
+            <div class="absolute top-0 right-0 bg-yellow-600 text-black text-xs font-bold px-4 py-1 rounded-bl-xl">DEPLOYED</div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="relative rounded-xl overflow-hidden border border-slate-700 shadow-[0_0_30px_rgba(234,179,8,0.1)] group-hover:shadow-[0_0_50px_rgba(234,179,8,0.2)] transition-all order-2 lg:order-1">
+                    <img src="images/bms_graph.png" alt="BMS Linearization Graph" class="w-full h-auto object-cover transform group-hover:scale-105 transition-duration-700">
+                    <div class="absolute bottom-3 left-3 bg-black/80 text-yellow-400 text-xs px-2 py-1 rounded border border-yellow-500/30">
+                        <i class="fas fa-chart-area mr-1"></i> Real-Time Linearization
                     </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-yellow-400 border border-slate-600">
+                            <i class="fas fa-car-battery fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Ion Sentinel</h2>
+                    </div>
+                    <h3 class="text-xl text-yellow-400 font-mono mb-4">Li-Ion Electrochemical Twin</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Controlling the chemical chaos inside a battery cell. Our <span class="text-white font-bold">Lightweight Koopman Engine</span> predicts voltage dynamics 
+                        faster than traditional Equivalent Circuit Models (ECM), ensuring safety without heavy computation.
+                    </p>
+                    <button class="bg-yellow-600 hover:bg-yellow-700 text-black px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-yellow-900/20">
+                        View Architecture
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+            <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl">HARDWARE READY</div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-blue-400 border border-slate-600">
+                            <i class="fas fa-microchip fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Kinetic Core</h2>
+                    </div>
+                    <h3 class="text-xl text-blue-400 font-mono mb-4">"Infinite Stiffness" PMSM Control</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Forget settling time. We use <span class="text-white font-bold">Data-Driven Koopman Operators + LQR</span> to achieve instant load recovery. 
+                        The graph on the right isn't theory—it's a benchmark against the industry-standard PI controller.
+                    </p>
                     <div class="flex gap-4">
-                        <a href="https://www.youtube.com/@bangsaenai" class="flex-1 bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition"><i class="fab fa-youtube mr-2"></i> Watch Demo</a>
-                        <a href="solar-research.html" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition">Read Case Study</a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-blue-900/20">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </a>
+                        <button class="border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:border-white hover:text-white transition-all">
+                            See Benchmark
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden border border-slate-700 shadow-[0_0_30px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all order-1 lg:order-2">
+                    <img src="images/LQRkoopman.png" alt="Koopman vs PI Graph" class="w-full h-auto object-cover transform group-hover:scale-105 transition-duration-700">
+                    
+                    <div class="absolute bottom-3 right-3 bg-black/80 text-blue-400 text-xs px-2 py-1 rounded border border-blue-500/30">
+                        <i class="fas fa-wave-square mr-1"></i> LQR Stabilized Response
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
-    <section id="playground" class="py-20 bg-slate-850 border-t border-slate-800 relative overflow-hidden">
+    <section id="playground" class="py-20 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30"></div>
-        <div class="absolute -left-20 top-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse"></div>
-        <div class="absolute -right-20 bottom-20 w-72 h-72 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse" style="animation-delay: 2s;"></div>
-
+        
         <div class="max-w-7xl mx-auto px-4 relative z-10">
             <div class="text-center mb-12">
                 <span class="text-green-400 font-mono text-sm tracking-widest uppercase mb-2 block">Interactive Simulation</span>
@@ -163,8 +246,14 @@
                         <h3 class="font-bold text-lg text-white">Parameters</h3>
                     </div>
                     <div class="space-y-6">
-                        <div><label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Inductance (L)</label><input type="number" value="2.5" step="0.1" class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all"></div>
-                        <div><label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Capacitance (C)</label><input type="number" value="50" step="10" class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all"></div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Inductance (L)</label>
+                            <input type="number" value="2.5" step="0.1" class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Capacitance (C)</label>
+                            <input type="number" value="50" step="10" class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all">
+                        </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Test Scenario</label>
                             <div class="p-3 bg-slate-800/50 rounded-lg border border-red-500/20 text-sm text-slate-400">
@@ -218,91 +307,6 @@
                 </div>
             </div>
         </div>
-
-
-   // ส่วนที่เพิ่มต่อจาก Inverter Section
-<div className="flex flex-col gap-12 mt-16">
-  
-  {/* --- PROJECT 2: MOTOR CONTROL --- */}
-  <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-2xl overflow-hidden relative group hover:border-blue-500 transition-all duration-500">
-    <div className="absolute top-0 right-0 bg-blue-600 text-xs font-bold px-3 py-1 rounded-bl-lg">
-      HARDWARE READY
-    </div>
-    
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <div>
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">⚙️</span>
-          <h2 className="text-3xl font-bold text-white">Project: Kinetic Core</h2>
-        </div>
-        <h3 className="text-xl text-blue-400 font-mono mb-4">"Infinite Stiffness" PMSM Control</h3>
-        <p className="text-gray-400 mb-6 leading-relaxed">
-          Forget settling time. We use <span className="text-white font-bold">Data-Driven Koopman Operators + LQR</span> to achieve instant load recovery. 
-          The graph on the right isn't a theory—it's a benchmark against the industry-standard PI controller.
-        </p>
-        
-        {/* Buttons */}
-        <div className="flex gap-4">
-           <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-bold transition-all">
-             See the Benchmark
-           </button>
-           <button className="border border-gray-600 text-gray-300 px-6 py-2 rounded-lg hover:border-white transition-all">
-             Watch Demo
-           </button>
-        </div>
-      </div>
-
-      {/* The Visual Flex */}
-      <div className="relative rounded-lg overflow-hidden border border-gray-700 shadow-[0_0_30px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_50px_rgba(59,130,246,0.4)] transition-all">
-        {/* ใส่รูป LQRkoopman.png ตรงนี้ */}
-        <img src="/path-to-your-images/LQRkoopman.png" alt="Koopman vs PI Graph" className="w-full h-auto object-cover transform group-hover:scale-105 transition-duration-700"/>
-        
-        {/* Overlay Label */}
-        <div className="absolute bottom-2 right-2 bg-black/80 text-blue-400 text-xs px-2 py-1 rounded border border-blue-500/30">
-          ● Live Simulation Result
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {/* --- PROJECT 3: BMS --- */}
-  <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-2xl overflow-hidden relative group hover:border-green-500 transition-all duration-500">
-    <div className="absolute top-0 right-0 bg-green-600 text-xs font-bold px-3 py-1 rounded-bl-lg">
-      DEPLOYED
-    </div>
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      {/* Visual First for Variety */}
-      <div className="relative rounded-lg overflow-hidden border border-gray-700 shadow-[0_0_30px_rgba(16,185,129,0.2)] group-hover:shadow-[0_0_50px_rgba(16,185,129,0.4)] transition-all order-2 lg:order-1">
-        {/* ใส่รูป BMS Graph ตรงนี้ */}
-        <img src="/path-to-your-images/bms_graph.png" alt="BMS Linearization" className="w-full h-auto object-cover transform group-hover:scale-105 transition-duration-700"/>
-      </div>
-
-      <div className="order-1 lg:order-2">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">🔋</span>
-          <h2 className="text-3xl font-bold text-white">Project: Ion Sentinel</h2>
-        </div>
-        <h3 className="text-xl text-green-400 font-mono mb-4">Li-Ion Real-Time Linearization</h3>
-        <p className="text-gray-400 mb-6 leading-relaxed">
-          Controlling the chemical chaos inside a battery cell. Our <span className="text-white font-bold">Lightweight Koopman Engine</span> predicts voltage dynamics 
-          faster than traditional Equivalent Circuit Models (ECM), ensuring safety without heavy computation.
-        </p>
-         <div className="flex gap-4">
-           <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold transition-all">
-             View Architecture
-           </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-        
     </section>
 
     <footer class="border-t border-slate-800 py-12 bg-slate-950">
@@ -327,18 +331,13 @@
                 <div class="inline-block px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-mono rounded-full mb-4">Status: INVITE-ONLY</div>
                 <p class="text-slate-400 text-sm leading-relaxed">Public API access is currently paused. We grant limited keys to <strong>qualified researchers</strong> with valid hardware use-cases.</p>
             </div>
-            <div class="bg-slate-800/50 p-4 rounded-lg mb-6 border-l-2 border-slate-600">
-                <p class="text-xs text-slate-500 uppercase font-bold mb-2">How to apply:</p>
-                <p class="text-sm text-slate-300">Email us with your project details.<br><span class="text-red-400 italic">"Empty requests will be ignored."</span></p>
-            </div>
-            <a href="mailto:drtanet@bangsaenai.com?subject=Application%20for%20Research%20Key&body=Project%20Title:%0AHardware%20Specs:%0AIntended%20Use%20Case:" class="block w-full bg-slate-700 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-center transition-all">Submit Application via Email</a>
+            <a href="mailto:drtanet@bangsaenai.com?subject=Application%20for%20Research%20Key" class="block w-full bg-slate-700 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-center transition-all">Submit Application via Email</a>
         </div>
     </div>
 
     <div id="modal-enterprise" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
         <div class="modal-content bg-[#0b0e14] border border-blue-500/30 rounded-2xl max-w-lg w-full p-8 shadow-[0_0_50px_rgba(59,130,246,0.15)] relative">
             <button onclick="closeModal('modal-enterprise')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
-            
             <div class="text-center mb-6">
                 <div class="w-16 h-16 bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500">
                     <i class="fas fa-building text-2xl text-blue-400"></i>
@@ -346,28 +345,13 @@
                 <h3 class="text-2xl font-bold text-white mb-2">Enterprise Deployment</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Direct integration of <strong>Bangsaen KKS</strong> into industrial inverters. 
-                    <span class="text-blue-300 block mt-2">
-                        Due to high demand and IP security protocols, all initial technical vetting is conducted via <strong>Encrypted Email Channel</strong> only.
-                    </span>
+                    <span class="text-blue-300 block mt-2">Due to high demand and IP security protocols, all initial technical vetting is conducted via <strong>Encrypted Email Channel</strong> only.</span>
                 </p>
             </div>
-
-            <ul class="space-y-3 mb-8">
-                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Full "Lifted Space" Source Code Access</li>
-                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-check text-blue-500 mr-3"></i> Zero-Inertia Controller Hardware Specs</li>
-                <li class="flex items-center text-sm text-slate-300"><i class="fas fa-file-signature text-blue-500 mr-3"></i> NDA & Licensing Review</li>
-            </ul>
-
-            <a href="mailto:drtanet@bangsaenai.com?subject=Enterprise%20Technical%20Review&body=Company:%0AContact%20Person:%0ATechnical%20Requirements:%0A(Please%20attach%20single-line%20diagram%20if%20available)" 
-               class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg text-center transition-all shadow-lg shadow-blue-900/20">
-                Submit Technical Requirements (Email)
-            </a>
-            
-            <p class="text-center text-xs text-slate-600 mt-4">
-                <i class="fas fa-lock mr-1"></i> No video calls scheduled prior to NDA signing.
-            </p>
+            <a href="mailto:drtanet@bangsaenai.com?subject=Enterprise%20Technical%20Review" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg text-center transition-all shadow-lg shadow-blue-900/20">Submit Technical Requirements (Email)</a>
         </div>
     </div>
+
     <script>
         // Modal Logic
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
