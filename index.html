@@ -114,4 +114,373 @@
 
     <section class="max-w-7xl mx-auto px-4 py-16 space-y-24">
 
-        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-blue-
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-blue-400 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-blue-400 border border-slate-600">
+                            <i class="fas fa-plane-departure fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Wing Craft</h2>
+                    </div>
+                    <h3 class="text-xl text-blue-300 font-mono mb-4">Autonomous Flight Stabilization</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Managing non-linear aerodynamics in real-time. Our Koopman Operator framework stabilizes flight dynamics 
+                        without relying on heavy neural networks, ensuring mathematically proven safety margins.
+                    </p>
+                    
+                    <div class="flex gap-4">
+                        <a href="flight-blueprints.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-blue-900/20">
+                            <i class="fas fa-map mr-2"></i> View Blueprint
+                        </a>
+                        <a href="https://www.authorea.com/users/1010167" target="_blank" class="border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:border-white hover:text-white transition-all">
+                            Read Original Paper
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 relative h-full min-h-[300px] bg-slate-900 rounded-xl border border-slate-700 flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://source.unsplash.com/800x600/?aircraft,cockpit')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"></div>
+                    <i class="fas fa-wind text-6xl text-blue-500/50 z-10"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-green-500 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
+            <div class="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl">LIVE SIMULATION AVAILABLE</div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="order-1 relative h-full min-h-[300px] bg-slate-900 rounded-xl border border-slate-700 flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://source.unsplash.com/800x600/?solar,energy')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"></div>
+                    <i class="fas fa-solar-panel text-6xl text-green-500/50 z-10"></i>
+                </div>
+
+                <div class="order-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-green-400 border border-slate-600">
+                            <i class="fas fa-bolt fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Solar Guardian</h2>
+                    </div>
+                    <h3 class="text-xl text-green-400 font-mono mb-4">Zero-Inertia Grid Security</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Using Physics Manifolds to detect cyber-attacks in < 0.06s vs. cloud shading. 
+                        Our Koopman-Kalman Safeguard (KKS) provides mathematical robustness to the grid edge.
+                    </p>
+                    
+                    <div class="bg-slate-900/80 p-4 rounded-lg mb-8 border border-slate-700 flex justify-between items-center max-w-md">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Scenario A (Nature)</p>
+                            <p class="text-green-400 font-mono text-sm">● PASSED (Robust)</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Scenario B (Attack)</p>
+                            <p class="text-red-400 font-mono text-sm">● DETECTED (Secure)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button onclick="document.getElementById('playground').scrollIntoView({behavior: 'smooth'})" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-green-900/20">
+                            <i class="fas fa-play mr-2"></i> Try Simulation
+                        </button>
+                        <a href="solar-research.html" class="border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:border-white hover:text-white transition-all">
+                            Read Case Study
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-yellow-500 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors"></div>
+            <div class="absolute top-0 right-0 bg-yellow-600 text-black text-xs font-bold px-4 py-1 rounded-bl-xl">DEPLOYED</div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-yellow-400 border border-slate-600">
+                            <i class="fas fa-car-battery fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Ion Sentinel</h2>
+                    </div>
+                    <h3 class="text-xl text-yellow-400 font-mono mb-4">Li-Ion Electrochemical Twin</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Controlling the chemical chaos inside a battery cell. Our <span class="text-white font-bold">Lightweight Koopman Engine</span> predicts voltage dynamics 
+                        faster than traditional Equivalent Circuit Models (ECM), ensuring safety without heavy computation.
+                    </p>
+                    <button class="bg-yellow-600 hover:bg-yellow-700 text-black px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-yellow-900/20">
+                        View Architecture
+                    </button>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden border border-slate-700 shadow-[0_0_30px_rgba(234,179,8,0.1)] group-hover:shadow-[0_0_50px_rgba(234,179,8,0.2)] transition-all order-1 lg:order-2">
+                    <img src="images/bms_graph.png" alt="BMS Linearization Graph" class="w-full h-auto object-cover transform group-hover:scale-105 transition-duration-700">
+                    <div class="absolute bottom-3 left-3 bg-black/80 text-yellow-400 text-xs px-2 py-1 rounded border border-yellow-500/30">
+                        <i class="fas fa-chart-area mr-1"></i> Real-Time Linearization
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+            <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl">HARDWARE READY</div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 items-center">
+                <div class="relative rounded-xl overflow-hidden border border-slate-700 shadow-[0_0_30px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all order-1">
+                    <img src="images/LQRkoopman.png" alt="Koopman vs PI Graph" class="w-full h-auto object-cover transform group-hover:scale-105 transition-duration-700">
+                    <div class="absolute bottom-3 right-3 bg-black/80 text-blue-400 text-xs px-2 py-1 rounded border border-blue-500/30">
+                        <i class="fas fa-wave-square mr-1"></i> LQR Stabilized Response
+                    </div>
+                </div>
+
+                <div class="order-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-blue-400 border border-slate-600">
+                            <i class="fas fa-microchip fa-xl"></i>
+                        </span>
+                        <h2 class="text-3xl font-bold text-white">Project: Kinetic Core</h2>
+                    </div>
+                    <h3 class="text-xl text-blue-400 font-mono mb-4">"Infinite Stiffness" PMSM Control</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Forget settling time. We use <span class="text-white font-bold">Data-Driven Koopman Operators + LQR</span> to achieve instant load recovery. 
+                        The graph on the left isn't theory—it's a benchmark against the industry-standard PI controller.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-blue-900/20">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </a>
+                        <button class="border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:border-white hover:text-white transition-all">
+                            See Benchmark
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="playground" class="py-20 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-green-400 font-mono text-sm tracking-widest uppercase mb-2 block">Interactive Simulation</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Prove the Math Yourself</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Don't just take our word for it. Input your specific hardware parameters below and simulate how the Koopman-Kalman Safeguard (KKS) stabilizes the grid in real-time.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 bg-slate-900/80 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-2xl h-fit">
+                    <div class="flex items-center gap-3 mb-6 border-b border-slate-700 pb-4">
+                        <i class="fas fa-sliders-h text-green-400"></i>
+                        <h3 class="font-bold text-lg text-white">Parameters</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Inductance (L)</label>
+                            <input type="number" value="2.5" step="0.1" class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Capacitance (C)</label>
+                            <input type="number" value="50" step="10" class="w-full bg-slate-800 border border-slate-600 rounded-lg py-3 px-4 text-green-400 font-mono focus:outline-none focus:border-green-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Test Scenario</label>
+                            <div class="p-3 bg-slate-800/50 rounded-lg border border-red-500/20 text-sm text-slate-400">
+                                <i class="fas fa-bolt text-red-400 mr-2"></i> Simulating <strong>100Ω → 10Ω</strong> Load Surge
+                            </div>
+                        </div>
+                        <button onclick="runSimulation()" class="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold py-4 rounded-lg shadow-lg shadow-green-900/20 transform transition active:scale-95 flex items-center justify-center gap-2 group">
+                            <i class="fas fa-play text-sm group-hover:animate-pulse"></i> Run Simulation
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-[#0b0e14] border border-slate-800 rounded-2xl p-1 relative overflow-hidden shadow-2xl flex flex-col">
+                    <div class="relative flex-1 min-h-[400px] w-full bg-slate-900/50 rounded-xl overflow-hidden">
+                        
+                        <div class="absolute top-4 left-4 z-20 flex gap-4 pointer-events-none">
+                            <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="text-xs text-slate-400">Standard PID</span></div>
+                            <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span><span class="text-xs text-green-400 font-bold">Bangsaen KKS</span></div>
+                        </div>
+                        
+                        <div class="graph-grid absolute inset-0 opacity-20 pointer-events-none"></div>
+                        <div class="absolute inset-0 z-10 w-full h-full"><canvas id="stabilityChart"></canvas></div>
+                        
+                        <div id="graph-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-slate-600 z-0 pointer-events-none transition-opacity duration-500">
+                            <i class="fas fa-chart-line text-6xl mb-4 opacity-20"></i><p class="font-mono text-sm uppercase tracking-widest opacity-50">Waiting for input...</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-[#0b0e14]/80 backdrop-blur border-t border-slate-800 p-3 px-6">
+                         <div class="font-mono text-xs text-slate-500">Auto-Tuning Gain (K): <span id="k_value" class="text-green-400">-</span></div>
+                         <div class="font-mono text-xs text-slate-500">STATUS: <span class="text-blue-400 animate-pulse">READY</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center border-t border-slate-800 pt-10">
+                <h3 class="text-2xl font-bold text-white mb-6">Satisfied with the simulation?</h3>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="openModal('modal-research')" 
+                       class="px-8 py-3 rounded-lg border border-green-500 text-green-400 font-semibold hover:bg-green-500/10 transition-colors flex items-center justify-center">
+                        <i class="fas fa-flask mr-2"></i> Get Research Key (Beta)
+                    </button>
+                    <button onclick="openModal('modal-enterprise')" 
+                       class="px-8 py-3 rounded-lg bg-slate-100 text-slate-900 font-bold hover:bg-white transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center">
+                        Deploy on Hardware
+                    </button>
+                </div>
+                
+                <div class="max-w-3xl mx-auto mt-12 p-4 rounded-lg bg-slate-900/50 border border-slate-700/50 text-center">
+                    <p class="text-xs text-slate-500 font-mono mb-2"><i class="fas fa-shield-alt text-green-500 mr-2 security-blink"></i> ARCHITECTURE SECURITY NOTICE</p>
+                    <p class="text-sm text-slate-400 leading-relaxed">This browser-based simulation utilizes a linearized approximation model for low-latency demonstration purposes. The production-grade <strong class="text-white">Infinite-Dimensional Lifted Space Koopman Operator</strong> runs exclusively on our secure backend kernel to protect Intellectual Property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <img src="images/logo.png" alt="Bangsaen AI Logo" class="h-16 w-auto mx-auto mb-6 opacity-80 hover:opacity-100 transition-opacity">
+            <h2 class="text-2xl font-bold text-slate-200 mb-4 font-heading">Don't trust the code. Trust the Math.</h2>
+            <p class="text-slate-500 mb-8">Bangsaen AI Research Laboratory &copy; 2025<br>Demonstrating Advanced Control Theory in Real-world Applications.</p>
+            <div class="text-slate-600 text-sm">
+                <a href="privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white mx-2">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-research" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="modal-content bg-slate-900 border border-green-500/30 rounded-2xl max-w-lg w-full p-8 shadow-2xl relative">
+            <button onclick="closeModal('modal-research')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/50"><i class="fas fa-lock text-2xl text-green-400"></i></div>
+                <h3 class="text-2xl font-bold text-white mb-2">Access Restricted</h3>
+                <div class="inline-block px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-mono rounded-full mb-4">Status: INVITE-ONLY</div>
+                <p class="text-slate-400 text-sm leading-relaxed">Public API access is currently paused. We grant limited keys to <strong>qualified researchers</strong> with valid hardware use-cases.</p>
+            </div>
+            <a href="mailto:drtanet@bangsaenai.com?subject=Application%20for%20Research%20Key" class="block w-full bg-slate-700 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-center transition-all">Submit Application via Email</a>
+        </div>
+    </div>
+
+    <div id="modal-enterprise" class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+        <div class="modal-content bg-[#0b0e14] border border-blue-500/30 rounded-2xl max-w-lg w-full p-8 shadow-[0_0_50px_rgba(59,130,246,0.15)] relative">
+            <button onclick="closeModal('modal-enterprise')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500">
+                    <i class="fas fa-building text-2xl text-blue-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Enterprise Deployment</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Direct integration of <strong>Bangsaen KKS</strong> into industrial inverters. 
+                    <span class="text-blue-300 block mt-2">Due to high demand and IP security protocols, all initial technical vetting is conducted via <strong>Encrypted Email Channel</strong> only.</span>
+                </p>
+            </div>
+            <a href="mailto:drtanet@bangsaenai.com?subject=Enterprise%20Technical%20Review" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg text-center transition-all shadow-lg shadow-blue-900/20">Submit Technical Requirements (Email)</a>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+        window.onclick = function(event) { if (event.target.classList.contains('modal')) event.target.classList.add('hidden'); }
+
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+
+        // Simulation
+        let myChart = null;
+        function runSimulation() {
+            const btn = document.querySelector('button[onclick="runSimulation()"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-microchip fa-spin"></i> Processing Math...';
+            btn.disabled = true;
+            
+            const placeholder = document.getElementById('graph-placeholder');
+            if(placeholder) placeholder.style.opacity = '0'; 
+
+            let L_val = document.querySelector('input[type="number"]:nth-of-type(1)')?.value || 2.5;
+            let C_val = document.querySelector('input[type="number"]:nth-of-type(2)')?.value || 50;
+            const L = parseFloat(L_val) * 1e-3;
+            const C = parseFloat(C_val) * 1e-6;
+            const Z0 = Math.sqrt(L/C);
+            const K_gain = (Z0 * 1.5).toFixed(2);
+            document.getElementById('k_value').innerText = `[${K_gain}, 0.8] (Optimized)`;
+
+            setTimeout(() => {
+                const dt = 50e-6; const steps = 1000;
+                const timeData = [], pidData = [], kksData = [];
+                let v_pid = 311, v_kks = 311;
+                let iL_pid = 3.11, iL_kks = 3.11;
+                let target = 311;
+                let pid_integral = 0, pid_prev_error = 0;
+
+                for (let i = 0; i < steps; i++) {
+                    let t = i * dt;
+                    timeData.push((t * 1000).toFixed(1));
+                    let R = (t > 0.025) ? 10 : 100;
+
+                    let error = target - v_pid;
+                    pid_integral += error * dt;
+                    let derivative = (error - pid_prev_error) / dt;
+                    let u_pid = (0.5 * error) + (20 * pid_integral) + (0.001 * derivative);
+                    pid_prev_error = error;
+                    let dv_pid = (iL_pid - (v_pid / R)) / C;
+                    let di_pid = (u_pid - v_pid) / L;
+                    v_pid += dv_pid * dt;
+                    iL_pid += di_pid * dt;
+
+                    let i_req = target / R;
+                    let err_i = i_req - iL_kks;
+                    let err_v = target - v_kks;
+                    let u_kks = target + (K_gain * err_i) + (0.8 * err_v);
+                    let dv_kks = (iL_kks - (v_kks / R)) / C;
+                    let di_kks = (u_kks - v_kks) / L;
+                    v_kks += dv_kks * dt;
+                    iL_kks += di_kks * dt;
+
+                    pidData.push(v_pid);
+                    kksData.push(v_kks);
+                }
+                drawGraph(timeData, pidData, kksData);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 800);
+        }
+
+        function drawGraph(labels, dataPID, dataKKS) {
+            const ctx = document.getElementById('stabilityChart').getContext('2d');
+            if (myChart) myChart.destroy();
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        { label: 'Standard PID', data: dataPID, borderColor: '#ef4444', borderWidth: 2, pointRadius: 0, tension: 0.4 },
+                        { label: 'Bangsaen AI', data: dataKKS, borderColor: '#4ade80', borderWidth: 3, pointRadius: 0, tension: 0.1 }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' },
+                    scales: {
+                        x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, title: { display: true, text: 'Time (ms)' } },
+                        y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, suggestedMin: 200, suggestedMax: 350, title: { display: true, text: 'Voltage (V)' } }
+                    },
+                    plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+                    animation: { duration: 1500, easing: 'easeOutQuart' }
+                }
+            });
+        }
+    </script>
+    
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "qOGqhPaxVWgqP21lEujIv"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
+</body>
+</html>
