@@ -3,23 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FFGV1SXG9J');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
     <title>Bangsaen AI - Physics-Informed Research Lab</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7340358979396049" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* เพิ่มเติมเฉพาะส่วนนี้เพื่อให้ Layout สวยขึ้น */
+        .column-header {
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-column {
+            background: rgba(16, 185, 129, 0.05); /* สีเขียวจางๆ */
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #10b981;
+            color: black;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #10b981;
+            color: #000;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #34d399;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body style="background-color: #0b0e14; color: white; font-family: sans-serif;">
 
@@ -39,158 +87,109 @@
         </div>
     </nav>
 
-    <header style="text-align: center; padding: 50px 20px;">
-        <h1 style="font-size: 2.5rem; color: #fff;">Engineering <span style="color: #4ade80;">Insights</span></h1>
-        <p style="color: #9ca3af;">Deep dive into Control Theory, AI, and Renewable Energy.</p>
+    <header style="text-align: center; padding: 60px 20px 40px;">
+        <h1 style="font-size: 3rem; color: #fff; margin-bottom: 10px;">Engineering <span style="color: #4ade80;">Insights</span></h1>
+        <p style="color: #9ca3af; font-size: 1.1rem;">Bridging the gap between Advanced Mathematics and Industrial Hardware.</p>
     </header>
 
     <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 20px;">
 
-        <div class="search-wrapper">
+        <div class="search-wrapper" style="margin-bottom: 40px;">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input type="text" id="searchInput" onkeyup="searchBlog()" placeholder="Search research topics, keywords, or math concepts...">
         </div>
-        
-        <div class="filter-menu">
-            <button class="filter-btn active" onclick="filterSelection('all')">All Research</button>
-            <button class="filter-btn" onclick="filterSelection('grid')">Energy Grid</button>
-            <button class="filter-btn" onclick="filterSelection('flight')">Flight Control</button>
-            <button class="filter-btn" onclick="filterSelection('math')">Mathematics</button>
-        </div>
 
-        <div class="blog-container">
-            
-            <div class="blog-card" data-category="grid">
-                <span class="badge badge-grid">Energy Grid</span>
-                <h3>Defending the Grid in Zero Inertia</h3>
-                <p>How Physics Manifold distinguishes cyber-attacks from cloud shadows.</p>
-                <a href="solar-research.html" class="read-link">Read Analysis &rarr;</a>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <div>
+                <div class="column-header">
+                    <i class="fa-solid fa-bolt text-yellow-500 mr-2"></i> Energy Systems
+                </div>
+                
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-grid">Energy Grid</span>
+                    <h3>Defending the Grid in Zero Inertia</h3>
+                    <p>How Physics Manifold distinguishes cyber-attacks from cloud shadows in a Net-Zero grid.</p>
+                    <a href="solar-research.html" class="read-link">Read Analysis &rarr;</a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-grid">Grid Stability</span>
+                    <h3>The Zero-Inertia Paradox</h3>
+                    <p>Tesla solved storage, but not stability. Why standard PID controls crash without rotating mass.</p>
+                    <a href="/grid/grid-00001-microgrid.html" class="read-link">Read Analysis &rarr;</a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="motor">
+                    <span class="badge badge-math">Motor Control</span>
+                    <h3>From Grid to Drive: Advanced Logic</h3>
+                    <p>Coming Soon: Applying Koopman operators to eliminate torque ripple in PMSM motors.</p>
+                    <a href="#" class="read-link" style="opacity:0.6; cursor:default;">Coming Soon</a>
+                </div>
             </div>
 
-            <div class="blog-card" data-category="flight" data-keywords="drone uav plane quadcopter">
-                <span class="badge badge-flight">Flight Control</span>
-                <h3>Koopman Operator Theory Explained</h3>
-                <p>Why linearizing non-linear dynamics is the future of drone stability.</p>
-                <a href="koopman-kalman.html" class="read-link">Read Analysis &rarr;</a>
+            <div class="hero-column">
+                <span class="hero-badge">Core Technology</span>
+                <div class="column-header" style="color:#4ade80; border-color:#4ade80;">
+                    <i class="fa-solid fa-microchip mr-2"></i> Battery Intelligence
+                </div>
+
+                <div class="blog-card mb-6" data-category="bms" style="border: 1px solid #334155;">
+                    <span class="badge badge-flight" style="background:#10b981;">Embedded AI</span>
+                    <h3>The Soft Sensor Revolution</h3>
+                    <p>Running Koopman Operators on a $2 ESP32 chip to achieve Lab-Grade precision.</p>
+                    <a href="#" class="read-link">Read Analysis &rarr;</a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="bms" style="border: 1px solid #334155;">
+                    <span class="badge badge-flight" style="background:#10b981;">Predictive</span>
+                    <h3>Seeing the Unseen: SOH Prediction</h3>
+                    <p>Predicting Battery Health (SOH) and Internal Resistance without stopping the vehicle.</p>
+                    <a href="#" class="read-link">Read Analysis &rarr;</a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="bms" style="border: 1px solid #334155;">
+                    <span class="badge badge-flight" style="background:#10b981;">Longevity</span>
+                    <h3>Self-Healing Batteries</h3>
+                    <p>How dynamic current limiting based on chemical states can extend cycle life by 30%.</p>
+                    <a href="#" class="read-link">Read Analysis &rarr;</a>
+                </div>
+
+                <a href="contact.html" class="cta-button">
+                    Partner with Us <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
             </div>
 
-            <div class="blog-card" data-category="math">
-                <span class="badge badge-math">Mathematics</span>
-                <h3>The Math Behind Chaos Control</h3>
-                <p>Understanding the differential equations that power our autopilot.</p>
-                <a href="math-chaos-control.html" class="read-link">Read Analysis &rarr;</a>
-            </div>
+            <div>
+                <div class="column-header">
+                    <i class="fa-solid fa-code text-blue-500 mr-2"></i> Deep Tech Core
+                </div>
 
-            <div class="blog-card" data-category="grid">
-                <span class="badge badge-grid">Energy Grid</span>
-                <h3>The Zero-Inertia Paradox</h3>
-                <p>Tesla solved the storage problem, but not the stability problem. See why standard PID controls crash in a Net-Zero grid.
-                </p>
-                <a href="/grid/grid-00001-microgrid.html" class="read-link">Read Analysis &rarr;</a>
-            </div>
+                <div class="blog-card mb-6" data-category="math">
+                    <span class="badge badge-math">Backend</span>
+                    <h3>Bangsaen Core Architecture</h3>
+                    <p>The Unified Backend for Distributed Energy: How we manage License Checks & Over-the-Air Tuning.</p>
+                    <a href="#" class="read-link">Read Analysis &rarr;</a>
+                </div>
 
-            <div class="blog-card" data-category="flight">
-                <span class="badge badge-flight">Flight Control</span>
-                <h3>Post-Stall Maneuvers with AI</h3>
-                <p>Using Deep Reinforcement Learning to recover fixed-wing drones from catastrophic spins.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
+                <div class="blog-card mb-6" data-category="math">
+                    <span class="badge badge-math">Mathematics</span>
+                    <h3>Koopman vs Neural Networks</h3>
+                    <p>Why we choose Physics-Informed Math over Black-box AI for safety-critical embedded systems.</p>
+                    <a href="koopman-kalman.html" class="read-link">Read Analysis &rarr;</a>
+                </div>
 
-            <div class="blog-card" data-category="math">
-                <span class="badge badge-math">Mathematics</span>
-                <h3>The Geometry of Koopman Operators</h3>
-                <p>Visualizing the infinite-dimensional lift of nonlinear systems into linear manifolds.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
+                <div class="blog-card mb-6" data-category="math">
+                    <span class="badge badge-math">Scalability</span>
+                    <h3>Master-Slave Architecture</h3>
+                    <p>Scaling from 48V Golf Carts to 800V Logistic Fleets using distributed ESP32 nodes.</p>
+                    <a href="#" class="read-link">Read Analysis &rarr;</a>
+                </div>
             </div>
-
-            <div class="blog-card" data-category="grid">
-                <span class="badge badge-grid">Energy Grid</span>
-                <h3>Grid Resilience in Extreme Weather</h3>
-                <p>Adapting control algorithms to handle rapid fluctuations from storm-induced PV drops.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="flight">
-                <span class="badge badge-flight">Flight Control</span>
-                <h3>Autonomous Landing on Moving Platforms</h3>
-                <p>Implementing Model Predictive Control (MPC) for high-precision drone recovery.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="math">
-                <span class="badge badge-math">Mathematics</span>
-                <h3>Lyapunov Stability in Neural Networks</h3>
-                <p>Proving stability guarantees for AI-driven control systems mathematically.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-             <div class="blog-card" data-category="grid">
-                <span class="badge badge-grid">Energy Grid</span>
-                <h3>Grid Resilience in Extreme Weather</h3>
-                <p>Adapting control algorithms to handle rapid fluctuations from storm-induced PV drops.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="flight">
-                <span class="badge badge-flight">Flight Control</span>
-                <h3>Autonomous Landing on Moving Platforms</h3>
-                <p>Implementing Model Predictive Control (MPC) for high-precision drone recovery.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="math">
-                <span class="badge badge-math">Mathematics</span>
-                <h3>Lyapunov Stability in Neural Networks</h3>
-                <p>Proving stability guarantees for AI-driven control systems mathematically.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-                         <div class="blog-card" data-category="grid">
-                <span class="badge badge-grid">Energy Grid</span>
-                <h3>Grid Resilience in Extreme Weather</h3>
-                <p>Adapting control algorithms to handle rapid fluctuations from storm-induced PV drops.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="flight">
-                <span class="badge badge-flight">Flight Control</span>
-                <h3>Autonomous Landing on Moving Platforms</h3>
-                <p>Implementing Model Predictive Control (MPC) for high-precision drone recovery.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="math">
-                <span class="badge badge-math">Mathematics</span>
-                <h3>Lyapunov Stability in Neural Networks</h3>
-                <p>Proving stability guarantees for AI-driven control systems mathematically.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-           <div class="blog-card" data-category="grid">
-                <span class="badge badge-grid">Energy Grid</span>
-                <h3>Grid Resilience in Extreme Weather</h3>
-                <p>Adapting control algorithms to handle rapid fluctuations from storm-induced PV drops.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="flight">
-                <span class="badge badge-flight">Flight Control</span>
-                <h3>Autonomous Landing on Moving Platforms</h3>
-                <p>Implementing Model Predictive Control (MPC) for high-precision drone recovery.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
-            <div class="blog-card" data-category="math">
-                <span class="badge badge-math">Mathematics</span>
-                <h3>Lyapunov Stability in Neural Networks</h3>
-                <p>Proving stability guarantees for AI-driven control systems mathematically.</p>
-                <a href="#" class="read-link">Read Analysis &rarr;</a>
-            </div>
-
 
         </div> </div>
 
-    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+    <footer class="border-t border-slate-800 py-12 bg-slate-950 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
             <p class="text-slate-500 mb-8">
@@ -210,81 +209,21 @@
     </script>
 
     <script>
-    // 1. ฟังก์ชันกรองหมวดหมู่ (Filter)
-    function filterSelection(category) {
-        var cards = document.getElementsByClassName("blog-card");
-        var buttons = document.getElementsByClassName("filter-btn");
-
-        // Loop จัดการแสดงผล Card
-        for (var i = 0; i < cards.length; i++) {
-            var cardCategory = cards[i].getAttribute("data-category");
-            if (category == 'all' || category == cardCategory) {
-                cards[i].style.display = "flex"; 
-                // Animation
-                cards[i].classList.remove("show");
-                void cards[i].offsetWidth; 
-                cards[i].classList.add("show");
-            } else {
-                cards[i].style.display = "none"; 
-            }
-        }
-
-        // Loop จัดการสีปุ่ม (Active State)
-        // ** แก้ไข: เพิ่มการเช็คว่ามี event จริงหรือไม่ เพื่อกัน Error ตอนโหลดหน้าเว็บ **
-        if (typeof event !== 'undefined' && event.type === 'click') {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove("active");
-            }
-            event.currentTarget.classList.add("active");
-        }
-    }
-
-    // 2. ฟังก์ชันค้นหา (Search)
     function searchBlog() {
         let input = document.getElementById('searchInput').value.toLowerCase();
         let cards = document.getElementsByClassName('blog-card');
         
-        // ถ้าเริ่มพิมพ์ ให้รีเซ็ตปุ่ม Filter เป็น All อัตโนมัติ
-        if(input.length > 0) {
-            let allBtn = document.querySelector('.filter-btn'); 
-            // ไม่ต้อง click() เพื่อเลี่ยง loop, แค่ให้มั่นใจว่าหาเจอทุกอัน
-            // หรือถ้าอยากให้ปุ่ม All active ด้วย:
-             if(allBtn && !allBtn.classList.contains('active')) {
-                 // รีเซ็ตปุ่ม Active ให้ไปอยู่ที่ All
-                 let buttons = document.getElementsByClassName("filter-btn");
-                 for (let btn of buttons) btn.classList.remove("active");
-                 allBtn.classList.add("active");
-             }
-        }
-
         for (let i = 0; i < cards.length; i++) { 
-            let title = cards[i].getElementsByTagName("h3")[0];
-            let desc = cards[i].getElementsByTagName("p")[0];
+            let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+            let desc = cards[i].getElementsByTagName("p")[0].innerText.toLowerCase();
             
-            let titleText = title.textContent || title.innerText;
-            let descText = desc.textContent || desc.innerText;
-            let keywords = cards[i].getAttribute("data-keywords") || ""; 
-
-            // ** แก้ไข: เพิ่มเงื่อนไข else เพื่อซ่อนการ์ดที่ไม่ตรงกับคำค้นหา **
-            if (titleText.toLowerCase().indexOf(input) > -1 || 
-                descText.toLowerCase().indexOf(input) > -1 ||
-                keywords.toLowerCase().indexOf(input) > -1 ) { 
+            if (title.indexOf(input) > -1 || desc.indexOf(input) > -1) { 
                 cards[i].style.display = "flex";
             } else {
-                cards[i].style.display = "none"; // ต้องมีบรรทัดนี้ ไม่งั้นมันจะไม่หายไปครับ!
+                cards[i].style.display = "none";
             }
         }
     } 
-
-    // 3. เรียกทำงานครั้งแรกให้โชว์ทั้งหมด (ไม่ต้องส่ง event)
-    window.onload = function() {
-        // เรียกฟังก์ชันแบบ manual โดยไม่ผ่าน onclick เพื่อไม่ให้ error
-        var cards = document.getElementsByClassName("blog-card");
-        for (var i = 0; i < cards.length; i++) {
-            cards[i].style.display = "flex";
-            cards[i].classList.add("show");
-        }
-    };
     </script>
 </body>
 </html>
