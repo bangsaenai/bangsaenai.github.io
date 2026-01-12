@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>THERMAL-001: Zero Overshoot Control - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7340358979396049" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="images/logo.png" alt="Bangsaen AI Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-green-400">
+                            Bangsaen<span class="text-green-500 group-hover:text-green-300">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="blog.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="about.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">About Us</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center mt-20">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="text-orange-400 font-bold tracking-wider text-xs uppercase">Thermal Control Research</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white">
+                Zero Overshoot: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">The Predictive Physics</span>
+            </h1>
+            <p class="text-lg text-slate-400">
+                Solving the "impossible" thermal inertia paradox using Koopman Operators and Internal Model Control on low-cost hardware.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 6 min read</span>
+                <span>•</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: THERMAL-001</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-3xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-32 bg-slate-800/50 rounded flex items-center justify-center mb-12 border border-slate-700 border-dashed text-slate-600">
+             <span class="text-xs">ADVERTISEMENT</span>
+        </div>
+
+        <div class="prose text-lg space-y-8 text-slate-300">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">C</span>ontrolling temperature in high-inertia systems (like industrial ovens) is notoriously difficult. It’s like driving a heavy truck on ice: if you wait until you see the stop sign to hit the brakes, you’ve already crashed.
+            </p>
+            <p>
+                Standard PID controllers drive "blind"—reacting only to current errors. This leads to two painful outcomes: <strong>Overshoot</strong> (burning the product) or <strong>Slow Rise Time</strong> (wasting production time).
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">1. The Problem: Driving Blind</h2>
+            <p>
+                We analyzed data from a standard industrial oven with a 60-second thermal delay. The PID controller, unaware of the delay, continues to apply 100% power until the temperature hits the target. By then, the residual heat in the heating elements pushes the temperature far beyond the setpoint (120°C).
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">2. The Solution: Bangsaen KKS (Predictive Cut-off)</h2>
+            <p>
+                Instead of reacting, our <strong>KKS Algorithm</strong> (based on Koopman Operator theory) builds an "Internal Model" of the oven. It predicts the future temperature 60 seconds ahead.
+            </p>
+            <p>
+                The graph below proves the difference. Look at the <span class="text-blue-400 font-bold">Blue Dashed Line</span>. This is the AI's prediction.
+            </p>
+
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0b0e14]">
+                <img src="images/thermal/kks_final_proof_cutoff.png" alt="KKS Prediction vs PID Overshoot" class="w-full h-auto"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-chart-line mr-2"></i> <strong>Figure 1: The "Money Saving Gap".</strong> Notice how KKS (Green) cuts power to 0% at minute 25 because its Prediction (Blue) hit the target, while PID (Red) keeps heating blindly.
+                </figcaption>
+            </figure>
+            
+
+            <p>
+                By cutting power <strong>before</strong> the target is reached (The "Money Saving Gap"), we utilize the system's own inertia to coast perfectly into the setpoint. <strong>Zero Overshoot.</strong>
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">3. Beyond On-Off: Cruise Control</h2>
+            <p>
+                A common misconception is that this is just a "Bang-Bang" (On-Off) controller. It is not. Once the landing is complete, KKS shifts into a steady-state hold mode.
+            </p>
+
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0b0e14]">
+                <img src="images/thermal/kks_vs_onoff_final.png" alt="KKS Steady State vs On-Off" class="w-full h-auto"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-wave-square mr-2"></i> <strong>Figure 2: Cruise Control.</strong> Unlike standard On-Off controls that oscillate forever (Red), KKS stabilizes at a holding power (Green), creating a flat-line temperature profile.
+                </figcaption>
+            </figure>
+
+            <blockquote class="border-l-4 border-orange-500 pl-4 italic text-slate-400 my-6">
+                "It combines the speed of Bang-Bang control with the stability of PID, governed by a predictive brain."
+            </blockquote>
+
+            <p>
+                This technology runs efficiently on standard STM32 microcontrollers, proving that you don't need expensive hardware to achieve premium control performance.
+            </p>
+
+        </div>
+
+        <div class="my-12 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-orange-500/30 text-center">
+            <i class="fas fa-microchip text-orange-400 text-4xl mb-4"></i>
+            <h3 class="text-white text-2xl font-bold mb-2">Upgrade Your Hardware</h3>
+            <p class="text-slate-400 mb-6">Interested in testing the Bangsaen KKS firmware on your equipment?</p>
+            <a href="contact.html" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-orange-500/20">
+                Contact Our Engineering Team
+            </a>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
+            <p class="text-slate-500 mb-8">Bangsaen AI Research Laboratory &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
+</body>
+</html>
