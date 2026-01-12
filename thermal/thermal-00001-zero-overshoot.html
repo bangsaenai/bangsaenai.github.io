@@ -105,12 +105,12 @@
             </p>
 
             <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0b0e14]">
-                <img src="images/thermal/kks_final_proof_cutoff.png" alt="KKS Prediction vs PID Overshoot" class="w-full h-auto"> 
+                <img src="images/kks_final_proof_cutoff.png" alt="KKS Prediction vs PID Overshoot" class="w-full h-auto"> 
+                
                 <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
                     <i class="fas fa-chart-line mr-2"></i> <strong>Figure 1: The "Money Saving Gap".</strong> Notice how KKS (Green) cuts power to 0% at minute 25 because its Prediction (Blue) hit the target, while PID (Red) keeps heating blindly.
                 </figcaption>
             </figure>
-            
 
             <p>
                 By cutting power <strong>before</strong> the target is reached (The "Money Saving Gap"), we utilize the system's own inertia to coast perfectly into the setpoint. <strong>Zero Overshoot.</strong>
@@ -122,7 +122,8 @@
             </p>
 
             <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0b0e14]">
-                <img src="images/thermal/kks_vs_onoff_final.png" alt="KKS Steady State vs On-Off" class="w-full h-auto"> 
+                <img src="images/kks_vs_onoff_final.png" alt="KKS Steady State vs On-Off" class="w-full h-auto"> 
+                
                 <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
                     <i class="fas fa-wave-square mr-2"></i> <strong>Figure 2: Cruise Control.</strong> Unlike standard On-Off controls that oscillate forever (Red), KKS stabilizes at a holding power (Green), creating a flat-line temperature profile.
                 </figcaption>
