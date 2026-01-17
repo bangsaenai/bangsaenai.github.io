@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
+
+    <title>TRANSFORMER-00005: The End of Tap Changers - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite; 
+        }
+        .ticker-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-indigo-500">
+                            Bangsaen<span class="text-indigo-600 group-hover:text-indigo-400">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-indigo-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-gray-300 hover:text-indigo-400 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-indigo-400 text-sm font-medium transition-colors">About Us</a>
+                    <a href="../contact.html" class="text-gray-300 hover:text-indigo-400 text-sm font-medium transition-colors">Contact</a>
+                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-indigo-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../index.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Home</a>
+                <a href="../blog.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Research Blog</a>
+                <a href="../about.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">About Us</a>
+                <a href="../contact.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center">
+        <div class="pt-32 pb-12 bg-[#0b0e14] text-center">
+            <span class="text-indigo-500 font-bold tracking-wider text-xs uppercase">Power Quality Series</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-4 leading-tight">
+                The End of the Tap Changer: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Software-Defined Voltage Reconstruction</span>
+            </h1>
+            <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+                Why wait 5 seconds for a mechanical gear to shift? See how Koopman Math reconstructs the perfect sine wave in 50 microseconds.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 3 min read</span>
+                <span>•</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: TRANSFORMER-00005</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-12 bg-indigo-900/20 border-y border-indigo-500/50 flex items-center overflow-hidden mb-12 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-indigo-400 tracking-widest font-bold">
+                [GRID MONITOR] VOLTAGE SAG DETECTED (0.7 p.u.) /// MECHANICAL OLTC: TOO SLOW /// SENSITIVE LOAD AT RISK /// SERVER FARM INSTABILITY DETECTED /// ACTIVATING SERIES INJECTION /// 
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-8">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">I</span>n the digital age, a "Voltage Sag" is the silent killer. It doesn't always blackout the grid, but it resets PLCs, crashes servers, and halts production lines.
+            </p>
+            <p>
+                The industry standard solution is the <strong>On-Load Tap Changer (OLTC)</strong>—a 100-year-old mechanical system that physically moves contacts inside a transformer to change turns. It is heavy, maintenance-heavy, and most importantly: <strong>It is too slow.</strong>
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">No Moving Parts. Just Math.</h2>
+            <p>
+                Bangsaen AI replaces the mechanical tap changer with a <strong>Series Voltage Injection</strong> algorithm. Instead of switching gears, our software measures the sag trajectory and instantly "fills in the gap" by injecting the missing voltage magnitude.
+            </p>
+            
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-indigo-500/50 bg-[#0b0e14]">
+                <img src="../images/scenario5_voltage_sag.png" alt="Voltage Sag Correction Graph" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-wave-square mr-2 text-indigo-400"></i> <strong>Figure 1: The Difference is Time.</strong> Top: Mechanical OLTC reacts too late (Red). Bottom: Bangsaen AI (Cyan) reconstructs a perfect 1.0 p.u. output instantly.
+                </figcaption>
+            </figure>
+
+            <div class="w-full h-12 bg-cyan-950/30 border-y border-cyan-900/50 flex items-center overflow-hidden my-12 ticker-container relative">
+                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                <div class="animate-marquee font-mono text-sm text-cyan-400 tracking-widest">
+                    >>> KOOPMAN OPERATOR ACTIVE >>> CALCULATING MISSING VECTOR >>> INJECTING +0.3 P.U. SERIES VOLTAGE >>> WAVEFORM RECONSTRUCTION: 100% >>> NO TRANSIENTS OBSERVED >>>
+                </div>
+            </div>
+
+            <blockquote class="border-l-4 border-indigo-500 pl-4 italic text-slate-400 my-6">
+                "We don't fix the grid. We immunize your equipment against it."
+            </blockquote>
+
+            <p>
+                As seen in the graph, when the grid (Gray line) drops to 70%, the Bangsaen AI controller (Cyan line) detects the deviation within microseconds. It doesn't wait. It injects the precise counter-voltage needed to maintain a perfect 1.0 p.u. output.
+            </p>
+            <p>
+                For the load downstream, the sag never happened. This is <strong>Software-Defined Power Quality</strong>.
+            </p>
+        </div>
+
+        <hr class="border-slate-800 my-12">
+
+        <div class="my-8 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-indigo-500/30 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-indigo-500 blur-3xl opacity-20"></div>
+            
+            <i class="fas fa-microchip text-indigo-400 text-4xl mb-4"></i>
+            <h3 class="text-white text-2xl font-bold mb-2">Manufacturer Notice</h3>
+            <p class="text-slate-400 mb-6">Stop building mechanical failure points into your products. License our voltage reconstruction core today.</p>
+            <a href="../contact.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/20">
+                Integrate This Tech
+            </a>
+        </div>
+
+        <div class="w-full h-12 bg-green-950/30 border-y border-green-900/50 flex items-center overflow-hidden mt-12 mb-6 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-green-400 tracking-widest">
+                STATUS: VOLTAGE STABLE /// 1.0 P.U. MAINTAINED /// NO MOVING PARTS /// TAP CHANGER: DISABLED /// EQUIPMENT PROTECTED ///
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-300 mb-4">Adapt or be Left Behind.</h2>
+            <p class="text-slate-500 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Defining the future of Software-Defined Power Grids.
+            </p>
+            <div class="text-slate-600 text-sm">
+                <a href="../privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                <a href="../terms.html" class="hover:text-white mx-2">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
+    
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
