@@ -30,11 +30,29 @@
             background: linear-gradient(45deg, rgba(220, 38, 38, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
             border-left: 4px solid #dc2626;
         }
+
+        /* --- เพิ่มส่วนนี้เพื่อให้ตัวหนังสือวิ่งครับ --- */
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .marquee-wrapper {
+            display: flex;
+            width: 200%; /* ขยายความกว้างเพื่อให้บรรจุข้อความ 2 ชุด */
+            animation: marquee-scroll 20s linear infinite; /* ปรับความเร็วตรง 20s ได้ครับ */
+        }
+        
+        .marquee-content {
+            width: 50%; /* แบ่งครึ่งให้ข้อความแต่ละชุด */
+            display: flex;
+            justify-content: space-around; /* จัดระยะห่าง */
+        }
+        /* --------------------------------------- */
+
     </style>
 </head>
-<body class="bg-[#0a0a0a] text-white">
-
-    <nav class="navbar border-b border-gray-800 bg-[#050505]/90 backdrop-blur-md sticky top-0 z-50">
+<body class="bg-[#0a0a0a] text-white overflow-x-hidden"> <nav class="navbar border-b border-gray-800 bg-[#050505]/90 backdrop-blur-md sticky top-0 z-50">
         <div class="nav-container max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="nav-logo text-2xl font-bold tracking-tighter">Bangsaen<span class="text-cyan-400">AI</span></a>
             <div class="nav-menu hidden md:flex space-x-8">
@@ -51,10 +69,15 @@
     </nav>
 
     <div class="min-h-screen flex flex-col">
-        <div class="bg-black py-4 overflow-hidden border-b border-gray-800">
-            <div class="whitespace-nowrap animate-marquee">
-                <span class="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-widest mx-4">Dread It. Run from it. Destiny arrives all the same.</span>
-                <span class="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-widest mx-4">Dread It. Run from it. Destiny arrives all the same.</span>
+        
+        <div class="bg-black py-4 border-b border-gray-800 overflow-hidden relative z-10">
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <span class="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-widest whitespace-nowrap">Dread It. Run from it. Destiny arrives all the same.</span>
+                </div>
+                <div class="marquee-content">
+                    <span class="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-widest whitespace-nowrap">Dread It. Run from it. Destiny arrives all the same.</span>
+                </div>
             </div>
         </div>
 
