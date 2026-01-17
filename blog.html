@@ -162,18 +162,23 @@
                     <i class="fa-solid fa-bolt text-yellow-500 mr-2"></i> Energy Systems
                 </div>
 
-                <div class="blog-card mb-6" data-category="grid">
-    <span class="badge badge-tech bg-sky-500/10 text-sky-400 border-sky-500/20">Wind Energy</span>
+               <div class="blog-card mb-6 relative overflow-hidden group" data-category="grid">
+    <div class="absolute -top-10 -right-10 w-40 h-40 bg-red-500/10 blur-3xl rounded-full transition-all duration-500 group-hover:bg-red-500/20"></div>
     
-    <h3 class="text-xl font-bold text-white mt-2">The Phantom Inertia: Stabilizing Wind Farms</h3>
+    <span class="badge badge-tech bg-red-500/10 text-red-400 border-red-500/20 relative z-10">
+        <i class="fas fa-exclamation-triangle mr-1"></i> Grid Critical
+    </span>
     
-    <p class="text-slate-400 text-sm mt-2">
-        Modern wind turbines are decoupled from the grid via inverters, causing "Zero Inertia" instability. 
-        See how Koopman creates "Synthetic Mass" to let turbines react to frequency drifts like heavy steam generators.
+    <h3 class="text-xl font-bold text-white mt-3 relative z-10 group-hover:text-red-400 transition-colors">
+        Scenario 4: The Anatomy of a Blackout
+    </h3>
+    
+    <p class="text-slate-400 text-sm mt-3 relative z-10 leading-relaxed">
+        Evidence confirmed. See the exact moment standard "Zero-Inertia" inverters crash the grid during a load step. Witness the difference between a system trip and a Koopman-stabilized ride-through.
     </p>
     
-    <a href="#" class="read-link mt-4 inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors opacity-70 cursor-not-allowed">
-        Simulation Coming Soon <i class="fas fa-lock ml-2 text-xs"></i>
+    <a href="transformer-00004-grid-collapse.html" class="read-link mt-6 inline-flex items-center text-red-400 hover:text-red-300 transition-colors relative z-10 font-medium">
+        View Critical Simulation <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
     </a>
 </div>
                 
