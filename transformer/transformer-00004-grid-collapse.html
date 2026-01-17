@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FFGV1SXG9J');</script>
+    
+    <title>Scenario 4: Grid Frequency Collapse - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0e14; color: #e2e8f0; }
+        h1, h2, h3, h4 { letter-spacing: -0.02em; }
+        .tech-accent { color: #00f2ff; }
+        .danger-accent { color: #ff3333; }
+        .code-font { font-family: 'Fira Code', monospace; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="navbar" style="background: rgba(11, 14, 20, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="nav-logo text-2xl font-extrabold tracking-tight"><span class="text-white">Bangsaen</span><span class="tech-accent">AI</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-slate-400 hover:text-white transition-colors">Home</a>
+                <a href="blog.html" class="nav-link text-white border-b-2 border-tech-accent">Research Blog</a>
+                <a href="about.html" class="nav-link text-slate-400 hover:text-white transition-colors">The Manifesto</a>
+                <a href="contact.html" class="nav-link text-slate-400 hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20">
+        <article class="max-w-4xl mx-auto px-4 sm:px-6">
+            
+            <header class="mb-12 text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-red-500/10 text-red-400 text-sm font-mono mb-4 border border-red-500/20">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>GRID CRITICAL
+                </span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                    Scenario 4: The Anatomy of a <span class="danger-accent">Blackout</span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                    Why standard "Zero-Inertia" inverters fail catastrophically during load steps, and the evidence for Software-Defined Inertia.
+                </p>
+            </header>
+
+            <div class="mb-16 relative group rounded-2xl overflow-hidden border border-red-500/30 shadow-[0_0_50px_rgba(255,51,51,0.15)]">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0b0e14] via-transparent to-transparent opacity-50 z-10"></div>
+                <img src="images/scenario4_v2_blackout.png" alt="Grid Frequency Collapse Simulation Graph" class="w-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700">
+                
+                <div class="absolute bottom-6 left-6 right-6 z-20 p-6 bg-[#0b0e14]/80 backdrop-blur-md rounded-xl border border-white/10">
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                        <i class="fas fa-chart-line mr-2 text-red-500"></i> The Evidence: Blackout Confirmed
+                    </h3>
+                    <p class="text-sm text-slate-300">
+                        <span class="text-red-400 font-bold">Red Line (Standard Inverter):</span> Crashes through the 49.0Hz trip limit instantly due to lack of inertia. Result: System Blackout.<br>
+                        <span class="text-cyan-400 font-bold">Cyan Line (Bangsaen AI):</span> Uses Koopman Operator to generate virtual inertia, dampening the crash and riding through the fault.
+                    </p>
+                </div>
+            </div>
+
+            <div class="prose prose-lg prose-invert max-w-none text-slate-300 space-y-8">
+                
+                <section>
+                    <h2 class="text-2xl font-bold text-white">The Zero-Inertia Trap</h2>
+                    <p>
+                        The graph above is the nightmare scenario for every grid operator from Iowa to Shanghai. Modern inverter-based resources (solar, wind, battery) are electrically "weightless." When a sudden load change occurs (a "load step"), there is no physical mass to resist the change in frequency.
+                    </p>
+                    <p>
+                        The result, as shown by the <span class="text-red-400 font-bold">Red Line</span>, is a freefall. The Rate of Change of Frequency (RoCoF) is so high that protection relays trip instantly, causing a localized or cascading blackout.
+                    </p>
+                </section>
+
+                <section class="bg-[#111827] p-8 rounded-2xl border-l-4 border-cyan-500 my-12">
+                    <h3 class="text-xl font-bold text-white mb-4">The Koopman Defense: Virtual Mass</h3>
+                    <p>
+                        Bangsaen AI does not use bigger capacitors or heavy flywheels. We use advanced mathematics.
+                    </p>
+                    <p>
+                        Our <strong>Software-Defined Core</strong> runs a real-time Koopman Operator model that predicts the frequency trajectory ahead of time. When it detects an imminent crash, it instantly alters the inverter's control parameters to inject localized active power, creating a <span class="tech-accent font-bold">"Virtual Inertia"</span> response.
+                    </p>
+                    <p>
+                        As seen in the <span class="text-cyan-400 font-bold">Cyan Line</span>, this dampens the fall, keeps the frequency above the 49.0Hz critical limit, and allows the grid to stabilize without disconnecting.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white">The Ultimatum</h2>
+                    <p>
+                        This simulation proves that hardware-only solutions have reached their limit. To achieve a stable, 100% renewable grid, intelligence must move to the edge.
+                    </p>
+                    <p class="font-bold text-white">
+                        The question for manufacturers is no longer "Can we afford this software?" It is "Can we afford another blackout?"
+                    </p>
+                </section>
+
+            </div>
+
+            <footer class="mt-20 pt-12 border-t border-white/10 text-center">
+                <h3 class="text-2xl font-bold text-white mb-6">Secure Your Grid Infrastructure</h3>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                    Stop relying on brittle, zero-inertia hardware. Integrate Bangsaen AI's Koopman Core for true grid resilience.
+                </p>
+                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                    Contact for Licensing <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </footer>
+
+        </article>
+    </main>
+
+</body>
+</html>
