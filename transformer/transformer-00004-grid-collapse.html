@@ -4,115 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FFGV1SXG9J');</script>
-    
-    <title>Scenario 4: Grid Frequency Collapse - Bangsaen AI</title>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
+
+    <title>Transformer-00004: The Anatomy of a Blackout - Bangsaen AI</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0b0e14; color: #e2e8f0; }
-        h1, h2, h3, h4 { letter-spacing: -0.02em; }
-        .tech-accent { color: #00f2ff; }
-        .danger-accent { color: #ff3333; }
-        .code-font { font-family: 'Fira Code', monospace; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite; 
+        }
+        .ticker-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
 
-    <nav class="navbar" style="background: rgba(11, 14, 20, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-        <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-            <a href="index.html" class="nav-logo text-2xl font-extrabold tracking-tight"><span class="text-white">Bangsaen</span><span class="tech-accent">AI</span></a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link text-slate-400 hover:text-white transition-colors">Home</a>
-                <a href="blog.html" class="nav-link text-white border-b-2 border-tech-accent">Research Blog</a>
-                <a href="about.html" class="nav-link text-slate-400 hover:text-white transition-colors">The Manifesto</a>
-                <a href="contact.html" class="nav-link text-slate-400 hover:text-white transition-colors">Contact</a>
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-red-500">
+                            Bangsaen<span class="text-red-600 group-hover:text-red-400">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-red-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="blog.html" class="text-gray-300 hover:text-red-400 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="about.html" class="text-gray-300 hover:text-red-400 text-sm font-medium transition-colors">About Us</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-red-400 text-sm font-medium transition-colors">Contact</a>
+                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Home</a>
+                <a href="blog.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Research Blog</a>
+                <a href="about.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">About Us</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-32 pb-20">
-        <article class="max-w-4xl mx-auto px-4 sm:px-6">
-            
-            <header class="mb-12 text-center">
-                <span class="inline-block py-1 px-3 rounded-full bg-red-500/10 text-red-400 text-sm font-mono mb-4 border border-red-500/20">
-                    <i class="fas fa-exclamation-triangle mr-2"></i>GRID CRITICAL
-                </span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-                    Scenario 4: The Anatomy of a <span class="danger-accent">Blackout</span>
-                </h1>
-                <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-                    Why standard "Zero-Inertia" inverters fail catastrophically during load steps, and the evidence for Software-Defined Inertia.
-                </p>
-            </header>
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center">
+        <div class="pt-32 pb-12 bg-[#0b0e14] text-center">
+            <span class="text-red-500 font-bold tracking-wider text-xs uppercase">Grid Stability & Inertia</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-4 leading-tight">
+                Scenario 4: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">The Anatomy of a Blackout</span>
+            </h1>
+            <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+                Evidence confirmed. Why standard "Zero-Inertia" inverters crash during load steps, and how Software-Defined Inertia saves the grid.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 4 min read</span>
+                <span>•</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: TRANSFORMER-00004</span>
+            </div>
+        </div>
+    </header>
 
-            <div class="mb-16 relative group rounded-2xl overflow-hidden border border-red-500/30 shadow-[0_0_50px_rgba(255,51,51,0.15)]">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0b0e14] via-transparent to-transparent opacity-50 z-10"></div>
-                <img src="images/scenario4_v2_blackout.png" alt="Grid Frequency Collapse Simulation Graph" class="w-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700">
-                
-                <div class="absolute bottom-6 left-6 right-6 z-20 p-6 bg-[#0b0e14]/80 backdrop-blur-md rounded-xl border border-white/10">
-                    <h3 class="text-lg font-bold text-white mb-2 flex items-center">
-                        <i class="fas fa-chart-line mr-2 text-red-500"></i> The Evidence: Blackout Confirmed
-                    </h3>
-                    <p class="text-sm text-slate-300">
-                        <span class="text-red-400 font-bold">Red Line (Standard Inverter):</span> Crashes through the 49.0Hz trip limit instantly due to lack of inertia. Result: System Blackout.<br>
-                        <span class="text-cyan-400 font-bold">Cyan Line (Bangsaen AI):</span> Uses Koopman Operator to generate virtual inertia, dampening the crash and riding through the fault.
-                    </p>
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-12 bg-red-900/20 border-y border-red-500/50 flex items-center overflow-hidden mb-12 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-red-400 tracking-widest font-bold">
+                [CRITICAL ALERT] LOAD STEP DETECTED /// FREQUENCY DROPPING FAST /// RoCoF > 2.0 HZ/S /// ZERO INERTIA FAILURE /// GRID TRIP IMMINENT /// BLACKOUT CONFIRMED /// REPEATING: BLACKOUT CONFIRMED ///
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-8">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">T</span>his is the moment of death for a modern power grid. When a large load turns on (or generation drops), the grid needs "Inertia" to resist the change.
+            </p>
+            <p>
+                Old steam turbines had massive steel rotors that stored kinetic energy. Modern solar and wind inverters have <strong>zero moving parts</strong> and <strong>zero inertia</strong>. They are electrically "weightless." When the load hits, they don't fight back—they just collapse.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">The Evidence: "Blackout Confirmed"</h2>
+            <p>
+                We ran a simulation comparing a standard Grid-Tie Inverter against Bangsaen AI’s Koopman-controlled core. The results are undeniable.
+            </p>
+            
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-red-500/50 bg-[#0b0e14]">
+                <img src="images/transfermer/scenario4_v2_blackout.png" alt="Grid Frequency Collapse Graph" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-chart-line mr-2 text-red-500"></i> <strong>Figure 1: The Kill Shot.</strong> The <span class="text-red-400">Red Line</span> (Standard Inverter) crashes through the 49.0Hz limit instantly. The <span class="text-cyan-400">Cyan Line</span> (Bangsaen AI) creates "Virtual Mass" to ride through safely.
+                </figcaption>
+            </figure>
+
+            <div class="w-full h-12 bg-cyan-950/30 border-y border-cyan-900/50 flex items-center overflow-hidden my-12 ticker-container relative">
+                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                <div class="animate-marquee font-mono text-sm text-cyan-400 tracking-widest">
+                    >>> KOOPMAN OPERATOR ACTIVE >>> PREDICTING TRAJECTORY >>> INJECTING SYNTHETIC INERTIA (H=6.0s) >>> DAMPING OSCILLATION >>> STABILIZING FREQUENCY AT 49.8 HZ >>> SYSTEM HOLDING >>>
                 </div>
             </div>
 
-            <div class="prose prose-lg prose-invert max-w-none text-slate-300 space-y-8">
-                
-                <section>
-                    <h2 class="text-2xl font-bold text-white">The Zero-Inertia Trap</h2>
-                    <p>
-                        The graph above is the nightmare scenario for every grid operator from Iowa to Shanghai. Modern inverter-based resources (solar, wind, battery) are electrically "weightless." When a sudden load change occurs (a "load step"), there is no physical mass to resist the change in frequency.
-                    </p>
-                    <p>
-                        The result, as shown by the <span class="text-red-400 font-bold">Red Line</span>, is a freefall. The Rate of Change of Frequency (RoCoF) is so high that protection relays trip instantly, causing a localized or cascading blackout.
-                    </p>
-                </section>
+            <blockquote class="border-l-4 border-cyan-500 pl-4 italic text-slate-400 my-6">
+                "The Red Line is what you are buying today. The Cyan Line is what you need to survive tomorrow. It’s not magic; it’s math."
+            </blockquote>
 
-                <section class="bg-[#111827] p-8 rounded-2xl border-l-4 border-cyan-500 my-12">
-                    <h3 class="text-xl font-bold text-white mb-4">The Koopman Defense: Virtual Mass</h3>
-                    <p>
-                        Bangsaen AI does not use bigger capacitors or heavy flywheels. We use advanced mathematics.
-                    </p>
-                    <p>
-                        Our <strong>Software-Defined Core</strong> runs a real-time Koopman Operator model that predicts the frequency trajectory ahead of time. When it detects an imminent crash, it instantly alters the inverter's control parameters to inject localized active power, creating a <span class="tech-accent font-bold">"Virtual Inertia"</span> response.
-                    </p>
-                    <p>
-                        As seen in the <span class="text-cyan-400 font-bold">Cyan Line</span>, this dampens the fall, keeps the frequency above the 49.0Hz critical limit, and allows the grid to stabilize without disconnecting.
-                    </p>
-                </section>
+            <p>
+                As seen in the graph, the standard system (Red) hits the <strong>49.0 Hz Trip Limit</strong> within milliseconds. The relay detects the steep drop (RoCoF) and cuts the power to save the hardware, causing a blackout.
+            </p>
+            <p>
+                Bangsaen AI (Cyan) detects the same drop but instantly calculates a counter-force. It injects active power to "fake" the presence of a heavy generator. The grid "feels" heavy, the drop slows down, and the lights stay on.
+            </p>
+        </div>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-white">The Ultimatum</h2>
-                    <p>
-                        This simulation proves that hardware-only solutions have reached their limit. To achieve a stable, 100% renewable grid, intelligence must move to the edge.
-                    </p>
-                    <p class="font-bold text-white">
-                        The question for manufacturers is no longer "Can we afford this software?" It is "Can we afford another blackout?"
-                    </p>
-                </section>
+        <hr class="border-slate-800 my-12">
 
+        <div class="my-8 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-red-500/30 text-center">
+            <i class="fas fa-shield-alt text-red-400 text-4xl mb-4"></i>
+            <h3 class="text-white text-2xl font-bold mb-2">Don't Let Your Grid Collapse</h3>
+            <p class="text-slate-400 mb-6">Stop relying on brittle hardware. Upgrade to Software-Defined Inertia.</p>
+            <a href="contact.html" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-red-500/20">
+                Contact for Licensing
+            </a>
+        </div>
+
+        <div class="w-full h-12 bg-green-950/30 border-y border-green-900/50 flex items-center overflow-hidden mt-12 mb-6 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-green-400 tracking-widest">
+                STATUS: EVENT CLEARED /// FREQUENCY STABLE /// NO BLACKOUT /// VIRTUAL INERTIA STANDBY /// GRID RESILIENCE CONFIRMED ///
             </div>
+        </div>
 
-            <footer class="mt-20 pt-12 border-t border-white/10 text-center">
-                <h3 class="text-2xl font-bold text-white mb-6">Secure Your Grid Infrastructure</h3>
-                <p class="text-slate-400 mb-8 max-w-xl mx-auto">
-                    Stop relying on brittle, zero-inertia hardware. Integrate Bangsaen AI's Koopman Core for true grid resilience.
-                </p>
-                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
-                    Contact for Licensing <i class="fas fa-arrow-right ml-3"></i>
-                </a>
-            </footer>
+    </article>
 
-        </article>
-    </main>
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-300 mb-4">Adapt or be Left Behind.</h2>
+            <p class="text-slate-500 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Defining the future of Software-Defined Power Grids.
+            </p>
+            <div class="text-slate-600 text-sm">
+                <a href="privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white mx-2">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
+    
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 </body>
 </html>
