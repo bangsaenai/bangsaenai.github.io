@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
+
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <title>TRANSFORMER-00002: Active Harmonic Cancellation - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+        .ticker-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <img src="../images/logo.png" alt="Bangsaen AI Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-green-400">
+                            Bangsaen<span class="text-green-500 group-hover:text-green-300">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">About Us</a>
+                    <a href="../contact.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Contact</a>
+                     <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../index.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Home</a>
+                <a href="../blog.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Research Blog</a>
+                <a href="../about.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">About Us</a>
+                <a href="../contact.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center">
+        <div class="pt-32 pb-12 bg-[#0b0e14] text-center">
+            <span class="text-yellow-500 font-bold tracking-wider text-xs uppercase">Power Quality & Compliance</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-4">
+                Koopman vs. Dirty Power: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">Active Harmonic Cancellation</span>
+            </h1>
+            <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+                Cleaning up industrial grid noise (5th & 7th Harmonics) without passive filters. Using spectral decomposition to purify the sine wave.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 4 min read</span>
+                <span>•</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: TRANSFORMER-00002</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-12 bg-yellow-950/30 border-y border-yellow-900/50 flex items-center overflow-hidden mb-12 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-yellow-500 tracking-widest">
+                [GRID ALERT] HIGH THD DETECTED /// 5TH & 7TH HARMONIC RESONANCE /// VFD NOISE CRITICAL /// SENSITIVE EQUIPMENT RISK /// POWER FACTOR DEGRADING /// PASSIVE FILTERS OVERHEATING ///
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-8">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">I</span>ndustrial grids are dirty. Variable Frequency Drives (VFDs), welding machines, and archaic inverters inject "noise" into the power lines. This noise, known as <strong>Harmonics</strong>, causes motors to overheat and sensitive electronics to fail.
+            </p>
+            <p>
+                The traditional solution is to install massive capacitor banks or passive filters. They are heavy, expensive, and can accidentally create resonance that blows up the system.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">The "Anti-Noise" Solution</h2>
+            <p>
+                Instead of trying to block the noise with heavy iron, Bangsaen AI uses math to <strong>cancel it out</strong>. Think of it like noise-canceling headphones for the power grid.
+            </p>
+            <p>
+                We use the Koopman Operator to perform real-time spectral decomposition, identifying the rogue frequencies (e.g., 250Hz, 350Hz) and injecting an precise "inverse signal."
+            </p>
+            
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-yellow-900/50 bg-[#0b0e14]">
+                <img src="../images/transformer/koopman_harmonic.png" alt="Active Harmonic Cancellation Graph" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-magic mr-2 text-yellow-500"></i> <strong>Figure 1: The Magic of Math.</strong> Top: The dirty input signal (Red). Bottom: The cleaned output (Green) and the Koopman injection signal (Yellow dashed line) working to cancel the noise.
+                </figcaption>
+            </figure>
+
+            <div class="w-full h-12 bg-blue-950/30 border-y border-blue-900/50 flex items-center overflow-hidden my-12 ticker-container relative">
+                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                <div class="animate-marquee font-mono text-sm text-blue-400 tracking-widest">
+                    >>> ANALYZING SPECTRAL DENSITY >>> ISOLATING 5TH HARMONIC >>> CALCULATING INVERSE PHASE >>> INJECTING CANCELLATION WAVE >>> RECONSTRUCTING PURE SINE WAVE >>> LATENCY: 0.01ms >>>
+                </div>
+            </div>
+
+            <blockquote class="border-l-4 border-yellow-500 pl-4 italic text-slate-400 my-6">
+                "We don't need heavy filters to clean the power. We just need to whisper the exact opposite of the noise."
+            </blockquote>
+
+            <p>
+                As seen in the graph above, the yellow dashed line is the "Koopman Injection." Notice how it mirrors the jagged edges of the dirty red signal perfectly? That is active cancellation in action.
+            </p>
+        </div>
+
+        <hr class="border-slate-800 my-12">
+
+        <div class="my-8 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-yellow-500/30 text-center">
+            <i class="fas fa-wave-square text-yellow-400 text-4xl mb-4"></i>
+            <h3 class="text-white text-2xl font-bold mb-2">Got Dirty Power?</h3>
+            <p class="text-slate-400 mb-6">Send us your THD data logs. We will simulate how much "Anti-Noise" is needed to clean your grid.</p>
+            <a href="../contact.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-yellow-500/20">
+                Request THD Analysis
+            </a>
+        </div>
+
+        <div class="w-full h-12 bg-green-950/30 border-y border-green-900/50 flex items-center overflow-hidden mt-12 mb-6 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-green-400 tracking-widest">
+                SYSTEM STATUS: CLEAN /// THD: &lt; 1.0% /// POWER FACTOR: 0.99 /// HARMONICS ELIMINATED /// GRID COMPLIANCE: IEC 61000-3-2 PASSED /// BANGSAEN AI ACTIVE ///
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-300 mb-4">Clean Power. Zero Weight.</h2>
+            <p class="text-slate-500 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Advanced Signal Processing for Industrial Power Grids.
+            </p>
+            <div class="text-slate-600 text-sm">
+                <a href="../privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                <a href="../terms.html" class="hover:text-white mx-2">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
+    
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
