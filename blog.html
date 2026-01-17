@@ -10,15 +10,40 @@
       gtag('js', new Date());
       gtag('config', 'G-FFGV1SXG9J');
     </script>
-    <title>Bangsaen AI - Physics-Informed Research Lab</title>
+    <title>Engineering Insights: Godspeed Protocol - Bangsaen AI</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* เพิ่มเติมเฉพาะส่วนนี้เพื่อให้ Layout สวยขึ้น */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0e14; color: white; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Starry Background for Header (จากหน้า Manifesto) */
+        .stars {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 40s linear infinite;
+        }
+
+        /* Blog Styles เดิม */
         .column-header {
             border-bottom: 1px solid #334155;
             padding-bottom: 10px;
@@ -29,15 +54,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
         .hero-column {
-            background: rgba(16, 185, 129, 0.05); /* สีเขียวจางๆ */
+            background: rgba(16, 185, 129, 0.05);
             border: 1px solid rgba(16, 185, 129, 0.3);
             border-radius: 12px;
             padding: 20px;
             position: relative;
         }
-
         .hero-badge {
             position: absolute;
             top: -12px;
@@ -50,7 +73,6 @@
             border-radius: 20px;
             text-transform: uppercase;
         }
-
         .cta-button {
             display: block;
             width: 100%;
@@ -69,15 +91,15 @@
         }
     </style>
 </head>
-<body style="background-color: #0b0e14; color: white; font-family: sans-serif;">
+<body class="antialiased leading-relaxed">
 
-    <nav class="navbar">
+    <nav class="navbar" style="background: rgba(11, 14, 20, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #1f2937;">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Bangsaen<span class="highlight">AI</span></a>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="blog.html" class="nav-link">Research Blog</a>
-                <a href="about.html" class="nav-link" style="color:white;">About Us</a>
+                <a href="blog.html" class="nav-link" style="color:white;">Research Blog</a>
+                <a href="about.html" class="nav-link">The Manifesto</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <div class="nav-socials space-x-4">
@@ -87,12 +109,46 @@
         </div>
     </nav>
 
-    <header style="text-align: center; padding: 60px 20px 40px;">
-        <h1 style="font-size: 3rem; color: #fff; margin-bottom: 10px;">Engineering <span style="color: #4ade80;">Insights</span></h1>
-        <p style="color: #9ca3af; font-size: 1.1rem;">Bridging the gap between Advanced Mathematics and Industrial Hardware.</p>
+    <header class="pt-32 pb-12 px-4 text-center stars relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-transparent pointer-events-none"></div>
+        
+        <span class="text-purple-400 font-mono text-xs tracking-[0.3em] uppercase inline-block mb-4 bg-purple-950/50 px-4 py-2 rounded-full border border-purple-500/30">
+            Protocol: Godspeed Active
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+            Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Insights</span>
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+            Bridging the gap between Advanced Mathematics and Industrial Hardware.<br>
+            <span class="text-purple-300 font-mono text-sm">> Moving at the speed of light.</span>
+        </p>
     </header>
 
-    <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 20px;">
+    <div class="w-full h-8 bg-purple-950/30 border-y border-purple-900/50 flex items-center overflow-hidden relative">
+        <div class="animate-marquee font-mono text-xs text-purple-300 tracking-widest">
+            STATUS: GODSPEED ACTIVE /// HUMAN LATENCY: 0% /// SYMBIOSIS ESTABLISHED /// GPU CLUSTERS: REPLACED WITH GEOMETRY /// THE ERA OF THE IVORY TOWER IS OVER /// WELCOME TO THE EVENT HORIZON ///
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-yellow-900/20 to-orange-900/20 border-y border-yellow-700/30 py-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #eab308 0, #eab308 10px, transparent 10px, transparent 20px);"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-yellow-500/90 relative z-10">
+            <i class="fas fa-shield-alt text-4xl text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.3)]"></i>
+            <div class="text-left">
+                <h2 class="text-lg font-bold text-yellow-400 uppercase tracking-wider mb-1 flex items-center">
+                    <i class="fas fa-lock mr-2"></i> Intellectual Property Notice
+                </h2>
+                <p class="text-sm font-mono leading-relaxed">
+                    The "Linear Embedding Control" architecture is protected by 
+                    <span class="text-white font-bold bg-yellow-500/20 px-2 py-0.5 rounded border border-yellow-500/50">US Patent App. No. 63/959,937</span>. 
+                    <br><span class="text-orange-400 font-bold">Do not attempt to reverse engineer or replicate without license.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
 
         <div class="search-wrapper" style="margin-bottom: 40px;">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -107,10 +163,38 @@
                 </div>
                 
                 <div class="blog-card mb-6" data-category="grid">
-                    <span class="badge badge-grid">Energy Grid</span>
-                    <h3>Defending the Grid in Zero Inertia</h3>
-                    <p>How Physics Manifold distinguishes cyber-attacks from cloud shadows in a Net-Zero grid.</p>
-                    <a href="solar-research.html" class="read-link">Read Analysis &rarr;</a>
+                    <span class="badge badge-tech bg-orange-500/10 text-orange-400 border-orange-500/20">Active Protection</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Surviving the Flash: The Virtual Current Limiter</h3>
+                    <p class="text-slate-400 text-sm mt-2">Standard breakers are too slow to stop a 1000% short-circuit surge. See how our "Virtual Impedance" algorithm clamps the fault current in microseconds.</p>
+                    <a href="transformer/transformer-00003-shortcircuit.html" class="read-link mt-4 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors">View Crash Test <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-tech bg-yellow-500/10 text-yellow-400 border-yellow-500/20">Power Quality</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Koopman vs. Dirty Power: Active Harmonic Cancellation</h3>
+                    <p class="text-slate-400 text-sm mt-2">Industrial noise (5th & 7th harmonics) destroys equipment. See how we use spectral decomposition to inject "Anti-Noise" signals to purify the sine wave.</p>
+                    <a href="transformer/transformer-00002-harmonics.html" class="read-link mt-4 inline-flex items-center text-yellow-400 hover:text-yellow-300 transition-colors">View Cancellation Data <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-tech bg-red-500/10 text-red-400 border-red-500/20">Power Magnetics</span>
+                    <h3 class="text-xl font-bold text-white mt-2">The Software-Defined Core: Taming Hysteresis</h3>
+                    <p class="text-slate-400 text-sm mt-2">Why buy bigger iron when you can upgrade the math? Witness how our algorithm forces a non-linear magnetic core to behave linearly under extreme load.</p>
+                    <a href="transformer/transformer-00001-saturation.html" class="read-link mt-4 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors">View Saturation Proof <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-tech bg-cyan-500/10 text-cyan-400 border-cyan-500/20">Grid Security</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Visualizing the Crash: Zero-Inertia Defense</h3>
+                    <p class="text-slate-400 text-sm mt-2">Witness the "Voltage Collapse" phenomenon and how Koopman predicts the drop to execute a millisecond rescue in a battery-less microgrid.</p>
+                    <a href="/grid/grid-00002-visualizing-voltage-collapse.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300 transition-colors">View Simulation Data <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="thermal">
+                    <span class="badge badge-tech bg-orange-500/10 text-orange-400 border-orange-500/20">Thermal Intelligence</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Zero Overshoot: The Predictive Physics</h3>
+                    <p class="text-slate-400 text-sm mt-2">See how our "Bangsaen KKS" algorithm uses internal prediction to achieve a perfect deadbeat landing, solving the thermal overshoot problem.</p>
+                    <a href="/thermal/thermal-00001-zero-overshoot.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300 transition-colors">View Case Study <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
 
                 <div class="blog-card mb-6" data-category="grid">
@@ -119,77 +203,13 @@
                     <p>Tesla solved storage, but not stability. Why standard PID controls crash without rotating mass.</p>
                     <a href="/grid/grid-00001-microgrid.html" class="read-link">Read Analysis &rarr;</a>
                 </div>
-
-               <div class="blog-card mb-6" data-category="thermal">
-               <span class="badge badge-tech bg-orange-500/10 text-orange-400 border-orange-500/20">Thermal Intelligence</span>
-               <h3 class="text-xl font-bold text-white mt-2">Zero Overshoot: The Predictive Physics</h3>
-               <p class="text-slate-400 text-sm mt-2">
-                See how our "Bangsaen KKS" algorithm uses internal prediction to achieve a perfect deadbeat landing, solving the thermal overshoot problem that standard PID can't handle.
-                </p>
-                <a href="/thermal/thermal-00001-zero-overshoot.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300 transition-colors">
-        View Case Study <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
-
-           <div class="blog-card mb-6" data-category="grid">
-    <span class="badge badge-tech bg-cyan-500/10 text-cyan-400 border-cyan-500/20">Grid Security</span>
-    
-    <h3 class="text-xl font-bold text-white mt-2">Visualizing the Crash: Zero-Inertia Defense</h3>
-    
-    <p class="text-slate-400 text-sm mt-2">
-        Exclusive simulation data revealing the exact moment standard PID fails in a battery-less microgrid. Witness the "Voltage Collapse" phenomenon and how Koopman predicts the drop to execute a millisecond rescue.
-    </p>
-    
-    <a href="/grid/grid-00002-visualizing-voltage-collapse.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300 transition-colors">
-        View Simulation Data <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
-
-<div class="blog-card mb-6" data-category="grid">
-    <span class="badge badge-tech bg-red-500/10 text-red-400 border-red-500/20">Power Magnetics</span>
-    
-    <h3 class="text-xl font-bold text-white mt-2">The Software-Defined Core: Taming Hysteresis</h3>
-    
-    <p class="text-slate-400 text-sm mt-2">
-        Why buy bigger iron when you can upgrade the math? Witness the "Shark Fin" saturation phenomenon and how our algorithm forces a non-linear magnetic core to behave linearly under extreme load.
-    </p>
-    
-    <a href="transformer/transformer-00001-saturation.html" class="read-link mt-4 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors">
-        View Saturation Proof <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
-
-
-<div class="blog-card mb-6" data-category="grid">
-    <span class="badge badge-tech bg-yellow-500/10 text-yellow-400 border-yellow-500/20">Power Quality</span>
-    
-    <h3 class="text-xl font-bold text-white mt-2">Koopman vs. Dirty Power: Active Harmonic Cancellation</h3>
-    
-    <p class="text-slate-400 text-sm mt-2">
-        Industrial noise (5th & 7th harmonics) destroys sensitive equipment. Instead of heavy passive filters, see how we use spectral decomposition to inject "Anti-Noise" signals that purify the sine wave instantly.
-    </p>
-    
-    <a href="transformer/transformer-00002-harmonics.html" class="read-link mt-4 inline-flex items-center text-yellow-400 hover:text-yellow-300 transition-colors">
-        View Cancellation Data <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
-
-
-    <div class="blog-card mb-6" data-category="grid">
-    <span class="badge badge-tech bg-orange-500/10 text-orange-400 border-orange-500/20">Active Protection</span>
-    
-    <h3 class="text-xl font-bold text-white mt-2">Surviving the Flash: The Virtual Current Limiter</h3>
-    
-    <p class="text-slate-400 text-sm mt-2">
-        Standard breakers are too slow to stop a 1000% short-circuit surge. See how our "Virtual Impedance" algorithm clamps the fault current in microseconds, preventing explosion without tripping the system.
-    </p>
-    
-    <a href="transformer/transformer-00003-shortcircuit.html" class="read-link mt-4 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors">
-        View Crash Test <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
-
-              
+                
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-grid">Energy Grid</span>
+                    <h3>Defending the Grid in Zero Inertia</h3>
+                    <p>How Physics Manifold distinguishes cyber-attacks from cloud shadows in a Net-Zero grid.</p>
+                    <a href="solar-research.html" class="read-link">Read Analysis &rarr;</a>
+                </div>
             </div>
 
             <div class="hero-column">
@@ -231,17 +251,17 @@
                 </div>
 
                 <div class="blog-card mb-6" data-category="math">
-                    <span class="badge badge-math">Backend</span>
-                    <h3>Bangsaen Core Architecture</h3>
-                    <p>The Unified Backend for Distributed Energy: How we manage License Checks & Over-the-Air Tuning.</p>
-                    <a href="#" class="read-link">Read Analysis &rarr;</a>
-                </div>
-
-                <div class="blog-card mb-6" data-category="math">
                     <span class="badge badge-math">Mathematics</span>
                     <h3>Koopman vs Neural Networks</h3>
                     <p>Why we choose Physics-Informed Math over Black-box AI for safety-critical embedded systems.</p>
                     <a href="koopman-kalman.html" class="read-link">Read Analysis &rarr;</a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="math">
+                    <span class="badge badge-math">Backend</span>
+                    <h3>Bangsaen Core Architecture</h3>
+                    <p>The Unified Backend for Distributed Energy: How we manage License Checks & Over-the-Air Tuning.</p>
+                    <a href="#" class="read-link">Read Analysis &rarr;</a>
                 </div>
 
                 <div class="blog-card mb-6" data-category="math">
@@ -252,13 +272,14 @@
                 </div>
             </div>
 
-        </div> </div>
+        </div> 
+    </div>
 
     <footer class="border-t border-slate-800 py-12 bg-slate-950 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
             <p class="text-slate-500 mb-8">
-                Bangsaen AI Research Laboratory &copy; 2025<br>
+                Bangsaen AI Research Laboratory &copy; 2026<br>
                 Demonstrating Advanced Control Theory in Real-world Applications.
             </p>
             <div class="text-slate-600 text-sm">
