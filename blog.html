@@ -80,6 +80,9 @@
             padding: 20px;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .blog-card:hover {
             transform: translateY(-5px);
@@ -94,6 +97,7 @@
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
             display: inline-block;
+            width: fit-content;
         }
         .badge-flight { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; }
         .badge-math { background: rgba(236, 72, 153, 0.1); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; }
@@ -101,6 +105,7 @@
         
         .read-link {
             transition: all 0.3s ease;
+            margin-top: auto;
         }
         
         .search-wrapper {
@@ -357,6 +362,36 @@
                 <a href="auto/auto-00003-torque.html" class="read-link mt-6 inline-flex items-center text-indigo-400 hover:text-indigo-300 relative z-10 font-medium">Access Alpha Protocol <i class="fas fa-arrow-right ml-2"></i></a>
             </div>
         </div> 
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+            
+            <div class="blog-card mb-6 relative overflow-hidden group border-emerald-900/30 hover:border-emerald-500 transition-all duration-500" data-category="auto">
+                <div class="w-full h-48 mb-4 overflow-hidden rounded-lg border border-emerald-900/30 bg-black">
+                    <img src="images/auto/Chrono_Link.png" alt="Chrono Link Telemetry" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105 transform">
+                </div>
+                
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-600/10 blur-3xl rounded-full transition-all duration-500 group-hover:bg-emerald-500/20"></div>
+                <span class="badge badge-tech bg-emerald-900/20 text-emerald-400 border-emerald-500/30 relative z-10"><i class="fas fa-history mr-1"></i> Sensorless Digital Twin</span>
+                <h3 class="text-xl font-bold text-white mt-3 relative z-10 group-hover:text-emerald-400 transition-colors">Scenario 10: The Chrono-Link Protocol</h3>
+                <p class="text-slate-400 text-sm mt-3 relative z-10">Why use expensive LiDAR? We use the front wheels as "Tactile Scouts". A time-shifted data buffer predicts the road for the rear wheels 200ms in advance. Result: Absolute Zero Vibration.</p>
+                <a href="auto/auto-00010-chrono-link.html" class="read-link mt-6 inline-flex items-center text-emerald-400 hover:text-emerald-300 relative z-10 font-medium">View Telemetry Proof <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+
+            <div class="blog-card mb-6 relative overflow-hidden group border-slate-800 opacity-70 hover:opacity-100 transition-all duration-500" data-category="auto">
+                <span class="badge badge-tech bg-slate-800 text-slate-500 border-slate-700 relative z-10"><i class="fas fa-lock mr-1"></i> Classified</span>
+                <h3 class="text-xl font-bold text-slate-500 mt-3 relative z-10 group-hover:text-slate-300 transition-colors">Scenario 11: The Neural Drift</h3>
+                <p class="text-slate-600 text-sm mt-3 relative z-10">System Locked. Decryption key required. <br>Subject: High-Speed Autonomous Drifting Control.</p>
+                <span class="read-link mt-6 inline-flex items-center text-slate-600 cursor-not-allowed relative z-10 font-medium">Transmission Pending...</span>
+            </div>
+
+            <div class="blog-card mb-6 relative overflow-hidden group border-slate-800 opacity-70 hover:opacity-100 transition-all duration-500" data-category="auto">
+                <span class="badge badge-tech bg-slate-800 text-slate-500 border-slate-700 relative z-10"><i class="fas fa-lock mr-1"></i> Classified</span>
+                <h3 class="text-xl font-bold text-slate-500 mt-3 relative z-10 group-hover:text-slate-300 transition-colors">Scenario 12: Hyper-G Stabilization</h3>
+                <p class="text-slate-600 text-sm mt-3 relative z-10">System Locked. Decryption key required. <br>Subject: Managing fluid dynamics under extreme G-forces.</p>
+                <span class="read-link mt-6 inline-flex items-center text-slate-600 cursor-not-allowed relative z-10 font-medium">Transmission Pending...</span>
+            </div>
+
+        </div>
 
         <div class="relative py-16 mt-12">
             <div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-red-900/50"></div></div>
