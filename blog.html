@@ -341,6 +341,27 @@
                     <p class="text-slate-400 text-sm mt-2">Scaling from 48V Golf Carts to 800V Logistic Fleets using distributed ESP32 nodes.</p>
                     <a href="#" class="read-link mt-4 inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors">Read Analysis &rarr;</a>
                 </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-tech bg-cyan-500/10 text-cyan-400 border-cyan-500/20">Grid Security</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Visualizing the Crash</h3>
+                    <p class="text-slate-400 text-sm mt-2">Witness the "Voltage Collapse" phenomenon and how Koopman predicts the drop.</p>
+                    <a href="/grid/grid-00002-visualizing-voltage-collapse.html" class="read-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">View Data <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-grid">Grid Stability</span>
+                    <h3 class="text-xl font-bold text-white mt-2">The Zero-Inertia Paradox</h3>
+                    <p class="text-slate-400 text-sm mt-2">Tesla solved storage, but not stability. Why standard PID controls crash without rotating mass.</p>
+                    <a href="/grid/grid-00001-microgrid.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300 transition-colors">Read Analysis &rarr;</a>
+                </div>
+
+                <div class="blog-card mb-6" data-category="grid">
+                    <span class="badge badge-grid">Energy Grid</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Defending the Grid</h3>
+                    <p class="text-slate-400 text-sm mt-2">How Physics Manifold distinguishes cyber-attacks from cloud shadows in a Net-Zero grid.</p>
+                    <a href="solar-research.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300 transition-colors">Read Analysis &rarr;</a>
+                </div>
             </div>
 
         </div> <div class="relative py-12">
@@ -420,8 +441,8 @@
             let desc = cards[i].getElementsByTagName("p")[0].innerText.toLowerCase();
             
             if (title.indexOf(input) > -1 || desc.indexOf(input) > -1) { 
-                cards[i].style.display = "flex"; // Note: This might need adjustment based on parent grid
-                cards[i].parentElement.style.display = "block"; // Keep parent visible
+                cards[i].style.display = "flex"; 
+                cards[i].parentElement.style.display = "block"; 
             } else {
                 cards[i].style.display = "none";
             }
