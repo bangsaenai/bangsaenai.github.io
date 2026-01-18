@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
 
+    <title>AUTO-00001: The Magic Carpet Protocol - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite; 
+        }
+        .ticker-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Starry Background (Borrowed from Main) */
+        .stars {
+            background-color: #0b0e14;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-orange-500">
+                            Bangsaen<span class="text-orange-600 group-hover:text-orange-400">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">About Us</a>
+                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center stars relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-900/10 to-transparent pointer-events-none"></div>
+        <div class="pt-32 pb-12 text-center relative z-10">
+            <span class="text-orange-500 font-bold tracking-wider text-xs uppercase border border-orange-500/30 px-3 py-1 rounded-full bg-orange-950/30">
+                Autonomous Mobility
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-6 leading-tight">
+                The Magic Carpet Protocol: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Active Suspension Control</span>
+            </h1>
+            <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+                Eliminating road imperfections before they reach the chassis. See how Koopman Operator predicts bumps and adjusts damping in microseconds—zero latency, pure physics.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 4 min read</span>
+                <span>•</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: AUTO-00001</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-12 bg-slate-800 border-y border-orange-500/50 flex items-center overflow-hidden mb-12 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-orange-300 tracking-widest font-bold">
+                [ROAD SCAN ALERT] POTHOLE DETECTED (DEPTH 10CM) /// STANDARD PID: REACTION LATENCY HIGH /// CHASSIS SHOCK IMMINENT /// RIDE COMFORT CRITICAL /// ENGAGING KOOPMAN PREDICTION /// CALCULATING INVERSE DYNAMICS ///
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-8">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">L</span>uxury isn't about leather seats; it's about <strong>isolation</strong>. Current active suspension systems (even in high-end EVs) suffer from a fatal flaw: they are <strong>Reactive</strong>.
+            </p>
+            <p>
+                They wait for the wheel to hit the bump, the accelerometer to detect the jolt, and <em>only then</em> does the computer try to compensate. By the time the damper adjusts, the shockwave has already traveled into the chassis. This is the <strong>"Latency Gap"</strong> that no amount of CPU power can fix.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">The Solution: Predicting the Future</h2>
+            <p>
+                We don't just "stiffen" the suspension. Bangsaen AI uses the <strong>Koopman Operator</strong> to predict the road input and apply an <strong>Inverse Force Vector</strong> instantly.
+            </p>
+            
+            <div class="bg-[#0b0e14] border-l-4 border-orange-500 p-6 my-8 rounded-r-lg shadow-lg">
+                <p class="font-mono text-xs text-orange-400 mb-2">// THE GOVERNING EQUATION</p>
+                <div class="text-lg text-slate-200">
+                    $$ F_{active} = - \left( K \cdot z_{road}(t) + C \cdot \dot{z}_{road}(t) \right) $$
+                </div>
+                <p class="text-sm text-slate-500 mt-2">
+                    By solving for the exact force required to cancel the road disturbance in real-time, we achieve \( \ddot{z}_{chassis} \approx 0 \).
+                </p>
+            </div>
+
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-orange-500/50 bg-[#0b0e14]">
+                <img src="../images/auto/suspension_comparison.png" alt="PID vs Koopman Suspension Response" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-car-burst mr-2 text-orange-400"></i> <strong>Figure 1: The Magic Carpet Effect.</strong> <br>
+                    <span class="text-red-400">Red Line (PID):</span> Reactive system oscillates and transfers shock to passengers.<br>
+                    <span class="text-orange-400">Orange Line (Koopman):</span> Predictive system creates a perfectly flat ride.
+                </figcaption>
+            </figure>
+
+            <div class="w-full h-12 bg-orange-950/30 border-y border-orange-900/50 flex items-center overflow-hidden my-12 ticker-container relative">
+                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                <div class="animate-marquee font-mono text-sm text-orange-400 tracking-widest">
+                    >>> INVERSE DYNAMICS APPLIED >>> ACTUATOR PRE-LOADED >>> FORCE VECTOR CANCELLATION >>> CHASSIS STABILIZED >>> G-FORCE: 0.0G >>> PASSENGER IMPACT: NULL >>>
+                </div>
+            </div>
+
+            <blockquote class="border-l-4 border-orange-500 pl-4 italic text-slate-400 my-6">
+                "It's not about reacting fast. It's about knowing the future. If you know the bump is there, you can lift the wheel before you even touch it."
+            </blockquote>
+
+            <p>
+                The graph proves it. The standard PID controller (Red) lets the chassis bounce like a boat. The Bangsaen Core (Orange) keeps the chassis perfectly level, effectively erasing the bump from existence. This algorithm runs on a standard <strong>ESP32 microcontroller</strong> at 1kHz.
+            </p>
+        </div>
+
+        <hr class="border-slate-800 my-12">
+
+        <div class="my-8 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-orange-500/30 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-orange-500 blur-3xl opacity-20"></div>
+            
+            <i class="fas fa-microchip text-orange-400 text-4xl mb-4"></i>
+            <h3 class="text-white text-2xl font-bold mb-2">Ready to upgrade your fleet?</h3>
+            <p class="text-slate-400 mb-6">From Hypercars to Logistics Trucks. Stop reacting. Start commanding.</p>
+            <a href="../contact.html" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-orange-500/20">
+                Request Integration Kit
+            </a>
+        </div>
+
+        <div class="w-full h-12 bg-green-950/30 border-y border-green-900/50 flex items-center overflow-hidden mt-12 mb-6 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-green-400 tracking-widest">
+                STATUS: OBSTACLE CLEARED /// CABIN MOTION: ZERO /// SUSPENSION TRAVEL: OPTIMIZED /// PASSENGER COMFORT: MAXIMUM /// READY FOR NEXT TERRAIN ///
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
+            <p class="text-slate-500 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Defining the future of Autonomous Mobility.
+            </p>
+            <div class="text-slate-600 text-sm">
+                <a href="../privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                <a href="../terms.html" class="hover:text-white mx-2">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
