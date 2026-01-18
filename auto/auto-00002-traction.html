@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
 
+    <title>AUTO-00002: The Friction Oracle - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite; 
+        }
+        .ticker-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Starry Background */
+        .stars {
+            background-color: #0b0e14;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+
+    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-orange-500">
+                            Bangsaen<span class="text-orange-600 group-hover:text-orange-400">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">About Us</a>
+                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center stars relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-900/10 to-transparent pointer-events-none"></div>
+        <div class="pt-32 pb-12 text-center relative z-10">
+            <span class="text-orange-500 font-bold tracking-wider text-xs uppercase border border-orange-500/30 px-3 py-1 rounded-full bg-orange-950/30">
+                Autonomous Mobility
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-6 leading-tight">
+                The Friction Oracle: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Zero-Slip Launch Control</span>
+            </h1>
+            <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+                Don't cut the power. Surf the limit. See how estimating surface friction ($\mu$) in real-time allows for a perfect 0-100 km/h launch on ice without wasted watts.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
+                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
+                <span>•</span>
+                <span><i class="far fa-clock mr-1"></i> 5 min read</span>
+                <span>•</span>
+                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: AUTO-00002</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-12 bg-slate-800 border-y border-orange-500/50 flex items-center overflow-hidden mb-12 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-orange-300 tracking-widest font-bold">
+                [TRACTION ALERT] ICE SURFACE DETECTED (MU=0.2) /// STANDARD PID: WHEEL SPIN DETECTED /// PANIC BRAKING ACTIVATED /// POWER CUT 100% -> 0% /// RESTARTING SEQUENCE... ///
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-8">
+            <p>
+                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">P</span>ower is nothing without control. Traditional Traction Control Systems (TCS) are fundamentally broken because they are <strong>Reactive</strong>.
+            </p>
+            <p>
+                When a wheel hits ice, it spins. The standard ECU panics, cuts the torque to zero (the "head-nod" effect), and then slowly reapplies power until it slips again. This creates a violent <strong>"Sawtooth"</strong> profile of acceleration—wasting momentum, time, and passenger comfort.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-12 mb-4">The Solution: The Friction Oracle</h2>
+            <p>
+                Bangsaen AI does not wait for the slip. We estimate the <strong>Maximum Friction Coefficient ($\mu_{max}$)</strong> of the surface in real-time using the Koopman Operator.
+            </p>
+            <p>
+                Instead of cutting power after a slip, we clamp the motor torque exactly at the <strong>Physics Limit</strong>. We don't punish the engine; we optimize it.
+            </p>
+            
+            <div class="bg-[#0b0e14] border-l-4 border-orange-500 p-6 my-8 rounded-r-lg shadow-lg">
+                <p class="font-mono text-xs text-orange-400 mb-2">// THE OPTIMAL TORQUE EQUATION</p>
+                <div class="text-lg text-slate-200">
+                    $$ T_{optimal} = \mu_{est} \cdot F_{normal} \cdot r_{tire} $$
+                </div>
+                <p class="text-sm text-slate-500 mt-2">
+                    Where $\mu_{est}$ is derived from the Latent Physics Manifold of the wheel dynamics, ensuring $ Slip \approx 0 $ while maintaining maximum thrust.
+                </p>
+            </div>
+
+            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-orange-500/50 bg-[#0b0e14]">
+                <img src="../images/auto/traction_control_on_ice.png" alt="PID vs Oracle Traction Control" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"> 
+                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
+                    <i class="fas fa-snowflake mr-2 text-blue-400"></i> <strong>Figure 1: Launch on Ice ($\mu=0.2$).</strong> <br>
+                    <span class="text-red-400">Red (Standard):</span> Violent "Sawtooth" oscillation. Power is cut repeatedly.<br>
+                    <span class="text-orange-400">Orange (Oracle):</span> Perfect "Flatline" torque delivery. Surfing the physics limit.
+                </figcaption>
+            </figure>
+
+            <div class="w-full h-12 bg-orange-950/30 border-y border-orange-900/50 flex items-center overflow-hidden my-12 ticker-container relative">
+                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                <div class="animate-marquee font-mono text-sm text-orange-400 tracking-widest">
+                    >>> SURFACE MU ESTIMATED: 0.20 >>> PHYSICS LIMIT: 582 NM >>> TORQUE CLAMP ACTIVE >>> ZERO SLIP LAUNCH >>> ACCELERATION OPTIMIZED >>> NO POWER LOSS >>>
+                </div>
+            </div>
+
+            <blockquote class="border-l-4 border-orange-500 pl-4 italic text-slate-400 my-6">
+                "Don't fight the slide. Calculate it. If you know the limit, you can surf it without slipping."
+            </blockquote>
+
+            <p>
+                The data speaks for itself. The Standard TCS (Red) struggles to reach 11 km/h, while the Bangsaen Oracle (Orange) hits 17.5 km/h in the same 5-second window on ice. That is a <strong>60% improvement</strong> in acceleration simply by replacing the control algorithm.
+            </p>
+        </div>
+
+        <hr class="border-slate-800 my-12">
+
+        <div class="my-8 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-orange-500/30 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-orange-500 blur-3xl opacity-20"></div>
+            
+            <i class="fas fa-tachometer-alt text-orange-400 text-4xl mb-4"></i>
+            <h3 class="text-white text-2xl font-bold mb-2">Launch like a rocket on ice.</h3>
+            <p class="text-slate-400 mb-6">Upgrade your EV fleet with Physics-Informed Traction Control today.</p>
+            <a href="../contact.html" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-orange-500/20">
+                Get the Firmware
+            </a>
+        </div>
+
+        <div class="w-full h-12 bg-green-950/30 border-y border-green-900/50 flex items-center overflow-hidden mt-12 mb-6 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-sm text-green-400 tracking-widest">
+                STATUS: 0-100 KM/H COMPLETE /// WASTED ENERGY: 0% /// TIRE WEAR: MINIMAL /// PASSENGER COMFORT: MAXIMUM /// READY FOR NEXT LAUNCH ///
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-300 mb-4">Don't trust the code. Trust the Math.</h2>
+            <p class="text-slate-500 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Defining the future of Autonomous Mobility.
+            </p>
+            <div class="text-slate-600 text-sm">
+                <a href="../privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                <a href="../terms.html" class="hover:text-white mx-2">Terms of Service</a>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
