@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
+
+    <title>Alien-00002: The Navier-Stokes Breaker - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #050000; color: #cbd5e1; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite; 
+        }
+        
+        /* Mars Background */
+        .stars {
+            background-color: #050000;
+            background-image: 
+                radial-gradient(rgba(255, 69, 0, 0.4) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+        }
+
+        /* Red Glow */
+        .glow-text {
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+        }
+        
+        /* MathJax Override color */
+        mjx-container { color: #e2e8f0 !important; }
+    </style>
+</head>
+<body class="antialiased leading-relaxed selection:bg-red-900 selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-[#050000]/90 backdrop-blur-md border-b border-red-900/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-red-500">
+                            Bangsaen<span class="text-red-600 group-hover:text-red-400">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-400 hover:text-red-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-red-500 hover:text-red-300 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-400 hover:text-red-400 text-sm font-medium transition-colors">The Manifesto</a>
+                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-800">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-24 px-4 bg-gradient-to-b from-red-950/20 to-[#050000] text-center stars relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent pointer-events-none"></div>
+        
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" 
+             style="background: radial-gradient(circle at 50% 0%, #7f1d1d 0%, transparent 70%);"></div>
+
+        <div class="pt-20 pb-12 text-center relative z-10">
+            <span class="text-red-400 font-mono font-bold tracking-[0.2em] text-xs uppercase border border-red-500/30 px-4 py-1 rounded-full bg-red-950/30 animate-pulse">
+                Zone 3: Interplanetary
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-8 leading-tight tracking-tight">
+                Alien-00002: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 glow-text">
+                    The Navier-Stokes Breaker
+                </span>
+            </h1>
+            <p class="text-xl text-slate-400 mt-6 max-w-3xl mx-auto font-light">
+                NASA has "The 7 Minutes of Terror." We have <span class="text-red-400 font-bold">Latency Removal</span>. <br>
+                Using Disturbance Observers to mathematically cancel hypersonic turbulence.
+            </p>
+            
+            <div class="flex justify-center items-center gap-6 text-sm text-slate-600 mt-8 font-mono">
+                <span><i class="fas fa-wind mr-2 text-red-500"></i> ENTRY VELOCITY: MACH 25</span>
+                <span>•</span>
+                <span class="bg-red-950/50 px-3 py-1 rounded text-xs border border-red-900/50 text-red-400">ID: ALIEN-00002</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-5xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-10 bg-[#0a0000] border-y border-red-900/40 flex items-center overflow-hidden mb-16 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050000] to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050000] to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-xs text-red-400/80 tracking-widest font-bold">
+                [ALERT] HYPERSONIC ENTRY DETECTED /// CALCULATING WIND SHEAR... NAVIER-STOKES TURBULENCE FOUND /// NASA STATUS: DRIFTING /// BANGSAEN STATUS: CANCELLING DISTURBANCE /// TARGET LOCKED: 0.00m ERROR ///
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-10">
+            
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/2">
+                    <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-red-500 first-letter:float-left first-letter:mr-3 leading-relaxed">
+                        Landing on Mars is a game of probability for NASA. They aim for a "Landing Ellipse"—a massive 10km x 10km zone—because they cannot predict the chaotic wind gusts during descent.
+                    </p>
+                    <p>
+                        The problem is <strong>Reactive Control (PID)</strong>. The controller waits for the wind to push the rover off-course (creating an "Error") before it fires the thrusters to correct it. By then, it's too late. The steady-state error accumulates.
+                    </p>
+                </div>
+                <div class="md:w-1/2 bg-red-950/10 border border-red-900/30 p-6 rounded-lg font-mono text-sm">
+                    <h4 class="text-red-500 font-bold mb-4 border-b border-red-900/50 pb-2">THE_PID_TRAP.cpp</h4>
+                    <div class="space-y-2 text-slate-400">
+                        <p class="text-gray-500">// Standard NASA Logic</p>
+                        <p><span class="text-purple-400">error</span> = target_x - current_x;</p>
+                        <p><span class="text-purple-400">thrust</span> = Kp * error;</p>
+                        <p class="mt-4 text-red-400">// FATAL FLAW:</p>
+                        <p class="text-red-400">// To generate thrust, you MUST have error.</p>
+                        <p class="text-red-400">// If Wind = Constant, Error != 0.</p>
+                        <p class="text-red-400">// Result: You miss the target by 4-10 meters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-white mt-16 mb-6 border-l-4 border-red-600 pl-6">The Solution: Disturbance Observer</h2>
+            <p>
+                We don't react to the wind. We measure it and delete it. <br>
+                By comparing the <strong>Commanded Acceleration</strong> with the <strong>Actual Acceleration</strong> (measured by IMU), we can mathematically isolate the external wind force in real-time.
+            </p>
+
+            <div class="bg-[#0b0505] border border-red-900/40 p-8 my-10 rounded-xl relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+                    <i class="fas fa-tornado text-6xl text-red-500"></i>
+                </div>
+                <p class="font-mono text-xs text-red-400 mb-4 tracking-widest">>> MATH OF CANCELLATION</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-xs text-gray-500 mb-2 font-mono">STEP 1: OBSERVE THE WIND</p>
+                        <div class="text-xl text-slate-200 font-serif py-2">
+                            $$ \hat{F}_{wind} = m \cdot a_{measured} - u_{cmd} $$
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 mb-2 font-mono">STEP 2: DELETE THE WIND</p>
+                        <div class="text-xl text-green-400 font-serif py-2">
+                            $$ u_{new} = u_{LQR} - \hat{F}_{wind} $$
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-sm text-slate-500 mt-6 text-center border-t border-red-900/30 pt-4">
+                    If the wind pushes left with 450N, the equation instantly adds 450N to the right. <br>
+                    <span class="text-red-400 font-bold">The net force on the vehicle becomes zero. The wind effectively ceases to exist.</span>
+                </p>
+            </div>
+
+            <figure class="my-12 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(220,38,38,0.2)] border border-red-600/30 bg-[#050000] relative">
+                
+                <img src="../../images/alien_tech/landing_precision.png" alt="Landing Precision Graph" class="w-full h-auto relative z-10"> 
+                
+                <figcaption class="p-6 text-center text-sm text-gray-400 border-t border-red-900/30 bg-[#0a0000]">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-[#ff4d4d] rounded-full mr-2"></span>
+                            <span><strong>NASA (Red):</strong> Reactive PID → Steady State Error (~4.80m)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-[#00ff99] rounded-full mr-2 shadow-[0_0_10px_#00ff99]"></span>
+                            <span><strong>Alien (Green):</strong> Disturbance Observer → <strong>0.00m Error</strong></span>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <blockquote class="border-l-4 border-red-500 pl-6 italic text-xl text-slate-300 my-10 bg-gradient-to-r from-red-950/20 to-transparent py-4">
+                "NASA builds margins for error. We build algorithms that eliminate it."
+            </blockquote>
+
+            <p>
+                The graph above shows the difference between "Good Enough" and "Perfection". 
+                The Red line (NASA) drifts by nearly 5 meters because it is fighting the wind. 
+                The Green line (Bangsaen) drops straight down as if it were in a vacuum. 
+            </p>
+
+        </div>
+
+        <hr class="border-red-900/30 my-16">
+
+        <div class="my-12 bg-gradient-to-br from-[#0f0000] to-[#1a0505] p-10 rounded-2xl border border-red-500/20 text-center relative overflow-hidden group">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-red-600 blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"></div>
+            
+            <i class="fas fa-snowflake text-red-500 text-5xl mb-6 animate-pulse"></i>
+            <h3 class="text-white text-3xl font-bold mb-3">Next: Entropy Reversal</h3>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                Surviving the landing is step one. Surviving the freezing night is step two. <br>
+                See how we trick thermodynamics to keep batteries alive forever.
+            </p>
+            
+            <div class="flex justify-center gap-4">
+                <button class="bg-red-700 hover:bg-red-600 text-white font-mono font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.4)] flex items-center">
+                    <i class="fas fa-lock mr-2"></i> ACCESS ALIEN-00003
+                </button>
+            </div>
+            <p class="text-xs text-red-500/50 mt-4 font-mono">CLEARANCE LEVEL 10 REQUIRED</p>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-red-900/30 py-12 bg-[#050000]">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-400 mb-4 font-mono">Don't trust the sensors. <span class="text-red-500">Trust the Math.</span></h2>
+            <p class="text-slate-600 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Moving at the speed of light.
+            </p>
+            <div class="text-slate-700 text-sm font-mono">
+                <a href="../privacy-policy.html" class="hover:text-red-500 mx-2 transition-colors">Privacy</a>
+                <span class="text-red-900">|</span>
+                <a href="../terms.html" class="hover:text-red-500 mx-2 transition-colors">Terms</a>
+                <span class="text-red-900">|</span>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2 transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
