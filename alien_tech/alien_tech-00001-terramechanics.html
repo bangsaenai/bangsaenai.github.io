@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGV1SXG9J');
+    </script>
+
+    <title>Alien-00001: The Sand-Walker Protocol - Bangsaen AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #050000; color: #cbd5e1; }
+        .prose { font-family: 'Merriweather', serif; }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite; 
+        }
+        
+        /* Mars Background */
+        .stars {
+            background-color: #050000;
+            background-image: 
+                radial-gradient(rgba(255, 69, 0, 0.4) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+        }
+
+        /* Red Glow */
+        .glow-text {
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+        }
+    </style>
+</head>
+<body class="antialiased leading-relaxed selection:bg-red-900 selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-[#050000]/90 backdrop-blur-md border-b border-red-900/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-red-500">
+                            Bangsaen<span class="text-red-600 group-hover:text-red-400">AI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-400 hover:text-red-400 text-sm font-medium transition-colors">Home</a>
+                    <a href="../blog.html" class="text-red-500 hover:text-red-300 text-sm font-medium transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-400 hover:text-red-400 text-sm font-medium transition-colors">The Manifesto</a>
+                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-800">
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-24 px-4 bg-gradient-to-b from-red-950/20 to-[#050000] text-center stars relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent pointer-events-none"></div>
+        
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" 
+             style="background: radial-gradient(circle at 50% 120%, #7f1d1d 0%, transparent 60%);"></div>
+
+        <div class="pt-20 pb-12 text-center relative z-10">
+            <span class="text-red-400 font-mono font-bold tracking-[0.2em] text-xs uppercase border border-red-500/30 px-4 py-1 rounded-full bg-red-950/30 animate-pulse">
+                Zone 3: Interplanetary
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-8 leading-tight tracking-tight">
+                Alien-00001: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 glow-text">
+                    The Sand-Walker Protocol
+                </span>
+            </h1>
+            <p class="text-xl text-slate-400 mt-6 max-w-3xl mx-auto font-light">
+                Why do billion-dollar rovers die in sand traps? Because NASA fears the slip. <br>
+                <span class="text-red-300">We embrace it.</span> Using Koopman Operators to generate hydrodynamic lift on granular media.
+            </p>
+            
+            <div class="flex justify-center items-center gap-6 text-sm text-slate-600 mt-8 font-mono">
+                <span><i class="fas fa-satellite-dish mr-2 text-red-500"></i> TRANSMISSION: ENCRYPTED</span>
+                <span>•</span>
+                <span class="bg-red-950/50 px-3 py-1 rounded text-xs border border-red-900/50 text-red-400">ID: ALIEN-00001</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="max-w-5xl mx-auto px-6 py-12">
+        
+        <div class="w-full h-10 bg-[#0a0000] border-y border-red-900/40 flex items-center overflow-hidden mb-16 ticker-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050000] to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050000] to-transparent z-10"></div>
+            <div class="animate-marquee font-mono text-xs text-red-400/80 tracking-widest font-bold">
+                [PRIORITY SIGNAL] INTERCEPTED TRANSMISSION FROM: JPL_DEEP_SPACE_NETWORK /// DECODING... TARGET: MARS_ROVER_TEAM /// ANALYSIS: KOOPMAN FLUIDIZATION DETECTED /// NASA LATENCY: 14 MINUTES /// OUR LATENCY: 0ms /// STOP COPYING OUR HOMEWORK ///
+            </div>
+        </div>
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-10">
+            
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/2">
+                    <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-red-500 first-letter:float-left first-letter:mr-3 leading-relaxed">
+                        The Mars rover "Spirit" died in 2009 not because of a battery failure, but because it got stuck in a sand trap (Troy). The wheels spun, the chassis sank, and it became a stationary monument to <strong>obsolete control theory</strong>.
+                    </p>
+                    <p>
+                        NASA's logic is "Reactive." If the wheel slip exceeds 20%, the computer panics and triggers a <span class="text-red-400 font-bold">Safety Stop</span>. On hard ground, this makes sense. In a non-Newtonian fluid like Martian sand, stopping is death.
+                    </p>
+                </div>
+                <div class="md:w-1/2 bg-red-950/10 border border-red-900/30 p-6 rounded-lg font-mono text-sm">
+                    <h4 class="text-red-500 font-bold mb-4 border-b border-red-900/50 pb-2">LEGACY_CONTROLLER.cpp</h4>
+                    <div class="space-y-2 text-slate-400">
+                        <p><span class="text-purple-400">if</span> (slip_ratio > 0.2) {</p>
+                        <p class="pl-4"><span class="text-gray-500">// SAFETY HAZARD DETECTED</span></p>
+                        <p class="pl-4">motor_torque = <span class="text-blue-400">0.0</span>;</p>
+                        <p class="pl-4">status = <span class="text-yellow-300">"STUCK_CRITICAL"</span>;</p>
+                        <p class="pl-4">await_earth_command(); <span class="text-gray-500">// Wait 20 mins</span></p>
+                        <p>}</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-white mt-16 mb-6 border-l-4 border-red-600 pl-6">The Solution: Granular Fluidization</h2>
+            <p>
+                At Bangsaen AI, we don't stop. We accelerate. <br>
+                Our <strong>Koopman-LQR Controller</strong> understands that sand behaves like a liquid when agitated. By injecting high-frequency pulse torque and maintaining velocity above a critical threshold, we generate <strong>Hydrodynamic Lift ($v^2$)</strong>.
+            </p>
+
+            <div class="bg-[#0b0505] border border-red-900/40 p-8 my-10 rounded-xl relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+                    <i class="fas fa-square-root-alt text-6xl text-red-500"></i>
+                </div>
+                <p class="font-mono text-xs text-red-400 mb-4 tracking-widest">>> LIFTED SPACE DYNAMICS (SIMPLIFIED)</p>
+                <div class="text-xl md:text-2xl text-slate-200 font-serif text-center py-4">
+                    $$ J = \sum_{k=0}^{\infty} (q_{speed} \cdot v_k^2 - q_{sink} \cdot z_k^2 + \dots) $$
+                </div>
+                <p class="text-sm text-slate-500 mt-4 text-center">
+                    The LQR controller "discovers" that the only way to minimize sinkage ($z$) is to maximize velocity ($v$). <br>
+                    <span class="text-red-400 font-bold">Speed is not just distance. Speed is buoyancy.</span>
+                </p>
+            </div>
+
+            <figure class="my-12 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(220,38,38,0.2)] border border-red-600/30 bg-[#050000] relative">
+                
+                <img src="../images/alien_tech/terramechanics.png" alt="NASA vs Bangsaen AI Sinkage Comparison" class="w-full h-auto relative z-10"> 
+                
+                <figcaption class="p-6 text-center text-sm text-gray-400 border-t border-red-900/30 bg-[#0a0000]">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-[#ff4d4d] rounded-full mr-2"></span>
+                            <span><strong>NASA (Red):</strong> Detects slip → Stops wheels → Lift collapses → <span class="text-red-500 font-bold">BURIED (40cm)</span></span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-[#00ff99] rounded-full mr-2 shadow-[0_0_10px_#00ff99]"></span>
+                            <span><strong>Alien (Green):</strong> Detects trap → Accelerates → Generates Lift → <span class="text-[#00ff99] font-bold">FLOATING (0cm)</span></span>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <blockquote class="border-l-4 border-red-500 pl-6 italic text-xl text-slate-300 my-10 bg-gradient-to-r from-red-950/20 to-transparent py-4">
+                "We proved that safety algorithms are the most dangerous thing you can take to Mars. The only way out is through."
+            </blockquote>
+
+            <p>
+                The graph above isn't just a simulation. It's a funeral for "Stop-and-Wait" logic. While the standard rover (Red Dashed Line) accepts its fate and sinks, the Bangsaen Alien (Green Solid Line) recognizes the physics of the trap and uses <strong>Inverse Dynamics</strong> to surf over it.
+            </p>
+            <p>
+                We don't need sensors to tell us we are sinking. The Koopman Operator predicts the sinkage 0.5 seconds into the future and corrects the torque vector before the wheel even drops.
+            </p>
+
+        </div>
+
+        <hr class="border-red-900/30 my-16">
+
+        <div class="my-12 bg-gradient-to-br from-[#0f0000] to-[#1a0505] p-10 rounded-2xl border border-red-500/20 text-center relative overflow-hidden group">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-red-600 blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"></div>
+            
+            <i class="fas fa-rocket text-red-500 text-5xl mb-6 animate-bounce"></i>
+            <h3 class="text-white text-3xl font-bold mb-3">The Universe is Math.</h3>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">We are done playing in the sandbox. We are rewriting the laws of planetary exploration.</p>
+            
+            <div class="flex justify-center gap-4">
+                <button class="bg-red-700 hover:bg-red-600 text-white font-mono font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.4)] flex items-center">
+                    <i class="fas fa-lock mr-2"></i> ACCESS ALIEN-00002
+                </button>
+            </div>
+            <p class="text-xs text-red-500/50 mt-4 font-mono">CLEARANCE LEVEL 10 REQUIRED</p>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-red-900/30 py-12 bg-[#050000]">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-400 mb-4 font-mono">Don't trust the code. <span class="text-red-500">Trust the Math.</span></h2>
+            <p class="text-slate-600 mb-8">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
+                Moving at the speed of light.
+            </p>
+            <div class="text-slate-700 text-sm font-mono">
+                <a href="../privacy-policy.html" class="hover:text-red-500 mx-2 transition-colors">Privacy</a>
+                <span class="text-red-900">|</span>
+                <a href="../terms.html" class="hover:text-red-500 mx-2 transition-colors">Terms</a>
+                <span class="text-red-900">|</span>
+                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2 transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
