@@ -42,6 +42,13 @@
             white-space: nowrap;
             animation: marquee 40s linear infinite;
         }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
 
         /* Card Styles */
         .column-header {
@@ -249,7 +256,7 @@
 
             <div class="hero-column">
                 <span class="hero-badge">Core Technology</span>
-                <div class="column-header" style="color:#4ade80; border-color:#4ade80;"><i class="fa-solid fa-microchip mr-2"></i> Battery Intelligence</div>
+                <div class="column-header" style="color:#4ade80; border-color:#4ade80;"><i class="fa-solid fa-microchip mr-2"></i> Battery & Math</div>
                 
                 <div class="blog-card mb-6" data-category="bms" style="border: 1px solid #334155;">
                    <span class="badge badge-flight" style="background:#10b981;">Embedded AI</span>
@@ -287,79 +294,64 @@
                     <h3 class="text-xl font-bold text-white mt-2 group-hover:text-fuchsia-400 transition-colors">The Control Theory Endgame</h3>
                     <p class="text-slate-400 text-sm mt-2">
                         NMPC is too slow. Deep Learning is unsafe. <br>
-                        See the definitive comparison table: Why "Linear Embedding" beats Industry Standard NMPC on every metric—Latency, Safety, and Cost.
+                        See the definitive comparison table: Why "Linear Embedding" beats Industry Standard NMPC on every metric.
                     </p>
                     <a href="math/math-00001-control-benchmark.html" class="read-link mt-4 inline-flex items-center text-fuchsia-400 hover:text-fuchsia-300 font-medium">
                         View The "Kill Sheet" <i class="fas fa-table ml-2"></i>
                     </a>
                 </div>
 
-<div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #06b6d4;" data-category="math">
-    <div class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-600/10 blur-3xl rounded-full transition-all duration-500 group-hover:bg-cyan-500/20"></div>
-    <span class="badge badge-math" style="background:rgba(6, 182, 212, 0.1); border-color:rgba(6, 182, 212, 0.3); color:#22d3ee;">
-        <i class="fas fa-atom mr-1"></i> Physics Paradigm
-    </span>
-    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-cyan-400 transition-colors">The Zero Inertia Crisis</h3>
-    <p class="text-slate-400 text-sm mt-2">
-        As the world moves from Steam Turbines to Inverters, we lost our physical safety net. <br>
-        See why NMPC hits a <strong>"Thermodynamic Wall"</strong> in this new regime, and how KKS creates "Virtual Inertia" out of pure math.
-    </p>
-    <a href="math/math-00002-zero-inertia.html" class="read-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium">
-        Read The Manifesto <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
+                <div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #06b6d4;" data-category="math">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-600/10 blur-3xl rounded-full transition-all duration-500 group-hover:bg-cyan-500/20"></div>
+                    <span class="badge badge-math" style="background:rgba(6, 182, 212, 0.1); border-color:rgba(6, 182, 212, 0.3); color:#22d3ee;">
+                        <i class="fas fa-atom mr-1"></i> Physics Paradigm
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-cyan-400 transition-colors">The Zero Inertia Crisis</h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        As the world moves from Steam Turbines to Inverters, we lost our physical safety net. <br>
+                        See why NMPC hits a <strong>"Thermodynamic Wall"</strong> in this new regime.
+                    </p>
+                    <a href="math/math-00002-zero-inertia.html" class="read-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium">
+                        Read The Manifesto <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
 
-<div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #d946ef;" data-category="math">
-    <div class="absolute -top-10 -right-10 w-40 h-40 bg-fuchsia-600/10 blur-3xl rounded-full animate-pulse"></div>
-    
-    <span class="badge badge-math" style="background:rgba(217, 70, 239, 0.1); border-color:rgba(217, 70, 239, 0.3); color:#e879f9;">
-        <i class="fas fa-network-wired mr-1"></i> The Neural Revolution
-    </span>
-    
-    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-fuchsia-400 transition-colors">
-        The Missing Link of Industry 4.0
-    </h3>
-    
-    <p class="text-slate-400 text-sm mt-2">
-        We have the Brain (AI). We have the Body (Robotics). <br>
-        So why is our "Nervous System" (PID) still stuck in the Steam Age?
-        <br>
-        <span class="text-white font-bold">Ask yourself:</span> Will we really enter the 22nd Century using a control loop invented in 1922?
-    </p>
-    
-    <a href="math/math-00003-revolution.html" class="read-link mt-4 inline-flex items-center text-fuchsia-400 hover:text-fuchsia-300 font-medium">
-        Join The Revolution <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
+                <div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #d946ef;" data-category="math">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-fuchsia-600/10 blur-3xl rounded-full animate-pulse"></div>
+                    <span class="badge badge-math" style="background:rgba(217, 70, 239, 0.1); border-color:rgba(217, 70, 239, 0.3); color:#e879f9;">
+                        <i class="fas fa-network-wired mr-1"></i> The Neural Revolution
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-fuchsia-400 transition-colors">
+                        The Missing Link of Industry 4.0
+                    </h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        We have the Brain (AI). We have the Body (Robotics). <br>
+                        So why is our "Nervous System" (PID) still stuck in the Steam Age?
+                    </p>
+                    <a href="math/math-00003-revolution.html" class="read-link mt-4 inline-flex items-center text-fuchsia-400 hover:text-fuchsia-300 font-medium">
+                        Join The Revolution <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
 
-    <div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #f59e0b;" data-category="math">
-    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-amber-500/10 blur-[60px] rounded-full animate-float"></div>
-    
-    <span class="badge badge-math" style="background:rgba(245, 158, 11, 0.1); border-color:rgba(245, 158, 11, 0.3); color:#fbbf24;">
-        <i class="fas fa-infinity mr-1"></i> The 22nd Century Paradigm
-    </span>
-    
-    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-amber-400 transition-colors">
-        Beyond "Control": Cybernetic Symbiosis
-    </h3>
-    
-    <p class="text-slate-400 text-sm mt-2">
-        "Control Theory" implies command. But nature cannot be commanded; only negotiated with.
-        <br>
-        Stop trying to force the system. Start dancing with it.
-        <br>
-        <span class="text-white font-bold">The future isn't about Control. It's about Harmony.</span>
-    </p>
-    
-    <a href="math/math-00004-symbiosis.html" class="read-link mt-4 inline-flex items-center text-amber-400 hover:text-amber-300 font-medium">
-        Enter The New Era <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-</div>
-                
-                
-            </div>
+                <div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #f59e0b;" data-category="math">
+                    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-amber-500/10 blur-[60px] rounded-full animate-float"></div>
+                    <span class="badge badge-math" style="background:rgba(245, 158, 11, 0.1); border-color:rgba(245, 158, 11, 0.3); color:#fbbf24;">
+                        <i class="fas fa-infinity mr-1"></i> The 22nd Century Paradigm
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-amber-400 transition-colors">
+                        Beyond "Control": Cybernetic Symbiosis
+                    </h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        "Control Theory" implies command. But nature cannot be commanded; only negotiated with.
+                        <br>
+                        <span class="text-white font-bold">The future isn't about Control. It's about Harmony.</span>
+                    </p>
+                    <a href="math/math-00004-symbiosis.html" class="read-link mt-4 inline-flex items-center text-amber-400 hover:text-amber-300 font-medium">
+                        Enter The New Era <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
 
-            <div>
+            </div> <div>
                 <div class="column-header"><i class="fa-solid fa-code text-blue-500 mr-2"></i> Deep Tech Core</div>
                 
                 <div class="blog-card mb-6" data-category="math">
