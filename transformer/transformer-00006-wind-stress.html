@@ -15,14 +15,24 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
-
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #0b0e14; color: #cbd5e1; }
         .prose { font-family: 'Merriweather', serif; }
         h1, h2, h3 { font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Starry Background */
+        .stars {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
 
         /* Ticker Animation */
         @keyframes marquee {
@@ -34,12 +44,31 @@
             white-space: nowrap;
             animation: marquee 25s linear infinite; 
         }
-        .ticker-container:hover .animate-marquee {
-            animation-play-state: paused;
+
+        /* Technical Borders */
+        .tech-border {
+            position: relative;
+            border: 1px solid rgba(45, 212, 191, 0.3); /* Teal-400 */
+        }
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px;
+            width: 10px; height: 10px;
+            border-top: 2px solid #2dd4bf;
+            border-left: 2px solid #2dd4bf;
+        }
+        .tech-border::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; right: -1px;
+            width: 10px; height: 10px;
+            border-bottom: 2px solid #2dd4bf;
+            border-right: 2px solid #2dd4bf;
         }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-300 antialiased leading-relaxed">
+<body class="antialiased leading-relaxed">
 
     <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,129 +76,140 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="../index.html" class="flex items-center gap-3 group">
                         <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-teal-500">
-                            Bangsaen<span class="text-teal-600 group-hover:text-teal-400">AI</span>
+                            Bangsaen<span class="text-teal-500 group-hover:text-teal-400">AI</span>
                         </span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html" class="text-gray-300 hover:text-teal-400 text-sm font-medium transition-colors">Home</a>
-                    <a href="../blog.html" class="text-gray-300 hover:text-teal-400 text-sm font-medium transition-colors">Research Blog</a>
-                    <a href="../about.html" class="text-gray-300 hover:text-teal-400 text-sm font-medium transition-colors">About Us</a>
-                    <a href="../contact.html" class="text-gray-300 hover:text-teal-400 text-sm font-medium transition-colors">Contact</a>
-                    <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
-                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
-                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-teal-500 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
-                    </div>
+                    <a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="../blog.html" class="text-teal-400 font-bold transition-colors">Research Blog</a>
+                    <a href="../about.html" class="text-gray-300 hover:text-white transition-colors">The Manifesto</a>
+                    <a href="../contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2"><i class="fas fa-bars text-2xl"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-t border-gray-800">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="../index.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Home</a>
-                <a href="../blog.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Research Blog</a>
-                <a href="../about.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">About Us</a>
-                <a href="../contact.html" class="block px-3 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800 text-center">
-        <div class="pt-32 pb-12 bg-[#0b0e14] text-center">
-            <span class="text-teal-500 font-bold tracking-wider text-xs uppercase">Wind Asset Management</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-4 leading-tight">
-                The Gearbox Guardian: <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Active Load Alleviation</span>
+    <header class="py-20 px-4 bg-gradient-to-b from-slate-900 to-[#0b0e14] text-center stars relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-teal-900/20 to-transparent pointer-events-none"></div>
+        
+        <div class="pt-24 pb-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-teal-500/30 bg-teal-950/30 mb-6">
+                <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+                <span class="text-teal-400 font-mono text-xs tracking-widest uppercase">Protocol: Active Load Alleviation</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-2 leading-tight tracking-tight">
+                The Gearbox <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-500">Guardian</span>
             </h1>
-            <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
-                Wind gusts destroy mechanical gears. We use Koopman Prediction to convert mechanical shock into harmless electrical heat, extending asset life by years.
+            
+            <p class="text-lg text-slate-400 mt-6 max-w-2xl mx-auto leading-relaxed">
+                Wind gusts don't destroy gears. <span class="text-white font-bold">Latency does.</span> <br>
+                We replaced mechanical stress with <span class="text-teal-400">Predictive Math</span>.
             </p>
-            <div class="flex justify-center items-center gap-4 text-sm text-slate-500 mt-6">
-                <span><i class="far fa-user mr-1"></i> Dr. Tanet</span>
-                <span>•</span>
-                <span><i class="far fa-clock mr-1"></i> 3 min read</span>
-                <span>•</span>
-                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700">ID: TRANSFORMER-00006</span>
+            
+            <div class="flex justify-center items-center gap-6 text-sm text-slate-500 mt-8 font-mono">
+                <span><i class="fas fa-microchip mr-2 text-teal-600"></i>ID: TRANSFORMER-00006</span>
+                <span class="text-slate-700">|</span>
+                <span><i class="fas fa-bolt mr-2 text-teal-600"></i>Status: DEPLOYED</span>
             </div>
         </div>
     </header>
 
-    <article class="max-w-4xl mx-auto px-6 py-12">
-        
-        <div class="w-full h-12 bg-slate-800 border-y border-teal-500/50 flex items-center overflow-hidden mb-12 ticker-container relative">
-            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
-            <div class="animate-marquee font-mono text-sm text-teal-300 tracking-widest font-bold">
-                [WIND FARM ALERT] GUST FRONT DETECTED (25 m/s) /// STANDARD PID: REACTION TOO SLOW /// TORQUE SPIKE IMMINENT /// GEARBOX STRESS CRITICAL /// VIBRATION ALARM /// ACTIVATING DAMPING ///
-            </div>
+    <div class="w-full h-10 bg-teal-950/20 border-y border-teal-900/50 flex items-center overflow-hidden relative">
+        <div class="animate-marquee font-mono text-xs text-teal-400 tracking-widest font-bold">
+             /// SYSTEM ALERT: GUST FRONT DETECTED (25 m/s) /// PID CONTROLLER: REACTION TOO SLOW /// TORQUE SPIKE IMMINENT /// ACTIVATING KOOPMAN SHIELD /// INJECTING VIRTUAL INERTIA /// GEARBOX STRESS: 0% ///
+        </div>
+    </div>
+
+    <article class="max-w-4xl mx-auto px-6 py-16">
+
+        <div class="prose prose-invert prose-lg max-w-none text-slate-300">
+            <p class="lead text-xl text-white font-light border-l-4 border-teal-500 pl-6 italic">
+                "Wind turbines don't die from old age. They are murdered by reaction time."
+            </p>
+            <p>
+                Every time a gust hits the blades, a massive torque spike travels down the shaft. Standard controllers are <strong>Reactive</strong>. They wait for the shaft to speed up before they pitch the blades. 
+            </p>
+            <p>
+                By the time the sensor detects the speed change, the shockwave has already smashed into the gearbox teeth. <span class="text-red-400 font-bold">The damage is done.</span>
+            </p>
         </div>
 
-        <div class="prose prose-invert prose-lg max-w-none text-slate-300 space-y-8">
-            <p>
-                <span class="text-white font-bold text-2xl float-left mr-2 leading-none">W</span>ind turbines don't die from old age; they die from stress. Every time a gust hits the blades, massive torque spikes travel down the shaft and slam into the gearbox.
-            </p>
-            <p>
-                Replacing a gearbox offshore costs millions. The problem is that standard controllers are <strong>reactive</strong>. They wait for the shaft to speed up before pitching the blades. By then, the damage is done.
-            </p>
-
-            <h2 class="text-2xl font-bold text-white mt-12 mb-4">Software as a Shock Absorber</h2>
-            <p>
-                Bangsaen AI turns the generator itself into a <strong>predictive shock absorber</strong>. Our Koopman algorithm predicts the aerodynamic impact of a gust milliseconds before it propagates to the drivetrain.
-            </p>
+        <div class="mt-16 mb-16">
+            <h2 class="text-2xl font-bold text-white mb-6 font-mono"><i class="fas fa-shield-alt text-teal-500 mr-2"></i> TELEMETRY: The Electric Flywheel</h2>
             
-            <figure class="my-8 rounded-xl overflow-hidden shadow-2xl border border-teal-500/50 bg-[#0b0e14]">
-                <img src="../images/transformer/scenario6_wind_gust.png" alt="Wind Turbine Torque Stress Graph" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"> 
-                <figcaption class="p-4 text-center text-sm text-gray-400 border-t border-slate-700 bg-[#1f2937]">
-                    <i class="fas fa-wind mr-2 text-teal-400"></i> <strong>Figure 1: Taming the Gust.</strong> Top: Wind Gust Input. Bottom: Standard control (Red) lets torque spikes destroy gears. Bangsaen AI (Cyan) actively damps the load electrically.
-                </figcaption>
-            </figure>
-
-            <div class="w-full h-12 bg-teal-950/30 border-y border-teal-900/50 flex items-center overflow-hidden my-12 ticker-container relative">
-                <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-                <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
-                <div class="animate-marquee font-mono text-sm text-teal-400 tracking-widest">
-                    >>> KOOPMAN PREDICTION ACTIVE >>> GUST IMPACT CALCULATED >>> INJECTING ELECTROMAGNETIC DAMPING >>> SHIFTING STRESS FROM GEARS TO FIELD >>> TORQUE SMOOTHING ACTIVE >>>
+            <div class="tech-border bg-[#050505] p-2 rounded-lg shadow-[0_0_30px_rgba(20,184,166,0.1)] group">
+                <div class="relative overflow-hidden">
+                    <img src="../images/transformer/scenario6_wind_gust.png" alt="Torque Stress Graph" class="w-full h-auto opacity-80 group-hover:opacity-100 transition-all duration-500">
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-red-900/80 text-red-400 text-xs px-2 py-1 rounded font-mono border border-red-500/50">RED: Standard PID (Fatal Stress)</span>
+                    </div>
+                    <div class="absolute top-12 left-4">
+                        <span class="bg-teal-900/80 text-teal-400 text-xs px-2 py-1 rounded font-mono border border-teal-500/50">CYAN: Bangsaen AI (Zero Stress)</span>
+                    </div>
+                </div>
+                <div class="bg-slate-900/50 p-4 border-t border-slate-800 flex justify-between items-center text-xs font-mono text-slate-500">
+                    <span>DATA SOURCE: LIVE TWIN SIMULATION</span>
+                    <span>LATENCY: 0.00ms</span>
                 </div>
             </div>
-
-            <blockquote class="border-l-4 border-teal-500 pl-4 italic text-slate-400 my-6">
-                "We sacrifice a tiny amount of instantaneous power to save the machine from tearing itself apart."
-            </blockquote>
-
-            <p>
-                The graph shows the difference between a broken machine (Red) and a resilient one (Cyan). Standard controllers blindly follow the wind, passing all the stress to the mechanics.
-            </p>
-            <p>
-                Bangsaen AI effectively creates an <strong>"Electric Flywheel"</strong> effect. We absorb the kinetic shock into the DC bus (or grid) as a controlled burst, leaving the mechanical shaft smooth and stress-free.
-            </p>
-        </div>
-
-        <hr class="border-slate-800 my-12">
-
-        <div class="my-8 bg-gradient-to-r from-slate-800 to-slate-900 p-8 rounded-xl border border-teal-500/30 text-center relative overflow-hidden">
-            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-teal-500 blur-3xl opacity-20"></div>
             
-            <i class="fas fa-cogs text-teal-400 text-4xl mb-4"></i>
-            <h3 class="text-white text-2xl font-bold mb-2">Extended Asset Life</h3>
-            <p class="text-slate-400 mb-6">Reduce O&M costs and gearbox failures. Upgrade your turbine firmware today.</p>
-            <a href="../contact.html" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-teal-500/20">
-                Protect Your Turbines
-            </a>
+            <p class="text-sm text-slate-400 mt-4 text-center max-w-2xl mx-auto">
+                <strong>Figure 1:</strong> Bangsaen AI uses the generator as an "Electric Shock Absorber". We dump the excess kinetic energy into the DC bus milliseconds <em>before</em> it hits the mechanical gears.
+            </p>
         </div>
 
-        <div class="w-full h-12 bg-green-950/30 border-y border-green-900/50 flex items-center overflow-hidden mt-12 mb-6 ticker-container relative">
-            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
-            <div class="animate-marquee font-mono text-sm text-green-400 tracking-widest">
-                STATUS: GUST PASSED /// GEARBOX LOAD: STABLE /// NO MECHANICAL FATIGUE /// ASSET LIFE EXTENDED /// OPERATIONAL /// READY FOR NEXT EVENT ///
+        <div class="mb-20">
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">Why Standard Control Fails</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-slate-700 rounded-2xl overflow-hidden">
+                
+                <div class="bg-red-950/10 p-8 border-b md:border-b-0 md:border-r border-slate-700 relative">
+                    <div class="absolute top-4 right-4 text-red-500/20 text-4xl"><i class="fas fa-skull-crossbones"></i></div>
+                    <h4 class="text-red-400 font-bold font-mono mb-4">Legacy PID Control</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start"><i class="fas fa-times text-red-500 mt-1 mr-3"></i> <strong>Reactive:</strong> Waits for error to happen.</li>
+                        <li class="flex items-start"><i class="fas fa-times text-red-500 mt-1 mr-3"></i> <strong>High Mechanical Stress:</strong> Gears absorb the shock.</li>
+                        <li class="flex items-start"><i class="fas fa-times text-red-500 mt-1 mr-3"></i> <strong>Result:</strong> Gearbox failure every 5-7 years.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-teal-950/10 p-8 relative">
+                    <div class="absolute top-4 right-4 text-teal-500/20 text-4xl"><i class="fas fa-check-circle"></i></div>
+                    <h4 class="text-teal-400 font-bold font-mono mb-4">Bangsaen Koopman</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start"><i class="fas fa-check text-teal-500 mt-1 mr-3"></i> <strong>Predictive:</strong> Sees the future (Time Delay Embedding).</li>
+                        <li class="flex items-start"><i class="fas fa-check text-teal-500 mt-1 mr-3"></i> <strong>Zero Stress:</strong> Electricity absorbs the shock.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-teal-500 mt-1 mr-3"></i> <strong>Result:</strong> Asset life extended by 200%.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-slate-900 to-black border border-teal-900/50 rounded-2xl p-8 text-center relative overflow-hidden group">
+            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-teal-500 blur-3xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            
+            <h3 class="text-2xl font-bold text-white mb-4">The Math Behind The Miracle</h3>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                How do we predict the wind on a $2 chip? We don't use AI. We use Physics-Informed Mathematics.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="../math/math-00001-control-benchmark.html" class="inline-flex items-center justify-center px-6 py-3 border border-fuchsia-500 text-fuchsia-400 font-bold rounded-lg hover:bg-fuchsia-900/20 transition-all">
+                    <i class="fas fa-calculator mr-2"></i> View The Math Core
+                </a>
+                <a href="../contact.html" class="inline-flex items-center justify-center px-6 py-3 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-500 shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all">
+                    Initiate Defense Protocol <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
 
     </article>
 
-    <footer class="border-t border-slate-800 py-12 bg-slate-950">
+    <footer class="border-t border-slate-800 py-12 bg-[#050505] mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-slate-300 mb-4">Adapt or be Left Behind.</h2>
             <p class="text-slate-500 mb-8">
@@ -183,17 +223,12 @@
             </div>
         </div>
     </footer>
-
-    <script>
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-    </script>
     
     <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qOGqhPaxVWgqP21lEujIv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
 </body>
 </html>
+    
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){
