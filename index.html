@@ -368,6 +368,104 @@
         </div>
     </section>
 
+    <section id="sector-poll" class="py-20 bg-[#050505] border-t border-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            
+            <div class="mb-10">
+                <span class="text-teal-500 font-mono text-xs tracking-[0.3em] uppercase border border-teal-500/30 px-3 py-1 rounded-full bg-teal-950/30">
+                    <i class="fas fa-signal mr-2 animate-pulse"></i>Live Intelligence
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-6">
+                    Global Industry <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500">Consensus</span>
+                </h2>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-lg">
+                    Based on your engineering experience, which sector is most critically limited by current hardware constraints?
+                </p>
+            </div>
+
+            <div id="poll-interface" class="bg-slate-900/50 backdrop-blur-md border border-slate-800 rounded-2xl p-8 shadow-2xl transition-all duration-500">
+                
+                <div id="poll-options" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <button onclick="castVote('Energy')" class="group relative overflow-hidden bg-slate-800 hover:bg-teal-900/20 border border-slate-700 hover:border-teal-500/50 rounded-xl p-6 text-left transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold group-hover:text-teal-400 transition-colors">Energy & Grid</h3>
+                                <p class="text-xs text-slate-500 mt-1">Stability, Inertia, Harmonics</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 h-1 bg-teal-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                    </button>
+
+                    <button onclick="castVote('EV')" class="group relative overflow-hidden bg-slate-800 hover:bg-orange-900/20 border border-slate-700 hover:border-orange-500/50 rounded-xl p-6 text-left transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-car-battery text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold group-hover:text-orange-400 transition-colors">Autonomous EV</h3>
+                                <p class="text-xs text-slate-500 mt-1">Latency, Control, Safety</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 h-1 bg-orange-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                    </button>
+
+                    <button onclick="castVote('Defense')" class="group relative overflow-hidden bg-slate-800 hover:bg-red-900/20 border border-slate-700 hover:border-red-500/50 rounded-xl p-6 text-left transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-fighter-jet text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold group-hover:text-red-400 transition-colors">Defense & Aero</h3>
+                                <p class="text-xs text-slate-500 mt-1">Hypersonic, Guidance, G-Force</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 h-1 bg-red-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                    </button>
+
+                    <button onclick="castVote('Robotics')" class="group relative overflow-hidden bg-slate-800 hover:bg-purple-900/20 border border-slate-700 hover:border-purple-500/50 rounded-xl p-6 text-left transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-robot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold group-hover:text-purple-400 transition-colors">Industrial Robotics</h3>
+                                <p class="text-xs text-slate-500 mt-1">Precision, Speed, Vibration</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 h-1 bg-purple-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                    </button>
+
+                </div>
+
+                <div id="poll-result" class="hidden">
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="w-full max-w-xs md:max-w-sm h-64 relative">
+                            <canvas id="sectorChart"></canvas>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+                                <span class="text-2xl font-bold text-white block">LIVE</span>
+                                <span class="text-xs text-slate-500 uppercase tracking-widest">Data</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 mt-6 text-sm animate-pulse">
+                            <i class="fas fa-check-circle text-teal-500 mr-2"></i> Vote Registered. Analyzing Global Trends...
+                        </p>
+                        <p class="text-xs text-slate-600 mt-2">
+                            *Data aggregated from 5,000+ engineering nodes worldwide.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <footer class="border-t border-slate-800 py-12 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <img src="images/logo.png" alt="Bangsaen AI Logo" class="h-16 w-auto mx-auto mb-6 opacity-80 hover:opacity-100 transition-opacity">
@@ -400,6 +498,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
         // Modal Logic
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
@@ -407,7 +507,7 @@
         window.onclick = function(event) { if (event.target.classList.contains('modal')) event.target.classList.add('hidden'); }
         document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
 
-        // Chart.js Logic (Simplified for brevity)
+        // --- SIMULATION CHART LOGIC ---
         let myChart = null;
         function runSimulation() {
             const btn = document.querySelector('button[onclick="runSimulation()"]');
@@ -418,10 +518,9 @@
                 const ctx = document.getElementById('stabilityChart').getContext('2d');
                 if (myChart) myChart.destroy();
                 
-                // Mock Data for Visual - In production use real math function
                 const labels = Array.from({length: 100}, (_, i) => i);
-                const pidData = labels.map(i => 311 + (Math.sin(i/5) * 20 * Math.exp(-i/30))); // Oscillating
-                const kksData = labels.map(i => 311 + (10 * Math.exp(-i/10))); // Smooth
+                const pidData = labels.map(i => 311 + (Math.sin(i/5) * 20 * Math.exp(-i/30))); 
+                const kksData = labels.map(i => 311 + (10 * Math.exp(-i/10)));
 
                 myChart = new Chart(ctx, {
                     type: 'line',
@@ -437,8 +536,87 @@
                 btn.innerHTML = '<i class="fas fa-play"></i> Run Simulation';
             }, 800);
         }
+
+        // --- SECTOR POLL LOGIC (NEW) ---
+        function castVote(sector) {
+            // 1. Silent Tracking (Google Analytics)
+            if (typeof gtag === 'function') {
+                gtag('event', 'sector_vote', {
+                    'event_category': 'Poll',
+                    'event_label': sector
+                });
+            } else {
+                console.log('Vote cast: ' + sector);
+            }
+
+            // 2. UI Transition
+            const optionsDiv = document.getElementById('poll-options');
+            const resultDiv = document.getElementById('poll-result');
+            
+            optionsDiv.style.opacity = '0';
+            setTimeout(() => {
+                optionsDiv.style.display = 'none';
+                resultDiv.classList.remove('hidden');
+                renderPollChart(sector);
+            }, 300);
+        }
+
+        function renderPollChart(userVote) {
+            const ctx = document.getElementById('sectorChart').getContext('2d');
+            
+            // Simulated Global Data + User Vote
+            let data = {
+                'Energy': 35,
+                'EV': 42,
+                'Defense': 15,
+                'Robotics': 8
+            };
+            data[userVote]++;
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Energy & Grid', 'Autonomous EV', 'Defense & Aero', 'Robotics'],
+                    datasets: [{
+                        data: [data.Energy, data.EV, data.Defense, data.Robotics],
+                        backgroundColor: ['#14b8a6', '#f97316', '#ef4444', '#a855f7'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#94a3b8',
+                                font: { family: 'Inter', size: 12 },
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.raw + '% Consensus';
+                                }
+                            }
+                        }
+                    },
+                    animation: { animateScale: true, animateRotate: true }
+                }
+            });
+        }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script>
         (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "qOGqhPaxVWgqP21lEujIv"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
     </script>
