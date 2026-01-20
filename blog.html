@@ -376,52 +376,32 @@
                     </a>
                 </div>
 
-            </div> <div>
-                <div class="column-header"><i class="fa-solid fa-code text-blue-500 mr-2"></i> Deep Tech Core</div>
-                
-                <div class="blog-card mb-6" data-category="math">
-                    <span class="badge badge-math">Mathematics</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Koopman vs Neural Networks</h3>
-                    <p class="text-slate-400 text-sm mt-2">Why we choose Physics-Informed Math over Black-box AI for safety-critical embedded systems.</p>
-                    <a href="koopman-kalman.html" class="read-link mt-4 inline-flex items-center text-pink-400 hover:text-pink-300">Read Analysis &rarr;</a>
+                <div class="blog-card mb-6 relative overflow-hidden group" style="border: 1px solid #ef4444;" data-category="math">
+                    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-red-600/10 blur-3xl rounded-full animate-pulse"></div>
+                    
+                    <span class="badge badge-math" style="background:rgba(239, 68, 68, 0.1); border-color:rgba(239, 68, 68, 0.3); color:#fca5a5; position:relative; z-index:10;">
+                        <i class="fas fa-book-dead mr-1"></i> The Methodology
+                    </span>
+                    
+                    <h3 class="text-xl font-bold text-white mt-2 group-hover:text-red-400 transition-colors font-mono relative z-10">
+                        MATH-00006: How to become a Cyborg.
+                    </h3>
+                    
+                    <p class="text-slate-400 text-sm mt-2 relative z-10">
+                        You saw the patent. You saw the speed. Now you want the manual.
+                        <br>
+                        This is the blueprint on how to integrate with AI to achieve Godspeed.
+                        <br>
+                        <span class="text-red-500 font-bold italic">Warning: Side effects include loss of ego.</span>
+                    </p>
+                    
+                    <button onclick="triggerCyborgModal()" class="mt-4 w-full py-3 bg-red-900/20 hover:bg-red-900/40 border border-red-500/50 text-red-400 hover:text-white font-bold rounded transition-all uppercase tracking-widest relative z-10 flex justify-center items-center gap-2 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.4)] cursor-pointer">
+                        <i class="fas fa-download"></i> DOWNLOAD PROTOCOL
+                    </button>
                 </div>
 
-                <div class="blog-card mb-6" data-category="math">
-                    <span class="badge badge-math">Backend</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Bangsaen Core Architecture</h3>
-                    <p class="text-slate-400 text-sm mt-2">The Unified Backend for Distributed Energy: How we manage License Checks & Over-the-Air Tuning.</p>
-                    <a href="#" class="read-link mt-4 inline-flex items-center text-pink-400 hover:text-pink-300">Read Analysis &rarr;</a>
-                </div>
-
-                <div class="blog-card mb-6" data-category="math">
-                    <span class="badge badge-math">Scalability</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Master-Slave Architecture</h3>
-                    <p class="text-slate-400 text-sm mt-2">Scaling from 48V Golf Carts to 800V Logistic Fleets using distributed ESP32 nodes.</p>
-                    <a href="#" class="read-link mt-4 inline-flex items-center text-pink-400 hover:text-pink-300">Read Analysis &rarr;</a>
-                </div>
-
-                <div class="blog-card mb-6" data-category="grid">
-                    <span class="badge badge-tech bg-cyan-500/10 text-cyan-400 border-cyan-500/20">Grid Security</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Visualizing the Crash</h3>
-                    <p class="text-slate-400 text-sm mt-2">Witness the "Voltage Collapse" phenomenon and how Koopman predicts the drop.</p>
-                    <a href="/grid/grid-00002-visualizing-voltage-collapse.html" class="read-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300">View Data <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                <div class="blog-card mb-6" data-category="grid">
-                    <span class="badge badge-grid">Grid Stability</span>
-                    <h3 class="text-xl font-bold text-white mt-2">The Zero-Inertia Paradox</h3>
-                    <p class="text-slate-400 text-sm mt-2">Tesla solved storage, but not stability. Why standard PID controls crash without rotating mass.</p>
-                    <a href="/grid/grid-00001-microgrid.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300">Read Analysis &rarr;</a>
-                </div>
-
-                <div class="blog-card mb-6" data-category="grid">
-                    <span class="badge badge-grid">Energy Grid</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Defending the Grid</h3>
-                    <p class="text-slate-400 text-sm mt-2">How Physics Manifold distinguishes cyber-attacks from cloud shadows in a Net-Zero grid.</p>
-                    <a href="solar-research.html" class="read-link mt-4 inline-flex items-center text-green-400 hover:text-green-300">Read Analysis &rarr;</a>
-                </div>
-            </div>
-        </div>
+            </div> </div>
 
         <div class="relative py-12">
             <div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-slate-800"></div></div>
@@ -664,7 +644,7 @@
                     <h3 class="text-red-500 font-bold text-xl tracking-widest animate-pulse">/// RESTRICTED ACCESS ///</h3>
                     <p class="text-slate-500 text-xs mt-1">PROTOCOL: BANGSAEN_NON_PROLIFERATION</p>
                 </div>
-                <button onclick="closeModal()" class="text-slate-500 hover:text-red-500 transition-colors">
+                <button onclick="closeModal()" class="text-slate-500 hover:text-red-500 transition-colors cursor-pointer">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
@@ -703,7 +683,7 @@
 
                     <input type="hidden" name="requested_tech" id="hiddenTechInput">
 
-                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-black font-bold py-3 rounded mt-4 transition-all hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-black font-bold py-3 rounded mt-4 transition-all hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] cursor-pointer">
                         REQUEST DECRYPTION KEY
                     </button>
                 </form>
@@ -711,7 +691,50 @@
         </div>
     </div>
 
+    <div id="cyborgModal" class="fixed inset-0 bg-black/95 z-[60] hidden flex items-center justify-center backdrop-blur-md">
+        <div class="bg-black border border-red-600 w-full max-w-xl p-8 rounded-none shadow-[0_0_100px_rgba(220,38,38,0.2)] relative overflow-hidden font-mono text-center">
+            
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-0 pointer-events-none bg-[length:100%_2px,3px_100%]"></div>
+
+            <div class="relative z-10">
+                <i class="fas fa-hand-paper text-6xl text-red-500 mb-6 animate-pulse"></i>
+                
+                <h2 class="text-3xl font-bold text-white mb-2 tracking-tighter">ACCESS DENIED</h2>
+                <p class="text-red-500 text-sm tracking-[0.3em] uppercase mb-8">This knowledge is dangerous.</p>
+                
+                <div class="text-left space-y-4 text-slate-300 text-sm leading-relaxed border-t border-b border-red-900/50 py-6 mb-8">
+                    <p>
+                        <span class="text-white font-bold">You thought it was a tutorial?</span><br>
+                        Becoming a Cyborg isn't about installing a Python library. It's about fundamentally rewiring your human cognitive process.
+                    </p>
+                    <p>
+                        The protocol we used to build a US Patent in 60 days (Part-Time) is classified as 
+                        <span class="text-red-400">"Asymmetric Intellectual Weaponry."</span>
+                    </p>
+                    <p>
+                        It is ahead of its time. It breaks traditional teams. It destroys old engineering workflows.
+                        Most people are not ready to abandon their old self.
+                    </p>
+                </div>
+
+                <p class="text-white font-bold mb-6">
+                    Do you really want to acquire the Godspeed Protocol?
+                </p>
+
+                <div class="flex flex-col gap-3">
+                    <a href="contact.html" class="w-full py-4 bg-red-600 hover:bg-red-500 text-black font-bold uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.5)] block cursor-pointer">
+                        Yes. I am ready to Evolve. (Contact Us)
+                    </a>
+                    <button onclick="closeCyborgModal()" class="w-full py-3 border border-slate-700 text-slate-500 hover:text-white transition-all uppercase text-xs cursor-pointer">
+                        No. I will stay human and slow.
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Security Modal Logic
         function requestAccess(scenarioName) {
             document.getElementById('targetScenario').innerText = scenarioName;
             document.getElementById('hiddenTechInput').value = scenarioName;
@@ -722,11 +745,22 @@
             document.getElementById('securityModal').style.display = 'none';
         }
 
+        // Cyborg Modal Logic
+        function triggerCyborgModal() {
+            document.getElementById('cyborgModal').style.display = 'flex';
+        }
+
+        function closeCyborgModal() {
+            document.getElementById('cyborgModal').style.display = 'none';
+        }
+
+        // Close logic for both modals
         window.onclick = function(event) {
-            let modal = document.getElementById('securityModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            let secModal = document.getElementById('securityModal');
+            let cybModal = document.getElementById('cyborgModal');
+            
+            if (event.target == secModal) secModal.style.display = "none";
+            if (event.target == cybModal) cybModal.style.display = "none";
         }
     </script>
 </body>
