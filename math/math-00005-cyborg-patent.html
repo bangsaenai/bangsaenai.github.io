@@ -35,6 +35,17 @@
             width: 2px;
             background: linear-gradient(to bottom, #ef4444, #a3e635);
         }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
     </style>
 </head>
 <body class="antialiased leading-relaxed cyber-grid">
@@ -48,13 +59,13 @@
                     </span>
                 </a>
                 
-                <div class="flex items-center gap-3 bg-slate-900/80 border border-lime-500/30 px-3 py-1 rounded-full">
+                <div class="hidden md:flex items-center gap-3 bg-slate-900/80 border border-lime-500/30 px-3 py-1 rounded-full">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-lime-500"></span>
                     </span>
                     <span class="font-mono text-xs text-lime-400 font-bold">
-                        OBSERVERS: <span id="viewCount">14,208</span>
+                        LIVE OBSERVERS: <span id="viewCount">14,208</span>
                     </span>
                 </div>
 
@@ -67,7 +78,7 @@
         </div>
     </nav>
 
-    <header class="py-32 px-4 text-center relative overflow-hidden">
+    <header class="pt-32 pb-12 px-4 text-center relative overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-lime-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div class="relative z-10">
@@ -86,25 +97,42 @@
         </div>
     </header>
 
-    <div class="max-w-4xl mx-auto px-4 mb-16 relative z-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-y border-lime-900/50 py-8 bg-lime-900/5 backdrop-blur-sm">
-            <div class="text-center border-r border-lime-900/30">
-                <p class="text-slate-500 text-[10px] font-mono uppercase tracking-widest mb-1">Total Duration</p>
-                <p class="text-3xl font-bold text-white font-mono">60 DAYS</p>
-            </div>
-            <div class="text-center border-r border-lime-900/30 md:border-r">
-                <p class="text-slate-500 text-[10px] font-mono uppercase tracking-widest mb-1">Human Resource</p>
-                <p class="text-3xl font-bold text-lime-400 font-mono animate-pulse">PART-TIME</p>
-                <p class="text-[9px] text-lime-600 uppercase mt-1">Evenings & Weekends</p>
-            </div>
-            <div class="text-center border-r border-lime-900/30">
-                <p class="text-slate-500 text-[10px] font-mono uppercase tracking-widest mb-1">AI Contribution</p>
-                <p class="text-3xl font-bold text-white font-mono">99%</p>
-            </div>
-            <div class="text-center">
-                <p class="text-slate-500 text-[10px] font-mono uppercase tracking-widest mb-1">Outcome</p>
-                <p class="text-3xl font-bold text-white font-mono">US PATENT</p>
-            </div>
+    <div class="w-full bg-lime-900/20 border-y border-lime-500/30 overflow-hidden py-3 mb-16 relative z-10">
+        <div class="animate-marquee text-lime-400 font-mono font-bold tracking-widest text-sm">
+            /// WARNING: RECORD BROKEN /// THE WORLD'S FIRST CYBORG HAS ARRIVED /// CONCEPT TO US PATENT IN 60 DAYS (PART-TIME) /// CHALLENGE: IF YOU DID IT FASTER, CONTACT US IMMEDIATELY /// WE ARE WAITING /// INDUSTRY STANDARD: 3 YEARS VS BANGSAEN AI: 60 DAYS /// 
+            /// WARNING: RECORD BROKEN /// THE WORLD'S FIRST CYBORG HAS ARRIVED /// CONCEPT TO US PATENT IN 60 DAYS (PART-TIME) /// CHALLENGE: IF YOU DID IT FASTER, CONTACT US IMMEDIATELY /// WE ARE WAITING /// INDUSTRY STANDARD: 3 YEARS VS BANGSAEN AI: 60 DAYS ///
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 mb-24 relative z-10">
+        <h2 class="text-2xl text-center text-white font-mono mb-8">THE EFFICIENCY GAP</h2>
+        
+        <div class="grid grid-cols-3 bg-slate-900 border border-slate-700 rounded-xl overflow-hidden text-sm md:text-base">
+            
+            <div class="bg-slate-800 p-4 border-b border-slate-700 text-slate-400 font-mono font-bold">METRIC</div>
+            <div class="bg-slate-800 p-4 border-b border-r border-slate-700 text-red-400 font-bold text-center border-l border-slate-700">TRADITIONAL R&D</div>
+            <div class="bg-lime-900/20 p-4 border-b border-lime-500/30 text-lime-400 font-bold text-center">CYBORG (BANGSAEN AI)</div>
+
+            <div class="p-4 border-b border-slate-800 text-slate-300 flex items-center"><i class="fas fa-clock w-6 text-slate-500"></i> Timeline</div>
+            <div class="p-4 border-b border-r border-slate-800 text-slate-400 text-center flex items-center justify-center bg-slate-900/50">24 - 36 Months</div>
+            <div class="p-4 border-b border-lime-500/10 text-lime-400 text-center font-bold bg-lime-900/10 flex items-center justify-center">60 Days</div>
+
+            <div class="p-4 border-b border-slate-800 text-slate-300 flex items-center"><i class="fas fa-users w-6 text-slate-500"></i> Workforce</div>
+            <div class="p-4 border-b border-r border-slate-800 text-slate-400 text-center flex items-center justify-center bg-slate-900/50">Team of 20+ Engineers<br><span class="text-xs opacity-50">(Full-Time)</span></div>
+            <div class="p-4 border-b border-lime-500/10 text-lime-400 text-center font-bold bg-lime-900/10 flex items-center justify-center">1 Man + 1 AI<br><span class="text-xs text-lime-600 ml-1">(Part-Time)</span></div>
+
+            <div class="p-4 border-b border-slate-800 text-slate-300 flex items-center"><i class="fas fa-coins w-6 text-slate-500"></i> Budget</div>
+            <div class="p-4 border-b border-r border-slate-800 text-slate-400 text-center flex items-center justify-center bg-slate-900/50">$2,000,000+</div>
+            <div class="p-4 border-b border-lime-500/10 text-lime-400 text-center font-bold bg-lime-900/10 flex items-center justify-center">< $500</div>
+
+            <div class="p-4 border-b border-slate-800 text-slate-300 flex items-center"><i class="fas fa-microchip w-6 text-slate-500"></i> Hardware</div>
+            <div class="p-4 border-b border-r border-slate-800 text-slate-400 text-center flex items-center justify-center bg-slate-900/50">dSPACE / Industrial PC</div>
+            <div class="p-4 border-b border-lime-500/10 text-lime-400 text-center font-bold bg-lime-900/10 flex items-center justify-center">ESP32 / Jetson Nano</div>
+
+            <div class="p-4 text-slate-300 flex items-center"><i class="fas fa-trophy w-6 text-slate-500"></i> Outcome</div>
+            <div class="p-4 border-r border-slate-800 text-slate-500 text-center flex items-center justify-center bg-slate-900/50 italic">Still in development...</div>
+            <div class="p-4 text-lime-400 text-center font-bold bg-lime-900/10 flex items-center justify-center shadow-[inset_0_0_20px_rgba(163,230,53,0.1)]">US PATENT FILED</div>
+
         </div>
     </div>
 
@@ -226,24 +254,16 @@
 
     <script>
         // FAKE LIVE COUNTER SCRIPT
-        // Starts at a high number and slowly increases to look like live traffic.
         let baseCount = 14208; 
         const counterElement = document.getElementById('viewCount');
         
         function updateCounter() {
-            // Increase by random amount 0-3 every few seconds
             let increase = Math.floor(Math.random() * 3); 
             baseCount += increase;
-            
-            // Format number with commas
             counterElement.innerText = baseCount.toLocaleString();
-            
-            // Random delay between updates to look organic
             let delay = Math.floor(Math.random() * 3000) + 1000;
             setTimeout(updateCounter, delay);
         }
-
-        // Start the counter
         setTimeout(updateCounter, 2000);
     </script>
 
