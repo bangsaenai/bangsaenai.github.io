@@ -696,24 +696,17 @@
                         </button>
                     </div>
 
-                    <div class="relative h-[300px] md:h-[400px] bg-black rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden group-hover:border-yellow-500/50 transition-colors">
+                    <div class="relative h-auto bg-black rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden group-hover:border-yellow-500/50 transition-colors shadow-2xl">
                         
-                        <div class="absolute inset-0 opacity-30 blur-sm scale-110">
-                            <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="h-full w-full stroke-yellow-500 fill-none stroke-2">
-                                <polyline points="0,100 50,80 100,120 150,60 200,90 250,50 300,40 350,80 400,20 450,50 500,10"></polyline>
-                             </svg>
-                        </div>
-
-                        <div class="relative z-10 text-center backdrop-blur-md bg-black/60 p-8 rounded-2xl border border-slate-700 shadow-2xl">
-                            <i class="fas fa-lock text-6xl text-slate-500 mb-4 group-hover:text-yellow-500 transition-colors duration-500"></i>
-                            <h3 class="text-xl font-bold text-white mb-2">Encrypted Stream</h3>
-                            <p class="text-slate-400 text-sm font-mono">
-                                AUTH_TOKEN_REQUIRED<br>
-                                Contact Admin for Access Key.
-                            </p>
+                        <div class="relative z-10 w-full">
+                            <img src="images/ai_advisor_dashboard_white.png" alt="Project X AI Dashboard Real Data" class="w-full h-auto object-contain rounded-lg opacity-90 group-hover:opacity-100 transition-opacity">
                         </div>
                         
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-500/10 to-transparent h-[10px] w-full animate-float pointer-events-none"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-500/5 to-transparent h-[5px] w-full animate-float pointer-events-none z-20"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur border border-green-500/50 text-green-400 text-xs font-mono py-1 px-3 rounded uppercase tracking-wider z-30 animate-pulse">
+                            <i class="fas fa-circle text-[8px] mr-2"></i> Live Feed
+                        </div>
                     </div>
 
                 </div>
