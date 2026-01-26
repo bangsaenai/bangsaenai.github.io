@@ -68,9 +68,7 @@ We don't need to "guess" the physics using AI; we **apply** the physics directly
 
 
 ---
-layout: dark-academic
-title: Linear Algebra for AI & Control
-description: The mathematical engine behind modern predictive control.
+The mathematical engine behind modern predictive control.
 ---
 
 # The Math Behind The Magic
