@@ -65,3 +65,58 @@ In financial markets, **Time = Alpha**.
 * **Bangsaen Koopman:** `Input` -> `Matrix Op` -> `Output` (Instant).
 
 We don't need to "guess" the physics using AI; we **apply** the physics directly. This allows **Bangsaen AI** to detect instability (Eigenvalues > 1.0) *before* the price crash occurs, with zero lag.
+
+
+---
+layout: dark-academic
+title: Linear Algebra for AI & Control
+description: The mathematical engine behind modern predictive control.
+---
+
+# The Math Behind The Magic
+> **"Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding."** — William Paul Thurston
+
+ยินดีต้อนรับสู่ **BangsaenAI Academy**.
+ที่นี่เราไม่ได้สอน Linear Algebra เพื่อให้คุณไปสอบไล่ แต่เราสอนเพื่อให้คุณ **"สร้าง"**
+โลกยุคเก่าของ PID Control จบลงแล้ว ยุคแห่งการทำนาย (Prediction) ขับเคลื่อนด้วยเมทริกซ์และเวกเตอร์
+นี่คือภาษาของ **Bangsaen Core**
+
+---
+
+## Part 1: From Scalar to Vector
+### (ทำไม PID ถึงตาย และ Vector คือทางรอด)
+
+ในระบบควบคุมแบบดั้งเดิม (Classical Control) หรือ PID เรามองโลกผ่านรูเข็ม เราสนใจค่าเพียงค่าเดียว คือ **Error** ($e(t)$)
+$$e(t) = \text{SetPoint} - \text{ProcessVariable}$$
+
+นี่คือ **Scalar** (ปริมาณสเกลาร์) — ตัวเลขตัวเดียวที่ไร้ทิศทาง ไร้มิติ และมองไม่เห็นภาพรวม
+
+แต่ในโลกความเป็นจริง ระบบมีความซับซ้อน (Complex Systems) การเปลี่ยนแปลงของอุณหภูมิส่งผลต่อความดัน ความดันส่งผลต่ออัตราการไหล
+การจะคุมสิ่งเหล่านี้ให้อยู่หมัด เราต้องมองให้เห็น **"State"** ทั้งหมดพร้อมกัน
+
+เราจึงต้องใช้ **Vector** ($\mathbf{x}$):
+
+$$\mathbf{x} = \begin{bmatrix} \text{Temperature} \\ \text{Pressure} \\ \text{Flow Rate} \end{bmatrix}$$
+
+
+
+### 💻 Python Representation
+
+ใน Python เราไม่ใช้ List ธรรมดา แต่เราใช้ `NumPy` เพื่อประสิทธิภาพสูงสุด
+
+```python
+import numpy as np
+
+# Scalar (Old School PID view)
+error = 5.0
+
+# Vector (Modern State-Space view)
+# นี่คือวิธีที่ Bangsaen Core มองเห็นระบบของคุณ
+x_state = np.array([
+    [120.5],  # Temp
+    [15.2],   # Pressure
+    [0.8]     # Flow
+])
+
+print(f"System State Shape: {x_state.shape}")
+# Output: (3, 1) -> 3 Dimensions, 1 State
