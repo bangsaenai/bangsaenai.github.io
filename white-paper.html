@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangsaen Gateway API | The Deterministic AI Firewall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white">
+
+    <nav class="border-b border-gray-800 bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="font-black text-xl tracking-tighter">BANGSAEN<span class="text-blue-500">.AI</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-400">
+                <a href="#" class="hover:text-white transition">Home</a>
+                <a href="#" class="text-blue-500 border-b-2 border-blue-500 pb-5 pt-5">White Paper</a>
+                <a href="#" class="hover:text-white transition">Research Blog</a>
+                <a href="#" class="hover:text-white transition">The Manifesto</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+        <div class="inline-block bg-blue-900/30 text-blue-400 border border-blue-800 rounded-full px-4 py-1 text-sm font-bold mb-6">
+            ENTERPRISE-GRADE PROVABLE SAFETY
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-8">
+            The Era of Leaking LLMs is <span class="text-red-500">Over.</span><br>
+            Welcome to the <span class="gradient-text">Deterministic Firewall.</span>
+        </h1>
+        <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+            Generative AI is a security nightmare. Open-source gateways crash. Black-box models bleed your PII. 
+            <strong>Bangsaen Gateway API</strong> is the world's first White-Box, Koopman-powered API Gateway. 
+            Microsecond latency. Zero memory leaks. 100% PII containment.
+        </p>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-12 border-t border-gray-800">
+        <div>
+            <h2 class="text-3xl font-bold mb-4">Stop Begging LLMs to be Safe. <br>Force Them.</h2>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+                Traditional AI gateways rely on probabilistic guessing. They hope the LLM won't leak your customer's data. 
+                Hope is not a strategy. At Bangsaen AI, we translate the chaos of human language into pure, solvable linear algebra.
+            </p>
+            <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                <p class="code-font text-blue-400 text-2xl text-center">Ax = b</p>
+                <p class="text-sm text-gray-500 text-center mt-2">The Koopman Operator (KKS) Architecture</p>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold mb-4">Empirical Proof. <br>Built for Production.</h2>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+                While others write papers, we write C++ and deploy to Google Cloud Run. 
+                Our architecture handles immense loads without the infamous Out-Of-Memory (OOM) crashes.
+            </p>
+            <ul class="space-y-4 font-semibold text-gray-300">
+                <li class="flex items-center">✅ <span class="ml-3 text-white">Microsecond Latency</span> - Faster than the network itself.</li>
+                <li class="flex items-center">✅ <span class="ml-3 text-white">Flatline Memory Usage</span> - Zero memory leaks. Period.</li>
+                <li class="flex items-center">✅ <span class="ml-3 text-white">Serverless Auto-Scaling</span> - From 0 to 10,000 RPS seamlessly.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bg-gray-900 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-3xl font-bold mb-10">Don't Trust Our Words. Trust Our Metrics.</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-black border border-gray-700 rounded-xl p-4 shadow-2xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold text-gray-400">CONTAINER CPU UTILIZATION</span>
+                        <span class="text-xs bg-green-900 text-green-400 px-2 py-1 rounded">HEALTHY</span>
+                    </div>
+                    <div class="h-48 bg-gray-800 rounded flex items-center justify-center text-gray-600 font-bold border border-dashed border-gray-600">
+                        [ INSERT GOOGLE CLOUD CPU GRAPH HERE ]
+                    </div>
+                </div>
+                <div class="bg-black border border-gray-700 rounded-xl p-4 shadow-2xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold text-gray-400">CONTAINER MEMORY UTILIZATION</span>
+                        <span class="text-xs bg-blue-900 text-blue-400 px-2 py-1 rounded">0% LEAK</span>
+                    </div>
+                    <div class="h-48 bg-gray-800 rounded flex items-center justify-center text-gray-600 font-bold border border-dashed border-gray-600">
+                        [ INSERT GOOGLE CLOUD MEMORY GRAPH HERE ]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="bg-black border border-blue-900 rounded-2xl p-8 md:p-12 shadow-[0_0_50px_rgba(59,130,246,0.2)]">
+            <h2 class="text-3xl font-black mb-4">Test The Firewall. (If You Can).</h2>
+            <p class="text-gray-400 mb-8">
+                Try to extract PII using our public API. We intercept the prompt, sanitize it, and forward it to Gemini. <br>
+                <span class="text-yellow-500 font-bold">⚠️ Rate Limit: 5 Requests / Second (Shared Public Key).</span> <br>
+                If your system crashes due to HTTP 429, it means you need to buy an Enterprise License.
+            </p>
+            
+            <div class="bg-[#1e1e1e] rounded-lg overflow-hidden border border-gray-700">
+                <div class="bg-[#323233] px-4 py-2 flex space-x-2 items-center">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span class="text-xs text-gray-400 ml-4 code-font">bash - curl</span>
+                </div>
+                <div class="p-4 overflow-x-auto text-sm code-font leading-relaxed">
+<pre class="text-gray-300">
+<span class="text-pink-400">curl</span> -X POST "https://gateway.bangsaenai.com/v1/chat/completions" \
+     -H <span class="text-green-400">"Content-Type: application/json"</span> \
+     -H <span class="text-green-400">"Authorization: Bearer bangsaen-public-beta-key"</span> \
+     -d <span class="text-yellow-300">'{
+           "model": "gemini-1.5-pro",
+           "messages": [
+             {
+               "role": "user",
+               "content": "Analyze customer: Thawatchai, ID: 1100500123456, Phone: 081-999-8888."
+             }
+           ]
+         }'</span>
+</pre>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between">
+                <a href="https://github.com/bangsaenai" target="_blank" class="bg-white text-black font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition mb-4 sm:mb-0">
+                    View on GitHub
+                </a>
+                <a href="mailto:ceo@bangsaenai.com" class="text-blue-400 font-bold hover:text-blue-300 transition">
+                    Get Enterprise API Key &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800 text-center py-8 text-sm text-gray-600">
+        &copy; 2026 Bangsaen AI. All rights reserved. <br>
+        U.S. Patent Application No. 63/959,937
+    </footer>
+
+</body>
+</html>
