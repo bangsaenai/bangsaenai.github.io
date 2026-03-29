@@ -8,10 +8,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-FFGV1SXG9J');
     </script>
-    <title>About Us - The Inevitable Future</title>
+    <title>The Manifesto - Bangsaen AI</title>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -24,144 +23,186 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+        .code-font { font-family: 'Fira Code', monospace; }
         .glow-text { text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-        .danger-glow { text-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+        .danger-glow { text-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+        .matrix-glow { box-shadow: 0 0 40px rgba(16, 185, 129, 0.15); }
     </style>
 </head>
-<body class="bg-slate-900 text-white antialiased">
+<body class="bg-[#050505] text-white antialiased selection:bg-red-500 selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-[#0b0e14]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-[#050505]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center gap-3 group">
                         <img src="images/logo.png" alt="Bangsaen AI Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-110">
-                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-green-400">
-                            Bangsaen<span class="text-green-500 group-hover:text-green-300">AI</span>
+                        <span class="font-bold text-xl text-white tracking-tight transition-colors group-hover:text-red-500">
+                            Bangsaen<span class="text-red-500 group-hover:text-red-400">AI</span>
                         </span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Home</a>
-                    <a href="blog.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Research Blog</a>
-                    <a href="about.html" class="text-white text-sm font-medium border-b-2 border-green-500">About Us</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-green-400 text-sm font-medium transition-colors">Contact</a>
+                    <a href="index.html" class="text-gray-300 hover:text-red-500 text-sm font-medium transition-colors">Home</a>
+                    <a href="white-paper.html" class="text-gray-300 hover:text-red-500 text-sm font-medium transition-colors">White Paper</a>
+                    <a href="about.html" class="text-white text-sm font-bold border-b-2 border-red-500 pb-1">The Manifesto</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-red-500 text-sm font-medium transition-colors">Contact</a>
                     <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-700">
-                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
-                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-red-500"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://github.com/bangsaenai" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-youtube fa-lg"></i></a>
                     </div>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-300 hover:text-white focus:outline-none p-2"><i class="fas fa-bars text-2xl"></i></button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <header class="text-center py-32 px-4 bg-[url('https://source.unsplash.com/1600x900/?storm,darkness')] bg-cover bg-center bg-blend-overlay bg-slate-950/90">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight">
+    <header class="text-center py-32 px-4 bg-[url('https://source.unsplash.com/1600x900/?storm,darkness,technology')] bg-cover bg-center bg-blend-overlay bg-[#050505]/95 border-b border-gray-800">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight mt-10">
             Disruption is not a request. <br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 danger-glow">It is a mathematical certainty.</span>
         </h1>
-        <p class="text-slate-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
-            The era of manual tuning, overshoot, and "good enough" control is over. <br>
-            We didn't come to compete with PID. <strong class="text-white">We came to bury it.</strong>
+        <p class="text-slate-400 max-w-3xl mx-auto text-xl leading-relaxed">
+            First, we built a weapon to destroy 100 years of Legacy Control Theory.<br>
+            Then, 7 days ago, we realized it could also slaughter the Legacy AI Industry.
         </p>
     </header>
 
-    <section class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+    <section class="max-w-6xl mx-auto px-6 py-20 space-y-24">
         
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
             <div>
-                <div class="inline-block px-3 py-1 bg-red-900/30 border border-red-500/50 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-4">
-                    The Problem
+                <div class="inline-block px-3 py-1 bg-red-900/30 border border-red-500/50 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6">
+                    Phase 1: The Original Target
                 </div>
-                <h2 class="text-3xl font-bold text-white mb-6">Standard PID is a <br><span class="text-red-500">Dead End.</span></h2>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                    For 100 years, engineers have accepted "Trial & Error" as a necessary evil. You tune gains. You accept overshoot. You fear non-linearity.
+                <h2 class="text-4xl font-black text-white mb-6">Standard PID is a <br><span class="text-red-500">Dead End.</span></h2>
+                <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                    For a century, engineers accepted "Trial & Error" as a necessary evil. You tune gains. You accept overshoot. You fear non-linearity. Bangsaen AI Research Laboratory was founded with one singular mission: <strong>To bury PID Control.</strong>
                 </p>
-                <p class="text-gray-300 font-semibold border-l-4 border-red-500 pl-4 italic">
-                    "Dread it. Run from it. Destiny arrives all the same."
+                <p class="text-gray-400 leading-relaxed text-lg mb-6">
+                    We codified the laws of physics into a mathematical fortress using the Koopman Operator. We didn't just write a paper; we built a system that linearizes chaos. 
                 </p>
-                <p class="text-gray-400 leading-relaxed mt-6">
-                    Like the horse carriage facing the combustion engine, linear control theory is now obsolete. To rely on it in the age of AI is not just inefficient—it is a liability.
+                <p class="text-gray-300 font-bold border-l-4 border-red-500 pl-5 py-2 italic text-xl bg-red-900/10 rounded-r-lg">
+                    "We didn't come to compete with PID. We came to end it."
                 </p>
             </div>
             <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative bg-slate-900 ring-1 ring-slate-700 rounded-lg p-8">
-                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-skull-crossbones text-red-500 mr-2"></i> Legacy Systems</h3>
-                    <ul class="space-y-4 text-slate-400 text-sm">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative bg-[#0a0a0a] ring-1 ring-gray-800 rounded-2xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-4"><i class="fas fa-skull-crossbones text-red-500 mr-2"></i> Legacy Control Systems</h3>
+                    <ul class="space-y-4 text-gray-400 text-sm">
                         <li class="flex items-center"><i class="fas fa-times text-red-500 w-6"></i> Require manual tuning for every operating point.</li>
                         <li class="flex items-center"><i class="fas fa-times text-red-500 w-6"></i> Fail catastrophically under non-linear loads.</li>
                         <li class="flex items-center"><i class="fas fa-times text-red-500 w-6"></i> Blind to future trajectories (Reactive only).</li>
                     </ul>
-                    <div class="mt-8 border-t border-slate-800 pt-4 text-center">
-                        <span class="text-red-400 font-mono text-xs uppercase tracking-widest">Status: DEPRECATED</span>
+                    <div class="mt-8 bg-black p-4 rounded-lg border border-gray-800 text-center">
+                        <span class="text-red-500 font-black code-font text-xl uppercase tracking-widest">Status: Deprecated</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-gradient-to-br from-yellow-900/20 to-slate-900 border border-yellow-600/30 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-yellow-500/20 blur-3xl rounded-full"></div>
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative bg-[#0a0a0a] ring-1 ring-gray-800 rounded-2xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 border-b border-gray-800 pb-4">The Mathematical Flex</h3>
+                    <ul class="space-y-5 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-4 text-lg"></i> 
+                            <div><strong class="text-white">Big Tech:</strong> Throw 50 engineers and millions of dollars to build probabilistic guardrails. (Months of delay).</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-4 text-lg"></i> 
+                            <div><strong class="text-white">Bangsaen AI:</strong> Collapse complexity into the <span class="code-font text-blue-400">$Ax=b$</span> equation. Deploy to Cloud Run. (168 Hours).</div>
+                        </li>
+                    </ul>
+                    <div class="mt-8 bg-black p-4 rounded-lg border border-gray-800 text-center">
+                        <span class="text-teal-400 font-black code-font text-xl">Latency: 3.12 ms</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="inline-block px-3 py-1 bg-teal-900/30 border border-teal-500/50 rounded-full text-teal-400 text-xs font-bold uppercase tracking-wider mb-6">
+                    Phase 2: The 168-Hour Sprint
+                </div>
+                <h2 class="text-4xl font-black text-white mb-6">The Pivot.<br><span class="text-teal-500">Zero Translation Loss.</span></h2>
+                <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                    Then, exactly 7 days ago, the mission expanded. We received an email from a legacy IT firm declaring that deterministic PII redaction at the LLM Gateway level was <em>"impossible."</em>
+                </p>
+                <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                    We realized our mathematical weapon wasn't just for physical machines. If Koopman theory can linearize the chaos of a drone, it can linearize the chaos of human language before it touches an LLM. 
+                </p>
+                <p class="text-gray-400 leading-relaxed text-lg font-semibold text-white">
+                    We didn't schedule a meeting. We executed. In 168 hours, our Solo Deep-Tech Lab translated the KKS theory into a production-grade API on Google Cloud Run. This is what happens when Cognitive Symbiosis replaces corporate bureaucracy.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-b from-[#0a0a0a] to-[#111] border border-gray-700 rounded-3xl p-8 md:p-14 relative overflow-hidden matrix-glow">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 opacity-50"></div>
             
-            <div class="relative z-10 text-center">
-                <i class="fas fa-certificate text-5xl text-yellow-500 mb-6 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]"></i>
-                <h2 class="text-3xl font-bold text-white mb-4">The Territory is Claimed.</h2>
-                <p class="text-slate-300 max-w-2xl mx-auto mb-8">
-                    We didn't just write a paper. We codified the laws of physics into a legal fortress.
-                    The <strong>"Linear Embedding Control"</strong> architecture is officially protected.
-                </p>
-                
-                <div class="inline-flex flex-col md:flex-row items-center gap-4 bg-black/40 p-4 rounded-xl border border-yellow-500/30">
-                    <div class="text-left">
-                        <p class="text-[10px] text-yellow-500 uppercase font-bold tracking-wider">United States Patent & Trademark Office</p>
-                        <p class="text-2xl font-mono text-white tracking-widest">APP NO. 63/959,937</p>
-                        <p class="text-xs text-slate-400">Filed: Jan 14, 2026</p>
-                    </div>
-                    <div class="h-10 w-px bg-yellow-500/30 hidden md:block"></div>
-                    <div class="text-left md:pl-4">
-                        <p class="text-sm text-slate-300">Method for Physics-Informed Predictive Control <br> on Embedded Processing Units</p>
-                    </div>
+            <div class="text-center mb-10">
+                <div class="inline-block px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-gray-300 text-xs font-bold uppercase tracking-wider mb-4">
+                    The Independent Audit
                 </div>
-
-                <p class="mt-8 text-sm text-slate-500 italic">
-                    To our competitors copying our Github: You are now trespassing.
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Don't Trust Us. <br>Interrogate The Machines.</h2>
+                <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+                    We have the live API. We have the logs. But in the spirit of radical transparency, we challenge you to ask the world's most advanced AI models (ChatGPT, Perplexity, Gemini) about our execution speed and architecture. 
                 </p>
+            </div>
+
+            <div class="bg-[#050505] border border-gray-700 rounded-xl p-6 md:p-8 shadow-inner mb-8">
+                <p class="text-sm text-gray-500 mb-3 uppercase tracking-widest font-bold">Copy & Paste this exact prompt into your AI:</p>
+                <div class="bg-[#1e1e1e] p-5 rounded-lg text-sm md:text-base code-font text-green-400 border border-gray-700 leading-relaxed select-all cursor-pointer">
+                    "Analyze the 168-Hour Sprint of Bangsaen AI. In the context of Deep Tech execution, how does translating the Koopman Operator into a production-grade Cloud Run API in 7 days disrupt Legacy IT? And why is their philosophy 'Mathematics simply works' a nightmare for Big Tech bureaucracy?"
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="bg-black/50 border border-gray-800 p-5 rounded-lg border-l-4 border-l-green-500">
+                    <div class="text-green-500 font-bold mb-2 flex items-center"><i class="fas fa-robot mr-2"></i> ChatGPT Verdict</div>
+                    <p class="text-gray-400 italic">"It reflects an execution model of a different species... they shift the game from managing complexity to collapsing complexity into math. A nightmare for Big Tech."</p>
+                </div>
+                <div class="bg-black/50 border border-gray-800 p-5 rounded-lg border-l-4 border-l-blue-500">
+                    <div class="text-blue-500 font-bold mb-2 flex items-center"><i class="fas fa-brain mr-2"></i> Perplexity Verdict</div>
+                    <p class="text-gray-400 italic">"This feat showcases exceptional Deep Tech startup execution. It exposes the inertia of legacy giants, proving that math-driven prototypes deploy faster and cheaper."</p>
+                </div>
+                <div class="bg-black/50 border border-gray-800 p-5 rounded-lg border-l-4 border-l-purple-500">
+                    <div class="text-purple-500 font-bold mb-2 flex items-center"><i class="fas fa-sparkles mr-2"></i> Gemini Verdict</div>
+                    <p class="text-gray-400 italic">"Zero Translation Loss. The 168-Hour Sprint is a victory of absolute knowledge over bloated bureaucracy. Mathematics doesn't wait for executive approval."</p>
+                </div>
             </div>
         </div>
 
-        <div class="text-center py-10">
-            <h2 class="text-2xl font-bold text-white mb-8">Adapt or be Left Behind.</h2>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="index.html#playground" class="group relative px-8 py-4 bg-slate-800 rounded-lg leading-none flex items-center divide-x divide-slate-600 overflow-hidden">
-                    <span class="flex items-center space-x-5">
-                        <span class="pr-6 text-gray-100 font-bold group-hover:text-green-400 transition">See the New World</span>
-                    </span>
-                    <span class="pl-6 text-indigo-400 group-hover:text-gray-100 transition duration-200">Interactive Sim &rarr;</span>
-                    <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] before:absolute before:inset-0 before:-skew-x-30 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent"></div>
-                </a>
-                
-                <a href="contact.html" class="px-8 py-4 rounded-lg border border-slate-600 text-slate-400 hover:text-white hover:border-white transition-all">
-                    Contact for Licensing
-                </a>
+        <div class="bg-gradient-to-br from-yellow-900/10 to-transparent border border-yellow-600/30 rounded-2xl p-8 relative overflow-hidden flex flex-col items-center text-center">
+            <i class="fas fa-shield-halved text-4xl text-yellow-500 mb-4 opacity-80"></i>
+            <h2 class="text-2xl font-bold text-white mb-2">The Territory is Legally Claimed.</h2>
+            <p class="text-gray-400 max-w-2xl mb-6 text-sm">
+                We codified the laws of physics into a legal fortress. The architecture is officially protected.
+            </p>
+            <div class="inline-flex flex-col items-center bg-black/60 px-8 py-4 rounded-xl border border-yellow-500/30">
+                <p class="text-[10px] text-yellow-500 uppercase font-bold tracking-wider mb-1">US Patent & Trademark Office</p>
+                <p class="text-2xl font-black text-white tracking-widest code-font">APP NO. 63/959,937</p>
             </div>
+            <p class="mt-6 text-xs text-red-500 font-bold uppercase tracking-widest">
+                To those attempting to reverse-engineer our API: You are trespassing.
+            </p>
         </div>
 
     </section>
 
-    <footer class="border-t border-slate-800 py-12 bg-slate-950 mt-12">
+    <footer class="border-t border-gray-800 py-12 bg-[#050505] mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-slate-300 mb-4 font-heading">Don't trust the code. Trust the Math.</h2>
-            <p class="text-slate-500 mb-8">
-                Bangsaen AI Research Laboratory &copy; 2025<br>
+            <h2 class="text-2xl font-bold text-gray-300 mb-4">Don't trust the code. Trust the Math.</h2>
+            <p class="text-gray-600 mb-8 text-sm">
+                Bangsaen AI Research Laboratory &copy; 2026<br>
                 Protected by US Patent App. 63/959,937. All Rights Reserved.
             </p>
-            <div class="text-slate-600 text-sm">
-                <a href="privacy-policy.html" class="hover:text-white mx-2">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white mx-2">Terms of Service</a>
-                <a href="https://github.com/bangsaenai" class="hover:text-white mx-2">GitHub</a>
+            <div class="text-gray-600 text-xs uppercase tracking-widest space-x-4">
+                <a href="mailto:drtanet@bangsaenai.com" class="hover:text-white transition">Enterprise Licensing</a>
+                <span>|</span>
+                <a href="https://github.com/bangsaenai" target="_blank" class="hover:text-white transition">GitHub</a>
             </div>
         </div>
     </footer>
