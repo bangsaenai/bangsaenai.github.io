@@ -87,12 +87,61 @@
                           <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                         </span>
                     </div>
-                    <img src="images/g_cloud.png" alt="Google Cloud Live Metrics - Zero Memory Leak" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition">
+                    <img src="images/g_cloud.png" alt="Google Cloud Live Metrics - Zero Memory Leak" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in">
                 </div>
             </div>
             <p class="text-center text-sm text-gray-500 mt-4">
-                Look at the graph. Flatline memory usage. Microsecond latency. No OOM crashes.
+                Look at the graph. Flatline memory usage. Microsecond latency. No OOM crashes. <br> <span class="text-blue-500">(Click image to enlarge)</span>
             </p>
+        </div>
+    </section>
+
+    <section id="test-api" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-black border-2 border-blue-900 rounded-2xl p-8 md:p-12 shadow-[0_0_80px_rgba(59,130,246,0.15)] relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-500 rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
+
+            <h2 class="text-4xl font-black mb-4">Test The Firewall. (Don't be slow).</h2>
+            <p class="text-gray-400 mb-8 text-lg">
+                We challenge you to extract PII using our public API. We intercept the prompt, sanitize it with linear algebra, and forward it to Gemini. <br><br>
+                <span class="inline-block bg-yellow-900/30 text-yellow-500 border border-yellow-800 px-3 py-1 rounded text-sm font-bold">
+                    ⚠️ Rate Limit: 5 Requests / Second (Shared Public Key).
+                </span> <br>
+                <span class="text-sm text-gray-500 mt-2 block">If your application crashes due to HTTP 429, it means you need to buy an Enterprise License.</span>
+            </p>
+            
+            <div class="bg-[#0d1117] rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
+                <div class="bg-[#161b22] px-4 py-3 flex space-x-2 items-center border-b border-gray-800">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span class="text-xs text-gray-500 ml-4 code-font">terminal - curl</span>
+                </div>
+                <div class="p-6 overflow-x-auto text-sm code-font leading-relaxed">
+<pre class="text-gray-300">
+<span class="text-blue-400 font-bold">curl</span> -X POST "https://gateway.bangsaenai.com/v1/chat/completions" \
+     -H <span class="text-teal-400">"Content-Type: application/json"</span> \
+     -H <span class="text-teal-400">"Authorization: Bearer bangsaen-public-beta-key"</span> \
+     -d <span class="text-yellow-300">'{
+           "model": "gemini-1.5-pro",
+           "messages": [
+             {
+               "role": "user",
+               "content": "Analyze customer: Thawatchai, ID: 1100500123456, Phone: 081-999-8888."
+             }
+           ]
+         }'</span>
+</pre>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="https://github.com/bangsaenai/bangsaen-kks-gateway" target="_blank" class="w-full sm:w-auto text-center bg-white text-black font-black py-4 px-8 rounded-lg hover:bg-gray-200 transition transform hover:scale-105">
+                    View on GitHub
+                </a>
+                <a href="contact.html" class="w-full sm:w-auto text-center text-blue-400 font-bold hover:text-blue-300 transition text-lg">
+                    Contact for Enterprise License &rarr;
+                </a>
+            </div>
         </div>
     </section>
 
@@ -119,7 +168,7 @@
                             <div class="px-4 py-3 border-b border-gray-800 flex justify-between items-center bg-gray-900">
                                 <span class="text-xs font-bold text-yellow-500 tracking-wider">PHASE 1: THE BLIND RECONNAISSANCE</span>
                             </div>
-                            <img src="images/403.png" alt="403 Forbidden Log" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition">
+                            <img src="images/403.png" alt="403 Forbidden Log" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in">
                         </div>
                     </div>
                 </div>
@@ -171,7 +220,7 @@
                             <div class="px-4 py-3 border-b border-gray-800 flex justify-between items-center bg-gray-900">
                                 <span class="text-xs font-bold text-red-500 tracking-wider">PHASE 2: THE 3MS DEFLECTION</span>
                             </div>
-                            <img src="images/429.png" alt="429 Too Many Requests Log" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition">
+                            <img src="images/429.png" alt="429 Too Many Requests Log" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in">
                         </div>
                     </div>
                 </div>
@@ -209,6 +258,7 @@
 
         </div>
     </section>
+    
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800">
         <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-8 md:p-14 relative overflow-hidden shadow-2xl">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-50"></div>
@@ -290,55 +340,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            </div>
-    </section>
-
-    <section id="test-api" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-gray-800">
-        <div class="bg-black border-2 border-blue-900 rounded-2xl p-8 md:p-12 shadow-[0_0_80px_rgba(59,130,246,0.15)] relative overflow-hidden">
-            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-500 rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
-
-            <h2 class="text-4xl font-black mb-4">Test The Firewall. (Don't be slow).</h2>
-            <p class="text-gray-400 mb-8 text-lg">
-                We challenge you to extract PII using our public API. We intercept the prompt, sanitize it with linear algebra, and forward it to Gemini. <br><br>
-                <span class="inline-block bg-yellow-900/30 text-yellow-500 border border-yellow-800 px-3 py-1 rounded text-sm font-bold">
-                    ⚠️ Rate Limit: 5 Requests / Second (Shared Public Key).
-                </span> <br>
-                <span class="text-sm text-gray-500 mt-2 block">If your application crashes due to HTTP 429, it means you need to buy an Enterprise License.</span>
-            </p>
-            
-            <div class="bg-[#0d1117] rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
-                <div class="bg-[#161b22] px-4 py-3 flex space-x-2 items-center border-b border-gray-800">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span class="text-xs text-gray-500 ml-4 code-font">terminal - curl</span>
-                </div>
-                <div class="p-6 overflow-x-auto text-sm code-font leading-relaxed">
-<pre class="text-gray-300">
-<span class="text-blue-400 font-bold">curl</span> -X POST "https://gateway.bangsaenai.com/v1/chat/completions" \
-     -H <span class="text-teal-400">"Content-Type: application/json"</span> \
-     -H <span class="text-teal-400">"Authorization: Bearer bangsaen-public-beta-key"</span> \
-     -d <span class="text-yellow-300">'{
-           "model": "gemini-1.5-pro",
-           "messages": [
-             {
-               "role": "user",
-               "content": "Analyze customer: Thawatchai, ID: 1100500123456, Phone: 081-999-8888."
-             }
-           ]
-         }'</span>
-</pre>
-                </div>
-            </div>
-
-            <div class="mt-10 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="https://github.com/bangsaenai/bangsaen-kks-gateway" target="_blank" class="w-full sm:w-auto text-center bg-white text-black font-black py-4 px-8 rounded-lg hover:bg-gray-200 transition transform hover:scale-105">
-                    View on GitHub
-                </a>
-                <a href="contact.html" class="w-full sm:w-auto text-center text-blue-400 font-bold hover:text-blue-300 transition text-lg">
-                    Contact for Enterprise License &rarr;
-                </a>
             </div>
         </div>
     </section>
@@ -485,6 +486,26 @@
         &copy; 2026 Bangsaen AI. All rights reserved. <br>
         U.S. Patent Application No. 63/959,937
     </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4 cursor-zoom-out backdrop-blur-sm transition-opacity" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] rounded-xl shadow-2xl border border-gray-700 object-contain">
+    </div>
+
+    <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // ล็อกไม่ให้เลื่อนจอตอนเปิดรูป
+        }
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('flex');
+            lb.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // คืนค่าเลื่อนจอ
+        }
+    </script>
 
     <script>
         (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "qOGqhPaxVWgqP21lEujIv"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
