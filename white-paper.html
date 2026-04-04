@@ -70,6 +70,52 @@
         </p>
     </section>
 
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800 bg-[#050508] relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-cyan-900/10 to-transparent pointer-events-none"></div>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-center relative z-10">
+            <div class="lg:w-1/2">
+                <div class="inline-block px-4 py-1.5 bg-cyan-900/30 border border-cyan-500/50 rounded-full text-cyan-400 text-xs font-bold uppercase tracking-widest mb-6 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+                    Hardware Reality Check
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                    No Supercomputer Needed.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">Air-Gapped on a Raspberry Pi 3.</span>
+                </h2>
+                <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                    Silicon Valley thinks you need an array of expensive GPUs to filter LLM traffic. <strong>We just proved them wrong.</strong> A true security gateway's job is to sit at the edge—lightweight, invisible, and completely isolated from the internet.
+                </p>
+                <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                    By compiling our deterministic <code class="text-cyan-400 font-mono text-sm px-1 bg-cyan-900/20 rounded">Ax=b</code> engine natively for ARM64 architecture, we compressed enterprise-grade Multilingual PII containment into a device with barely <strong>1GB of RAM</strong>. No cloud dependencies. No bloatware. Just pure mathematical filtering.
+                </p>
+                <div class="bg-gray-900/80 border-l-4 border-cyan-500 p-5 rounded-r-lg shadow-xl backdrop-blur-sm">
+                    <p class="text-white font-bold text-xl italic leading-snug">
+                        "If we can perfectly secure an Enterprise LLM on a 9-year-old microboard... Class is officially dismissed."
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 w-full">
+                <div class="bg-black border border-gray-700 rounded-xl p-2 shadow-[0_0_40px_rgba(34,211,238,0.15)] relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative bg-[#0a0a0a] rounded-lg overflow-hidden border border-gray-800">
+                        <div class="px-4 py-3 border-b border-gray-800 flex justify-between items-center bg-[#111]">
+                            <span class="text-xs font-bold text-cyan-400 tracking-wider font-mono">LIVE TELEMETRY: PI3 DOCKER BUILD & RAM USAGE</span>
+                            <span class="flex h-3 w-3 relative">
+                              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-cyan-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                            </span>
+                        </div>
+                        <img src="images/htop.PNG" alt="Raspberry Pi 3 htop metrics showing low RAM usage" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in">
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">
+                    Look closely: Bare OS + Docker running flawlessly.<br>
+                    <span class="text-cyan-500 cursor-pointer hover:underline font-semibold" onclick="openLightbox('images/htop.PNG')">(Click to expand monitor)</span>
+                </p>
+            </div>
+        </div>
+    </section>
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800 bg-[#0a0c10] relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-900/10 to-transparent pointer-events-none"></div>
         <div class="flex flex-col md:flex-row gap-16 items-center relative z-10">
