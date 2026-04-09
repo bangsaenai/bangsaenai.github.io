@@ -1405,135 +1405,6 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-gray-800 bg-black relative">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-red-500 opacity-20 shadow-[0_0_20px_rgba(239,68,68,0.3)]"></div>
-
-        <div class="text-center mb-16 relative z-10">
-            <div class="inline-block bg-orange-900/30 text-orange-400 border border-orange-800 px-3 py-1 rounded text-xs font-bold mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(249,115,22,0.3)]">
-                Live Combat Logs (V1 Historical)
-            </div>
-            <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight tracking-tight">
-                Anatomy of a <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]">V1 Leaking Beta.</span>
-            </h2>
-            <p class="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto">
-                Theory must be proven on the battlefield. The March 28-31 Beta provided critical combat data. While the base Koopman blocked manual floods, the English-centric model failed the Thai Numeral Red Team. These are the historical logs that catalyzed V2.
-            </p>
-        </div>
-
-        <div class="space-y-24">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-black border border-gray-800 rounded-xl p-2 shadow-2xl relative group">
-                        <div class="relative bg-black rounded-lg overflow-hidden border border-gray-800">
-                            <div class="px-4 py-3 border-b border-gray-800 flex justify-between items-center bg-gray-900">
-                                <span class="text-xs font-bold text-yellow-500 tracking-wider font-mono">V1 LOG: THE 403 DEFLECTION</span>
-                            </div>
-                            <img src="images/403.png" alt="403 Forbidden Log" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in flex-grow border-b border-gray-800">
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <h3 class="text-3xl font-black mb-4 text-white"><span class="text-yellow-500">PHASE 1</span> — Authorization Breach Deflected</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6 font-bold uppercase text-red-500">HTTP 403: Forbidden.</p>
-                    <p class="text-gray-300 text-sm pl-4 border-l-2 border-yellow-800 italic leading-relaxed">Attacker obtained the core endpoint (<code class="text-xs text-yellow-400 bg-yellow-900/30 px-1 rounded">POST /analyze</code>) and attempted to flood the AI matrix without an API key. authentication shield rejected requests instantly.</p>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-1">
-                    <h3 class="text-3xl font-black mb-4 text-white"><span class="text-red-500">PHASE 2</span> — The Economic DDoS Flood deflected</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6 font-bold uppercase text-orange-400">HTTP 429: Too Many Requests.</p>
-                    <p class="text-gray-300 text-sm pl-4 border-l-2 border-red-800 italic leading-relaxed">Attacker obtained a public key and deployed a python-requests loop script, hoping to force an Out-Of-Memory (OOM) crash. Rate limiting identified the anomaly and deterministically deflected it in <strong class="text-green-400">3ms</strong> before reaching core logic.</p>
-                </div>
-                <div class="order-2">
-                    <div class="bg-black border border-red-900 rounded-xl p-2 shadow-2xl relative group h-full">
-                        <div class="relative bg-black rounded-lg overflow-hidden border border-gray-800 h-full flex flex-col">
-                            <div class="px-4 py-3 border-b border-gray-800 flex justify-between items-center bg-gray-900">
-                                <span class="text-xs font-bold text-red-500 tracking-wider font-mono">V1 LOG: THE 3MS DEFLECTION</span>
-                            </div>
-                            <img src="images/429.png" alt="429 Too Many Requests Log" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in flex-grow border-b border-gray-800">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-black border border-red-900 rounded-xl p-2 shadow-2xl relative group h-full">
-                        <div class="relative bg-black rounded-lg overflow-hidden border border-gray-800 h-full flex flex-col">
-                            <div class="px-4 py-3 border-b border-gray-800 flex justify-between items-center bg-gray-900">
-                                <span class="text-xs font-bold text-red-500 tracking-wider font-mono">V1 Combat: THE NUMERAL LEAK</span>
-                            </div>
-                            <img src="images/378.png" alt="V1 Thai Numeral Leak Log" onclick="openLightbox(this.src)" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition cursor-zoom-in flex-grow border-red-900 border">
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <h3 class="text-3xl font-black mb-4 text-red-500">Critical Leaks Detected (Thai PII Crisis)</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-6 font-bold uppercase red-gradient-text italic">
-                        The March 31 Failure: Thai Numeral Bypass.
-                    </p>
-                    <p class="text-gray-300 text-sm pl-4 border-l-2 border-red-800 italic leading-relaxed">The English-centric V1 brain placed <strong class="text-white">Thai numerals (๑๒๓)</strong> in a vector subspace that did not trigger the PII equation. Western NLP models fail at unstructured complexity—forcing the immediate upgrade to V2 Deterministic MultiLingual normalizers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-800 bg-gradient-to-b from-gray-900/50 to-black relative">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-blue-600 rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
-        
-        <div class="text-center mb-16 relative z-10">
-            <div class="inline-block bg-indigo-900/40 text-indigo-400 border border-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold mb-6 tracking-widest uppercase shadow-[0_0_20px_rgba(99,102,241,0.3)]">
-                The Master Plan
-            </div>
-            <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight text-white tracking-tight">
-                The <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">Gateway</span> Roadmap.
-            </h2>
-        </div>
-
-        <div class="grid md:grid-cols-4 gap-6 relative z-10 font-black uppercase text-center tracking-wide">
-            <div class="bg-[#0d1117] border border-blue-500 rounded-2xl p-6 relative group flex flex-col shadow-[0_0_20px_rgba(37,99,235,0.3)]">
-                <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-transparent rounded-2xl opacity-100 transition pointer-events-none"></div>
-                <div class="text-blue-500 text-3xl mb-1 code-font tracking-tighter relative z-10 font-bold">01</div>
-                <h3 class="text-white font-bold text-xl mb-4 relative z-10 leading-tight">V2: The Vanguard <span class="text-[10px] bg-blue-600 text-white px-2 py-1 rounded ml-2 align-middle font-black">Live</span></h3>
-                <ul class="text-sm text-gray-400 space-y-3 mb-6 flex-grow relative z-10 text-left font-sans">
-                    <li><strong class="text-white">Status:</strong> Released & Open.</li>
-                    <li><strong class="text-white">Deployments:</strong> Public Cloud API or On-Premise Docker.</li>
-                    <li><strong class="text-white">Goal:</strong> 100% PII Containment verified.</li>
-                </ul>
-            </div>
-
-            <div class="bg-[#0d1117] border border-emerald-500 rounded-2xl p-6 relative group flex flex-col shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-                <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/20 to-transparent rounded-2xl opacity-100 transition pointer-events-none"></div>
-                <div class="text-emerald-500 text-3xl mb-1 code-font tracking-tighter relative z-10 font-bold">02</div>
-                <h3 class="text-white font-bold text-xl mb-4 relative z-10 leading-tight">V3: The Enterprise <span class="text-[10px] bg-emerald-900 text-emerald-400 border border-emerald-500 px-2 py-1 rounded ml-2 align-middle font-black">Building</span></h3>
-                <ul class="text-sm text-gray-400 space-y-3 mb-6 flex-grow relative z-10 text-left font-sans">
-                    <li><strong class="text-white">Status:</strong> Development active.</li>
-                    <li><strong class="text-white">Features:</strong> Unlimited TPS, Billing Proxy, SIEM Logs.</li>
-                    <li><strong class="text-white">Goal:</strong> B2B tollgate dominance.</li>
-                </ul>
-            </div>
-
-            <div class="bg-[#0d1117] border border-gray-800 rounded-2xl p-6 relative opacity-50 flex flex-col">
-                <div class="text-gray-500 text-3xl mb-1 code-font tracking-tighter font-bold line-through">03</div>
-                <h3 class="text-gray-500 font-bold text-xl mb-4 leading-tight">The 512MB RAM Diet <span class="text-[10px] bg-gray-800 text-gray-400 border border-gray-600 px-2 py-1 rounded ml-2 align-middle font-black">Abandoned</span></h3>
-                <ul class="text-sm text-gray-400 space-y-3 mb-6 flex-grow text-left font-sans">
-                    <li><strong class="text-white">Target:</strong> Raspberry Pi Zero</li>
-                    <li><strong class="text-white">Why:</strong> Pi 3 already dominates edge performance.</li>
-                </ul>
-            </div>
-
-            <div class="bg-[#0d1117] border border-gray-800 rounded-2xl p-6 relative opacity-50 flex flex-col">
-                <div class="text-gray-500 text-3xl mb-1 code-font tracking-tighter font-bold line-through">04</div>
-                <h3 class="text-gray-500 font-bold text-xl mb-4 leading-tight">SV Microboard Killer <span class="text-[10px] bg-gray-800 text-gray-400 border border-gray-600 px-2 py-1 rounded ml-2 align-middle font-black">Abandoned</span></h3>
-                <ul class="text-sm text-gray-400 space-y-3 mb-6 flex-grow text-left font-sans">
-                    <li><strong class="text-white">Target:</strong> ESP32-S3 ($6 Chip)</li>
-                    <li><strong class="text-white">Why:</strong> V2 mathematical compression optimized the 1GB baseline.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800 bg-[#0a0c10] relative overflow-hidden selection:bg-emerald-500">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-900/10 to-transparent pointer-events-none"></div>
         <div class="grid md:grid-cols-2 gap-16 items-center relative z-10">
@@ -1581,6 +1452,86 @@
         </div>
     </section>
 
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-gray-800 bg-[#020205] relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-red-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="text-center mb-16 relative z-10">
+            <div class="inline-block px-4 py-1.5 bg-red-950/80 border border-red-500/50 rounded-full text-red-400 text-xs font-black uppercase tracking-widest mb-6 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                The CISO Defeat Deck
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
+                Enterprise FAQ: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">Closing the Vulnerability Gap.</span>
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto font-light">
+                Questions asked by Chief Information Security Officers. Answered with deterministic engineering.
+            </p>
+        </div>
+
+        <div class="space-y-6 max-w-5xl mx-auto relative z-10">
+            
+            <div class="bg-[#0a0c12] border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-red-500/50 transition duration-300">
+                <h3 class="text-white font-bold text-xl mb-4 flex items-start">
+                    <span class="text-red-500 mr-3 text-2xl leading-none">Q.</span>
+                    ถ้าระบบบล็อกข้อมูลผิดพลาด (False Positive) จนธุรกิจสะดุด ใครจะรับผิดชอบ?
+                </h3>
+                <div class="pl-7 border-l-2 border-gray-800 ml-2">
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        <strong class="text-white">A:</strong> เราเข้าใจว่า Downtime คือหายนะ นั่นคือเหตุผลที่ V3 Enterprise Edition มาพร้อมระบบ <strong class="text-red-400">Failsafe (Undo & Factory Reset)</strong> หาก Admin สั่งอัปเดตกฎ (Hot-Reload) แล้วเกิดข้อผิดพลาด สามารถกดย้อนเวลากลับไปสถานะก่อนหน้าได้ภายใน 1 วินาที โดยระบบไม่ต้อง Restart ธุรกิจของคุณจะไม่สะดุด และ Admin ของคุณมีสิทธิ์ควบคุมสูงสุด (Human-in-the-loop)
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#0a0c12] border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-cyan-500/50 transition duration-300">
+                <h3 class="text-white font-bold text-xl mb-4 flex items-start">
+                    <span class="text-cyan-500 mr-3 text-2xl leading-none">Q.</span>
+                    จะการันตีได้อย่างไรว่าความลับองค์กรจะไม่รั่วไหลไปที่เซิร์ฟเวอร์ของ Bangsaen AI?
+                </h3>
+                <div class="pl-7 border-l-2 border-gray-800 ml-2">
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        <strong class="text-white">A:</strong> สถาปัตยกรรมของเราคือ <strong class="text-cyan-400">Zero-Footprint (ไร้ร่องรอย)</strong> ระบบประมวลผลสมการบน RAM ของเซิร์ฟเวอร์คุณ (Stateless) เมื่อเสร็จสิ้น ข้อมูลจะถูกทำลายทิ้งทันที (Garbage Collected) ในระดับ 18ms สิ่งเดียวที่ส่งกลับมาที่ Dashboard ของ CISO คือ "ตัวเลขสถิติการบล็อก" เราไม่เคยเห็น ไม่เคยแคช และไม่มี Log ข้อความของคุณแม้แต่ตัวอักษรเดียว
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#0a0c12] border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-purple-500/50 transition duration-300">
+                <h3 class="text-white font-bold text-xl mb-4 flex items-start">
+                    <span class="text-purple-500 mr-3 text-2xl leading-none">Q.</span>
+                    ทำไมต้องใช้ Bangsaen AI ในเมื่อมีระบบ DLP หรือ LLM Guardrails ทั่วไปอยู่แล้ว?
+                </h3>
+                <div class="pl-7 border-l-2 border-gray-800 ml-2">
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        <strong class="text-white">A:</strong> LLM ทั่วไปทำงานแบบ 'เดาความน่าจะเป็น' (Probabilistic) ทำให้ประมวลผลช้าและมีโอกาสหลอน (Hallucinate) แต่เราคือเครื่องยนต์คณิตศาสตร์ <strong class="text-purple-400">Koopman Operator (Deterministic)</strong> เราผ่านการทดสอบ 100K Stress Test ตลอด 12.5 ชั่วโมงด้วยผลลัพธ์ 0 False Negatives และกินเวลาประมวลผลเพียง 18ms ซึ่ง LLM หรือ Regex ไม่สามารถทำได้กับภาษาไทยที่ซับซ้อน
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#0a0c12] border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-orange-500/50 transition duration-300">
+                <h3 class="text-white font-bold text-xl mb-4 flex items-start">
+                    <span class="text-orange-500 mr-3 text-2xl leading-none">Q.</span>
+                    แฮกเกอร์ใช้คำสแลงใหม่ๆ ตลอดเวลา องค์กรต้องรอแพตช์อัปเดตนานแค่ไหน?
+                </h3>
+                <div class="pl-7 border-l-2 border-gray-800 ml-2">
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        <strong class="text-white">A:</strong> ไม่ต้องรอครับ. V3 ของเรามีฟีเจอร์ <strong class="text-orange-400">Dynamic Hot-Matrix Injection</strong> ทันทีที่มีคำสแลงใหม่ (เช่น 'กระเป๋าบิน') Admin สามารถพิมพ์คำลง Dashboard ระบบจะแปลงเป็น Vector และฉีดเข้าสมการคณิตศาสตร์ที่รันอยู่บน RAM ทันที บล็อกคำสั่งทั่วทั้งองค์กรภายใน 0.05 มิลลิวินาที โดยไม่ต้องพึ่งพาทีม Dev และไม่ต้อง Restart Server
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-[#0a0c12] border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-green-500/50 transition duration-300">
+                <h3 class="text-white font-bold text-xl mb-4 flex items-start">
+                    <span class="text-green-500 mr-3 text-2xl leading-none">Q.</span>
+                    ทำไมต้องทำ 2-Way Filtering? แค่บล็อกขาออก (Outbound) ไม่ให้ความลับหลุดก็พอแล้วไม่ใช่หรือ?
+                </h3>
+                <div class="pl-7 border-l-2 border-gray-800 ml-2">
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        <strong class="text-white">A:</strong> ภัยคุกคาม AI มีสองทิศทางครับ การบล็อก Outbound คือ 'การปกป้ององค์กรจาก AI' (Data Destruction) แต่การสกัด Inbound คือ <strong class="text-green-400">'การปกป้อง AI จากมนุษย์'</strong> เราสกัด Prompt Injection, Jailbreak และเจตนามุ่งร้าย (Malicious Intent) ตั้งแต่ต้นทาง การกางโล่ 2 ทางคือการการันตีว่าสถาปัตยกรรม Zero-Trust ของคุณจะสมบูรณ์แบบ 100%
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <footer class="border-t border-gray-800 text-center py-10 text-sm text-gray-600 bg-black selection:bg-gray-800 selection:text-gray-400">
         <div class="font-black text-lg tracking-tighter text-gray-500 mb-2">BANGSAEN<span class="text-blue-900">AI</span> Labs</div>
         &copy; 2026 Bangsaen AI Labs. All rights reserved. <br>
