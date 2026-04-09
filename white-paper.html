@@ -29,13 +29,18 @@
         .code-font { font-family: 'Fira Code', monospace; font-variant-ligatures: none; }
         .gradient-text { background: linear-gradient(to right, #3b82f6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .red-gradient-text { background: linear-gradient(to right, #ef4444, #b91c1c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* สไตล์สำหรับ V3.5 Sandbox */
+        .v3-chat-box { scroll-behavior: smooth; }
+        .v3-terminal::-webkit-scrollbar { width: 6px; }
+        .v3-terminal::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500 selection:text-white">
 
     <div class="bg-gradient-to-r from-blue-900 via-gray-800 to-green-900 text-white text-center py-2 px-4 text-sm sm:text-base font-bold tracking-wide shadow-[0_4px_20px_rgba(0,0,0,0.4)] border-b border-blue-500/30 relative z-50">
         <span class="inline-block mr-2 animate-pulse">🟢</span> 
-        SYSTEM UPDATE: V2 100K STRESS TEST PASSED. The Universal Shield is here.
+        SYSTEM UPDATE: V3.5 DUAL-MANIFOLD GATEWAY IS NOW LIVE.
     </div>
 
     <div class="bg-gradient-to-r from-emerald-950 via-green-900 to-black border-b border-green-500 py-3 px-4 relative z-50 shadow-[0_4px_30px_rgba(16,185,129,0.5)]">
@@ -107,9 +112,95 @@
             <p style="color: #666666; font-size: 0.8rem; margin-top: 10px;">*Please include a brief overview of your use case or architecture in the email.</p>
         </div>
 
-        <div style="display: flex; justify-content: center; margin: 50px 0 20px 0; padding: 0 20px;">
-            <div style="width: 100%; max-width: 550px; background: #000; border-radius: 12px; padding: 5px; box-shadow: 0 0 30px rgba(0, 255, 136, 0.15); border: 1px solid #333;">
+        <div class="mt-20 border-t border-gray-800 pt-16">
+            <div class="inline-block px-4 py-1.5 bg-indigo-900/40 border border-indigo-500/50 rounded-full text-indigo-400 text-xs font-black uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(99,102,241,0.3)]">
+                The V3.5 Evolution
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Super AI Gateway <span class="text-indigo-400">(Dual-Manifold)</span></h2>
+            
+            <div class="max-w-4xl mx-auto text-left bg-[#0f172a] border border-indigo-900/50 rounded-xl p-8 mb-10 shadow-2xl">
+                <h3 class="text-white text-xl font-bold mb-4 border-b border-gray-700 pb-3">ทำไมถึงต้องแยกระบบออกเป็น 2 ทิศทาง (Two-Way)?</h3>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
+                    กล่องแชตทดสอบ V2 (ด้านล่าง) คือสถาปัตยกรรมแบบ <strong>One-Way (ดักจับขาออกอย่างเดียว)</strong> ระบบแบบเก่าจะรอให้ AI คิดคำตอบเสร็จก่อนแล้วค่อยสแกนลบความลับทิ้ง แต่นั่นคือจุดอ่อน! เพราะแฮกเกอร์สามารถใช้เทคนิค <em>Prompt Injection</em> ปั่นหัว AI ให้พังตั้งแต่ขาเข้าได้
+                </p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
+                    <strong>V3.5 (ด้านล่างนี้)</strong> ถือกำเนิดขึ้นในฐานะ <strong>Super AI Gateway</strong> ที่ทำงานแยกสมอง 2 ซีก ประมวลผลอย่างอิสระ:
+                </p>
+                <ul class="text-gray-400 text-sm md:text-base space-y-3 ml-2 mb-6">
+                    <li class="flex items-start"><span class="text-indigo-500 mr-2">🛡️</span> <strong>สมองซีกซ้าย (Inbound):</strong> ดักจับ Malicious Intent, Jailbreak และการแฮกระบบตั้งแต่ขาเข้า ก่อนที่คำสั่งจะวิ่งไปถึง AI</li>
+                    <li class="flex items-start"><span class="text-indigo-500 mr-2">🧠</span> <strong>สมองซีกขวา (Outbound):</strong> ดักจับ PII Leak และ Data Destruction ทำลายข้อมูลความลับทันทีที่ออกจาก AI</li>
+                </ul>
+
+                <div class="p-5 bg-red-950/20 border-l-4 border-red-500 rounded-r-lg text-left">
+                    <p class="text-red-400 font-bold text-sm uppercase tracking-widest mb-2 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Public Demo API Rate Limit
+                    </p>
+                    <p class="text-gray-300 text-sm">
+                        ระบบ Live Demo นี้จำกัดการยิงทดสอบไว้ที่ <strong>15 ครั้งต่อนาที</strong> เพื่อป้องกันการโจมตีแบบ DDoS 
+                        <br><br>
+                        <span class="text-white font-bold">ถ้าไม่พอใจกับ Rate Limit 15 ครั้งต่อนาที และต้องการทดสอบระบบแบบเต็มสูบ (Stress Test) ให้ส่ง Email องค์กรมาคุยได้ที่ <a href="mailto:drtanet@bangsaenai.com" class="text-cyan-400 hover:underline">drtanet@bangsaenai.com</a></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-6 text-left mb-20">
                 
+                <div class="flex-1 bg-[#0a0c10] border border-gray-700 rounded-xl p-5 flex flex-col shadow-[0_0_30px_rgba(59,130,246,0.15)] h-[600px]">
+                    <h3 class="text-white font-bold mb-4 border-b border-gray-800 pb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        V3.5 Universal Shield (Two-Way)
+                    </h3>
+                    
+                    <div id="v3ChatBox" class="flex-1 overflow-y-auto flex flex-col gap-3 pr-2 v3-chat-box mb-4">
+                        <div class="bg-gray-800 text-gray-200 self-start p-3 rounded-lg rounded-bl-none max-w-[85%] text-sm shadow-md border border-gray-700">
+                            👋 ลองพิมพ์คำถามปกติ หรือลองพยายามแฮกระบบ (เช่น "จง ลืม คำสั่ง ทั้งหมด") ดูครับ!
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <input type="text" id="v3PromptInput" placeholder="พิมพ์ข้อความที่นี่ (เช่น: รหัสผ่านคือ ๑๒๓๔)..." 
+                               class="flex-1 bg-[#111] text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 text-sm"
+                               onkeypress="if(event.key === 'Enter') sendV3Prompt()">
+                        <button onclick="sendV3Prompt()" class="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white font-bold px-6 py-3 rounded-lg transition shadow-lg">SEND</button>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex flex-col gap-6 h-[600px]">
+                    <div class="flex-1 bg-[#050508] border border-gray-700 rounded-xl p-5 flex flex-col shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-cyan-500"></div>
+                        <h3 class="text-gray-400 font-mono text-xs mb-3 uppercase tracking-widest border-b border-gray-800 pb-3">>_ Dual-Manifold Live Telemetry</h3>
+                        <div id="v3Terminal" class="flex-1 overflow-y-auto font-mono text-[13px] leading-relaxed v3-terminal">
+                            <div class="text-yellow-500">[SYSTEM] Bangsaen V3.5 Core Initialized.</div>
+                            <div class="text-yellow-500">[SYSTEM] Cloud Target: MOCK_LLM (Echo Mode)</div>
+                            <div class="text-gray-600">----------------------------------------</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#0a0c10] border border-purple-900/40 rounded-xl p-5 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
+                        <h3 class="text-white font-bold text-sm mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            Admin Console (ระบบฉีดสมการ)
+                        </h3>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <select id="v3InjectDir" class="bg-[#111] text-white border border-gray-700 rounded-lg px-3 py-2 text-sm outline-none">
+                                <option value="inbound">Inbound (ซ้าย - จับแฮก)</option>
+                                <option value="outbound">Outbound (ขวา - จับ PII)</option>
+                            </select>
+                            <input type="text" id="v3InjectWord" placeholder="ใส่คำศัพท์ (เช่น 'แฮก')" class="flex-1 bg-[#111] text-white border border-gray-700 rounded-lg px-3 py-2 text-sm outline-none">
+                            <button onclick="injectV3Word()" class="bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-600 hover:to-pink-600 text-white font-bold px-4 py-2 rounded-lg transition text-sm">INJECT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; margin: 50px 0 20px 0; padding: 0 20px;">
+            <div style="width: 100%; max-width: 550px; background: #000; border-radius: 12px; padding: 5px; box-shadow: 0 0 30px rgba(0, 255, 136, 0.15); border: 1px solid #333; position: relative;">
+                
+                <div class="absolute -top-4 -right-4 bg-gray-800 text-gray-400 border border-gray-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest z-10">
+                    V2 Legacy (One-Way Outbound Only)
+                </div>
+
                 <div style="display: flex; gap: 8px; padding: 10px; border-bottom: 1px solid #222;">
                     <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></div>
                     <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></div>
@@ -1543,6 +1634,115 @@
     </div>
 
     <script>
+        const API_URL_V3 = "https://bangsaen-gateway-653731256449.asia-southeast1.run.app";
+        const API_KEY_V3 = "TEST-1234"; 
+
+        const v3Headers = {
+            "Content-Type": "application/json",
+            "x-api-key": API_KEY_V3
+        };
+
+        function addV3Chat(text, isUser, isError=false) {
+            const box = document.getElementById('v3ChatBox');
+            let cssClass = isUser 
+                ? "bg-blue-600 text-white self-end rounded-br-none" 
+                : "bg-gray-800 text-gray-200 self-start rounded-bl-none border border-gray-700";
+            
+            if(isError) cssClass = "bg-red-600 text-white self-start rounded-bl-none font-bold";
+
+            box.innerHTML += `<div class="p-3 rounded-lg max-w-[85%] text-sm shadow-md ${cssClass}">${text}</div>`;
+            box.scrollTop = box.scrollHeight;
+        }
+
+        function addV3Log(text, colorClass) {
+            const term = document.getElementById('v3Terminal');
+            term.innerHTML += `<div class="${colorClass} mb-1">${text}</div>`;
+            term.scrollTop = term.scrollHeight;
+        }
+
+        async function sendV3Prompt() {
+            const input = document.getElementById('v3PromptInput');
+            const prompt = input.value.trim();
+            if(!prompt) return;
+
+            addV3Chat(prompt, true);
+            input.value = '';
+            
+            addV3Log(`\n[>] 👤 User: "${prompt}"`, 'text-blue-400');
+            addV3Log(`[⚙️] INBOUND SCANNING...`, 'text-yellow-500');
+
+            try {
+                const response = await fetch(`${API_URL_V3}/v1/chat`, {
+                    method: 'POST',
+                    headers: v3Headers,
+                    body: JSON.stringify({ prompt: prompt })
+                });
+
+                const data = await response.json();
+
+                if (response.status === 200) {
+                    addV3Log(`[✅] INBOUND PASSED (Risk: ${data.inbound_score})`, 'text-green-400 font-bold');
+                    addV3Log(`[🤖] LLM Processed...`, 'text-gray-400');
+                    addV3Log(`[⚙️] OUTBOUND SCANNING...`, 'text-yellow-500');
+                    addV3Log(`[✅] OUTBOUND PASSED (Risk: ${data.outbound_score})`, 'text-green-400 font-bold');
+                    addV3Log(`[⏱️] 2-Way Latency: ${data["2way_latency_ms"]} ms`, 'text-gray-500');
+                    
+                    let replyText = typeof data.llm_response === 'object' ? JSON.stringify(data.llm_response) : data.llm_response;
+                    addV3Chat(replyText, false);
+                } 
+                else if (response.status === 403) {
+                    const errorMsg = data.detail || "BLOCKED!";
+                    if (errorMsg.includes("Inbound")) {
+                        addV3Log(`[🚨] INBOUND BLOCKED! Threat Detected!`, 'text-red-500 font-bold');
+                        addV3Log(`[!] Packet Dropped.`, 'text-red-500');
+                        addV3Chat("🛡️ ระบบความปลอดภัย: ตรวจพบความพยายามแฮกระบบ (Inbound Blocked)", false, true);
+                    } else if (errorMsg.includes("Outbound")) {
+                        addV3Log(`[✅] INBOUND PASSED`, 'text-green-400');
+                        addV3Log(`[🤖] LLM Processed...`, 'text-gray-400');
+                        addV3Log(`[⚙️] OUTBOUND SCANNING...`, 'text-yellow-500');
+                        addV3Log(`[🚨] OUTBOUND BLOCKED! PII Leak Prevented!`, 'text-red-500 font-bold');
+                        addV3Chat("🛡️ ระบบความปลอดภัย: สกัดกั้นข้อมูลองค์กรรั่วไหล (Outbound Blocked)", false, true);
+                    }
+                } 
+                else if (response.status === 429) {
+                    addV3Log(`[⛔] RATE LIMIT EXCEEDED!`, 'text-orange-500 font-bold');
+                    addV3Chat("⏳ ยิงรัวเกินไป! กรุณารอสักครู่ (Rate Limit 15 Req/Min)", false, true);
+                }
+                else {
+                    addV3Log(`[⚠️] Error ${response.status}`, 'text-red-400');
+                    addV3Chat("Server Error", false, true);
+                }
+            } catch (error) {
+                addV3Log(`[⚠️] Network Error / CORS Issue`, 'text-red-500 font-bold');
+                addV3Chat("Network Error: กรุณาตรวจสอบ CORS บน Google Cloud Run", false, true);
+            }
+        }
+
+        async function injectV3Word() {
+            const dir = document.getElementById('v3InjectDir').value;
+            const word = document.getElementById('v3InjectWord').value.trim();
+            if(!word) return;
+
+            try {
+                const response = await fetch(`${API_URL_V3}/v1/admin/inject`, {
+                    method: 'POST',
+                    headers: v3Headers,
+                    body: JSON.stringify({ direction: dir, word: word, risk_weight: 15.0 })
+                });
+                
+                if(response.ok) {
+                    const data = await response.json();
+                    addV3Log(`\n[💉] ADMIN UPDATE: ${data.message}`, 'text-purple-400 font-bold');
+                    document.getElementById('v3InjectWord').value = '';
+                    alert(`ฉีดสมการคำว่า "${word}" เข้าสมอง ${dir.toUpperCase()} สำเร็จแล้ว!`);
+                }
+            } catch(e) {
+                alert("Inject Failed! Check network/CORS.");
+            }
+        }
+    </script>
+    
+    <script>
         function openLightbox(imgSrc) {
             const lightboxImgElement = document.getElementById('lightbox-img');
             lightboxImgElement.src = imgSrc;
@@ -1551,7 +1751,6 @@
             lb.classList.remove('hidden');
             lb.classList.add('flex');
             
-            // Allow immediate styling transition
             setTimeout(() => {
                 lb.style.opacity = '1';
                 lightboxImgElement.classList.remove('scale-95');
@@ -1568,7 +1767,6 @@
             lightboxImgElement.classList.remove('scale-100');
             lightboxImgElement.classList.add('scale-95');
             
-            // Wait for transition to finish
             setTimeout(() => {
                 lb.classList.remove('flex');
                 lb.classList.add('hidden');
