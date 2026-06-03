@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,6 +80,9 @@
         }
         .glow-text-red {
             text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+        }
+        .glow-text-cyan {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
         }
         /* Modal Styles */
         .modal { transition: opacity 0.3s ease-in-out, visibility 0.3s; }
@@ -164,12 +168,88 @@
                 <button onclick="window.location.href='mailto:drtanet@bangsaenai.com?subject=PoC Challenge Request'" class="px-8 py-4 rounded-lg bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white font-bold shadow-lg shadow-red-900/30 transition-all transform hover:scale-105 border border-red-500/50">
                     <i class="fas fa-bolt mr-2"></i> Send Us Your Hardest PoC
                 </button>
-                <button onclick="document.getElementById('challenge').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 rounded-lg border border-slate-600 hover:border-white text-slate-300 hover:text-white font-bold transition-all">
+                <button onclick="document.getElementById('5g-ai-proxy').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 rounded-lg border border-slate-600 hover:border-white text-slate-300 hover:text-white font-bold transition-all">
                     View Our Arsenal
                 </button>
             </div>
         </div>
     </header>
+
+    <section id="5g-ai-proxy" class="py-24 bg-[#010a12] border-b border-cyan-900/30 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-emerald-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-2 block animate-pulse"><i class="fas fa-satellite-dish"></i> Global Operations: Active</span>
+                <h2 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter">
+                    THE 5G PROXY AI CO-PILOT
+                </h2>
+                <p class="text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed">
+                    We don't sell airplanes; <strong class="text-white">we sell the Brain.</strong> Watch us turn the <i>Flightory Stallion</i> into our physical test subject, orchestrating a world-class convergence of 5G, J.A.R.V.I.S., and AI Vision.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-cyan-950/50 text-cyan-400 text-xs font-mono font-bold uppercase tracking-widest border border-cyan-500/30">
+                        <span class="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></span> Virtual Ground Station
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-white leading-tight">
+                        Hardware is dead weight. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 glow-text-cyan">Intelligence stays on the ground.</span>
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        Why force a drone to carry a heavy AI brain? We stripped the logic from the sky. Our Flying Robots act merely as "eyes," streaming raw data down via <strong>5G</strong> to our supercomputers on earth. YOLOv8 and MiDaS analyze the world in real-time, executing J.A.R.V.I.S.-style commands.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed pb-4 border-b border-cyan-900/50">
+                        But vision isn't enough. We are ripping out classical flight physics. By deploying the <strong>Koopman Operator</strong> over the network, if we can replace the PID controller... <strong>we will replace everything.</strong>
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://www.youtube.com/@bangsaenai" target="_blank" class="px-8 py-5 rounded-lg bg-[#cc0000] hover:bg-[#ff0000] text-white font-black text-center transition-all shadow-[0_0_30px_rgba(204,0,0,0.4)] flex items-center justify-center gap-3 transform hover:scale-[1.02]">
+                            <i class="fab fa-youtube text-2xl"></i> WITNESS THE EVOLUTION ON YOUTUBE
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 relative group">
+                     <div class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                     <div class="relative rounded-2xl overflow-hidden border border-cyan-800/50 bg-[#050b14] shadow-2xl flex flex-col h-[450px]">
+                        <div class="bg-[#09111f] px-4 py-3 border-b border-cyan-900/50 flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-cyan-500/70 text-xs font-mono uppercase tracking-widest">JARVIS_Ground_Station.exe</div>
+                        </div>
+                        <div class="p-6 font-mono text-sm flex-1 overflow-hidden relative text-cyan-400">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050b14] pointer-events-none z-10"></div>
+                            
+                            <p class="mb-2 opacity-70">>> ESTABLISHING 5G DOWNLINK... <span class="text-emerald-400">[SUCCESS]</span></p>
+                            <p class="mb-2 opacity-70">>> LATENCY: 12ms | BANDWIDTH: OPTIMAL</p>
+                            <p class="mb-4 opacity-70">>> SUBJECT: FLIGHTORY_STALLION_01</p>
+                            
+                            <p class="mb-2 text-white font-bold">>> INITIALIZING COMPUTER VISION...</p>
+                            <p class="mb-2 opacity-90">> YOLOv8 THREAT DETECTION: <span class="text-red-400 font-bold">ACTIVE</span></p>
+                            <p class="mb-4 opacity-90">> MiDaS DEPTH ESTIMATION: <span class="text-red-400 font-bold">ACTIVE (45% THRESHOLD)</span></p>
+                            
+                            <p class="mb-2 text-yellow-400 font-bold">>> OVERRIDING CLASSICAL PID CONTROLLERS...</p>
+                            
+                            <div class="my-4 border border-cyan-800/50 bg-cyan-950/20 p-4 rounded text-xs text-slate-300">
+                                <p class="text-cyan-300 font-bold mb-2 uppercase tracking-widest text-[10px]">Koopman Matrix Injection:</p>
+                                <p class="text-[14px] text-emerald-400 font-bold">$$\mathcal{K}\varphi(x)=\varphi(F(x))$$</p>
+                                <p class="mt-2 text-slate-400 italic font-sans text-[11px]">"Lifting non-linear aerodynamics into the infinite-dimensional linear space."</p>
+                            </div>
+
+                            <p class="mt-4 text-white animate-pulse">> J.A.R.V.I.S: "Awaiting instructions, Sir."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="challenge" class="py-24 bg-[#0a0505] border-b border-red-900/30 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-red-600/10 blur-[150px] rounded-full pointer-events-none"></div>
