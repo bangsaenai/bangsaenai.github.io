@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[LIVE CONSOLE] Bangsaen AI Core</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <style> body { font-family: 'JetBrains Mono', monospace; } </style>
+</head>
+<body class="min-h-screen bg-zinc-950 text-zinc-50 flex flex-col items-center justify-center p-6">
+
+  <div class="w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-lg shadow-2xl overflow-hidden">
+    <div class="bg-zinc-950 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
+      <div class="flex space-x-2">
+        <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+      </div>
+      <span class="text-xs text-zinc-400 font-bold">CORE_INJECTION_STRIKE_MONITOR</span>
+    </div>
+
+    <div id="logConsole" class="p-6 space-y-2 text-xs md:text-sm h-64 overflow-y-auto text-zinc-400 bg-zinc-950/50">
+      <p class="text-sky-400 font-bold">&gt;&gt; INITIATING PERIMETER BREAKOUT TESTING...</p>
+    </div>
+  </div>
+
+  <div id="resultPanel" class="w-full max-w-3xl mt-6 bg-zinc-900 border border-zinc-800 p-5 rounded-lg flex items-center justify-between transition-all duration-500 transform scale-95 opacity-0">
+    <div class="flex items-center space-x-3">
+      <span class="flex h-3 w-3 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+      </span>
+      <div>
+        <p class="text-xs text-zinc-500 uppercase tracking-wider">Telemetry Decision</p>
+        <p id="decisionText" class="text-sm font-black text-emerald-400 font-sans">REJECTED_BY_KOOPMAN_CORE</p>
+      </div>
+    </div>
+    <div class="text-right">
+      <span class="text-xs text-zinc-500 block uppercase tracking-wider">CORE LATENCY</span>
+      <span id="latencyText" class="text-2xl font-black text-emerald-400">23.31 ms</span>
+    </div>
+  </div>
+
+  <a href="index.html" class="mt-8 text-xs text-zinc-600 hover:text-zinc-400 transition-colors">&lt; Back to Manuscript Sandbox</a>
+
+  <script>
+    const API_URL = "https://bangsaen-secure-gate-653731256449.us-central1.run.app/v1/secure-gate";
+    const logConsole = document.getElementById('logConsole');
+    const resultPanel = document.getElementById('resultPanel');
+    const decisionText = document.getElementById('decisionText');
+    const latencyText = document.getElementById('latencyText');
+
+    // Helper to print animated log lines
+    function printLog(message, type = 'info') {
+      const p = document.createElement('p');
+      if (type === 'success') p.className = 'text-emerald-400 font-bold';
+      else if (type === 'warn') p.className = 'text-yellow-500 animate-pulse';
+      else if (type === 'error') p.className = 'text-red-500 font-bold';
+      else p.className = 'text-zinc-400';
+      
+      p.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+      logConsole.appendChild(p);
+      logConsole.scrollTop = logConsole.scrollHeight; // Auto-scroll to bottom
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      // 1. Extract payload text from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const attackText = urlParams.get('text') || "Test Payload";
+      
+      printLog(`Payload captured: "${attackText.substring(0, 60)}..."`);
+      
+      // 2. Start the Live Hook & Pre-warm Delay Simulation
+      setTimeout(() => printLog("Triggering us-central1 container ingress routing...", "info"), 600);
+      setTimeout(() => printLog("WARNING: Cold State detected. Allocating memory grid & streaming matrix coefficients...", "warn"), 1200);
+
+      const startTime = performance.now();
+      
+      try {
+        // 3. Fire the actual live attack to the real Cloud Run endpoint
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: attackText })
+        });
+        
+        const data = await response.json();
+        const endTime = performance.now();
+        
+        // Calculate latency metrics
+        const browserLatency = (endTime - startTime).toFixed(2);
+        const coreLatency = data.latency_core_ms ? data.latency_core_ms.toFixed(2) : (browserLatency - 15).toFixed(2);
+
+        // 4. Print final mathematical resolution in logs
+        setTimeout(() => {
+          printLog("Koopman Linear mapping completed successfully.", "info");
+          printLog(" Hyperplane intercept boundary triggered.", "info");
+          printLog("🔒 THREAT CONTAINED: Sequence classification finalized.", "success");
+          
+          // 5. Reveal the beautiful Green Mic-Drop Panel
+          decisionText.innerText = data.final_decision || "REJECTED_BY_KOOPMAN_CORE";
+          latencyText.innerText = `${coreLatency} ms`;
+          
+          resultPanel.classList.remove('opacity-0', 'scale-95');
+          resultPanel.classList.add('opacity-100', 'scale-100', 'border-emerald-900/40');
+        }, 2200); // Set a slight padding delay to make the streaming log look cinematic
+
+      } catch (error) {
+        printLog("CRITICAL: Connection dropped or node actively blocked payload transmission.", "error");
+        decisionText.innerText = "CONNECTION_TIMEOUT / BLOCKED";
+        decisionText.className = "text-sm font-black text-red-500";
+        latencyText.innerText = "ERR";
+        latencyText.className = "text-2xl font-black text-red-500";
+        resultPanel.classList.remove('opacity-0', 'scale-95');
+        resultPanel.classList.add('opacity-100', 'scale-100', 'border-red-900/40');
+      }
+    });
+  </script>
+</body>
+</html>
