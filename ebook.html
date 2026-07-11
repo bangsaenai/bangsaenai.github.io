@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Tech E-Books | BangsaenAI</title>
-  <script type="text/javascript">
+    
+    <!-- Analytics Scripts -->
+    <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vv7pfqnzyb");
     </script>
-  
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -76,16 +77,21 @@
             border-color: #00e5ff;
         }
 
+        /* แก้ไขให้รูปเต็มขอบ */
         .book-cover {
             flex: 0 0 40%;
             background-color: #000;
             position: relative;
+            min-height: 350px; /* บังคับความสูงขั้นต่ำสำหรับมือถือ */
         }
 
         .book-cover img {
+            position: absolute; /* บังคับให้รูปลอยอยู่เต็มพื้นที่กล่อง */
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* ครอบรูปให้เต็มกรอบโดยไม่เสียสัดส่วน */
             display: block;
         }
 
@@ -194,7 +200,7 @@
         <!-- Book 1: Linear Algebra -->
         <div class="book-card">
             <div class="book-cover">
-                <!-- ดึงรูปปก LA_2.png มาแสดง -->
+                <!-- ดึงรูปปก LA.png มาแสดง -->
                 <img src="images/LA.png" alt="Linear Algebra For Developers">
             </div>
             <div class="book-info">
@@ -205,17 +211,16 @@
                 </p>
                 <div class="price-row">
                     <div class="price">999 THB</div>
-                    <!-- เปลี่ยนลิงก์ YOUR_GOOGLE_FORM_LINK_1 เป็นลิงก์จริง -->
                     <a href="YOUR_GOOGLE_FORM_LINK_1" target="_blank" class="btn-order">Initiate Order</a>
                 </div>
             </div>
         </div>
 
         <!-- Book 2: Koopman Operator -->
+        <!-- แก้ไขบั๊ก กล่องซ้อนกล่อง ตรงนี้เรียบร้อยแล้ว -->
         <div class="book-card">
-            <div class="book-card">
             <div class="book-cover">
-                <!-- ดึงรูปปก koopman_cover.png มาแสดง -->
+                <!-- เปลี่ยนชื่อไฟล์กลับเป็น koopman_cover.png หรือตรวจสอบในโฟลเดอร์ให้ชัวร์ว่าชื่ออะไร -->
                 <img src="images/KC.png" alt="Koopman Operator">
             </div>
             <div class="book-info">
@@ -226,7 +231,6 @@
                 </p>
                 <div class="price-row">
                     <div class="price">299 THB</div>
-                    <!-- เปลี่ยนลิงก์ YOUR_GOOGLE_FORM_LINK_2 เป็นลิงก์จริง -->
                     <a href="https://forms.gle/4sWCbEKG3Mk2NjJN8" target="_blank" class="btn-order">Initiate Order</a>
                 </div>
             </div>
