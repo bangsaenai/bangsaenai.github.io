@@ -75,24 +75,28 @@
         .book-card:hover {
             transform: translateY(-5px);
             border-color: #00e5ff;
+            box-shadow: 0 10px 40px rgba(0, 229, 255, 0.15);
         }
 
-        /* แก้ไขให้รูปเต็มขอบ */
+        /* ปรับปรุงกรอบรูปใหม่ ไม่ให้ครอปภาพ */
         .book-cover {
             flex: 0 0 40%;
-            background-color: #000;
-            position: relative;
-            min-height: 350px; /* บังคับความสูงขั้นต่ำสำหรับมือถือ */
+            background-color: #0b0d10; /* ทำสีพื้นหลังให้มืดลงนิดนึงเพื่อขับให้รูปเด่น */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px; /* เว้นระยะขอบรอบรูป */
+            border-right: 1px solid #2a2e35; /* เส้นคั่นกลางบางๆ */
+            box-sizing: border-box;
         }
 
         .book-cover img {
-            position: absolute; /* บังคับให้รูปลอยอยู่เต็มพื้นที่กล่อง */
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* ครอบรูปให้เต็มกรอบโดยไม่เสียสัดส่วน */
-            display: block;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain; /* บังคับให้แสดงรูปครบ 100% ไม่โดนตัด */
+            border-radius: 6px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.8); /* เพิ่มเงาให้รูปดูมีมิติเหมือนหนังสือจริง */
         }
 
         .book-info {
@@ -101,7 +105,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            box-sizing: border-box;
         }
+
+
+      
+       
 
         .tag {
             font-family: 'Share Tech Mono', monospace;
@@ -201,7 +210,7 @@
         <div class="book-card">
             <div class="book-cover">
                 <!-- ดึงรูปปก LA.png มาแสดง -->
-                <img src="images/kcnew.png" alt="Linear Algebra For Developers">
+                <img src="images/LA.png" alt="Linear Algebra For Developers">
             </div>
             <div class="book-info">
                 <div class="tag">#CORE_ENGINE // 15 MODULES</div>
@@ -221,7 +230,7 @@
         <div class="book-card">
             <div class="book-cover">
                 <!-- เปลี่ยนชื่อไฟล์กลับเป็น koopman_cover.png หรือตรวจสอบในโฟลเดอร์ให้ชัวร์ว่าชื่ออะไร -->
-                <img src="images/LA.png" alt="Koopman Operator">
+                <img src="images/k.png" alt="Koopman Operator">
             </div>
             <div class="book-info">
                 <div class="tag">#DYNAMIC_SYSTEMS // DEEP TECH</div>
