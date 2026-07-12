@@ -35,14 +35,42 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px 80px 20px;
+        }
+
+        /* Manifesto Section (Top) */
+        .manifesto-section {
+            background: rgba(255, 0, 0, 0.05);
+            border-left: 4px solid #ff2a2a;
+            padding: 30px;
+            margin-bottom: 50px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 0 20px rgba(255, 42, 42, 0.1);
+        }
+
+        .manifesto-section h2 {
+            font-family: 'Share Tech Mono', monospace;
+            color: #ff2a2a;
+            margin: 0 0 15px 0;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+        }
+
+        .manifesto-section p {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        .manifesto-section .highlight-red {
+            color: #ff2a2a;
+            font-weight: bold;
         }
 
         .header-section {
             text-align: center;
-            margin-bottom: 60px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         .header-section h1 {
@@ -57,6 +85,7 @@
             color: #ff6600;
             font-size: 1.2em;
             letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
         /* Bookshelf Layout */
@@ -78,15 +107,14 @@
             box-shadow: 0 10px 40px rgba(0, 229, 255, 0.15);
         }
 
-        /* ปรับปรุงกรอบรูปใหม่ ไม่ให้ครอปภาพ */
         .book-cover {
             flex: 0 0 40%;
-            background-color: #0b0d10; /* ทำสีพื้นหลังให้มืดลงนิดนึงเพื่อขับให้รูปเด่น */
+            background-color: #0b0d10;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 30px; /* เว้นระยะขอบรอบรูป */
-            border-right: 1px solid #2a2e35; /* เส้นคั่นกลางบางๆ */
+            padding: 30px;
+            border-right: 1px solid #2a2e35;
             box-sizing: border-box;
         }
 
@@ -94,9 +122,9 @@
             width: 100%;
             height: auto;
             max-height: 400px;
-            object-fit: contain; /* บังคับให้แสดงรูปครบ 100% ไม่โดนตัด */
+            object-fit: contain;
             border-radius: 6px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.8); /* เพิ่มเงาให้รูปดูมีมิติเหมือนหนังสือจริง */
+            box-shadow: 0 5px 25px rgba(0,0,0,0.8);
         }
 
         .book-info {
@@ -107,10 +135,6 @@
             justify-content: center;
             box-sizing: border-box;
         }
-
-
-      
-       
 
         .tag {
             font-family: 'Share Tech Mono', monospace;
@@ -172,6 +196,80 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
         }
 
+        /* Discord / Communication Section (Bottom) */
+        .discord-section {
+            background: #111419;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discord-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #5865F2, #00e5ff);
+        }
+
+        .discord-section h2 {
+            font-family: 'Share Tech Mono', monospace;
+            color: #5865F2; /* Discord Purple */
+            margin: 0 0 20px 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step-box {
+            background: #0b0d10;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: 'Share Tech Mono', monospace;
+            color: #00e5ff;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .step-box h4 {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .step-box p {
+            color: #8892b0;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .lego-concept {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px dashed #333;
+            color: #a0aab5;
+            line-height: 1.8;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .book-card {
@@ -190,12 +288,23 @@
                 text-align: center;
                 box-sizing: border-box;
             }
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        
+        <!-- Manifesto Section -->
+        <div class="manifesto-section">
+            <h2>[ THE REBELLION MANIFESTO ]</h2>
+            <p>ที่นี่ไม่ใช่สนามเด็กเล่นสำหรับ "ผู้เรียกใช้ API" แต่เป็นศูนย์บัญชาการของ <span class="highlight-red">"สถาปนิกผู้สร้าง"</span><br>
+            พื้นที่นี้ถูกออกแบบมาสำหรับวิศวกรซอฟต์แวร์ไทยที่มี <strong>"ใจนักสู้"</strong> และพร้อมจะทวงคืนอำนาจจากข้อจำกัดของ Big Tech หากคุณพอใจกับการเป็นแค่ AI Wrapper ที่ต้องรอคอยการอัปเดต... หน้าเว็บนี้ไม่เหมาะกับคุณ แต่ถ้าคุณพร้อมที่จะลงลึกทะลวง Black Box ให้กลายเป็นกระจกใส... ยินดีต้อนรับสู่กองกำลังรบของเรา</p>
+        </div>
+
         <!-- Header -->
         <div class="header-section">
             <h1>[ THE DEEP TECH ARMORY ]</h1>
@@ -209,7 +318,6 @@
         <!-- Book 1: Linear Algebra -->
         <div class="book-card">
             <div class="book-cover">
-                <!-- ดึงรูปปก LA.png มาแสดง -->
                 <img src="images/LA.png" alt="Linear Algebra For Developers">
             </div>
             <div class="book-info">
@@ -226,10 +334,8 @@
         </div>
 
         <!-- Book 2: Koopman Operator -->
-        <!-- แก้ไขบั๊ก กล่องซ้อนกล่อง ตรงนี้เรียบร้อยแล้ว -->
         <div class="book-card">
             <div class="book-cover">
-                <!-- เปลี่ยนชื่อไฟล์กลับเป็น koopman_cover.png หรือตรวจสอบในโฟลเดอร์ให้ชัวร์ว่าชื่ออะไร -->
                 <img src="images/k.png" alt="Koopman Operator">
             </div>
             <div class="book-info">
@@ -245,7 +351,43 @@
             </div>
         </div>
 
+        <!-- Discord Communication Section -->
+        <div class="discord-section">
+            <h2>[ THE ARCHITECT'S SANCTUARY ]</h2>
+            <p style="text-align: center; color: #d1d5db; margin-bottom: 40px;">
+                ฐานทัพลับ (Private Discord) ของ Bangsaen AI Studio ไม่เปิดรับบุคคลทั่วไป<br>เราอนุญาตให้เข้าถึงเฉพาะสถาปนิกที่ผ่านการทดสอบเท่านั้น
+            </p>
+
+            <div class="steps-container">
+                <div class="step-box">
+                    <span class="step-number">01</span>
+                    <h4>ครอบครองคัมภีร์</h4>
+                    <p>เลือกอาวุธของคุณจากคลังด้านบน เพื่อปูรากฐานสถาปัตยกรรมทางความคิดของคุณให้แน่นหนา</p>
+                </div>
+                <div class="step-box">
+                    <span class="step-number">02</span>
+                    <h4>ถอดรหัสลับ</h4>
+                    <p>หลังการสั่งซื้อ คุณจะได้รับอีเมลพร้อม "คำถามเฉพาะบุคคล" เพื่อประเมินความเข้าใจอย่างแท้จริง</p>
+                </div>
+                <div class="step-box">
+                    <span class="step-number">03</span>
+                    <h4>เข้าสู่ฐานทัพ</h4>
+                    <p>ตอบคำถามผ่านอีเมลได้ทะลุปรุโปร่ง รหัสผ่านและลิงก์เข้าสู่ Discord จะถูกปลดล็อกให้คุณทันที</p>
+                </div>
+            </div>
+
+            <div class="lego-concept">
+                <strong>[ THE LEGO ARCHITECTURE ]</strong><br>
+                คลังอาวุธแห่งนี้จะถูกสร้างต่อยอดขึ้นไปเรื่อยๆ ทีละเล่ม เหมือนตัวต่อ LEGO<br>
+                ฐานที่แข็งแกร่งจากคัมภีร์เล่มล่างสุด จะเป็นกุญแจสำคัญในการไขความลับของสถาปัตยกรรมระดับ Enterprise ในเล่มต่อๆ ไป<br>
+                <span style="color: #00e5ff; font-family: 'Share Tech Mono', monospace; font-size: 1.1em; display: block; margin-top: 15px;">We Build the Impossible. In Days. Not Months.</span>
+            </div>
+        </div>
+
     </div>
+
+</body>
+</html>
 
 </body>
 </html>
