@@ -278,18 +278,18 @@
         .countdown-alert {
             background: rgba(255, 42, 42, 0.05);
             border: 1px dashed #ff2a2a;
-            padding: 15px;
+            padding: 25px 20px;
             border-radius: 6px;
-            margin-top: 20px;
+            margin-top: 25px;
             text-align: center;
         }
 
         .countdown-alert .warning-text {
             color: #ff2a2a;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.95em;
+            font-size: 1.05em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
@@ -298,6 +298,7 @@
             justify-content: center;
             gap: 20px;
             font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 25px;
         }
 
         .time-box {
@@ -305,13 +306,13 @@
             flex-direction: column;
             align-items: center;
             background: #0b0d10;
-            padding: 8px 15px;
+            padding: 10px 18px;
             border-radius: 4px;
             border: 1px solid #333;
         }
 
         .time-box .num {
-            font-size: 1.5em;
+            font-size: 1.6em;
             color: #00e5ff;
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
         }
@@ -322,6 +323,47 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 2px;
+        }
+        
+        /* IPO Psychology Text Section */
+        .ipo-psychology-text {
+            border-top: 1px dashed #ff2a2a;
+            padding-top: 20px;
+            text-align: left;
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        .ipo-psychology-text strong {
+            color: #fff;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .ipo-psychology-text .highlight-cyan {
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+        .ipo-psychology-text .highlight-alert {
+            color: #ff2a2a;
+            font-weight: bold;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1em;
+        }
+
+        .ipo-psychology-text .call-to-action-urgent {
+            color: #ff6600;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+            font-size: 1.1em;
+            background: rgba(255, 102, 0, 0.1);
+            padding: 10px;
+            border-radius: 4px;
         }
 
         .btn-order {
@@ -545,7 +587,7 @@
                     <a href="https://forms.gle/7r1Ubc2CW4RTnvPX7" target="_blank" class="btn-preorder">INITIATE PRE-ORDER</a>
                 </div>
                 
-                <!-- Countdown Alert Section -->
+                <!-- Countdown & Psychology Alert Section -->
                 <div class="countdown-alert">
                     <div class="warning-text">PRE-ORDER CLOSES AFTER EECON-49 PEER REVIEW</div>
                     <div class="timer-display" id="eecon-timer">
@@ -553,6 +595,15 @@
                         <div class="time-box"><span class="num" id="hours">00</span><span class="label">Hours</span></div>
                         <div class="time-box"><span class="num" id="mins">00</span><span class="label">Mins</span></div>
                         <div class="time-box"><span class="num" id="secs">00</span><span class="label">Secs</span></div>
+                    </div>
+                    
+                    <div class="ipo-psychology-text">
+                        <strong>ทำไมถึงควรจ่าย 2,999 THB ตอนนี้ ทั้งที่คัมภีร์ยังสร้างไม่เสร็จ?</strong>
+                        นี่คือการลงทุนซื้อ <span class="highlight-cyan">ความเชื่อใจ (เสมือนการซื้อหุ้น IPO)</span> คุณไม่จำเป็นต้องรอให้ใครหน้าไหน หรือ Peer Review มาการันตี เพราะคุณสามารถทดสอบยิง Payload เข้า Live Endpoint เพื่อดูผลลัพธ์ 20ms ด้วยตาตัวเองได้ทันทีตั้งแต่วันนี้<br><br>
+                        แต่หากคุณเลือกรอให้งานวิชาการ EECON-49 ประทับตราการันตี... ถึงวันนั้น สถาปัตยกรรมนี้จะถูกยกระดับเป็น "มาตรฐานโลก (Global Standard)" และคุณจะต้องจ่ายในราคาเต็ม <span class="highlight-alert">299,999 THB</span> เพราะบนโลกใบนี้ ไม่มีใครทำความเร็วระดับนี้ได้ และไม่มีใครขาย Blueprint นี้นอกจากเรา<br>
+                        <span class="call-to-action-urgent">
+                            พรุ่งนี้เช้า... เรียก C-Level ของคุณมาประชุมด่วน แล้วตัดสินใจว่าจะเป็นผู้ถือหุ้น IPO ในวันนี้ หรือเป็นผู้ตามที่ต้องจ่ายราคา Enterprise ในวันหน้า!
+                        </span>
                     </div>
                 </div>
 
@@ -664,7 +715,7 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("eecon-timer").innerHTML = "<div style='color:#ff2a2a; font-size:1.2em;'>PRICE INCREASED TO 299,999 THB</div>";
-                // You can also add logic here to change the actual price text dynamically
+                document.querySelector('.ipo-psychology-text').style.display = 'none';
             }
         }, 1000);
     </script>
