@@ -249,11 +249,6 @@
             font-weight: bold;
         }
 
-        .highlight-alert {
-            color: #ff2a2a;
-            font-weight: bold;
-        }
-
         .price-row {
             display: flex;
             align-items: center;
@@ -267,6 +262,66 @@
             font-size: 1.8em;
             font-weight: bold;
             color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Countdown & Anchor Pricing Styles */
+        .future-price {
+            font-size: 0.45em;
+            color: #a0aab5;
+            text-decoration: line-through;
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: -5px;
+        }
+
+        .countdown-alert {
+            background: rgba(255, 42, 42, 0.05);
+            border: 1px dashed #ff2a2a;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .countdown-alert .warning-text {
+            color: #ff2a2a;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.95em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #0b0d10;
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: 1px solid #333;
+        }
+
+        .time-box .num {
+            font-size: 1.5em;
+            color: #00e5ff;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+        }
+
+        .time-box .label {
+            font-size: 0.65em;
+            color: #8892b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
         }
 
         .btn-order {
@@ -299,6 +354,7 @@
             font-size: 1.1em;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            text-align: center;
         }
 
         .btn-preorder:hover {
@@ -482,9 +538,24 @@
                     เมื่อคุณเข้าใจการควบคุมมิติอนันต์ คัมภีร์เล่มนี้คือ Blueprint ลับที่เฉลยวิธีสร้าง Deterministic Filter (Bangsaen Filter V2 live endpoint @ www.bangsaenai.com) ที่ตอบสนองได้ใกล้เคียง <span style="color: #fff; font-weight: bold;">20 มิลลิวินาที</span> นี่ไม่ใช่แค่การเขียนโค้ด แต่เป็นการบิดเบือน Infrastructure ระดับ Enterprise
                 </p>
                 <div class="price-row">
-                    <div class="price" style="color: #ff2a2a;">2,999 THB</div>
+                    <div class="price" style="color: #ff2a2a;">
+                        <span class="future-price">FUTURE PRICE: 299,999 THB</span>
+                        2,999 THB
+                    </div>
                     <a href="https://forms.gle/7r1Ubc2CW4RTnvPX7" target="_blank" class="btn-preorder">INITIATE PRE-ORDER</a>
                 </div>
+                
+                <!-- Countdown Alert Section -->
+                <div class="countdown-alert">
+                    <div class="warning-text">PRE-ORDER CLOSES AFTER EECON-49 PEER REVIEW</div>
+                    <div class="timer-display" id="eecon-timer">
+                        <div class="time-box"><span class="num" id="days">00</span><span class="label">Days</span></div>
+                        <div class="time-box"><span class="num" id="hours">00</span><span class="label">Hours</span></div>
+                        <div class="time-box"><span class="num" id="mins">00</span><span class="label">Mins</span></div>
+                        <div class="time-box"><span class="num" id="secs">00</span><span class="label">Secs</span></div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -567,5 +638,35 @@
 
     </div>
 
+    <!-- Countdown Script -->
+    <script>
+        // Set the date we're counting down to (End of EECON-49: Nov 20, 2026 23:59:59 GMT+0700)
+        var countDownDate = new Date("Nov 20, 2026 23:59:59 GMT+0700").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Format numbers to have leading zeros
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("mins").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("secs").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("eecon-timer").innerHTML = "<div style='color:#ff2a2a; font-size:1.2em;'>PRICE INCREASED TO 299,999 THB</div>";
+                // You can also add logic here to change the actual price text dynamically
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
