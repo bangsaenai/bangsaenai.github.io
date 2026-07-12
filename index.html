@@ -394,6 +394,122 @@
 
 </div>
 
+
+<style>
+/* CSS สำหรับ Section ใหม่ (วางต่อจาก CSS เดิมได้เลย) */
+.reality-check-section {
+    background: rgba(20, 24, 30, 0.4);
+    border: 1px solid #2a2e35;
+    border-left: 4px solid #ff2a2a;
+    padding: 35px;
+    margin: 40px auto; /* ระยะห่างระหว่าง Terminal กับ ตาราง */
+    border-radius: 4px;
+    font-family: 'Prompt', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 950px;
+}
+.reality-check-section h3 {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ff2a2a;
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+.reality-check-section .metaphor-text {
+    color: #d1d5db;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+.reality-check-section .metaphor-text ul {
+    list-style-type: none;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+.reality-check-section .metaphor-text li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+.reality-check-section .metaphor-text li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #5865F2;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
+}
+.reality-check-section .metaphor-text .highlight-cyan {
+    color: #00e5ff;
+    font-weight: bold;
+}
+.reality-check-section .challenge-box {
+    background: #0b0d10;
+    border: 1px dashed #5865F2;
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+}
+.reality-check-section .challenge-box::before {
+    content: 'MESSAGE TO SILICON VALLEY';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #0b0d10;
+    padding: 0 10px;
+    color: #5865F2;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+.reality-check-section .challenge-box p {
+    color: #a0aab5;
+    line-height: 1.7;
+    margin: 0 0 15px 0;
+    font-size: 1em;
+}
+.reality-check-section .challenge-box .final-question {
+    color: #ff6600;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.15em;
+    margin-bottom: 0;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+</style>
+
+<!-- HTML Section สำหรับแทรกใต้ปุ่ม RUN LIVE ATTACK และก่อนตาราง -->
+<div class="reality-check-section">
+    <h3>[ A REALITY CHECK FOR SILICON VALLEY ]</h3>
+    
+    <div class="metaphor-text">
+        <strong>Engineering Fundamentals Humanity Has Known for a Century:</strong>
+        <ul>
+            <li>You don’t pump raw, muddy water into a Reverse Osmosis membrane without a coarse filter.</li>
+            <li>You don’t leave a Jet Engine turbine exposed to bird strikes and foreign debris.</li>
+            <li><span class="highlight-cyan">So why on earth are you letting raw, malicious garbage payloads pass directly into the GPU core of your Multi-Billion Parameter LLMs?</span></li>
+        </ul>
+    </div>
+    
+    <div class="challenge-box">
+        <p>
+            To the American engineers, CTOs, and VC-backed startups burning billions on "LLM-as-a-judge" firewalls: You have access to the world's most advanced hardware, yet you seem to have forgotten basic system architecture. Big Tech has become so blinded by the magic of Generative AI that Common Sense was left behind.
+        </p>
+        <p>
+            How is it possible that a single Thai developer built a sub-20ms Deterministic Filter using raw CPU math, while your billion-dollar engineering teams are still arguing over which LLM is "less slow" at filtering? 
+        </p>
+        <p class="final-question">
+            Are you true engineers building robust systems, or are you just API wrappers praying your Black Box doesn't break?
+        </p>
+    </div>
+</div>
+
+
+
+
+        
+
 <div class="table-container" style="overflow-x:auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 20px 0;">
     <table style="width:100%; border-collapse: collapse; text-align: left; background-color: #ffffff; border: 1px solid #e1e4e8; border-radius: 6px;">
         <thead>
