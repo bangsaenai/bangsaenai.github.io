@@ -565,6 +565,120 @@
             </div>
         </div>
 
+        <!-- Build vs Buy Table Section -->
+<style>
+    .build-buy-container {
+        margin: 60px 0 20px 0;
+        background: #0b0d10;
+        border: 1px solid #2a2e35;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .build-buy-header {
+        text-align: center;
+        padding: 25px;
+        background: #111419;
+        border-bottom: 1px solid #333;
+    }
+    .build-buy-header h3 {
+        margin: 0;
+        color: #fff;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+    .build-buy-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+    .build-buy-table th {
+        background: #15181e;
+        color: #8892b0;
+        padding: 20px;
+        font-family: 'Prompt', sans-serif;
+        font-weight: bold;
+        border-bottom: 2px solid #333;
+        width: 33.33%;
+    }
+    .build-buy-table th.th-buy {
+        background: rgba(0, 229, 255, 0.05);
+        color: #00e5ff;
+        border-bottom: 2px solid #00e5ff;
+    }
+    .build-buy-table td {
+        padding: 20px;
+        border-bottom: 1px solid #1a1e24;
+        color: #a0aab5;
+        vertical-align: top;
+        line-height: 1.6;
+    }
+    .build-buy-table td.td-buy {
+        background: rgba(0, 229, 255, 0.02);
+        color: #d1d5db;
+    }
+    .build-buy-table tr:last-child td {
+        border-bottom: none;
+    }
+    .text-danger { color: #ff2a2a; font-weight: bold; }
+    .text-success { color: #00e5ff; font-weight: bold; }
+    .text-warning { color: #ff6600; font-weight: bold; }
+    
+    @media (max-width: 768px) {
+        .build-buy-table, .build-buy-table tbody, .build-buy-table tr, .build-buy-table th, .build-buy-table td {
+            display: block;
+            width: 100%;
+        }
+        .build-buy-table th, .build-buy-table td {
+            box-sizing: border-box;
+        }
+        .build-buy-table tr {
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #333;
+        }
+    }
+</style>
+
+<div class="build-buy-container">
+    <div class="build-buy-header">
+        <h3>[ BUILD vs. BUY : THE ENTERPRISE REALITY ]</h3>
+        <p style="color: #8892b0; margin: 10px 0 0 0; font-size: 0.95em;">ทำไมราคา 299,999 THB จึงถูกกว่าการสร้างเองถึง 10 เท่า?</p>
+    </div>
+    <table class="build-buy-table">
+        <thead>
+            <tr>
+                <th>ปัจจัยต้นทุน (Cost Factors)</th>
+                <th>สร้างเอง (Build In-House)</th>
+                <th class="th-buy">ซื้อความลับ (Buy Bangsaen Blueprint)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>ค่าจ้างมันสมอง<br>(Human Capital)</strong></td>
+                <td>ต้องจ้าง System Architect ระดับท็อป และ AI Engineer สายคณิตศาสตร์ 2 คนขึ้นไป <br><span class="text-danger">(เงินเดือนรวม 200,000 - 300,000 บาท/เดือน)</span></td>
+                <td class="td-buy">ไม่ต้องจ้างเพิ่ม ใช้ทีม Dev ปัจจุบันของคุณ นำ Blueprint สถาปัตยกรรมไปต่อยอดและฝังเข้าระบบได้ทันที</td>
+            </tr>
+            <tr>
+                <td><strong>เวลาที่สูญเสีย<br>(Time to Market)</strong></td>
+                <td>กระบวนการ Trial & Error ตั้งแต่ร่างสมการ จนถึงการจูนระบบบน Cloud Run ให้เสถียร <br><span class="text-danger">(ใช้เวลาอย่างน้อย 3-6 เดือน)</span></td>
+                <td class="td-buy">ทางลัดข้ามเวลา <span class="text-success">(ใช้เวลาเพียงไม่กี่วัน)</span> เพราะเราผ่านการลองผิดลองถูก และเขียนโครงสร้างที่สมบูรณ์แบบมาให้คุณแล้ว</td>
+            </tr>
+            <tr>
+                <td><strong>ความเสี่ยง<br>(Sunk Cost Risk)</strong></td>
+                <td>จ่ายเงินเดือนและเผาค่า Cloud ไปครึ่งปี โดย<span class="text-danger">ไม่มีใครการันตี</span>ว่าทีมของคุณจะทำความเร็ว Latency ได้ต่ำกว่า 20ms</td>
+                <td class="td-buy">ความเสี่ยงเป็นศูนย์ เพราะนี่คือ <span class="text-success">Production-Ready</span> ที่มี Live Endpoint ให้คุณยิงทดสอบผลลัพธ์ 20ms ด้วยตาตัวเองแล้ววันนี้</td>
+            </tr>
+            <tr>
+                <td><strong>สรุปต้นทุนรวม<br>(Total Estimated Cost)</strong></td>
+                <td>องค์กรต้องเตรียมงบวิจัย <br><span class="text-danger" style="font-size: 1.2em;">1,500,000 - 3,000,000 บาท</span><br>พร้อมแบกรับความเสี่ยงที่จะล้มเหลวสูงมาก</td>
+                <td class="td-buy">จ่ายเพื่อซื้อสิทธิ์ IPO วันนี้เพียง <br><span class="text-success" style="font-size: 1.5em;">2,999 บาท</span><br><span style="font-size: 0.85em;">(ก่อนพุ่งเป็น <span class="text-warning">299,999 บาท</span> ทันทีหลังจบงาน EECON-49)</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- End Build vs Buy Table Section -->
+
         <!-- Book 3 (TOP / EASTER EGG): Deterministic Filter -->
         <div class="book-card easter-egg-card">
             <div class="book-cover">
