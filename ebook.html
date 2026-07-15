@@ -685,6 +685,165 @@
 </div>
 <!-- END: NATIONWIDE STALKER ALERT -->
 
+        <div class="hacker-recon-container">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=IBM+Plex+Sans+Thai:wght@400;600&display=swap');
+
+        .hacker-recon-container {
+            background: #06060a;
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            max-width: 800px;
+            margin: 3rem auto;
+            font-family: 'Fira Code', monospace;
+            color: #d1d5db;
+            box-shadow: 0 0 35px rgba(239, 68, 68, 0.15);
+            position: relative;
+        }
+
+        .hacker-recon-container::after {
+            content: 'LIVE INCIDENT REPORT';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #ef4444;
+            color: #000;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 3px;
+            letter-spacing: 1px;
+        }
+
+        .recon-meta {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .recon-meta span {
+            color: #a855f7;
+            font-weight: 600;
+        }
+
+        .recon-title {
+            font-size: 1.75rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+        }
+
+        .recon-title span {
+            color: #ef4444;
+        }
+
+        .recon-body {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #9ca3af;
+            margin-bottom: 2rem;
+        }
+
+        .recon-body p {
+            margin: 0 0 1rem 0;
+        }
+
+        .recon-body strong {
+            color: #ffffff;
+        }
+
+        .terminal-box {
+            background: #000000;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #4ade80;
+            overflow-x: auto;
+        }
+
+        .terminal-box .log-err {
+            color: #f43f5e;
+            font-weight: bold;
+        }
+
+        .terminal-box .log-time {
+            color: #64748b;
+        }
+
+        .recon-punchline {
+            border-left: 3px solid #a855f7;
+            padding-left: 1rem;
+            font-style: italic;
+            color: #e9d5ff;
+            margin: 1.5rem 0;
+        }
+
+        .recon-footer {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+        }
+
+        .recon-footer a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #a855f7;
+            transition: all 0.2s ease;
+        }
+
+        .recon-footer a:hover {
+            color: #c084fc;
+            border-color: #c084fc;
+            padding-bottom: 2px;
+        }
+    </style>
+
+    <div class="recon-meta">
+        TIMESTAMP: <span>JULY 15, 2026</span> // TARGET PATH: <span>/v1/secure-gate</span> // STATUS: <span>COMPLETELY IMMUNE</span>
+    </div>
+
+    <h3 class="recon-title">To the Scripters Hammering Our Gate: <span>Your Amateur Loops Are Obsolete.</span></h3>
+
+    <div class="recon-body">
+        <p>We tracked your automated routines spinning up all morning. You rotated headers from Chrome 142 to Safari, executed relentless sequential loops, and even waited out our instance shutdown to catch a sluggish Cold Start. You thought you could force a delay or bend the logic gates.</p>
+        
+        <div class="recon-punchline">
+            Spoiler alert: You ran straight into a concrete mathematical wall. 
+        </div>
+
+        <p>Every single probe you sent was instantly annihilated at the absolute threshold. **405 Method Not Allowed** in exactly **2 milliseconds**. Your malicious vectors didn't even make it past the front door. They never smelled the core memory, they never touched our GPU hardware, and they never stood a chance against the Koopman Hyperplane.</p>
+    </div>
+
+    <div class="terminal-box">
+        <span class="log-time">2026-07-15 09:17:49.454 ICT</span><br>
+        GET <span class="log-err">405 Method Not Allowed</span> (140 B) -> <span style="color: #f59e0b;">[ REJECTED IN 2ms ]</span><br>
+        <span class="log-time">2026-07-15 09:18:02.852 ICT</span><br>
+        GET <span class="log-err">405 Method Not Allowed</span> (140 B) -> <span style="color: #f59e0b;">[ REJECTED IN 2ms ]</span><br>
+        <span class="log-time">2026-07-15 09:18:07.705 ICT</span><br>
+        SYS_STATUS: <span style="color: #38bdf8;">Null Space Sovereignty Maintained. $Ax = b$ Executed.</span>
+    </div>
+
+    <div class="recon-body">
+        <p>Stop wasting your cloud credits on stone-age stress testing. The Bangsaen Filter doesn't waste overhead collecting your log files; it simply erases your existence from the silicon fabric before the OS even acknowledges your handshake.</p>
+    </div>
+
+    <div class="recon-footer">
+        อยากรู้ว่าทำไมคณิตศาสตร์ชั้นสูงถึงเปลี่ยนซิลิคอนให้เป็นสุสานของแฮกเกอร์? <br>
+        อ่านคำตอบในพิมพ์เขียวฉบับเต็ม หรือตามไปคว้าซอร์สโค้ดระดับโลกมาทดสอบได้ที่ <a href="https://github.com/bangsaenai/Bangsaen-BlackHole" target="_blank">Bangsaen BlackHole GitHub</a>
+    </div>
+</div>
+
         <!-- START: WAR LOG BANANA INCIDENT -->
 <div class="war-log-container" style="margin: 30px auto; padding: 25px; border: 1px solid rgba(255, 77, 77, 0.4); border-left: 4px solid #ff4d4d; background: rgba(15, 15, 15, 0.9); border-radius: 4px; max-width: 100%; box-shadow: 0 4px 25px rgba(255, 77, 77, 0.15);">
     <h3 style="color: #ff4d4d; margin-top: 0; font-size: 1.15rem; letter-spacing: 1.5px; font-weight: bold; text-transform: uppercase;">
