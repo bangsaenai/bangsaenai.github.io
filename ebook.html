@@ -2073,6 +2073,161 @@
         </div>
     </div>
 </section>
+
+
+<section class="philosophy-fairness-section">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap');
+
+        .philosophy-fairness-section {
+            background: #090a0f;
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            border-radius: 16px;
+            padding: 3.5rem 2.5rem;
+            max-width: 900px;
+            margin: 4rem auto;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            color: #94a3b8;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .phil-badge {
+            font-family: 'Fira Code', monospace;
+            background: rgba(244, 63, 94, 0.15);
+            border: 1px solid #f43f5e;
+            color: #fb7185;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phil-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 1rem 0;
+            line-height: 1.3;
+        }
+
+        .phil-title span {
+            color: #f43f5e;
+            background: linear-gradient(to right, #fb7185, #fda4af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .phil-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+        }
+
+        .gate-logic-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .gate-logic-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .logic-card {
+            background: #11131c;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .logic-card.pass { border-color: rgba(34, 197, 94, 0.3); }
+        .logic-card.reject { border-color: rgba(244, 63, 94, 0.3); }
+
+        .logic-card h5 {
+            font-size: 1.2rem;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .logic-card.pass h5 { color: #4ade80; }
+        .logic-card.reject h5 { color: #f87171; }
+
+        .logic-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .statement-box {
+            text-align: center;
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .statement-box h4 {
+            color: #ffffff;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .statement-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+    </style>
+
+    <center><div class="phil-badge">System Philosophy // Proof of Knowledge</div></center>
+    
+    <h3 class="phil-title" style="text-align: center;">ความแฟร์ระดับเด็ดขาด: <span>ถ้าคุณไม่มีความรู้ คุณก็ไม่มีสิทธิ์เปิดประตูนี้</span></h3>
+
+    <div class="phil-lead" style="text-align: center;">
+        ในโปรเจกต์ Capstone นี้ เราใช้ตำราวิชาการ 2 เล่มที่เราจัดทำขึ้นมาเป็นตัวกำหนดขอบเขตจักรวาลความรู้ 
+        (Knowledge Domain) ของระบบอย่างเข้มงวด ด่านหน้า <strong>Bangsaen Filter</strong> บน Cloud Run 
+        ไม่ได้บล็อกข้อมูลตามอารมณ์หรือสุ่มเดา แต่ทำงานบนบรรทัดฐานของ "กุญแจความรู้" ที่ตรงไปตรงมาที่สุด
+    </div>
+
+    <div class="gate-logic-container">
+        <div class="logic-card pass">
+            <h5>🟢 มีความรู้ = ผ่านไปเอาความรู้เพิ่ม</h5>
+            <p>
+                เมื่อผู้ใช้ส่งคำถามหรือชุดข้อมูลที่มีพิกัดเวกเตอร์ความหมาย (Semantic Vector) สอดคล้องกับเนื้อหาในตำราทั้ง 2 เล่ม 
+                ระบบจะถือว่าคุณมี <strong>"เจตนาที่ถูกต้อง"</strong> และมีกุญแจความรู้ที่ตรงกัน 
+                ด่านหน้าจะเปิดทางและส่ง Payload ที่ปลอดภัยนี้มุดท่อตรงไปให้โมเดล LLM ในเครื่องของนักเรียนประมวลผลเพื่อส่งมอบความรู้ในระดับที่ลึกขึ้นต่อไป
+            </p>
+        </div>
+
+        <div class="logic-card reject">
+            <h5>🔴 ไร้ความรู้ / เจตนาเคลือบแคลง = ดีดทิ้งและทำลาย</h5>
+            <p>
+                หากคำถามหลุดกรอบออกไปนอกโดเมนตำรา ชวนคุยไร้สาระ หรือจงใจแฝงรหัสลับ/คำสั่งวางยา (Prompt Injection) 
+                เพื่อหวังเจาะระบบหลังบ้าน สมการคณิตศาสตร์ชั้นสูงจะตีค่าสัญญาณนี้เป็นขยะทันที 
+                ระบบจะดีดคำถามนั้นทิ้งและส่งเข้าสู่ <strong>Black Hole Engine</strong> เพื่อสลายสัญญาณให้หายวับไปในหน่วยความจำทันที
+            </p>
+        </div>
+    </div>
+
+    <div class="statement-box">
+        <h4>นี่คือระบบที่ "แฟร์" ที่สุดในยุค Agent Tsunamiหรือไม่?</h4>
+        <p>
+            <strong>คำตอบคือ แฟร์ที่สุด</strong> เพราะในโลกที่บอทและแฮกเกอร์รันสคริปต์อัตโนมัติมาถล่มระบบตลอด 24 ชั่วโมง 
+            คอมพิวท์ทรัพยากรมีไว้ตอบสนองต่อผู้ที่มีเจตนาศึกษาจริงเท่านั้น ระบบนี้คือบทพิสูจน์เชิงสถาปัตยกรรมว่า 
+            ถ้าคุณเข้ามาด้วยความรู้ คุณจะได้ความรู้กลับไป แต่ถ้าคุณเข้ามาด้วยความว่างเปล่าหรือสิ่งแปลกปลอม 
+            คุณจะชนเข้ากับกำแพงคณิตศาสตร์ที่ไม่มีแม้แต่บานประตูให้คุณมองเห็น
+        </p>
+    </div>
+</section>
         
 
 <!-- START: BANGSAEN AI ECOSYSTEM SECTION -->
