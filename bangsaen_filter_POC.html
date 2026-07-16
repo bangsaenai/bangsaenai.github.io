@@ -261,6 +261,78 @@
         .user-msg { color: #a5d6ff; margin-bottom: 5px; }
         .bot-msg { color: #79c0ff; margin-bottom: 15px; white-space: pre-line; }
         .intercept-msg { color: #ff7b72; margin-bottom: 15px; font-weight: bold; }
+
+        /* Price Hike Alert Style */
+        .price-hike-alert {
+            background: rgba(255, 107, 0, 0.05);
+            border: 1px dashed var(--orange);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .alert-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--orange);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .price-hike-alert h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .alert-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .price-compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .price-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .price-box h5 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .price-line {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .price-line del {
+            color: #ff7b72;
+        }
+
+        .price-line strong {
+            font-size: 20px;
+            color: var(--orange);
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -316,14 +388,39 @@
     </div>
 
     <!-- Section 4: Pure Candor Call To Action -->
+  <!-- Section 4: Price Hike Alert -->
+    <section class="price-hike-alert">
+        <div class="alert-badge">⏳ TIME-SENSITIVE OFFER // LAST CHANCE</div>
+        <h2>รีบตัดสินใจ ก่อนระบบปรับราคาขึ้นชุดใหญ่!</h2>
+        <p class="alert-desc">
+            โอกาสสุดท้ายที่จะได้ครอบครองคัมภีร์ลับในราคา Early Bird เพราะในเดือน<strong>สิงหาคม</strong>นี้ ตำราทั้ง 2 เล่มจะถูกปรับราคาขึ้นสู่มูลค่าที่แท้จริงตามความเข้มข้นของสถาปัตยกรรม อย่ารอจนต้องจ่ายแพงกว่าเดิมถึง 4 เท่า!
+        </p>
+        
+        <div class="price-compare-grid">
+            <div class="price-box" style="border-left: 3px solid var(--orange);">
+                <h5>The Koopman Paradigm</h5>
+                <div class="price-line">
+                    ราคาตอนนี้: <del>299 THB</del> ➡️ สิงหาคมนี้: <strong>1199 THB</strong>
+                </div>
+            </div>
+            <div class="price-box" style="border-left: 3px solid var(--cyan);">
+                <h5>Linear Algebra for Developers</h5>
+                <div class="price-line">
+                    ราคาตอนนี้: <del>999 THB</del> ➡️ สิงหาคมนี้: <strong>3,999 THB</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Call to Action -->
     <footer>
         <p class="cta-text">นี่คือ <span>เทคโนโลยีอวกาศ</span> ที่เกิดมาเพื่อกำจัดตรรกะสายถึกทิ้งอย่างสิ้นเชิง</p>
         <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; font-size: 15px;">
             ถ้าคำถามที่คุณพิมพ์ไม่เกี่ยวข้องกับขอบเขตเนื้อหาในตำราทั้งสองเล่มนี้ ระบบจะดีดทิ้งทันทีอย่างไร้ความปราณี 
             ถ้าคุณเป็นนักพัฒนาที่ต้องการสร้างระบบความปลอดภัยระดับนี้ แต่ยังทำไม่ได้... แนะนำให้ซื้อตำราไปอ่านศึกษาซะ 
-            อย่าเสียเวลาไปควานหาของฟรีใน Google เลย <strong>เพราะวิชาเชิงลึกขนาดนี้ ไม่มีทางมีให้คุณหาฟรีแน่นอน!</strong>
+            อย่าเสียเวลาไปควานหาของฟรีใน Google เลย เพราะวิชาเชิงลึกขนาดนี้ ไม่มีทางมีให้คุณหาฟรีแน่นอน!
         </p>
-        <a href="https://bangsaenai.com/ebook.html" class="btn-buy">ซื้อคู่มือสถาปัตยกรรมมิติสูงที่นี่</a>
+        <a href="#" class="btn-buy" style="background: var(--orange);">สั่งซื้อคู่มือราคา Early Bird ทันที</a>
     </footer>
 </div>
 
