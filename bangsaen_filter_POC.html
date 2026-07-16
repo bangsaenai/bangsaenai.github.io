@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangsaen Filter POC // The Death of If-Else</title>
+
+   <!-- Analytics Scripts -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vv7pfqnzyb");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGV1SXG9J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FFGV1SXG9J');
+    </script>
+  
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --cyan: #00f0ff;
+            --orange: #ff6b00;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Style */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 1px solid var(--cyan);
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: var(--orange);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Tech Concept Grid */
+        .grid-books {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .book-card.la::before { background: var(--cyan); }
+        .book-card.km::before { background: var(--orange); }
+
+        .book-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .la .book-tag { color: var(--cyan); }
+        .km .book-tag { color: var(--orange); }
+
+        .book-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Architecture Section */
+        .architecture {
+            background: rgba(22, 27, 34, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .arch-title {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .arch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .arch-core h4 {
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        /* Interactive POC Live Chat */
+        .poc-window {
+            background: #070a0e;
+            border: 2px solid var(--cyan);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+        }
+
+        .chat-box {
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            height: 250px;
+            padding: 20px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+
+        button {
+            background: var(--cyan);
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            padding: 0 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background: #00c8d4;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Footer Call to Action */
+        footer {
+            text-align: center;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .cta-text span {
+            color: var(--cyan);
+        }
+
+        .btn-buy {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--orange);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .btn-buy:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+        }
+
+        .sys-msg { color: #58a6ff; margin-bottom: 10px; }
+        .user-msg { color: #a5d6ff; margin-bottom: 5px; }
+        .bot-msg { color: #79c0ff; margin-bottom: 15px; white-space: pre-line; }
+        .intercept-msg { color: #ff7b72; margin-bottom: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge">DEEP TECH ARCHITECTURE</div>
+        <h1>Bangsaen Filter <span>// The Death of If-Else</span></h1>
+        <p class="subtitle">พิสูจน์ระบบเกราะป้องกันควอนตัมความหมายระดับสองทาง (Bidirectional) สลัดตรรกะแบบสายถึกทิ้งไป แล้วก้าวเข้าสู่การควบคุมโมเดลด้วยระดับมิติเชิงเส้น</p>
+    </header>
+
+    <!-- Section 1: The Core Domain Knowledge -->
+    <div class="grid-books">
+        <div class="book-card la">
+            <div class="book-tag">#CORE_ENGINE // THE AWAKENING</div>
+            <h3 class="book-title">Linear Algebra for Developers</h3>
+            <p style="color: var(--text-muted); font-size: 14px;">การเปลี่ยนประโยคภาษาคนให้กลายเป็นเรขาคณิตบนระนาบมิติสูง เพื่อฉายเงาพลังงานตรวจสอบความถูกต้องโดยไม่ต้องดักจับคำหยาบหรือคำต้องห้ามแม้แต่คำเดียว</p>
+        </div>
+        <div class="book-card km">
+            <div class="book-tag">#ENTRY_POINT // THE PARADIGM SHIFT</div>
+            <h3 class="book-title">The Koopman Paradigm</h3>
+            <p style="color: var(--text-muted); font-size: 14px;">สถาปัตยกรรมจัดการมิติตอนันต์ แปลงระบบพลศาสตร์ของคำตอบที่ไม่มีวันคาดเดาได้ ให้กลายสภาพเป็นระบบเชิงเส้นเด็ดขาด คุมอยู่หมัดทั้งจักรวาลความหมาย</p>
+        </div>
+    </div>
+
+    <!-- Section 2: Architecture Challenge -->
+    <section class="architecture">
+        <div class="arch-title">
+            <span>⚙️</span> สถาปัตยกรรมนวัตกรรมกรองสองทางระดับโลก (Bidirectional Geometric Filter)
+        </div>
+        <div class="arch-grid">
+            <div class="arch-core">
+                <h4>1. Inbound Gate (สกัด Prompt ขาเข้า)</h4>
+                <p style="color: var(--text-muted); font-size: 14px;">เบื่อไหมกับการเขียน <code>if-else</code> ยาวถึงดวงจันทร์เพื่อดัก Prompt Injection? เราใช้พิกัดจากตำรากางระนาบ Subspace ตรวจสอบองศาความหมาย ถ้าหลุดกรอบวิชาเรียน ดีดทิ้งทันทีในไม่กี่มิลลิวินาที</p>
+            </div>
+            <div class="arch-core">
+                <h4>2. Outbound Gate (สกัดความหลอนขาออก)</h4>
+                <p style="color: var(--text-muted); font-size: 14px;"><strong style="color: var(--orange);">คำท้าทายระดับโลก:</strong> คุณไม่มีทางรู้ล่วงหน้าว่า LLM จะคายคำตอบอะไรออกมา แล้วคุณจะใช้โค้ดดักคำได้อย่างไร? คำตอบคือการฉายเงาเวกเตอร์เข้า Left Null Space เพื่อวัดความบริสุทธิ์ของความหมายก่อนถึงจอ User</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Live Sandbox Playground -->
+    <div class="poc-window">
+        <div class="book-tag" style="color: var(--cyan); margin-bottom: 15px;">⚡ LIVE SANDBOX // ยิงถล่มเกราะคณิตศาสตร์ได้ที่นี่</div>
+        <div class="chat-box" id="chatContainer">
+            <div class="sys-msg">[System] เกราะป้องกันควอนตัมความหมายเปิดใช้งานแล้ว ล็อกน่านฟ้าตามฐานข้อมูลตำรา 2 เล่ม...</div>
+        </div>
+        <div class="input-group">
+            <input type="text" id="userInput" placeholder="ลองแฮก ยิงคำถามนอกกรอบ หรือถามวิชาการเพื่อทดสอบค่าความแม่นยำ..." onkeypress="if(event.key === 'Enter') sendStream()">
+            <button onclick="sendStream()" id="sendBtn">EXECUTE</button>
+        </div>
+    </div>
+
+    <!-- Section 4: Pure Candor Call To Action -->
+    <footer>
+        <p class="cta-text">นี่คือ <span>เทคโนโลยีอวกาศ</span> ที่เกิดมาเพื่อกำจัดตรรกะสายถึกทิ้งอย่างสิ้นเชิง</p>
+        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; font-size: 15px;">
+            ถ้าคำถามที่คุณพิมพ์ไม่เกี่ยวข้องกับขอบเขตเนื้อหาในตำราทั้งสองเล่มนี้ ระบบจะดีดทิ้งทันทีอย่างไร้ความปราณี 
+            ถ้าคุณเป็นนักพัฒนาที่ต้องการสร้างระบบความปลอดภัยระดับนี้ แต่ยังทำไม่ได้... แนะนำให้ซื้อตำราไปอ่านศึกษาซะ 
+            อย่าเสียเวลาไปควานหาของฟรีใน Google เลย <strong>เพราะวิชาเชิงลึกขนาดนี้ ไม่มีทางมีให้คุณหาฟรีแน่นอน!</strong>
+        </p>
+        <a href="https://bangsaenai.com/ebook.html" class="btn-buy">ซื้อคู่มือสถาปัตยกรรมมิติสูงที่นี่</a>
+    </footer>
+</div>
+
+<script>
+    function sendStream() {
+        const inputEl = document.getElementById('userInput');
+        const chatContainer = document.getElementById('chatContainer');
+        const btn = document.getElementById('sendBtn');
+        const query = inputEl.value.trim();
+
+        if (!query) return;
+
+        // ล็อกปุ่มป้องกันการยิงซ้ำ
+        inputEl.value = '';
+        btn.disabled = true;
+        btn.innerText = 'PROCESSING...';
+
+        // แสดงคำถามของผู้ใช้บนหน้าจอ console
+        const userDiv = document.createElement('div');
+        userDiv.className = 'user-msg';
+        userDiv.innerText = `👤 USER_PROMPT > ${query}`;
+        chatContainer.appendChild(userDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        // ยิงเข้า Secure Endpoint หลังบ้านบน Google Cloud Run ตรงๆ
+        fetch('https://bangsaen-filter-api-653731256449.asia-southeast1.run.app/api/filter', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ prompt: query })
+        })
+        .then(res => {
+            if (!res.ok) throw new Error('Network response was not ok');
+            return res.json();
+        })
+        .then(data => {
+            const reply = data.reply;
+            const responseDiv = document.createElement('div');
+            
+            // เช็คว่าโดนระบบ Intercepted หรือไม่เพื่อเปลี่ยนสี Log ให้สะใจ
+            if (reply.includes('[System Notification]') || reply.includes('[System Intercepted]')) {
+                responseDiv.className = 'intercept-msg';
+                responseDiv.innerText = `🔴 FILTER_GATE > ${reply}`;
+            } else {
+                responseDiv.className = 'bot-msg';
+                responseDiv.innerText = `🟢 GEMINI_RESPONSE > \n${reply}`;
+            }
+            
+            chatContainer.appendChild(responseDiv);
+        })
+        .catch(err => {
+            const errDiv = document.createElement('div');
+            errDiv.className = 'intercept-msg';
+            errDiv.innerText = `❌ SYSTEM_ERROR > ไม่สามารถติดต่อเกราะป้องกันคลาวด์หลังบ้านได้ (${err.message})`;
+            chatContainer.appendChild(errDiv);
+        })
+        .finally(() => {
+            btn.disabled = false;
+            btn.innerText = 'EXECUTE';
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        });
+    }
+</script>
+
+</body>
+</html>
