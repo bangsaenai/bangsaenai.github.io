@@ -522,6 +522,81 @@
             color: #ff6b00;
             font-weight: bold;
         }
+
+        /* New Homework Section */
+        .homework-section {
+            background: #0d1117;
+            padding: 40px 20px 60px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .homework-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .homework-tag {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.1);
+            color: #ff6b00;
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .homework-title {
+            color: #fff;
+            font-size: 26px;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            line-height: 1.3;
+        }
+
+        .homework-body {
+            color: #c9d1d9;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .homework-body p {
+            margin: 0 0 20px 0;
+        }
+
+        .homework-box-callout {
+            background: #0d1117;
+            border-left: 4px solid #00f0ff;
+            padding: 25px;
+            border-radius: 4px;
+            margin: 30px 0;
+        }
+
+        .homework-box-callout h4 {
+            color: #00f0ff;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .homework-footer {
+            text-align: center;
+            border-top: 1px solid #30363d;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .homework-highlight-text {
+            color: #58a6ff;
+            font-weight: 600;
+        }
         
     </style>
 </head>
@@ -669,6 +744,59 @@
     </div>
 </section>
 <!-- END: POUND-FOR-POUND VS SECTION -->
+
+    <!-- START: NEW HOMEWORK SECTION -->
+<section class="homework-section">
+    <div class="homework-container">
+        
+        <div class="homework-tag">📝 HOMEWORK NO.2</div>
+        
+        <h3 class="homework-title">
+            เราเฉลยการบ้านข้อแรกไปแล้วด้วยตารางด้านบน...<br>
+            <span style="color: #ff6b00;">และนี่คือ "การบ้านข้อใหม่" ให้คุณเก็บกลับไปคิดคืนนี้</span>
+        </h3>
+
+        <div class="homework-body">
+            <p>
+                ลองสังเกต URL หรือโครงสร้างระบบของหน้าทดสอบนี้ดี ๆ ระบบที่เราใช้โชว์พลังการดีดข้อความหลอนในระดับมิลลิวินาทีนี้ 
+                เราจงใจรันมันไว้บน <span class="homework-highlight-text">Google Cloud Run</span> แพลตฟอร์ม Serverless ธรรมดา ๆ 
+                และเขียนโครงสร้างทั้งหมดขึ้นด้วยภาษา <span class="homework-highlight-text">Python</span>
+            </p>
+
+            <p>
+                เดฟสายสถาปัตยกรรมระบบทุกคนรู้ดีว่า Python บนระบบ Serverless มีข้อจำกัดเรื่องทรัพยากรขนาดไหน 
+                แต่ทำไมเกราะป้องกันตัวนี้ถึงยังทำงานได้เร็วและเสถียรเท่ากันทุกรอบ โดยไม่มีอาการหน่วงหรือรอคิวโหลดโมเดล? 
+                คำตอบคือเพราะมันไม่ใช่การรันโมเดล AI ซ้อนโมเดล แต่เป็นเพียง <span style="color:#ff6b00; font-weight:600;">การคำนวณพีชคณิตเชิงเส้น (Linear Algebra)</span> ที่เบาหวิวระดับขนนก
+            </p>
+
+            <div class="homework-box-callout">
+                <h4>ลองจินตนาการสิ่งนี้ดูเล่น ๆ :</h4>
+                <p style="margin: 0; font-size: 16px; color: #e6edf3;">
+                    "ถ้าระบบจำลองบน Cloud Run ยังทำได้ขนาดนี้... จะเกิดอะไรขึ้นถ้าคุณนำอัลกอริทึมนี้ไปรันแบบ 
+                    <strong style="color: #fff; background: rgba(0,240,255,0.1); padding: 2px 6px; border-radius: 4px;">Local / Air-Gapped</strong> 
+                    ไว้ในระบบปิดขององค์กรคุณโดยตรง?"
+                </p>
+            </div>
+
+            <p>
+                คุณจะได้ระบบความปลอดภัยระดับสูงสุดที่รันอยู่ข้าง ๆ database ของคุณโดย <strong>ไม่เสียค่า Token ขาออกเลยสักหยดเดียว</strong> 
+                ดาต้าไม่มีวันรั่วไหลออกสู่อินเทอร์เน็ตภายนอก ไม่ต้องต่อเน็ต และทำงานเร็วกว่าระบบคลาวด์หลายเท่าตัว เพราะไม่ต้องเสียเวลาเดินทางของข้อมูล (Network Latency)
+            </p>
+        </div>
+
+        <div class="homework-footer">
+            <p style="color: #8b949e; font-size: 14px; margin: 0 0 10px 0;">
+                พิมพ์เขียวของสถาปัตยกรรมที่เบาหวิวแต่ทรงพลังนี้ ถูกถอดรหัสไว้ให้หมดแล้ว
+            </p>
+            <p style="color: #ff6b00; font-weight: bold; font-size: 15px; margin: 0;">
+                🎯 โอกาสครอบครองในราคา Early Bird สิ้นสุดสิ้นเดือนนี้ (สิงหาคมปรับราคาขึ้น 4 เท่าตัว)
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- END: NEW HOMEWORK SECTION -->
+    
 
     <!-- Section: Price Hike Alert (แมปตามดีไซน์รูปล่าสุด) -->
     <section class="price-hike-alert">
