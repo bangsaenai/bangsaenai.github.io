@@ -597,6 +597,61 @@
             color: #58a6ff;
             font-weight: 600;
         }
+
+        /* The Final Reality Check Section */
+        .terminal-section {
+            background: #0d1117;
+            padding: 60px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .terminal-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Fake Terminal */
+        .fake-terminal {
+            background: #010409;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #7ee787;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .terminal-input { color: #e6edf3; }
+        .terminal-error { color: #f85149; font-weight: bold; }
+
+        .story-content {
+            color: #c9d1d9;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .punchline-box {
+            border-top: 2px solid #30363d;
+            border-bottom: 2px solid #30363d;
+            padding: 40px 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .punchline-question {
+            font-size: 28px;
+            color: #ff6b00;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
         
     </style>
 </head>
@@ -821,6 +876,53 @@
             </div>
         </div>
     </section>
+
+    <!-- START: THE FINAL REALITY CHECK SECTION -->
+<section class="terminal-section">
+    <div class="terminal-container">
+        
+        <!-- Fake Terminal Mockup (ดักทางสายก๊อบ) -->
+        <div class="fake-terminal">
+            <span class="terminal-input">$ git clone https://github.com/bangsaenai/koopman_llm_filter.git</span><br>
+            <span>Cloning into 'koopman_llm_filter'...</span><br>
+            <span class="terminal-error">remote: Repository not found.</span><br>
+            <span class="terminal-error">fatal: repository 'https://github.com/bangsaenai/koopman_llm_filter.git' not found</span><br><br>
+            <span style="color: #8b949e;"># อย่าเสียเวลาไปเสิร์ชหาเลยครับ มันไม่มีบนโลก Open Source หรอก...</span>
+        </div>
+
+        <div class="story-content">
+            <p>
+                โลกใบนี้ไม่มีอะไรได้มาง่าย ๆ ขนาดนั้น 
+                สิ่งที่คุณเห็นรันอยู่บนหน้าจอ Sandbox ไม่ใช่โค้ดที่ไปก๊อบปี้มาจาก GitHub ของฝรั่ง 
+                ไม่ใช่โมเดลสำเร็จรูปที่ใครก็หยิบมาวางได้ แต่โครงสร้างทั้งหมดนี้มันคือ <strong>"งานวิจัย" (Deep Research)</strong> ของจริง
+            </p>
+
+            <p>
+                ย้อนกลับไปตอนที่ผมเรียนจบและเดินทางกลับมาจากประเทศเยอรมนีเมื่อปี <strong>2010</strong> 
+                ในยุคนั้น ไม่มีบริษัทเทคโนโลยีในประเทศไทยแห่งไหนยอมรับเข้าทำงานเลยสักที่เดียว 
+                คำถามตลกร้ายที่ผมได้รับในวันนั้นคือ <em>"บริษัทในไทยจะจ้างคนทำวิจัยไปทำไม? เราต้องการแค่คนเขียนโค้ดตามสั่งด่วน ๆ เท่านั้น"</em> 
+                วงการไอทีบ้านเราชินกับการเอาเทคโนโลยีของต่างชาติมาห่อขาย (Wrap) ไปวัน ๆ จนมองไม่เห็นหัวคนทำงานวิจัยรากฐาน
+            </p>
+
+            <p>
+                แต่วันนี้ ในปี <strong>2026</strong> ดอกผลของงานวิจัยที่ถูกบ่มเพาะมาอย่างยาวนานกว่า 16 ปี มันออกดอกผลแตกกิ่งก้านให้เห็นคาตาแล้ว 
+                มันคืองานวิจัยประยุกต์ใช้เวลานานหนาทึบแบบที่ไม่รู้ล่วงหน้าเลยว่าจะได้ทุนคืนเมื่อไหร่ 
+                แต่มันทำให้วันนี้เรามีระบบควบคุมภาษาที่ยืนได้ด้วยลำแข้งตัวเอง 
+                <strong>เราไม่ต้องเสียค่า Token ขาออกให้บิ๊กเทคฝรั่งเลยสักหยดเดียว</strong> เพราะเราลงมือทำเอง มือเราเปื้อนเลือด เปื้อนหยาดเหงื่อกับสมการคณิตศาสตร์มิติสูงเหล่านี้มานานนับทศวรรษ
+            </p>
+        </div>
+
+        <!-- หมัดฮุคสุดท้าย ตัดจบวันนี้ -->
+        <div class="punchline-box">
+            <p class="punchline-question">
+                "แล้วคุณคิดจะเดินเข้ามาฉกเอาพิมพ์เขียวงานวิจัย 16 ปีนี้ไป 'ฟรี ๆ' จริงหรือ?"
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- END: THE FINAL REALITY CHECK SECTION -->
+    
 
     <!-- Footer Call to Action -->
     <footer>
