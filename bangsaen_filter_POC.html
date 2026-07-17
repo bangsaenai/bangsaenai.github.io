@@ -427,6 +427,100 @@
 
         .price-tag-container .highlight-price {
             color: var(--orange);
+        } 
+
+        /* Pound-for-Pound Comparison Section */
+        .vs-section {
+            background: #0d1117;
+            padding: 50px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .vs-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .vs-title {
+            text-align: center;
+            color: #fff;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .vs-title span {
+            color: #ff6b00;
+        }
+
+        .vs-table-wrapper {
+            overflow-x: auto;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .vs-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background: #161b22;
+            min-width: 600px;
+        }
+
+        .vs-table th, .vs-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #30363d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .vs-table th {
+            background: #0d1117;
+            color: #8b949e;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* Column Widths */
+        .col-feature { width: 20%; color: #58a6ff; font-weight: 600; }
+        .col-them { width: 40%; color: #c9d1d9; }
+        .col-us { width: 40%; color: #fff; background: rgba(56, 139, 253, 0.02); }
+
+        /* Highlight Rows */
+        .vs-table tr:hover {
+            background: #1f242c;
+        }
+
+        .badge-them {
+            background: rgba(248, 81, 73, 0.1);
+            color: #ff7b72;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .badge-us {
+            background: rgba(56, 139, 253, 0.15);
+            color: #58a6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 5px;
+            border: 1px solid rgba(56, 139, 253, 0.3);
+        }
+        
+        .text-highlight-orange {
+            color: #ff6b00;
+            font-weight: bold;
         }
         
     </style>
@@ -505,6 +599,76 @@
             </p>
         </div>
     </section>
+
+    <!-- START: POUND-FOR-POUND VS SECTION -->
+<section class="vs-section">
+    <div class="vs-container">
+        
+        <div class="vs-title">
+            เปรียบเทียบปอนด์ต่อปอนด์: <span>ท่าซับซ้อนของสายห่อ VS ท่าเดียวจบของเทคโนโลยีอวกาศ</span>
+        </div>
+
+        <div class="vs-table-wrapper">
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">หัวข้อเปรียบเทียบ</th>
+                        <th style="width: 40%;">ระบบทั่วไป (Enterprise AI Gateway / Wrapper)</th>
+                        <th style="width: 40%; color: #ff6b00;">Bangsaen Filter (คัมภีร์ 2 เล่มนี้)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-feature">จำนวนกระบวนการ</td>
+                        <td class="col-them">
+                            <span class="badge-them">ต้องใช้ 2 ท่าที่แตกต่างกัน</span><br>
+                            ขาเข้าใช้ Dev แบบปกติ (if-else/Regex) พอขาออกคุมไม่ได้ ต้องไปเรียกโมเดลตัวที่สองมาครอบตรวจอีกรอบ
+                        </td>
+                        <td class="col-us">
+                            <span class="badge-us">ท่าเดียวคุมเบ็ดเสร็จ (Unified Paradigm)</span><br>
+                            ใช้สถาปัตยกรรมเรขาคณิตชุดเดียว กางระนาบ Subspace ครอบทั้งขาเข้าและขาออกพร้อมกัน
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-feature">ความเร็วในการทำงาน (Latency)</td>
+                        <td class="col-them">
+                            <span class="badge-them">ช้าและไม่เสถียร (Non-uniform)</span><br>
+                            ความเร็วแกว่งตามขนาดข้อความ และต้องบวกเวลาเพิ่มอีกเท่าตัว (Double Latency) เพราะต้องรอ LLM ตัวที่สองอ่านและอนุมัติคำตอบ
+                        </td>
+                        <td class="col-us">
+                            <span class="badge-us">เร็วคงที่เท่ากันทุกรอบ (Uniform Time)</span><br>
+                            คำนวณผ่านโครงสร้างเวกเตอร์โดยตรง ไม่ว่าข้อความจะยาวแค่ไหน เวลาที่ใช้จะสม่ำเสมอในระดับมิลลิวินาที (Deterministic Speed)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-feature">การคุมฝั่งขาออก (Outbound Filter)</td>
+                        <td class="col-them">
+                            <span class="badge-them">ใช้โมเดลเดาสุ่ม (Probabilistic)</span><br>
+                            เอา LLM มาตรวจ LLM เกิดอาการ "หลอนซ้อนหลอน" โมเดลที่เอามาดักจับก็มีโอกาสทำงานพลาดหรือหลุดเองได้
+                        </td>
+                        <td class="col-us">
+                            <span class="badge-us">ควบคุมได้ 100% (Deterministic)</span><br>
+                            ใช้การโปรเจกต์เวกเตอร์เข้า Null Space หากความหมายหลุดออกจากขอบเขตที่กักขังไว้ ระบบจะทำลายสัญญาณทิ้งทันที ไม่มีสุ่มเดา
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-feature">ค่าใช้จ่ายหลังบ้าน (Compute Cost)</td>
+                        <td class="col-them">
+                            <span class="badge-them">จ่ายเงิน 2 เท่า (Double Tokens)</span><br>
+                            ต้องจ่ายค่า Token หรือค่าเปิด GPU รันโมเดลถึง 2 ตัว เพื่อตอบคำถามเพียงแค่ครั้งเดียว ยิ่งผู้ใช้เยอะ ยิ่งคลาวด์แตก
+                        </td>
+                        <td class="col-us">
+                            <span class="badge-us">ใกล้เคียง 0 (Near-Zero Overhead)</span><br>
+                            เปลี่ยนพื้นที่ข้อความเป็นสมการเชิงเส้น กินทรัพยากรต่ำมากจนรันบน CPU ธรรมดาได้ ไม่ต้องพึ่งการถม GPU ซ้อนโมเดล
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+<!-- END: POUND-FOR-POUND VS SECTION -->
 
     <!-- Section: Price Hike Alert (แมปตามดีไซน์รูปล่าสุด) -->
     <section class="price-hike-alert">
