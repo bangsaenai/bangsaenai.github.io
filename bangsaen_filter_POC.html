@@ -873,6 +873,174 @@
 
 </section>
 
+    <style>
+  .comp-section {
+    padding: 40px 20px 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .comp-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .comp-title {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+    tracking-tight: -0.02em;
+  }
+  .comp-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid rgba(71, 85, 105, 0.3);
+    border-radius: 8px;
+    background: rgba(30, 41, 59, 0.15);
+  }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+    min-width: 800px;
+  }
+  .comp-table th {
+    background: rgba(15, 23, 42, 0.6);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 16px;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.4);
+  }
+  .comp-table td {
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.2);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .comp-table tr:last-child td {
+    border-bottom: none;
+  }
+  .tech-name {
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .text-cyan { color: #00b4d8; }
+  .text-orange { color: #f97316; }
+  .text-pink { color: #f472b6; }
+  .text-white { color: #ffffff; }
+  .text-slate { color: #94a3b8; }
+  
+  .list-pro, .list-con {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .list-pro li {
+    color: #cbd5e1;
+    margin-bottom: 6px;
+  }
+  .list-pro li::marker {
+    color: #00b4d8;
+  }
+  .list-con li {
+    color: #94a3b8;
+    margin-bottom: 6px;
+  }
+  .list-con li::marker {
+    color: #f472b6;
+  }
+</style>
+
+<section class="comp-section">
+  <div class="comp-header">
+    <h3 class="comp-title">// ตารางเปรียบเทียบสถาปัตยกรรมควบคุม AI Guardrail</h3>
+  </div>
+
+  <div class="comp-table-wrapper">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="width: 25%">สถาปัตยกรรม</th>
+          <th style="width: 25%">กลไกการทำงาน</th>
+          <th style="width: 25%">ข้อดี (Pros)</th>
+          <th style="width: 25%">ข้อเสีย / ช่องโหว่ (Cons)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Row 1 -->
+        <tr>
+          <td>
+            <span class="tech-name text-pink">1. Black Box ซ้อน Black Box</span>
+            <span class="text-slate" style="font-size: 12px;">(สายห่อ AI ฝรั่งนิยมใช้)</span>
+          </td>
+          <td class="text-slate">
+            เอา LLM หรือโมเดล AI อีกตัวมานั่งคร่อมสแกนข้อความซ้ำ เพื่อเช็คว่าคำตอบปลอดภัยไหมก่อนส่งออก
+          </td>
+          <td>
+            <ul class="list-pro">
+              <li>เข้าใจภาษามนุษย์ที่ซับซ้อนได้ระดับหนึ่ง</li>
+              <li>เดฟไม่ต้องคิดเยอะ ก๊อปปี้สคริปต์ฝรั่งมาครอบก็ใช้งานได้ทันที</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="list-con">
+              <li><strong class="text-white">ช้าและแพง:</strong> เสียเวลาประมวลผลเพิ่ม และเสียค่า Token สองเด้ง</li>
+              <li><strong class="text-white">หลอนซ้ำซ้อน:</strong> ตัวตรวจจับก็เป็น AI จึงมีโอกาสตัดสินใจหลอนเองได้เช่นกัน</li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr>
+          <td>
+            <span class="tech-name text-orange">2. Regex / String Matching</span>
+            <span class="text-slate" style="font-size: 12px;">(สายดักคำแบบโลกเก่า)</span>
+          </td>
+          <td class="text-slate">
+            เขียนโค้ด <span class="subspace-code">if-else</span> หรือไล่ทำบัญชีดำดักจับคำหยาบและคำต้องห้ามตรง ๆ 
+          </td>
+          <td>
+            <ul class="list-pro">
+              <li>ประมวลผลเร็วระดับตัวอักษร</li>
+              <li>ไม่เสียค่า Token เพิ่มในชั้นคัดกรอง</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="list-con">
+              <li><strong class="text-white">แพ้คำดิ้นได้:</strong> เจอยูสเซอร์บิดคำ สลับช่องว่าง หรือหลบเลี่ยงนิดเดียวก็ทะลุ</li>
+              <li><strong class="text-white">คุมขากลับไม่ได้:</strong> ชาติหน้าก็เขียนดักคำที่ AI จะสุ่มสร้างขึ้นมา (Hallucination) ไม่หมด</li>
+              <li>ต้องกลับมานั่งแก้โค้ดเพิ่มคำศัพท์ไปตลอดชีวิต</li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Row 3 -->
+        <tr>
+          <td>
+            <span class="tech-name text-cyan">3. Geometric Control Flow</span>
+            <span class="text-slate" style="font-size: 12px;">(Bangsaen Filter)</span>
+          </td>
+          <td class="text-slate">
+            แปลงสัญญาณเป็นเวกเตอร์ แล้วใช้คณิตศาสตร์คำนวณพิสูจน์พิกัดในพื้นที่ <strong class="text-white">Subspace</strong>
+          </td>
+          <td>
+            <ul class="list-pro">
+              <li><strong class="text-cyan">Bidirectional:</strong> คุมสัญญาณความหมายขาดลอยทั้งขาเข้าและขากลับ</li>
+              <li><strong class="text-cyan">Sub-millisecond:</strong> คำนวณด้วยสมการเรขาคณิตครั้งเดียว ความเร็วคงที่</li>
+              <li><strong class="text-cyan">Zero Token Wastage:</strong> ดีดคำขยะทิ้งได้ตั้งแต่ประตูหน้า ไม่ส่งไปประมวลผลให้เปลืองเงิน</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="list-con">
+              <li>ไม่ใช่บะหมี่กึ่งสำเร็จรูป เดฟต้องใช้ตรรกะคณิตศาสตร์เชิงเส้นในการออกแบบ ไม่ใช่แค่ก๊อปวางโค้ด</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
     <!-- Section 1: The Core Domain Knowledge -->
     <div class="grid-books">
         <div class="book-card la">
