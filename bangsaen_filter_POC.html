@@ -677,73 +677,200 @@
         <p class="subtitle">พิสูจน์ระบบเกราะป้องกันควอนตัมความหมายระดับสองทาง (Bidirectional) สลัดตรรกะแบบสายถึกทิ้งไป แล้วก้าวเข้าสู่การควบคุมโมเดลด้วยระดับมิติเชิงเส้น</p>
     </header>
 
-    <section class="forgotten-subspace-section py-16 px-6 bg-slate-900 text-slate-100 font-sans">
-  <div class="max-w-6xl mx-auto">
+   <!-- คัดลอกตั้งแต่ตรงนี้ไปวางได้เลยครับ -->
+<style>
+  .subspace-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .subspace-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .subspace-badge {
+    color: #00b4d8;
+    font-family: monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: rgba(0, 180, 216, 0.1);
+    padding: 6px 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    display: inline-block;
+  }
+  .subspace-title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    line-height: 1.4;
+  }
+  .subspace-subtitle {
+    color: #94a3b8;
+    margin-top: 16px;
+    font-size: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  .subspace-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  @media (min-width: 768px) {
+    .subspace-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .subspace-card {
+    background: rgba(30, 41, 59, 0.25);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+    border-left: 4px solid #00b4d8; /* ปรับให้เข้ากับดีไซน์กล่องด้านล่างของคุณ */
+    padding: 24px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* สลับสีเส้นขอบการ์ดใบที่สองให้ดูมีมิติ */
+  .subspace-grid .subspace-card:nth-child(2) {
+    border-left-color: #3b82f6;
+  }
+  /* สลับสีเส้นขอบการ์ดใบที่สาม */
+  .subspace-grid .subspace-card:nth-child(3) {
+    border-left-color: #f97316;
+  }
+  .subspace-card-meta {
+    color: #00b4d8;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .subspace-grid .subspace-card:nth-child(2) .subspace-card-meta { color: #3b82f6; }
+  .subspace-grid .subspace-card:nth-child(3) .subspace-card-meta { color: #f97316; }
+
+  .subspace-card-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+  .subspace-card-body {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  .subspace-code {
+    background: #0f172a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #f472b6;
+    font-family: monospace;
+    font-size: 13px;
+  }
+  .subspace-card-footer {
+    padding-top: 16px;
+    border-top: 1px solid rgba(71, 85, 105, 0.2);
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .subspace-footer-note {
+    margin-top: 40px;
+    text-align: center;
+    background: rgba(30, 41, 59, 0.15);
+    border: 1px solid rgba(71, 85, 105, 0.2);
+    padding: 14px;
+    border-radius: 6px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subspace-footer-text {
+    color: #64748b;
+    font-family: monospace;
+    font-size: 13px;
+    margin: 0;
+  }
+</style>
+
+<section class="subspace-section">
+  
+  <!-- Header -->
+  <div class="subspace-header">
+    <span class="subspace-badge">The Forgotten Subspace</span>
+    <h2 class="subspace-title">มองกลับมุม: คณิตศาสตร์ ม.4 ที่คุณทิ้งไป คือ "Alien Tech" ที่ระบบกำลังตามหา?</h2>
+    <p class="subspace-subtitle">
+      ปัญหา AI หลอนและหลุดกรอบความรู้ไม่ได้แก้ไขยากอย่างที่คิดครับ มันจะกลายเป็นเรื่องง่ายทันทีถ้าคุณหยุดวิ่งไล่ตามตัวอักษร แล้วหันกลับมามองปัญหาด้วยเรื่อง "เซต" และระบบสมการเชิงเส้นที่ทุกคนเคยเรียนมา
+    </p>
+  </div>
+
+  <!-- Grid Content -->
+  <div class="subspace-grid">
     
-    <!-- Header -->
-    <div class="text-center mb-14">
-      <span class="text-blue-400 font-mono text-xs uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">The Forgotten Subspace</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-4 text-white tracking-tight">มองกลับมุม: คณิตศาสตร์ ม.4 ที่คุณทิ้งไป คือ "Alien Tech" ที่ระบบกำลังตามหา?</h2>
-      <p class="text-slate-400 mt-4 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-        ปัญหา AI หลอนและหลุดกรอบความรู้ไม่ได้แก้ไขยากอย่างที่คิดครับ มันจะกลายเป็นเรื่องง่ายทันทีถ้าคุณหยุดวิ่งไล่ตามตัวอักษร แล้วหันกลับมามองปัญหาด้วยเรื่อง "เซต" และระบบสมการเชิงเส้นที่ทุกคนเคยเรียนมา
-      </p>
+    <!-- Card 1 -->
+    <div class="subspace-card">
+      <div>
+        <div class="subspace-card-meta">01 / THE UNIVERSE</div>
+        <h3 class="subspace-card-title">จักรวาลภาษาไทยที่กว้างใหญ่เกินกว่าจะดักจับ</h3>
+        <p class="subspace-card-body">
+          ถ้าคุณเลือกจะเขียนโค้ด <span class="subspace-code">if-else</span> หรือไล่เขียน Regex ดักคำ เพื่อหวังจะกักขัง Universe ของภาษาไทยทั้งหมด... ต่อให้เขียนไปถึงชาติหน้าก็ไม่มีวันสำเร็จ เพราะ AI สามารถสุ่มสร้างโครงสร้างประโยคขยะใหม่ ๆ ขึ้นมาได้ตลอดเวลา
+        </p>
+      </div>
+      <div class="subspace-card-footer">
+        * ความจริงของสายห่อ: บริษัทเทคระดับโลกไม่มีวันมานั่งพัฒนา API สแกนบริบทภาษาไทยแบบคัสตอมให้คุณ
+      </div>
     </div>
 
-    <!-- Grid Content -->
-    <div class="grid md:grid-cols-3 gap-8">
-      
-      <!-- Card 1 -->
-      <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/60 flex flex-col justify-between">
-        <div>
-          <div class="text-blue-500 font-mono text-xl font-bold mb-4">01 / THE UNIVERSE</div>
-          <h3 class="text-xl font-semibold text-white mb-3">จักรวาลภาษาไทยที่กว้างใหญ่เกินกว่าจะดักจับ</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            ถ้าคุณเลือกจะเขียนโค้ด <code class="bg-slate-900 px-1.5 py-0.5 rounded text-pink-400 font-mono text-xs">if-else</code> หรือไล่เขียน Regex ดักคำ เพื่อหวังจะกักขัง Universe ของภาษาไทยทั้งหมด... ต่อให้เขียนไปถึงชาติหน้าก็ไม่มีวันสำเร็จ เพราะ AI สามารถสุ่มสร้างโครงสร้างประโยคขยะใหม่ ๆ ขึ้นมาได้ตลอดเวลา
-          </p>
-        </div>
-        <div class="pt-4 border-t border-slate-700/40 text-xs text-slate-500 font-medium">
-          * ความจริงของสายห่อ: บริษัทเทคระดับโลกไม่มีวันมานั่งพัฒนา API สแกนบริบทภาษาไทยแบบเจาะลึกคัสตอมให้คุณ
-        </div>
+    <!-- Card 2 -->
+    <div class="subspace-card">
+      <div>
+        <div class="subspace-card-meta">02 / THE EQUATION</div>
+        <h3 class="subspace-card-title">ทางรอดไม่ได้อยู่ที่โค้ด แต่อยู่ที่สมการ Ax = b</h3>
+        <p class="subspace-card-body">
+          ในขณะที่ทุกคนพยายามเดาว่าอินพุตและเอาต์พุตจะเป็นคำว่าอะไร Bangsaen Filter เลือกที่จะมองข้ามตัวอักษรทั้งหมด แล้วหันมาใช้คณิตศาสตร์บริสุทธิ์ในการพิสูจน์พื้นที่ Subspace ของเวกเตอร์ความหมาย ตรวจสอบสัญญาณเข้าออกผ่านสมการ $$Ax = b$$ ว่าอยู่ในน่านฟ้าความรู้ที่กำหนดไว้หรือไม่
+        </p>
       </div>
-
-      <!-- Card 2 -->
-      <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/60 flex flex-col justify-between">
-        <div>
-          <div class="text-blue-500 font-mono text-xl font-bold mb-4">02 / THE EQUATION</div>
-          <h3 class="text-xl font-semibold text-white mb-3">ทางรอดไม่ได้อยู่ที่โค้ด แต่อยู่ที่สมการ Ax = b</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            ในขณะที่ทุกคนพยายามเดาว่าอินพุตและเอาต์พุตจะเป็นคำว่าอะไร Bangsaen Filter เลือกที่จะมองข้ามตัวอักษรทั้งหมด แล้วหันมาใช้คณิตศาสตร์บริสุทธิ์ในการพิสูจน์พื้นที่ Subspace ของเวกเตอร์ความหมาย ตรวจสอบสัญญาณเข้าออกผ่านสมการ <strong>Ax = b</strong> ว่าอยู่ในน่านฟ้าความรู้ที่กำหนดไว้หรือไม่
-          </p>
-        </div>
-        <div class="pt-4 border-t border-slate-700/40 text-xs text-slate-500 font-medium">
-          * สิ่งนี้คือนิยามพื้นฐานในห้องเรียน ม.4 เท่านั้นเอง เป็นพวกเราเองหรือเปล่าที่เลือกทิ้งเครื่องมือนี้ไป?
-        </div>
+      <div class="subspace-card-footer">
+        * สิ่งนี้คือนิยามพื้นฐานในห้องเรียน ม.4 เท่านั้นเอง เป็นพวกเราเองหรือเปล่าที่เลือกทิ้งเครื่องมือนี้ไป?
       </div>
-
-      <!-- Card 3 -->
-      <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/60 flex flex-col justify-between">
-        <div>
-          <div class="text-blue-500 font-mono text-xl font-bold mb-4">03 / THE PARADIGM</div>
-          <h3 class="text-xl font-semibold text-white mb-3">ปรับแนวคิดการเขียนโปรแกรมเพียงครั้งเดียว</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            เมื่อเปลี่ยนวิธีคิดจากการตรวจสอบข้อความ (String Matching) มาเป็นการควบคุมทิศทางเวกเตอร์ (Geometric Control Flow) คุณจะสามารถดักจับและทำลายสัญญาณขยะขากลับได้แบบสบาย ๆ ก่อนที่คำตอบจะหลุดไปถึงหน้าจอของผู้ใช้
-          </p>
-        </div>
-        <div class="pt-4 border-t border-slate-700/40 text-xs text-slate-500 font-medium">
-          * ไม่ต้องเพิ่มโค้ดดักคำศัพท์ใหม่ทุกครั้ง คุมขอบเขต Subspace ให้แม่นยำครั้งเดียวจบ ความเร็วคงที่ระดับ Sub-millisecond
-        </div>
-      </div>
-
     </div>
 
-    <!-- Bottom Footer Note -->
-    <div class="mt-12 text-center bg-slate-800/30 border border-slate-700/40 p-4 rounded-xl max-w-2xl mx-auto">
-      <p class="text-xs md:text-sm text-slate-400 font-mono">
-        // เลิกเหนื่อยกับการเขียนโค้ดไล่ตามคำพูดมนุษย์ แล้วปล่อยให้คณิตศาสตร์ควบคุมทิศทางแทน
-      </p>
+    <!-- Card 3 -->
+    <div class="subspace-card">
+      <div>
+        <div class="subspace-card-meta">03 / THE PARADIGM</div>
+        <h3 class="subspace-card-title">ปรับแนวคิดการเขียนโปรแกรมเพียงครั้งเดียว</h3>
+        <p class="subspace-card-body">
+          เมื่อเปลี่ยนวิธีคิดจากการตรวจสอบข้อความ (String Matching) มาเป็นการควบคุมทิศทางเวกเตอร์ (Geometric Control Flow) คุณจะสามารถดักจับและทำลายสัญญาณขยะขากลับได้แบบสบาย ๆ ก่อนที่คำตอบจะหลุดไปถึงหน้าจอของผู้ใช้
+        </p>
+      </div>
+      <div class="subspace-card-footer">
+        * ไม่ต้องเพิ่มโค้ดดักคำศัพท์ใหม่ทุกครั้ง คุมขอบเขต Subspace ให้แม่นยำครั้งเดียวจบ ความเร็วคงที่ระดับ Sub-millisecond
+      </div>
     </div>
 
   </div>
+
+  <!-- Bottom Note -->
+  <div class="subspace-footer-note">
+    <p class="subspace-footer-text">
+      // เลิกเหนื่อยกับการเขียนโค้ดไล่ตามคำพูดมนุษย์ แล้วปล่อยให้คณิตศาสตร์ควบคุมทิศทางแทน
+    </p>
+  </div>
+
 </section>
 
     <!-- Section 1: The Core Domain Knowledge -->
