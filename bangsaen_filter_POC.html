@@ -683,94 +683,253 @@
     </header>
 
 
-<!-- ================= EVOLUTION & REAL-WORLD VALIDATION SECTION ================= -->
-<section class="relative w-full bg-slate-950 border-t border-slate-800 py-16 px-4 sm:px-6 lg:px-8 font-mono">
-  
-  <div class="max-w-5xl mx-auto space-y-10">
+<!-- ================= BANGSAEN EVOLUTION SECTION (PURE CSS INCLUDED) ================= -->
+<style>
+  /* Base Container & Typography */
+  .bs-evo-wrapper {
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .bs-evo-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Header Section */
+  .bs-evo-header {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  .bs-evo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    background-color: rgba(69, 10, 10, 0.8);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #f87171;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .bs-evo-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ef4444;
+    box-shadow: 0 0 8px #ef4444;
+  }
+  .bs-evo-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .bs-text-gradient {
+    background: linear-gradient(90deg, #ef4444 0%, #f97316 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bs-evo-subtitle {
+    color: #94a3b8;
+    font-size: 14px;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Grid Layout */
+  .bs-evo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 30px;
+  }
+  @media (min-width: 768px) {
+    .bs-evo-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Card Components */
+  .bs-card {
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .bs-card-today {
+    background: linear-gradient(180deg, #0f172a 0%, #0f172a 60%, rgba(69, 10, 10, 0.25) 100%);
+    border: 2px solid rgba(239, 68, 68, 0.5);
+    box-shadow: 0 12px 30px -5px rgba(239, 68, 68, 0.15);
+  }
+  .bs-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 14px;
+    font-size: 10px;
+    font-weight: 800;
+    border-bottom-left-radius: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .bs-tag-yesterday { background-color: #334155; color: #94a3b8; }
+  .bs-tag-today { background-color: #dc2626; color: #ffffff; box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+
+  .bs-card-sub { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .bs-card-sub-yesterday { color: #64748b; }
+  .bs-card-sub-today { color: #f87171; }
+
+  .bs-card-h3 { font-size: 20px; font-weight: 800; margin: 6px 0 18px 0; color: #ffffff; }
+
+  /* List Items */
+  .bs-list { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.8; }
+  .bs-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; color: #cbd5e1; }
+  .bs-icon-x { color: #f87171; font-weight: bold; }
+  .bs-icon-check { color: #34d399; font-weight: bold; }
+
+  /* Footer Quote & Banner */
+  .bs-footer-quote {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid #1e293b;
+    font-size: 11px;
+    color: #64748b;
+    font-style: italic;
+  }
+  .bs-cta-banner {
+    background-color: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(153, 27, 27, 0.4);
+    padding: 24px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e2e8f0;
+  }
+  .bs-code-span {
+    background-color: #020617;
+    color: #fbbf24;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #1e293b;
+  }
+  .bs-btn-now {
+    display: inline-block;
+    background-color: #dc2626;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.2s ease;
+  }
+  .bs-btn-now:hover {
+    background-color: #ef4444;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+  }
+</style>
+
+<section class="bs-evo-wrapper">
+  <div class="bs-evo-inner">
     
-    <!-- Header Badge -->
-    <div class="text-center space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-500/30 text-red-400 text-xs tracking-widest uppercase">
-        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+    <!-- Header -->
+    <div class="bs-evo-header">
+      <div class="bs-evo-badge">
+        <span class="bs-evo-badge-dot"></span>
         [ SYSTEM EVOLUTION: FROM POC TO GLOBAL EDGE ]
       </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+      <h2 class="bs-evo-title">
         ไม่รอให้ใครอนุมัติ... <br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-amber-300">
+        <span class="bs-text-gradient">
           พิสูจน์ด้วยการฆ่า Bot จริงทั่วโลก 24 ชั่วโมง!
         </span>
       </h2>
-      <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed pt-2">
-        เมื่อวานเราบอกให้คุณส่งอีเมลหาเราเพื่อขอทดสอบ... แต่นั่นมันช้าเกินไปสำหรับโลกไซเบอร์ <br class="hidden sm:inline">
-        บอททั่วโลกไม่ได้รอให้ใครตอบอีเมล Bangsaen Filter เลยถูกยกขึ้น <strong class="text-white">Cloudflare Global Edge Network</strong> ให้ใช้ฟรีทันที!
+      <p class="bs-evo-subtitle">
+        เมื่อวานเราบอกให้คุณส่งอีเมลหาเราเพื่อขอทดสอบ... แต่นั่นมันช้าเกินไปสำหรับโลกไซเบอร์ <br>
+        บอททั่วโลกไม่ได้รอให้ใครตอบอีเมล Bangsaen Filter เลยถูกยกขึ้น <strong style="color: #fff;">Cloudflare Global Edge Network</strong> ให้ใช้ฟรีทันที!
       </p>
     </div>
 
-    <!-- Comparative Evolution Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+    <!-- Comparative Grid -->
+    <div class="bs-evo-grid">
       
-      <!-- Yesterday Box (POC) -->
-      <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 relative overflow-hidden group hover:border-slate-700 transition-colors">
-        <div class="absolute top-0 right-0 bg-slate-800 text-slate-400 text-[10px] px-3 py-1 uppercase font-semibold rounded-bl-lg">
-          YESTERDAY (POC)
-        </div>
-        <div class="text-slate-400 text-xs font-bold uppercase tracking-wider">Cloud Run Playground</div>
-        <h3 class="text-xl font-bold text-slate-300 mt-1">Manual Email Request</h3>
+      <!-- YESTERDAY (POC) -->
+      <div class="bs-card">
+        <div class="bs-tag bs-tag-yesterday">YESTERDAY (POC)</div>
+        <div class="bs-card-sub bs-card-sub-yesterday">Cloud Run Playground</div>
+        <div class="bs-card-h3">Manual Email Request</div>
         
-        <ul class="mt-4 space-y-2.5 text-xs text-slate-400">
-          <li class="flex items-center gap-2">
-            <span class="text-red-400">✕</span> ต้องส่งอีเมลแนะตัวและรอทีมงานอนุมัติ
+        <ul class="bs-list">
+          <li>
+            <span class="bs-icon-x">✕</span>
+            <span>ต้องส่งอีเมลแนะนำตัวและรอทีมงานอนุมัติ</span>
           </li>
-          <li class="flex items-center gap-2">
-            <span class="text-red-400">✕</span> ทดสอบได้เฉพาะจำลอง Traffic ในแล็บ
+          <li>
+            <span class="bs-icon-x">✕</span>
+            <span>ทดสอบได้เฉพาะจำลอง Traffic ในแล็บ</span>
           </li>
-          <li class="flex items-center gap-2">
-            <span class="text-slate-500">⚡ Latency: ~0.007ms (Sub-millisecond)</span>
+          <li>
+            <span style="color: #64748b;">⚡ Latency: ~0.007ms (Sub-millisecond)</span>
           </li>
         </ul>
-        <div class="mt-6 pt-4 border-t border-slate-800/50 text-[11px] text-slate-500 italic">
+        <div class="bs-footer-quote">
           "ช้าเกินไป... นักพัฒนาไม่ควรต้องรอใครเพื่อลองใช้ของดี"
         </div>
       </div>
 
-      <!-- Today Box (GLOBAL PRODUCTION) -->
-      <div class="bg-gradient-to-b from-slate-900 via-slate-900 to-red-950/20 border-2 border-red-500/50 rounded-xl p-6 relative overflow-hidden shadow-xl shadow-red-950/30">
-        <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] px-3 py-1 uppercase font-bold rounded-bl-lg shadow-sm">
-          TODAY (PRODUCTION LIVE)
-        </div>
-        <div class="text-red-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-          <span>⚡ Cloudflare Native WASM</span>
-        </div>
-        <h3 class="text-xl font-bold text-white mt-1">Self-Serve Instant Key (100k Free)</h3>
+      <!-- TODAY (PRODUCTION LIVE) -->
+      <div class="bs-card bs-card-today">
+        <div class="bs-tag bs-tag-today">TODAY (PRODUCTION LIVE)</div>
+        <div class="bs-card-sub bs-card-sub-today">⚡ Cloudflare Native WASM</div>
+        <div class="bs-card-h3">Self-Serve Instant Key (100k Free)</div>
         
-        <ul class="mt-4 space-y-2.5 text-xs text-slate-200">
-          <li class="flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> <strong>กดปุ่มเดียวได้ Key ทันที</strong> ไม่ต้องลงทะเบียน/ไม่ใช้บัตร
+        <ul class="bs-list">
+          <li>
+            <span class="bs-icon-check">✓</span>
+            <span><strong style="color: #fff;">กดปุ่มเดียวได้ Key ทันที</strong> ไม่ต้องลงทะเบียน/ไม่ใช้บัตร</span>
           </li>
-          <li class="flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> <strong>เสียบหลังบ้านฆ่า Bot จริงได้เลย</strong> รองรับการยิงจากทั่วโลก
+          <li>
+            <span class="bs-icon-check">✓</span>
+            <span><strong style="color: #fff;">เสียบหลังบ้านฆ่า Bot จริงได้เลย</strong> รองรับการยิงจากทั่วโลก</span>
           </li>
-          <li class="flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">⚡ Latency: 0.000ms</span> (C++ Kernel on Edge)
+          <li>
+            <span style="color: #34d399;">⚡ Latency: 0.000ms (C++ Kernel on Edge)</span>
           </li>
         </ul>
 
-        <div class="mt-6 pt-4 border-t border-red-900/40 flex items-center justify-between">
-          <span class="text-xs text-emerald-400 font-bold">PROVISIONED & READY</span>
-          <a href="#claimKeyBtn" class="text-xs bg-red-600 hover:bg-red-500 text-white px-3 py-1.5 rounded font-bold transition-all">
-            GET FREE KEY NOW →
-          </a>
+        <div style="margin-top: 24px; padding-top: 14px; border-top: 1px solid rgba(153,27,27,0.4); display: flex; justify-content: space-between; align-items: center;">
+          <span style="color: #34d399; font-size: 11px; font-weight: 800;">PROVISIONED & READY</span>
+          <a href="#claimKeyBtn" class="bs-btn-now">GET FREE KEY NOW →</a>
         </div>
       </div>
 
     </div>
 
-    <!-- The Hardcore Manifesto Statement -->
-    <div class="bg-slate-900/90 border border-red-900/30 p-6 rounded-lg text-center space-y-3">
-      <p class="text-sm sm:text-base text-slate-200 font-sans leading-relaxed">
-        <span class="font-mono text-red-400 font-bold">"เราไม่แจกสไลด์ ไม่ขายฝัน และไม่ง้อการพิสูจน์ในห้องแล็บ"</span><br>
-        เรามอบ <strong class="text-white underline decoration-red-500">100,000 Requests/เดือน ให้ฟรีตลอดชีพ</strong> เอาไปเสียบต่อหลัง Reverse Proxy, Cloudflare Worker หรือ API Server ของคุณ <br class="hidden sm:inline">
-        แล้วดูผลลัพธ์ผ่าน Header <code class="text-amber-400 bg-slate-950 px-2 py-0.5 rounded text-xs">X-Bangsaen-Exec-Time</code> ด้วยตาคุณเอง!
+    <!-- Bottom Manifesto -->
+    <div class="bs-cta-banner">
+      <p style="margin: 0;">
+        <span style="color: #f87171; font-weight: 700;">"เราไม่แจกสไลด์ ไม่ขายฝัน และไม่ง้อการพิสูจน์ในห้องแล็บ"</span><br>
+        เรามอบ <strong style="color: #fff; text-decoration: underline; text-decoration-color: #ef4444;">100,000 Requests/เดือน ให้ฟรีตลอดชีพ</strong> เอาไปเสียบต่อหลัง Reverse Proxy, Cloudflare Worker หรือ API Server ของคุณ <br>
+        แล้วดูผลลัพธ์ผ่าน Header <code class="bs-code-span">X-Bangsaen-Exec-Time</code> ด้วยตาคุณเอง!
       </p>
     </div>
 
