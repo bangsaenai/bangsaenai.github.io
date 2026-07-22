@@ -314,7 +314,116 @@ async function claimFreeKey() {
 </script>
 <!-- =========================================================== -->
     
+<!-- Bangsaen Filter: The Sandwich Architecture Section -->
+<section style="background-color: #08090c; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; padding: 100px 20px; border-top: 1px solid #1e293b;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 70px;">
+      <span style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 9999px; text-transform: uppercase;">
+        Beyond Reactive WAFs
+      </span>
+      <h2 style="font-size: 48px; font-weight: 900; letter-spacing: -1px; margin-top: 20px; margin-bottom: 15px; color: #ffffff;">
+        Bot Mitigation Was Just The Warm-Up.<br>
+        <span style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Meet The Sandwich Architecture.
+        </span>
+      </h2>
+      <p style="font-size: 18px; color: #94a3b8; max-width: 720px; margin: 0 auto; line-height: 1.6;">
+        Static rules and reactive PID loops are dead. Bangsaen Filter wraps your LLMs and Cloud Infrastructure in a dual-sided, 0.000ms C++ WASM predictive dynamic shield.
+      </p>
+    </div>
 
+    <!-- Interactive Architecture Diagram -->
+    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #1e293b; border-radius: 24px; padding: 40px; margin-bottom: 60px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); backdrop-filter: blur(12px);">
+      
+      <!-- Flow Visualizer -->
+      <div style="display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto;">
+        
+        <!-- STEP 1: INBOUND -->
+        <div style="background: linear-gradient(90deg, rgba(14, 165, 233, 0.15) 0%, rgba(15, 23, 42, 0.4) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 16px; padding: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span style="background: #0284c7; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px;">0.000ms</span>
+              <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: #38bdf8;">1. INBOUND SHIELD: Pre-Execution Gatekeeper</h3>
+            </div>
+            <p style="margin: 0; font-size: 14px; color: #cbd5e1;">Destroys Denial of Wallet (DoW), AI Token Drainers, and Malicious Injections via Koopman Operator Spectral Analysis.</p>
+          </div>
+          <div style="font-family: monospace; font-size: 12px; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 8px; color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2);">
+            PREDICTIVE_MPC_CIRCUIT_BREAK
+          </div>
+        </div>
+
+        <!-- ARROW DOWN -->
+        <div style="text-align: center; color: #64748b; font-size: 24px; font-weight: 300;">↓</div>
+
+        <!-- STEP 2: CORE ENGINE -->
+        <div style="background: rgba(30, 41, 59, 0.8); border: 1px dashed #475569; border-radius: 16px; padding: 28px; text-align: center;">
+          <span style="color: #94a3b8; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Protected Core Infrastructure</span>
+          <h4 style="margin: 6px 0 0 0; font-size: 22px; font-weight: 800; color: #f8fafc;">Your LLMs / AI Agents / Cloud Serverless Compute</h4>
+        </div>
+
+        <!-- ARROW DOWN -->
+        <div style="text-align: center; color: #64748b; font-size: 24px; font-weight: 300;">↓</div>
+
+        <!-- STEP 3: OUTBOUND -->
+        <div style="background: linear-gradient(90deg, rgba(236, 72, 153, 0.15) 0%, rgba(15, 23, 42, 0.4) 100%); border: 1px solid rgba(244, 114, 182, 0.4); border-radius: 16px; padding: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span style="background: #db2777; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px;">0.000ms</span>
+              <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: #f472b6;">2. OUTBOUND SHIELD: Post-Execution Breaker</h3>
+            </div>
+            <p style="margin: 0; font-size: 14px; color: #cbd5e1;">Evaluates Output Entropy, neutralizes Hallucinations, and prevents API Key / PII Exfiltration before reaching the user.</p>
+          </div>
+          <div style="font-family: monospace; font-size: 12px; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 8px; color: #f472b6; border: 1px solid rgba(244, 114, 182, 0.2);">
+            ENTROPY_BOUNDARY_CONTROL
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Detailed Matrix Breakdown -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+      
+      <!-- Inbound Feature Card -->
+      <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid #1e293b; border-radius: 16px; padding: 32px;">
+        <div style="width: 42px; height: 42px; background: rgba(56, 189, 248, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: #38bdf8; font-weight: 900;">
+          IN
+        </div>
+        <h4 style="font-size: 20px; font-weight: 700; color: #ffffff; margin: 0 0 12px 0;">Inbound Defense Matrix</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; color: #94a3b8; font-size: 14px; line-height: 2;">
+          <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #38bdf8;">✓</span> <strong>DoW Protection:</strong> Kills L7 algorithmic financial draining</li>
+          <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #38bdf8;">✓</span> <strong>Predictive MPC:</strong> Identifies attack trajectories in 3-4 packets</li>
+          <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #38bdf8;">✓</span> <strong>Zero Latency Tax:</strong> Runs natively at Cloudflare Edge</li>
+        </ul>
+      </div>
+
+      <!-- Outbound Feature Card -->
+      <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid #1e293b; border-radius: 16px; padding: 32px;">
+        <div style="width: 42px; height: 42px; background: rgba(244, 114, 182, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: #f472b6; font-weight: 900;">
+          OUT
+        </div>
+        <h4 style="font-size: 20px; font-weight: 700; color: #ffffff; margin: 0 0 12px 0;">Outbound Defense Matrix</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; color: #94a3b8; font-size: 14px; line-height: 2;">
+          <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #f472b6;">✓</span> <strong>Hallucination Breaker:</strong> Instant fallbacks on low-confidence outputs</li>
+          <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #f472b6;">✓</span> <strong>Exfiltration Guard:</strong> Real-time regex/entropy check for leaked keys</li>
+          <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #f472b6;">✓</span> <strong>MCP Agent Boundary:</strong> Limits unauthorized tool executions</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+    
  <section>
     <!-- [ START OF TESLA VS EDISON SECTION ] -->
 <div style="background-color: #0a0e17; padding: 60px 20px; border-bottom: 1px solid #1a2333; font-family: 'Inter', 'Arial', sans-serif; color: #ffffff; box-sizing: border-box;">
