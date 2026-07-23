@@ -314,46 +314,40 @@ async function claimFreeKey() {
 </script>
 <!-- =========================================================== --> 
 
-<!-- ================= WORDPRESS INTEGRATION CARD (FIXED LAYOUT) ================= -->
-<div style="max-width: 1200px; width: 100%; margin: 40px auto; padding: 0 20px; box-sizing: border-box;">
-  <div style="background: rgba(18, 20, 29, 0.85); border: 1px solid rgba(255, 185, 0, 0.3); border-radius: 12px; padding: 32px; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);">
+<div className="max-w-6xl mx-auto px-4 my-10 w-full">
+  <div className="bg-[#12141d]/85 border border-[#ffb900]/30 rounded-xl p-8 backdrop-blur-md shadow-2xl">
     
-    <!-- Status Badge & ETA -->
-    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #ffb900; box-shadow: 0 0 10px #ffb900;"></span>
-        <span style="background: rgba(255, 185, 0, 0.1); color: #ffb900; border: 1px solid rgba(255, 185, 0, 0.25); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; font-family: monospace;">
+    <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
+      <div className="flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-[#ffb900] shadow-[0_0_10px_#ffb900]" />
+        <span className="bg-[#ffb900]/10 color-[#ffb900] text-[#ffb900] border border-[#ffb900]/25 px-3 py-1 rounded-full text-xs font-bold font-mono">
           [ WORDPRESS PLUGIN: UNDER REVIEW ]
         </span>
       </div>
-      <span style="color: #8a8f9d; font-size: 0.85rem; font-family: monospace;">
-        ⏳ Official Launch ETA: <strong style="color: #ffffff;">~5 Days</strong>
+      <span className="text-gray-400 text-sm font-mono">
+        ⏳ Official Launch ETA: <strong className="text-white">~5 Days</strong>
       </span>
     </div>
 
-    <!-- Headline -->
-    <h3 style="color: #ffffff; font-size: 1.5rem; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3;">
+    <h3 className="text-white text-2xl font-bold mb-3">
       🔌 Zero-Overhead Bot Protection for WordPress.
     </h3>
 
-    <!-- Description -->
-    <p style="color: #9ea4b5; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0; max-width: 850px;">
+    <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-3xl">
       <strong>Bangsaen Filter v1.0.0</strong> has been officially submitted to the <strong>WordPress.org Plugin Directory</strong>. Our code is currently undergoing standard security & manual review by the WP Plugin Team. Soon, you’ll be able to stop scrapers with 0.000ms host CPU impact directly from your WP Admin.
     </p>
 
-    <!-- Action Bar -->
-    <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-      <a href="#" style="background: #ff4500; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center;">
+    <div className="flex items-center gap-4 flex-wrap pt-5 border-t border-white/10">
+      <a href="#" className="bg-[#ff4500] hover:bg-[#e03d00] text-white px-6 py-3 rounded-md font-bold text-sm transition-transform hover:scale-105">
         ⚡ Pre-Claim API Key (100k Reqs Free)
       </a>
-      <span style="color: #6c727f; font-size: 0.85rem; font-family: monospace;">
+      <span className="text-gray-500 text-sm font-mono">
         Get your key ready now ➔ Activate in 3 seconds on Day 1.
       </span>
     </div>
 
   </div>
 </div>
-<!-- =========================================================================== -->
     
 <!-- Bangsaen Filter: The Sandwich Architecture Section -->
 <section style="background-color: #08090c; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; padding: 100px 20px; border-top: 1px solid #1e293b;">
