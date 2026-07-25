@@ -907,7 +907,331 @@ async function claimFreeKey() {
 </section>
 <!-- ============================================================ -->
 
+<!-- ========================================================= -->
+<!-- BANGSAEN FILTER: DEEP TECH ROI & PRICING COMPARISON SECTION -->
+<!-- ========================================================= -->
+<section class="dt-roi-section">
+  <style>
+    .dt-roi-section {
+      background-color: #080b11;
+      color: #e2e8f0;
+      font-family: 'JetBrains Mono', 'Fira Code', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 80px 20px;
+      line-height: 1.6;
+      border-top: 1px solid rgba(56, 189, 248, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    }
 
+    .dt-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dt-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .dt-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .dt-title span {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .dt-subtitle {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 750px;
+      margin-bottom: 48px;
+    }
+
+    /* Comparison Table Styling */
+    .dt-table-wrapper {
+      background: #0d131f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .dt-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .dt-table th {
+      background: #111827;
+      padding: 18px 20px;
+      color: #94a3b8;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .dt-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+
+    .dt-table tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .dt-highlight-column {
+      background: rgba(56, 189, 248, 0.04) !important;
+      border-left: 1px solid rgba(56, 189, 248, 0.3);
+      border-right: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    th.dt-highlight-column {
+      background: rgba(56, 189, 248, 0.1) !important;
+      color: #38bdf8 !important;
+      font-weight: 700;
+    }
+
+    .dt-price-tag {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .dt-price-pro {
+      color: #34d399;
+      font-size: 1.4rem;
+    }
+
+    .dt-check {
+      color: #34d399;
+      font-weight: bold;
+    }
+
+    .dt-cross {
+      color: #f87171;
+    }
+
+    /* 3 Value Cards */
+    .dt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .dt-card {
+      background: #0d131f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 28px;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .dt-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .dt-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: #38bdf8;
+    }
+
+    .dt-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .dt-card-desc {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* CTA Banner */
+    .dt-cta-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(129, 140, 248, 0.1) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      padding: 36px;
+      text-align: center;
+      position: relative;
+    }
+
+    .dt-cta-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .dt-cta-desc {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .dt-btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .dt-btn-primary {
+      background: #38bdf8;
+      color: #090d16;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+
+    .dt-btn-primary:hover {
+      background: #7dd3fc;
+    }
+
+    .dt-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+
+    .dt-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+
+  <div class="dt-container">
+    <!-- Header -->
+    <div class="dt-badge">[ ARCHITECTURE ECONOMICS ]</div>
+    <h2 class="dt-title">Enterprise Layer-7 Defense. <span>SME Economics.</span></h2>
+    <p class="dt-subtitle">
+      Why spend $200+/month on legacy WAFs or upgrade to expensive origin instances just to absorb bot attacks? 
+      Bangsaen Filter offloads threat inspection to the Edge using compiled C++/WASM at a fraction of the cost.
+    </p>
+
+    <!-- Comparison Table -->
+    <div class="dt-table-wrapper">
+      <table class="dt-table">
+        <thead>
+          <tr>
+            <th>Metric / Feature</th>
+            <th>Cloudflare Business / Ent</th>
+            <th>Traditional Hardware Scaling</th>
+            <th class="dt-highlight-column">🛡️ Bangsaen Filter Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monthly Starting Price</strong></td>
+            <td><span class="dt-price-tag">$200 – $1,000+/mo</span></td>
+            <td><span class="dt-price-tag">$100 – $300+/mo</span></td>
+            <td class="dt-highlight-column"><span class="dt-price-tag dt-price-pro">$19/mo</span> (1M reqs)</td>
+          </tr>
+          <tr>
+            <td><strong>Inspection Mechanism</strong></td>
+            <td>Cloud Edge (Ruleset)</td>
+            <td>Origin PHP / MySQL</td>
+            <td class="dt-highlight-column"><strong>Edge C++/WASM Kernel</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Edge Execution CPU Time</strong></td>
+            <td>Variable</td>
+            <td>N/A (Executes on Server)</td>
+            <td class="dt-highlight-column"><span class="dt-check">1.3 ms avg (Blazing Fast)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Origin CPU Utilization</strong></td>
+            <td>0%</td>
+            <td><span class="dt-cross">80% – 100% (High risk 502/504)</span></td>
+            <td class="dt-highlight-column"><span class="dt-check">0.00% (Zero PHP Overhead)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Free Tier Allowance</strong></td>
+            <td>Basic Rules Only</td>
+            <td>N/A</td>
+            <td class="dt-highlight-column"><span class="dt-check">100,000 Reqs/mo FREE</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cost Reduction Ratio</strong></td>
+            <td>Baseline</td>
+            <td>Negative (Pays Bot Tax)</td>
+            <td class="dt-highlight-column"><strong style="color: #34d399;">90%+ Monthly Savings</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3 Core Pillars -->
+    <div class="dt-grid">
+      <div class="dt-card">
+        <div class="dt-card-icon">⚡</div>
+        <div class="dt-card-title">1.3ms Microsecond Execution</div>
+        <div class="dt-card-desc">
+          Threat payloads are intercepted and evaluated in bare-metal C++ before reaching your server. You stay safely within Cloudflare's 10ms execution limit.
+        </div>
+      </div>
+
+      <div class="dt-card">
+        <div class="dt-card-icon">💰</div>
+        <div class="dt-card-title">Eliminate the "Host Upgrade Tax"</div>
+        <div class="dt-card-desc">
+          Stop upgrading to $150/mo cloud VMs just to survive bot spikes. Keep your origin server lean ($0–$10/mo) while Bangsaen Filter tanking 100% of bad requests.
+        </div>
+      </div>
+
+      <div class="dt-card">
+        <div class="dt-card-icon">🎯</div>
+        <div class="dt-card-title">Built for Modern E-Commerce</div>
+        <div class="dt-card-desc">
+          Battle-tested on live WooCommerce storefronts with Stripe Express Checkout. Legitimate shoppers buy with sub-600ms latency while bots get an instant HTTP 403.
+        </div>
+      </div>
+    </div>
+
+    <!-- Call To Action -->
+    <div class="dt-cta-box">
+      <h3 class="dt-cta-title">Ready to Nuke Bad Bots at the Edge?</h3>
+      <p class="dt-cta-desc">Start with our 100% Free Tier (100,000 reqs/mo). No credit card required.</p>
+      <div class="dt-btn-group">
+        <a href="https://studio.bangsaenai.com/shop/" class="dt-btn-primary">CLAIM FREE API KEY</a>
+        <a href="https://github.com/bangsaenai/bangsaen-filter-bot-killer-docs/releases/tag/v1.0.0" class="dt-btn-secondary" target="_blank">Download Plugin (v1.0.0)</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     
     
