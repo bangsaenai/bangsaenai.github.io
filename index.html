@@ -793,7 +793,119 @@ async function claimFreeKey() {
 </section>
 
 
+<!-- ============================================================ -->
+<!-- SECTION: REAL-WORLD BENCHMARK & LIVE SANDBOX DEMO            -->
+<!-- ============================================================ -->
+<section style="background-color: #030712; color: #f3f4f6; padding: 5rem 1.5rem; border-top: 1px solid #1f2937; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Header Badge & Title -->
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span style="font-family: monospace; font-size: 0.85rem; color: #38bdf8; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.35rem 1rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">
+        [ Empirical Proof of Concept ]
+      </span>
+      <h2 style="font-size: 2.25rem; font-weight: 800; color: #ffffff; margin-top: 1.25rem; margin-bottom: 0.75rem; letter-spacing: -0.025em;">
+        How a $0 GCP Micro-VM Defeated Layer-7 Scrapers
+      </h2>
+      <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
+        We stress-tested <strong style="color: #f3f4f6;">Bangsaen Filter (C++/WASM)</strong> on an ultra-constrained <strong style="color: #f97316;">GCP e2-micro (1 vCPU, 1GB RAM)</strong> running WordPress & WooCommerce. Here are the live execution metrics.
+      </p>
+    </div>
 
+    <!-- Benchmark Cards Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem;">
+      
+      <!-- Card 1: Attacker Traffic -->
+      <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 0.75rem; padding: 1.75rem; position: relative; backdrop-filter: blur(8px);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <span style="font-size: 0.875rem; font-weight: 700; color: #ef4444; font-family: monospace;">ROUND 1: ATTACKER TRAFFIC</span>
+          <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 0.375rem; font-weight: 600;">sqlmap Exploit Test</span>
+        </div>
+
+        <div style="font-size: 2.5rem; font-weight: 900; color: #ffffff; font-family: monospace; margin-bottom: 0.25rem;">
+          100% <span style="font-size: 1.25rem; color: #ef4444;">BLOCKED</span>
+        </div>
+        <p style="color: #9ca3af; font-size: 0.875rem; margin-bottom: 1.5rem;">HTTP 403 Rejection directly at Cloudflare Edge before reaching Origin VM.</p>
+
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-family: monospace;">
+          <div>
+            <div style="color: #6b7280; font-size: 0.75rem;">THROUGHPUT</div>
+            <div style="color: #38bdf8; font-weight: 700; font-size: 1.1rem;">88.36 RPS</div>
+          </div>
+          <div>
+            <div style="color: #6b7280; font-size: 0.75rem;">AVG LATENCY</div>
+            <div style="color: #38bdf8; font-weight: 700; font-size: 1.1rem;">213.43 ms</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem; background: rgba(0,0,0,0.4); padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; color: #22c55e; border-left: 3px solid #22c55e;">
+          🛡️ <strong>Origin CPU Load: 0.00%</strong> (Zero PHP execution overhead)
+        </div>
+      </div>
+
+      <!-- Card 2: Legitimate Customer Traffic -->
+      <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 0.75rem; padding: 1.75rem; position: relative; backdrop-filter: blur(8px);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <span style="font-size: 0.875rem; font-weight: 700; color: #22c55e; font-family: monospace;">ROUND 2: LEGITIMATE BUYERS</span>
+          <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 0.375rem; font-weight: 600;">Chrome Browser Test</span>
+        </div>
+
+        <div style="font-size: 2.5rem; font-weight: 900; color: #ffffff; font-family: monospace; margin-bottom: 0.25rem;">
+          603<span style="font-size: 1.25rem; color: #22c55e;">ms</span>
+        </div>
+        <p style="color: #9ca3af; font-size: 0.875rem; margin-bottom: 1.5rem;">Avg Response Latency under peak 20-thread concurrency load.</p>
+
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-family: monospace;">
+          <div>
+            <div style="color: #6b7280; font-size: 0.75rem;">THROUGHPUT</div>
+            <div style="color: #22c55e; font-weight: 700; font-size: 1.1rem;">30.75 RPS</div>
+          </div>
+          <div>
+            <div style="color: #6b7280; font-size: 0.75rem;">ERROR RATE</div>
+            <div style="color: #22c55e; font-weight: 700; font-size: 1.1rem;">0.00%</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem; background: rgba(0,0,0,0.4); padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; color: #38bdf8; border-left: 3px solid #38bdf8;">
+          ⚡ <strong>7x Latency Optimization</strong> (Down from 4,186ms uncached)
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Key Retrieval Notice Banner -->
+    <div style="background: linear-gradient(90deg, rgba(249, 115, 22, 0.1) 0%, rgba(56, 189, 248, 0.1) 100%); border: 1px dashed rgba(249, 115, 22, 0.4); border-radius: 0.75rem; padding: 1rem 1.5rem; margin-bottom: 3rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+      <span style="font-size: 1.25rem;">🔑</span>
+      <span style="color: #e5e7eb; font-size: 0.95rem;">
+        Need an API Key to activate the WordPress plugin? Scroll up and click <strong style="color: #f97316;">"CLAIM FREE API KEY"</strong> at the top bar!
+      </span>
+    </div>
+
+    <!-- CTA Sandbox & Release Links -->
+    <div style="background: #0f172a; border: 1px solid #1e293b; border-radius: 1rem; padding: 2.5rem 1.5rem; text-align: center; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
+      <h3 style="font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem;">
+        Test the Live Sandbox Architecture Yourself
+      </h3>
+      <p style="color: #9ca3af; font-size: 0.95rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Inspect our live WooCommerce sandbox or grab the compiled release package to deploy Bangsaen Filter on your own WordPress infrastructure.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <!-- Live Shop Button -->
+        <a href="https://studio.bangsaenai.com/shop/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f97316; color: #ffffff; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.95rem; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);">
+          <span>🛍️</span> Visit Live Test Shop
+        </a>
+
+        <!-- GitHub Release Button -->
+        <a href="https://github.com/bangsaenai/bangsaen-filter-bot-killer-docs/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1e293b; color: #38bdf8; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.95rem; border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.2s ease;">
+          <span>📦</span> Download Release ZIP (v1.0.0)
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ============================================================ -->
 
 
 
