@@ -179,6 +179,101 @@
         </div>
     </header>
 
+<!-- ================================================================= -->
+<!-- HERO SECTION: THE GLOBAL AI CIRCUIT BREAKER MANIFESTO (TOP LEVEL) -->
+<!-- ================================================================= -->
+<section id="global-manifesto" style="background: #020617; color: #f8fafc; padding: 60px 20px; font-family: 'Inter', system-ui, -apple-system, sans-serif; border-bottom: 2px solid #1e293b;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    
+    <!-- Header Badge -->
+    <div style="display: inline-block; background: rgba(56, 189, 248, 0.1); border: 1px solid #38bdf8; color: #38bdf8; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">
+      Architectural Specification & Specification Anchor
+    </div>
+
+    <!-- Main Title -->
+    <h1 style="font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: #ffffff; margin-bottom: 24px; letter-spacing: -0.02em;">
+      Specifying the Global AI Circuit Breaker:<br>
+      <span style="color: #38bdf8;">An Architectural Manifesto for Deterministic AGI Safety</span>
+    </h1>
+
+    <!-- Subtitle / Hook -->
+    <p style="font-size: 1.15rem; line-height: 1.7; color: #94a3b8; margin-bottom: 32px;">
+      The global AI race is scaling unconstrained intelligence without a physical fuse. Bangsaen AI Labs is formalizing the specification for the <strong>Global AI Circuit Breaker (GACB)</strong>—a deterministic, sub-millisecond execution boundary powered by classical control theory and operator mathematics.
+    </p>
+
+    <!-- Manifesto Content Box -->
+    <div style="background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 32px; margin-bottom: 40px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
+      
+      <!-- Section 1 -->
+      <h2 style="color: #f8fafc; font-size: 1.35rem; font-weight: 700; margin-top: 0; margin-bottom: 16px; border-left: 4px solid #38bdf8; padding-left: 12px;">
+        1. The Flaw in the Intelligence Scale Hypothesis
+      </h2>
+      <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 20px;">
+        Modern AI engineering operates under a flawed assumption: that safety will naturally emerge through continuous scaling or soft alignment. Intelligence measures capability; safety requires boundary containment. Without a deterministic execution plane, autonomous agents interacting with APIs and ledgers represent high-risk operational vectors.
+      </p>
+
+      <!-- ASCII Diagram Box -->
+      <pre style="background: #020617; color: #38bdf8; padding: 16px; border-radius: 6px; font-size: 0.85rem; overflow-x: auto; font-family: monospace; border: 1px solid #334155; margin-bottom: 28px;">
+[ Unbounded Agentic Execution ] ──> ( Non-Deterministic Latency ) ──> Catastrophic Drift
+[ Circuit-Breaked Architecture ] ──> ( Sub-1ms Latent Energy Bound ) ──> Guaranteed Interception</pre>
+
+      <!-- Section 2 -->
+      <h2 style="color: #f8fafc; font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; border-left: 4px solid #38bdf8; padding-left: 12px;">
+        2. Non-Negotiable Structural Constraints
+      </h2>
+      <ul style="color: #cbd5e1; line-height: 1.7; padding-left: 20px; margin-bottom: 28px;">
+        <li style="margin-bottom: 8px;"><strong>Decoupled Execution Plane:</strong> Safety verification must execute entirely outside the primary LLM sampling loop to eliminate latency overhead and prompt bypass.</li>
+        <li style="margin-bottom: 8px;"><strong>Continuous Energy Bound Verification:</strong> Trajectory stability is calculated via geometric bounds on latent vectors (<span style="font-family: monospace; color: #38bdf8;">R<sup>128</sup></span>), replacing soft text checks with exact Lyapunov bounds: <strong style="color: #ffffff; font-family: monospace;">V(x) = x<sup>T</sup>Px</strong>.</li>
+        <li style="margin-bottom: 8px;"><strong>Deterministic Microsecond Tripping:</strong> Hard interception occurs in sub-milliseconds (<span style="font-family: monospace; color: #38bdf8;">~150µs - 450µs</span>), severing execution paths before API transmission.</li>
+      </ul>
+
+      <!-- Section 3 -->
+      <h2 style="color: #f8fafc; font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; border-left: 4px solid #38bdf8; padding-left: 12px;">
+        3. Deployment Topologies
+      </h2>
+      <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 28px;">
+        Validated via lightweight single-board PoCs, the production architecture scales across two primary nodes:
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 28px;">
+        <div style="background: #1e293b; padding: 16px; border-radius: 8px;">
+          <h4 style="color: #38bdf8; margin: 0 0 8px 0; font-size: 1rem;">Global Anycast Edge</h4>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">Distributed Cloudflare Workers computing latent energy bounds in real-time for public cloud agents.</p>
+        </div>
+        <div style="background: #1e293b; padding: 16px; border-radius: 8px;">
+          <h4 style="color: #38bdf8; margin: 0 0 8px 0; font-size: 1rem;">Air-Gapped Enterprise Appliance</h4>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">On-premise zero-trust execution controllers designed for defense and sovereign infrastructure.</p>
+        </div>
+      </div>
+
+      <!-- Section 4 (The Mathematical Whip) -->
+      <h2 style="color: #f8fafc; font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; border-left: 4px solid #38bdf8; padding-left: 12px;">
+        4. Linear Embedding Control & IP Authority (The Sovereign Whip)
+      </h2>
+      <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 16px;">
+        By lifting non-linear latent spaces into an invariant linear subspace via the <strong>Koopman Operator</strong>, Bangsaen AI Labs unlocks the full suite of classical control theory (Lyapunov Stability, Kalman Filtering) to govern AGI with mathematical guarantees.
+      </p>
+      <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 0;">
+        This architecture functions as the <strong>sovereign mathematical whip</strong>—a patented control plane protected under <strong>US Provisional Patent No. 63/959,937</strong> (<em>Koopman-Kalman Safeguard / KKS Framework</em>).
+      </p>
+
+    </div>
+
+    <!-- Call to Action / Patent Box -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); border: 1px solid #6366f1; border-radius: 12px; padding: 24px; text-align: center;">
+      <h3 style="color: #ffffff; font-size: 1.2rem; margin-top: 0; margin-bottom: 8px;">Official Reference Textbook & Mathematical Suite</h3>
+      <p style="color: #c7d2fe; font-size: 0.95rem; margin-bottom: 16px;">
+        Access complete mathematical derivations, Koopman lifting matrices, and deployment specs.
+      </p>
+      <a href="mailto:drtanet@bangsaenai.com?subject=pre%20order%20autonomous%20math" style="display: inline-block; background: #38bdf8; color: #020617; font-weight: 700; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: background 0.2s;">
+        Pre-Order "Autonomous Math" — 500 THB (~$15 USD)
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+    
 <!-- Bangsaen Filter Announcement Section -->
 <section style="max-width: 900px; margin: 40px auto; padding: 32px; background: #0f172a; border-radius: 16px; border: 1px solid #334155; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #f8fafc;">
   
