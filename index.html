@@ -505,6 +505,336 @@ function resetGhSession() {
 </section>
 
 
+    <!-- =========================================================
+     SECTION: ผลงานต้นแบบ (Bangsaen AI Micro-Apps Portfolio)
+     นำไปวางแทรกในส่วน <body> ของหน้าแรก bangsaenai.com ได้เลย
+========================================================= -->
+<section id="bangsaen-demos" class="bs-portfolio-section">
+  <style>
+    .bs-portfolio-section {
+      --bs-bg: #f8fafc;
+      --bs-card-bg: #ffffff;
+      --bs-text-main: #0f172a;
+      --bs-text-muted: #475569;
+      --bs-border: #e2e8f0;
+      --bs-primary: #0284c7;
+      --bs-primary-hover: #0369a1;
+      font-family: 'Prompt', 'Kanit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bs-bg);
+      color: var(--bs-text-main);
+      padding: 64px 20px;
+      line-height: 1.6;
+      box-sizing: border-box;
+    }
+
+    .bs-portfolio-section *,
+    .bs-portfolio-section *::before,
+    .bs-portfolio-section *::after {
+      box-sizing: border-box;
+    }
+
+    .bs-container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .bs-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px auto;
+    }
+
+    .bs-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .bs-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      font-weight: 700;
+      margin: 0 0 14px 0;
+      color: var(--bs-text-main);
+    }
+
+    .bs-header p {
+      font-size: 1.05rem;
+      color: var(--bs-text-muted);
+      margin: 0;
+    }
+
+    .bs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .bs-card {
+      background: var(--bs-card-bg);
+      border: 1px solid var(--bs-border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .bs-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.1);
+    }
+
+    .bs-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .bs-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.65rem;
+    }
+
+    .bs-icon-run { background: #eff6ff; color: #2563eb; }
+    .bs-icon-food { background: #fff7ed; color: #ea580c; }
+    .bs-icon-acc { background: #ecfdf5; color: #059669; }
+
+    .bs-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+    .bs-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: var(--bs-text-main);
+    }
+
+    .bs-card p {
+      font-size: 0.95rem;
+      color: var(--bs-text-muted);
+      margin: 0 0 18px 0;
+    }
+
+    .bs-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .bs-features li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+    }
+
+    .bs-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: 700;
+    }
+
+    .bs-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .bs-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .bs-btn-primary {
+      background-color: var(--bs-primary);
+      color: #ffffff;
+    }
+
+    .bs-btn-primary:hover {
+      background-color: var(--bs-primary-hover);
+    }
+
+    .bs-btn-outline {
+      background-color: #f8fafc;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    .bs-btn-outline:hover {
+      background-color: #e2e8f0;
+    }
+
+    .bs-footer-note {
+      background: #ffffff;
+      border: 1px solid var(--bs-border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .bs-footer-note-text h4 {
+      margin: 0 0 4px 0;
+      font-size: 1.1rem;
+      color: var(--bs-text-main);
+    }
+
+    .bs-footer-note-text p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--bs-text-muted);
+    }
+
+    .bs-btn-chat {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .bs-btn-chat:hover {
+      background-color: #1e293b;
+    }
+  </style>
+
+  <div class="bs-container">
+    <!-- หัวข้อ Section -->
+    <div class="bs-header">
+      <span class="bs-badge">🌊 Bangsaen AI Studio — ตัวอย่างระบบงานจริง</span>
+      <h2>ระบบซอฟต์แวร์ Custom ตัดเย็บพอดีกับธุรกิจคุณ</h2>
+      <p>
+        ไม่ต้องทนใช้โปรแกรมสำเร็จรูปที่เมนูซับซ้อนเกินความจำเป็น ใช้งานได้ทันทีบนทุกอุปกรณ์ผ่านเบราว์เซอร์ (มือถือ แท็บเล็ต คอมพิวเตอร์) พร้อมปรับแก้ฟีเจอร์ให้ตรงกับหน้างานจริงของร้านคุณ
+      </p>
+    </div>
+
+    <!-- การ์ดแสดง 3 ผลงานหลัก -->
+    <div class="bs-grid">
+      
+      <!-- 1. Bangsaen Food -->
+      <article class="bs-card">
+        <div>
+          <div class="bs-card-top">
+            <div class="bs-icon bs-icon-food">🦀</div>
+            <span class="bs-tag">ร้านอาหาร & คาเฟ่</span>
+          </div>
+          <h3>Bangsaen Food</h3>
+          <p>ระบบสั่งอาหารผ่าน QR Code หน้าโต๊ะ พร้อมสร้าง QR PromptPay ล็อกยอดเงินและส่งออเดอร์เข้าจอครัวแบบเรียลไทม์</p>
+          <ul class="bs-features">
+            <li>ลูกค้าสแกนสั่งได้ทันที ไม่ต้องโหลดแอป</li>
+            <li>แยกออเดอร์เข้าจอครัว (Kitchen Display)</li>
+            <li>ลดภาระพนักงานรับออเดอร์ ไม่เสียค่า GP</li>
+          </ul>
+        </div>
+        <div class="bs-actions">
+          <a href="https://bangsaen-food.bangsaenai.com" target="_blank" rel="noopener" class="bs-btn bs-btn-primary">
+            ทดลองสั่งอาหาร (ฝั่งลูกค้า) ↗
+          </a>
+          <a href="https://bangsaen-food.bangsaenai.com/kitchen" target="_blank" rel="noopener" class="bs-btn bs-btn-outline">
+            🔒 หน้าจอครัว (ทักแชทขอรหัส PIN)
+          </a>
+        </div>
+      </article>
+
+      <!-- 2. Bangsaen Accounting -->
+      <article class="bs-card">
+        <div>
+          <div class="bs-card-top">
+            <div class="bs-icon bs-icon-acc">📊</div>
+            <span class="bs-tag">บัญชี & การเงิน SME</span>
+          </div>
+          <h3>Bangsaen Accounting</h3>
+          <p>ระบบบันทึกรายรับ-รายจ่ายและสรุปกำไรสุทธิฉบับเจ้าของกิจการ ตัดศัพท์บัญชียุ่งยาก เชื่อมข้อมูลยอดขายจากหน้าร้านได้</p>
+          <ul class="bs-features">
+            <li>เห็นรายรับ-รายจ่าย และกำไรสุทธิแบบเรียลไทม์</li>
+            <li>ออกใบสำคัญรับ-จ่าย พร้อมพิมพ์/เซฟ PDF</li>
+            <li>กด Export ไฟล์ Excel ส่งปิดงบสิ้นเดือนได้ทันที</li>
+          </ul>
+        </div>
+        <div class="bs-actions">
+          <a href="https://bangsaen-accounting.bangsaenai.com" target="_blank" rel="noopener" class="bs-btn bs-btn-primary">
+            ทดลองใช้งานระบบบัญชี ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- 3. Bangsaen Run -->
+      <article class="bs-card">
+        <div>
+          <div class="bs-card-top">
+            <div class="bs-icon bs-icon-run">🏃‍♂️</div>
+            <span class="bs-tag">อีเวนต์ & การลงทะเบียน</span>
+          </div>
+          <h3>Bangsaen Run</h3>
+          <p>ระบบรับสมัครงานวิ่งและจัดการผู้เข้าร่วมกิจกรรม ออกหมายเลข BIB ตรวจสอบสถานะการชำระเงิน และเช็กอินหน้างานรวดเร็ว</p>
+          <ul class="bs-features">
+            <li>ฟอร์มลงทะเบียนบนมือถือ กรอกง่ายใน 1 นาที</li>
+            <li>จัดการรายชื่อและแบ่งรุ่นการแข่งขันอัตโนมัติ</li>
+            <li>ปรับแต่งเป็นระบบจองคิวหรือลงทะเบียนอบรมได้</li>
+          </ul>
+        </div>
+        <div class="bs-actions">
+          <a href="https://bangsaen-run.bangsaenai.com" target="_blank" rel="noopener" class="bs-btn bs-btn-primary">
+            ทดลองระบบลงทะเบียน ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- แถบ Call to Action ด้านล่าง -->
+    <div class="bs-footer-note">
+      <div class="bs-footer-note-text">
+        <h4>💡 ต้องการระบบที่ปรับแต่งเฉพาะธุรกิจของคุณ หรือขอรหัส PIN ทดสอบหลังร้าน?</h4>
+        <p>แยกเซิร์ฟเวอร์และฐานข้อมูลส่วนตัวสำหรับร้านคุณโดยเฉพาะ ดูแลระบบ Cloud ครบวงจร</p>
+      </div>
+      <!-- เปลี่ยน href ด้านล่างเป็นลิงก์ Facebook Page หรือ Line ของคุณได้เลยครับ -->
+      <a href="https://m.me/" target="_blank" rel="noopener" class="bs-btn-chat">
+        💬 ทักแชทปรึกษา / ขอรหัสทดลอง
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <!-- ================================================================= -->
 <!-- 🛡️ SECTION: BANGSAEN AI SHIELD — 6-STATE EXPERIMENT SHOWCASE     -->
